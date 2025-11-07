@@ -15,6 +15,8 @@
     --border-color: #475569;
     --accent-color: #c026d3; /* Cor T20 */
     --accent-hover: #a21caf;
+    --danger-color: #f43f5e;
+    --success-color: #22c55e; /* Verde para "Vestido" */
     
     --spacing-sm: 0.5rem;
     --spacing-md: 1rem;
@@ -36,9 +38,27 @@ body {
 
 /* ===== LAYOUT ===== */
 .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 var(--spacing-md);
+}
+
+.container-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+}
+
+@media (min-width: 1024px) {
+    .container-grid {
+        grid-template-columns: 3fr 1fr;
+    }
+}
+
+.content-column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
 }
 
 .header {
@@ -58,13 +78,8 @@ body {
     color: var(--text-muted);
 }
 
-.main-content {
-    padding-bottom: var(--spacing-xl);
-}
-
 /* ===== FILTROS ===== */
 .filters-section {
-    margin-bottom: var(--spacing-xl);
     display: flex;
     flex-direction: column;
     gap: var(--spacing-lg);
@@ -193,6 +208,12 @@ body {
     color: #cbd5e1;
 }
 
+/* NOVO: Badge "Vestido" */
+.badge-vestido {
+    background-color: rgba(34, 197, 94, 0.2);
+    color: #86efac;
+}
+
 .item-spaces {
     font-size: 0.875rem;
     color: var(--text-secondary);
@@ -206,6 +227,97 @@ body {
     color: var(--text-muted);
 }
 
+/* ===== INVENTÁRIO ===== */
+.inventory-container {
+    background-color: var(--secondary-bg);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    height: fit-content;
+    position: sticky;
+    top: var(--spacing-xl);
+}
+
+.inventory-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.inventory-list {
+    list-style: none;
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: var(--spacing-sm);
+}
+
+.inventory-empty {
+    color: var(--text-muted);
+    text-align: center;
+    padding: var(--spacing-lg) 0;
+}
+
+.inventory-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md) 0;
+    border-bottom: 1px solid var(--tertiary-bg);
+}
+
+.inventory-item:last-child {
+    border-bottom: none;
+}
+
+.item-info .item-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.item-info .item-details {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.item-actions .remove-item-btn {
+    background: none;
+    border: none;
+    color: var(--danger-color);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.inventory-summary {
+    border-top: 1px solid var(--border-color);
+    margin-top: var(--spacing-md);
+    padding-top: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.summary-row span:last-child {
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+.clear-btn {
+    width: 100%;
+    margin-top: var(--spacing-md);
+    background-color: var(--danger-color);
+    border-color: var(--danger-color);
+}
+
 /* ===== MODAL ===== */
 .modal {
     position: fixed;
@@ -217,7 +329,7 @@ body {
     border-radius: var(--radius-lg);
     max-width: 600px;
     width: 90%;
-    max-height: 90vh;
+    max-height: 95vh;
     overflow-y: auto;
     z-index: 50;
     opacity: 0;
@@ -356,20 +468,56 @@ body {
     font-weight: 700;
 }
 
-.modal-close-btn {
-    width: 100%;
-    padding: 0.75rem;
+.modal-add-item {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+    margin-top: var(--spacing-lg);
+    border-top: 1px solid var(--border-color);
+    padding-top: var(--spacing-lg);
+}
+
+.modal-add-item label {
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.quantity-input {
+    width: 60px;
+    padding: 0.5rem;
+    background-color: var(--tertiary-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.add-item-btn {
+    flex-grow: 1;
+    padding: 0.6rem 1rem;
     background-color: var(--accent-color);
     border: none;
     border-radius: var(--radius-md);
     color: var(--text-primary);
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s ease;
-    margin-top: var(--spacing-lg);
 }
 
-.modal-close-btn:hover {
+.add-item-btn:hover {
     background-color: var(--accent-hover);
+}
+
+.badge-vestido {
+    background-color: rgba(22, 163, 74, 0.2);
+    color: #4ade80;
+}
+
+/* Indicador para a lista do Inventário */
+.vestido-indicator {
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: #4ade80;
+    margin-left: 4px;
 }
