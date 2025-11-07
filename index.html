@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T20 Item Finder - Consulta de Itens</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="header-title">T20 Item Finder</h1>
+            <p class="header-subtitle">Consulta rápida de itens do Sistema T20</p>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="filters-section">
+                <div class="search-bar">
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        placeholder="Buscar por nome do item..." 
+                        class="search-input"
+                    >
+                </div>
+
+                <div class="filter-group">
+                    <button class="filter-btn active" data-category="todos">Todos</button>
+                    <button class="filter-btn" data-category="Arma">Armas</button>
+                    <button class="filter-btn" data-category="Armadura">Armaduras</button>
+                    <button class="filter-btn" data-category="Escudo">Escudos</button>
+                    <button class="filter-btn" data-category="Item Geral">Itens Gerais</button>
+                </div>
+
+                <div id="specificFilters" class="filter-group"></div>
+            </div>
+
+            <div id="itemsGrid" class="items-grid">
+                <div class="loading">Carregando itens...</div>
+            </div>
+        </div>
+    </main>
+
+    <div id="itemModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            
+            <div class="modal-header">
+                <h2 id="modalTitle" class="modal-title"></h2>
+                <p id="modalPrice" class="modal-price"></p>
+            </div>
+
+            <div class="modal-body">
+                <div class="modal-image-container">
+                    <img id="modalImage" src="" alt="" class="modal-image" style="display:none;">
+                </div>
+                <div id="modalBadges" class="modal-badges"></div>
+                <div class="modal-section">
+                    <h3>Descrição</h3>
+                    <p id="modalDescription"></p>
+                </div>
+                
+                <div id="weaponStats" class="modal-stats-container"></div>
+                <div id="armorStats" class="modal-stats-container"></div>
+
+                <div class="modal-section">
+                    <div class="stat-box">
+                        <p class="stat-label">Espaços Ocupados</p>
+                        <p id="modalSpaces" class="stat-value"></p>
+                    </div>
+                </div>
+            </div>
+
+            <button id="closeModalBtn" class="modal-close-btn">Fechar</button>
+        </div>
+    </div>
+    <div id="modalOverlay" class="modal-overlay"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
