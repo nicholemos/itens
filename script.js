@@ -2268,7 +2268,7 @@ const t20Data = {
 // ===== ESTADO GLOBAL =====
 let allItems = [];
 let filteredItems = [];
-let inventory = []; // Este array será carregado do localStorage
+let inventory = []; 
 let currentModalItem = null; 
 let currentCategory = 'todos';
 let currentType = 'todos';
@@ -2294,10 +2294,10 @@ const addItemBtn = document.getElementById('addItemBtn');
 
 // ===== INICIALIZAÇÃO =====
 document.addEventListener('DOMContentLoaded', () => {
-    loadInventory(); // NOVO: Carrega o inventário salvo
+    loadInventory(); 
     loadItems(); 
     setupEventListeners();
-    renderInventory(); // ATUALIZADO: Renderiza o inventário que foi carregado
+    renderInventory(); 
 });
 
 // ===== CARREGAR DADOS =====
@@ -2312,19 +2312,17 @@ function loadItems() {
     }
 }
 
-// ===== NOVO: Salvar e Carregar Inventário =====
+// ===== Salvar e Carregar Inventário =====
 function saveInventory() {
-    // Converte o array de inventário em string JSON e salva no localStorage
     localStorage.setItem('t20Inventory', JSON.stringify(inventory));
 }
 
 function loadInventory() {
-    // Pega a string do localStorage e converte de volta para um array
     const savedInventory = localStorage.getItem('t20Inventory');
     if (savedInventory) {
         inventory = JSON.parse(savedInventory);
     } else {
-        inventory = []; // Se não houver nada salvo, começa com um array vazio
+        inventory = []; 
     }
 }
 
@@ -2384,10 +2382,17 @@ function isVestido(item) {
     if (item.tipo === "Vestuário") {
         return true;
     }
+
+    // ---------------------------------------------------
+    // AQUI ESTÁ A CORREÇÃO
+    // ---------------------------------------------------
     // 3. Acessórios Mágicos (mas não Tomos/Manuais)
-    if (item.tipo === "Acessório" && !item.nome.includes("Tomo") && !item.nome.includes("Manual")) {
+    // Usamos ?.includes() para checar por "Acessório", "Acessório Menor", "Acessório Médio", etc.
+    if (item.tipo?.includes("Acessório") && !item.nome.includes("Tomo") && !item.nome.includes("Manual")) {
         return true;
     }
+    // ---------------------------------------------------
+
     // 4. Alguns Esotéricos
     const esotericosVestidos = ["Luva de ferro", "Medalhão de prata"];
     if (item.tipo === "Esotérico" && esotericosVestidos.includes(item.nome)) {
@@ -2509,18 +2514,18 @@ function addItemToInventory() {
         });
     }
 
-    renderInventory(); // Esta função agora também salva
+    renderInventory(); 
     closeModal();
 }
 
 function removeItemFromInventory(index) {
     inventory.splice(index, 1); 
-    renderInventory(); // Esta função agora também salva
+    renderInventory(); 
 }
 
 function clearInventory() {
     inventory = [];
-    renderInventory(); // Esta função agora também salva
+    renderInventory(); 
 }
 
 function renderInventory() {
@@ -2549,7 +2554,7 @@ function renderInventory() {
     }
     
     updateInventorySummary();
-    saveInventory(); // NOVO: Salva o inventário toda vez que ele é renderizado
+    saveInventory(); 
 }
 
 function updateInventorySummary() {
@@ -2573,11 +2578,11 @@ function updateInventorySummary() {
 
     totalCostEl.textContent = `T$ ${totalCost.toLocaleString('pt-BR')}`;
     totalSpacesEl.textContent = totalSpaces.toLocaleString('pt-BR');
-    totalVestidosEl.textContent = `${totalVestidos} / 10`; 
+    totalVestidosEl.textContent = `${totalVestidos} / 4`; 
 }
 
 function parsePrice(priceString) {
-    if (!priceString || priceString === "—" || priceString.startsWith('+') || priceString === 'Variável') {
+    if (!priceString || priceString === "—" || priceString.startsWith('+') || priceString === 'Variável' || priceString === "") {
         return 0;
     }
     const cleanString = priceString.replace("T$ ", "").replace(/\./g, "").replace(",", ".");
@@ -2655,7 +2660,7 @@ function openModal(index) {
     const armorStatsContainer = document.getElementById('armorStats');
     if (item.bonus_defesa) {
         armorStatsContainer.innerHTML = `
-            <div class="modal-section">
+            <div classs="modal-section">
                 <h3>Estatísticas de Defesa</h3>
                 <div class="modal-stats">
                     <div class="stat-box">
@@ -2676,7 +2681,7 @@ function openModal(index) {
     document.getElementById('modalSpaces').textContent = item.espacos || '—';
     modalQuantityInput.value = "1"; 
 
-    if (item.preco.startsWith('+') || item.preco === 'Variável') {
+    if (item.preco.startsWith('+') || item.preco === 'Variável' || item.preco === "") {
         document.querySelector('.modal-add-item').style.display = 'none';
     } else {
         document.querySelector('.modal-add-item').style.display = 'flex';
@@ -2697,7 +2702,7 @@ function closeModal() {
 // ===== MAPA DE IMAGENS (SIMPLIFICADO) =====
 function getImagePath(itemName) {
     const imageMap = {
-        'Adaga': 'https://png.pngtree.com/png-vector/20240913/ourmid/pngtree-dagger-png-image_13245837.png',
+        // 'Adaga': 'img/adaga.png',
     };
     return imageMap[itemName] || null; 
 }
