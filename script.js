@@ -311,35 +311,79 @@ function handleModSelection(e) {
     }
 }
 
+// SUBSTITUA A FUNÇÃO "isVestido" INTEIRA POR ESTA:
 
 // ===== LÓGICA DE ITENS VESTIDOS =====
+/**
+ * Verifica se um item conta como "vestido"
+ * @param {object} item O objeto do item
+ * @returns {boolean}
+ */
 function isVestido(item) {
     const itemToCheck = item.baseItem || item;
 
+    // 1. Armaduras (mas não escudos)
     if (itemToCheck.categoria === "Armadura") {
         return true;
     }
+    // 2. Vestuário (Itens Gerais)
     if (itemToCheck.tipo === "Vestuário") {
         return true;
     }
-    if (itemToCheck.tipo?.includes("Acessório") && !itemToCheck.nome.includes("Tomo") && !itemToCheck.nome.includes("Manual")) {
-        return true;
+
+    // 3. Acessórios Mágicos (que ocupam espaço no corpo)
+    if (itemToCheck.tipo?.includes("Acessório")) {
+        // Lista de EXCEÇÕES: Acessórios que NÃO são vestidos
+        const naoVestidos = [
+            "Corda da Escalada",
+            "Espelho da Oposição",
+            "Ferraduras da Velocidade",
+            "Garrafa da Fumaça Eterna",
+            "Gema da Luminosidade",
+            "Flauta Fantasma",
+            "Lâmpada da Revelação",
+            "Bola de Cristal",
+            "Caveira Maldita",
+            "Gema da Telepatia",
+            "Gema Elemental",
+            "Manual da Saúde Corporal",
+            "Manual do Bom Exercício",
+            "Manual dos Movimentos Precisos",
+            "Tomo da Compreensão",
+            "Tomo da Liderança e Influência",
+            "Tomo dos Grandes Pensamentos",
+            "Estatueta Animista",
+            "Orbe das Tempestades",
+            "Espelho do Aprisionamento",
+            "Tapete Voador"      // Item que você mencionou
+            // Adicione aqui outros itens (Ex: "Bolsa de Carga", "Manual do Bom Exercício")
+        ];
+
+        if (naoVestidos.includes(itemToCheck.nome)) {
+            return false; // Se estiver na lista de exceções, NÃO é vestido
+        }
+
+        return true; // Se for "Acessório" e não for uma exceção, É vestido
     }
+
+    // 4. Alguns Esotéricos
     const esotericosVestidos = ["Luva de ferro", "Medalhão de prata"];
     if (itemToCheck.tipo === "Esotérico" && esotericosVestidos.includes(itemToCheck.nome)) {
         return true;
     }
+    // 5. Armaduras Mágicas (mas não Escudos Mágicos)
     if (itemToCheck.tipo === "Armadura/Escudo" && !itemToCheck.nome.toLowerCase().includes("escudo")) {
         return true;
     }
-    return false;
+
+    return false; // Padrão: não é vestido
 }
 
 // ===== FILTROS ESPECÍFICOS =====
 function updateSpecificFilters() {
     specificFiltersContainer.innerHTML = '';
 
-    const noSubFilter = ['todos', 'Item Superior', 'Item Mágico'];
+    const noSubFilter = ['todos'];
     if (noSubFilter.includes(currentCategory)) {
         return;
     }
