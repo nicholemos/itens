@@ -4,44 +4,44 @@
 const itensMagicosData = {
     "item": [
         // Poções
-        { nome: "Poção: Abençoar Alimentos (óleo)", preco: "T$ 30", tipo: "Poção", categoria: "Item Mágico", descricao: "Purifica e abençoa alimentos e bebidas." },
-        { nome: "Poção: Área Escorregadia (granada)", preco: "T$ 30", tipo: "Granada", categoria: "Item Mágico", descricao: "Cria uma área escorregadia no local de impacto." },
-        { nome: "Poção: Arma Mágica (óleo)", preco: "T$ 30", tipo: "Óleo", categoria: "Item Mágico", descricao: "Concede +1 em ataques e dano com a arma ungida." },
-        { nome: "Poção: Compreensão", preco: "T$ 30", tipo: "Poção", categoria: "Item Mágico", descricao: "Concede compreensão mágica e linguística temporária." },
-        { nome: "Poção: Curar Ferimentos (2d8+2 PV)", preco: "T$ 30", tipo: "Poção", categoria: "Item Mágico", descricao: "Restaura 2d8+2 pontos de vida ao beber." },
-        { nome: "Poção: Disfarce Ilusório", preco: "T$ 30", tipo: "Poção", categoria: "Item Mágico", descricao: "Cria uma ilusão que altera a aparência do usuário." },
-        { nome: "Poção: Escuridão (óleo)", preco: "T$ 30", tipo: "Óleo", categoria: "Item Mágico", descricao: "Gera uma área de escuridão mágica ao ser aplicada." },
-        { nome: "Poção: Luz (óleo)", preco: "T$ 30", tipo: "Óleo", categoria: "Item Mágico", descricao: "Emite luz intensa ao ser aplicada." },
-        { nome: "Poção: Névoa (granada)", preco: "T$ 30", tipo: "Granada", categoria: "Item Mágico", descricao: "Cria uma nuvem de névoa na área de impacto." },
-        { nome: "Poção: Primor Atlético", preco: "T$ 30", tipo: "Poção", categoria: "Item Mágico", descricao: "Concede bônus em testes de Atletismo e Acrobacia." },
-        { nome: "Poção: Proteção Divina", preco: "T$ 30", tipo: "Poção", categoria: "Item Mágico", descricao: "Concede +1 na Defesa e nos testes de resistência." },
-        { nome: "Poção: Resistência a Energia", preco: "T$ 30", tipo: "Poção", categoria: "Item Mágico", descricao: "Concede resistência a um tipo de energia." },
-        { nome: "Poção: Sono", preco: "T$ 30", tipo: "Poção", categoria: "Item Mágico", descricao: "Adormece criaturas em uma pequena área." },
-        { nome: "Poção: Suporte Ambiental", preco: "T$ 30", tipo: "Poção", categoria: "Item Mágico", descricao: "Protege contra calor, frio ou falta de ar." },
-        { nome: "Poção: Tranca Arcana (óleo)", preco: "T$ 30", tipo: "Óleo", categoria: "Item Mágico", descricao: "Fecha e sela portas ou objetos." },
-        { nome: "Poção: Visão Mística", preco: "T$ 30", tipo: "Poção", categoria: "Item Mágico", descricao: "Permite ver magias e auras mágicas." },
-        { nome: "Poção: Vitalidade Fantasma", preco: "T$ 30", tipo: "Poção", categoria: "Item Mágico", descricao: "Concede pontos de vida temporários." },
-        { nome: "Poção: Escudo da Fé (duração cena)", preco: "T$ 120", tipo: "Poção", categoria: "Item Mágico", descricao: "Cria um campo de proteção divina por uma cena." },
-        { nome: "Poção: Alterar Tamanho", preco: "T$ 270", tipo: "Poção", categoria: "Item Mágico", descricao: "Permite crescer ou encolher temporariamente." },
-        { nome: "Poção: Aparência Perfeita", preco: "T$ 270", tipo: "Poção", categoria: "Item Mágico", descricao: "Concede aparência perfeita e carismática." },
-        { nome: "Poção: Armamento da Natureza (óleo)", preco: "T$ 270", tipo: "Óleo", categoria: "Item Mágico", descricao: "Imbuí uma arma com poder natural." },
-        { nome: "Poção: Bola de Fogo (granada)", preco: "T$ 270", tipo: "Granada", categoria: "Item Mágico", descricao: "Explode causando 5d6 de dano de fogo em área." },
-        { nome: "Poção: Camuflagem Ilusória", preco: "T$ 270", tipo: "Poção", categoria: "Item Mágico", descricao: "Cria uma ilusão que oculta o usuário." },
-        { nome: "Poção: Concentração de Combate (duração cena)", preco: "T$ 270", tipo: "Poção", categoria: "Item Mágico", descricao: "Melhora foco e resistência em combate." },
-        { nome: "Poção: Curar Ferimentos (4d8+4 PV)", preco: "T$ 270", tipo: "Poção", categoria: "Item Mágico", descricao: "Restaura 4d8+4 pontos de vida." },
-        { nome: "Poção: Físico Divino", preco: "T$ 270", tipo: "Poção", categoria: "Item Mágico", descricao: "Concede +2 em For, Des ou Con por uma cena." },
-        { nome: "Poção: Mente Divina", preco: "T$ 270", tipo: "Poção", categoria: "Item Mágico", descricao: "Concede +2 em Int, Sab ou Car por uma cena." },
-        { nome: "Poção: Metamorfose", preco: "T$ 270", tipo: "Poção", categoria: "Item Mágico", descricao: "Permite assumir a forma de outra criatura." },
-        { nome: "Poção: Purificação", preco: "T$ 270", tipo: "Poção", categoria: "Item Mágico", descricao: "Remove venenos, doenças e condições negativas." },
-        { nome: "Poção: Velocidade", preco: "T$ 270", tipo: "Poção", categoria: "Item Mágico", descricao: "Concede uma ação de movimento extra por turno." },
-        { nome: "Poção: Vestimenta da Fé (óleo)", preco: "T$ 270", tipo: "Óleo", categoria: "Item Mágico", descricao: "Abençoa armaduras com energia divina." },
-        { nome: "Poção: Voz Divina", preco: "T$ 270", tipo: "Poção", categoria: "Item Mágico", descricao: "Amplifica e inspira por meio da voz." },
-        { nome: "Poção: Arma Mágica +3 (óleo)", preco: "T$ 750", tipo: "Óleo", categoria: "Item Mágico", descricao: "Concede +3 em ataques e dano com a arma ungida." },
-        { nome: "Poção: Curar Ferimentos (7d8+7 PV)", preco: "T$ 1.080", tipo: "Poção", categoria: "Item Mágico", descricao: "Restaura 7d8+7 pontos de vida." },
-        { nome: "Poção: Físico Divino (três atributos)", preco: "T$ 1.080", tipo: "Poção", categoria: "Item Mágico", descricao: "Concede +2 em For, Des e Con por uma cena." },
-        { nome: "Poção: Invisibilidade (duração cena)", preco: "T$ 1.080", tipo: "Poção", categoria: "Item Mágico", descricao: "Torna o usuário invisível por uma cena." },
-        { nome: "Poção: Bola de Fogo Aprimorada (granada)", preco: "T$ 1.470", tipo: "Granada", categoria: "Item Mágico", descricao: "Explode causando 10d6 de dano de fogo em área." },
-        { nome: "Poção: Curar Ferimentos (11d8+11 PV)", preco: "T$ 3.000", tipo: "Poção", categoria: "Item Mágico", descricao: "Restaura 11d8+11 pontos de vida." },
+        { nome: "Poção: Abençoar Alimentos (óleo)", preco: "T$ 30", tipo: "Poção", espacos: "0,5",  categoria: "Item Mágico", descricao: "Purifica e abençoa alimentos e bebidas." },
+        { nome: "Poção: Área Escorregadia (granada)", preco: "T$ 30",  tipo: "Granada", espacos: "0,5", categoria: "Item Mágico", descricao: "Cria uma área escorregadia no local de impacto." },
+        { nome: "Poção: Arma Mágica (óleo)", preco: "T$ 30",  tipo: "Óleo", espacos: "0,5", categoria: "Item Mágico", descricao: "Concede +1 em ataques e dano com a arma ungida." },
+        { nome: "Poção: Compreensão", preco: "T$ 30", tipo: "Poção", espacos: "0,5", categoria: "Item Mágico", descricao: "Concede compreensão mágica e linguística temporária." },
+        { nome: "Poção: Curar Ferimentos (2d8+2 PV)", preco: "T$ 30", tipo: "Poção", espacos: "0,5", categoria: "Item Mágico", descricao: "Restaura 2d8+2 pontos de vida ao beber." },
+        { nome: "Poção: Disfarce Ilusório", preco: "T$ 30", tipo: "Poção", espacos: "0,5", categoria: "Item Mágico", descricao: "Cria uma ilusão que altera a aparência do usuário." },
+        { nome: "Poção: Escuridão (óleo)", preco: "T$ 30",  tipo: "Óleo", espacos: "0,5", categoria: "Item Mágico", descricao: "Gera uma área de escuridão mágica ao ser aplicada." },
+        { nome: "Poção: Luz (óleo)", preco: "T$ 30",  tipo: "Óleo", espacos: "0,5", categoria: "Item Mágico", descricao: "Emite luz intensa ao ser aplicada." },
+        { nome: "Poção: Névoa (granada)", preco: "T$ 30",  tipo: "Granada", espacos: "0,5", categoria: "Item Mágico", descricao: "Cria uma nuvem de névoa na área de impacto." },
+        { nome: "Poção: Primor Atlético", preco: "T$ 30", tipo: "Poção", espacos: "0,5", categoria: "Item Mágico", descricao: "Concede bônus em testes de Atletismo e Acrobacia." },
+        { nome: "Poção: Proteção Divina", preco: "T$ 30", tipo: "Poção", espacos: "0,5", categoria: "Item Mágico", descricao: "Concede +1 na Defesa e nos testes de resistência." },
+        { nome: "Poção: Resistência a Energia", preco: "T$ 30", tipo: "Poção", espacos: "0,5", categoria: "Item Mágico", descricao: "Concede resistência a um tipo de energia." },
+        { nome: "Poção: Sono", preco: "T$ 30", tipo: "Poção", espacos: "0,5", categoria: "Item Mágico", descricao: "Adormece criaturas em uma pequena área." },
+        { nome: "Poção: Suporte Ambiental", preco: "T$ 30", tipo: "Poção", espacos: "0,5", categoria: "Item Mágico", descricao: "Protege contra calor, frio ou falta de ar." },
+        { nome: "Poção: Tranca Arcana (óleo)", preco: "T$ 30",  tipo: "Óleo", espacos: "0,5", categoria: "Item Mágico", descricao: "Fecha e sela portas ou objetos." },
+        { nome: "Poção: Visão Mística", preco: "T$ 30", tipo: "Poção", espacos: "0,5", categoria: "Item Mágico", descricao: "Permite ver magias e auras mágicas." },
+        { nome: "Poção: Vitalidade Fantasma", preco: "T$ 30", tipo: "Poção", espacos: "0,5", categoria: "Item Mágico", descricao: "Concede pontos de vida temporários." },
+        { nome: "Poção: Escudo da Fé (duração cena)", preco: "T$ 120", tipo: "Poção", espacos: "0,5", categoria: "Item Mágico", descricao: "Cria um campo de proteção divina por uma cena." },
+        { nome: "Poção: Alterar Tamanho", preco: "T$ 270", tipo: "Poção", espacos: "0,5", categoria: "Item Mágico", descricao: "Permite crescer ou encolher temporariamente." },
+        { nome: "Poção: Aparência Perfeita", preco: "T$ 270", tipo: "Poção", espacos: "0,5", categoria: "Item Mágico", descricao: "Concede aparência perfeita e carismática." },
+        { nome: "Poção: Armamento da Natureza (óleo)", preco: "T$ 270",  tipo: "Óleo", espacos: "0,5", categoria: "Item Mágico", descricao: "Imbuí uma arma com poder natural." },
+        { nome: "Poção: Bola de Fogo (granada)", preco: "T$ 270",  tipo: "Granada", espacos: "0,5", categoria: "Item Mágico", descricao: "Explode causando 5d6 de dano de fogo em área." },
+        { nome: "Poção: Camuflagem Ilusória", preco: "T$ 270", tipo: "Poção", espacos: "0,5", categoria: "Item Mágico", descricao: "Cria uma ilusão que oculta o usuário." },
+        { nome: "Poção: Concentração de Combate (duração cena)", preco: "T$ 270", tipo: "Poção", espacos: "0,5", categoria: "Item Mágico", descricao: "Melhora foco e resistência em combate." },
+        { nome: "Poção: Curar Ferimentos (4d8+4 PV)", preco: "T$ 270", tipo: "Poção", espacos: "0,5", categoria: "Item Mágico", descricao: "Restaura 4d8+4 pontos de vida." },
+        { nome: "Poção: Físico Divino", preco: "T$ 270", tipo: "Poção", espacos: "0,5", categoria: "Item Mágico", descricao: "Concede +2 em For, Des ou Con por uma cena." },
+        { nome: "Poção: Mente Divina", preco: "T$ 270", tipo: "Poção", espacos: "0,5", categoria: "Item Mágico", descricao: "Concede +2 em Int, Sab ou Car por uma cena." },
+        { nome: "Poção: Metamorfose", preco: "T$ 270", tipo: "Poção", espacos: "0,5", categoria: "Item Mágico", descricao: "Permite assumir a forma de outra criatura." },
+        { nome: "Poção: Purificação", preco: "T$ 270", tipo: "Poção", espacos: "0,5", categoria: "Item Mágico", descricao: "Remove venenos, doenças e condições negativas." },
+        { nome: "Poção: Velocidade", preco: "T$ 270", tipo: "Poção", espacos: "0,5", categoria: "Item Mágico", descricao: "Concede uma ação de movimento extra por turno." },
+        { nome: "Poção: Vestimenta da Fé (óleo)", preco: "T$ 270",  tipo: "Óleo", espacos: "0,5", categoria: "Item Mágico", descricao: "Abençoa armaduras com energia divina." },
+        { nome: "Poção: Voz Divina", preco: "T$ 270", tipo: "Poção", espacos: "0,5", categoria: "Item Mágico", descricao: "Amplifica e inspira por meio da voz." },
+        { nome: "Poção: Arma Mágica +3 (óleo)", preco: "T$ 750",  tipo: "Óleo", espacos: "0,5", categoria: "Item Mágico", descricao: "Concede +3 em ataques e dano com a arma ungida." },
+        { nome: "Poção: Curar Ferimentos (7d8+7 PV)", preco: "T$ 1.080", tipo: "Poção", espacos: "0,5", categoria: "Item Mágico", descricao: "Restaura 7d8+7 pontos de vida." },
+        { nome: "Poção: Físico Divino (três atributos)", preco: "T$ 1.080", tipo: "Poção", espacos: "0,5", categoria: "Item Mágico", descricao: "Concede +2 em For, Des e Con por uma cena." },
+        { nome: "Poção: Invisibilidade (duração cena)", preco: "T$ 1.080", tipo: "Poção", espacos: "0,5", categoria: "Item Mágico", descricao: "Torna o usuário invisível por uma cena." },
+        { nome: "Poção: Bola de Fogo Aprimorada (granada)", preco: "T$ 1.470",  tipo: "Granada", espacos: "0,5", categoria: "Item Mágico", descricao: "Explode causando 10d6 de dano de fogo em área." },
+        { nome: "Poção: Curar Ferimentos (11d8+11 PV)", preco: "T$ 3.000", tipo: "Poção", espacos: "0,5", categoria: "Item Mágico", descricao: "Restaura 11d8+11 pontos de vida." },
 
         // Armas Especificas
         {
@@ -57,7 +57,7 @@ const itensMagicosData = {
             preco: "T$ 30.000",
             categoria: "Item Mágico",
             tipo: "Arma",
-            espacos: "2",
+            espacos: "1",
             descricao: "Espada longa +2 que concede +2 em testes de Diplomacia e Intimidação quando empunhada por nobres."
         },
         {
@@ -65,7 +65,7 @@ const itensMagicosData = {
             preco: "T$ 45.000",
             categoria: "Item Mágico",
             tipo: "Arma",
-            espacos: "2",
+            espacos: "1",
             descricao: "Espada +3 sagrada que causa +2d6 de dano de luz contra mortos-vivos e demônios."
         },
         {
@@ -73,7 +73,7 @@ const itensMagicosData = {
             preco: "T$ 45.000",
             categoria: "Item Mágico",
             tipo: "Arma",
-            espacos: "2",
+            espacos: "1",
             descricao: "Permite invocar um aliado animal ou assumir forma bestial por uma cena (como Metamorfose)."
         },
         {
@@ -81,7 +81,7 @@ const itensMagicosData = {
             preco: "T$ 45.000",
             categoria: "Item Mágico",
             tipo: "Arma",
-            espacos: "2",
+            espacos: "1",
             descricao: "Maça +3 que pode amedrontar inimigos em um raio de 9 m (Vontade CD 17)."
         },
         {
@@ -113,7 +113,7 @@ const itensMagicosData = {
             preco: "T$ 70.000",
             categoria: "Item Mágico",
             tipo: "Arma",
-            espacos: "3",
+            espacos: "2",
             descricao: "Machado de batalha +3 que causa +2d6 de dano adicional contra aberrações e mortos-vivos."
         },
         {
@@ -121,7 +121,7 @@ const itensMagicosData = {
             preco: "T$ 70.000",
             categoria: "Item Mágico",
             tipo: "Arma",
-            espacos: "3",
+            espacos: "2",
             descricao: "Martelo de guerra +3 forjado por anões; causa +2d6 de dano contra orcs e goblinoides e retorna ao portador ao ser lançado."
         },
         {
@@ -137,7 +137,7 @@ const itensMagicosData = {
             preco: "T$ 90.000",
             categoria: "Item Mágico",
             tipo: "Arma",
-            espacos: "2",
+            espacos: "1",
             descricao: "Espada curva +4 flamejante; causa +2d6 de dano de fogo e concede resistência 10 a fogo ao portador."
         },
         {
@@ -161,7 +161,7 @@ const itensMagicosData = {
             preco: "T$ 110.000",
             categoria: "Item Mágico",
             tipo: "Arma",
-            espacos: "2",
+            espacos: "1",
             descricao: "Espada longa +4 que concede vantagem em um teste de ataque, perícia ou resistência uma vez por dia."
         },
         {
@@ -169,7 +169,7 @@ const itensMagicosData = {
             preco: "T$ 140.000",
             categoria: "Item Mágico",
             tipo: "Arma",
-            espacos: "3",
+            espacos: "2",
             descricao: "Martelo gigante +5 que pode liberar uma onda sísmica (como a magia Terremoto) uma vez por semana."
         },
         {
@@ -185,7 +185,7 @@ const itensMagicosData = {
             preco: "T$ 200.000",
             categoria: "Item Mágico",
             tipo: "Arma",
-            espacos: "3",
+            espacos: "2",
             descricao: "Espada longa +5 sagrada; causa +2d6 de dano adicional contra criaturas malignas e concede resistência 10 a trevas ao portador."
         },
 
@@ -195,7 +195,7 @@ const itensMagicosData = {
             preco: "T$ 30.000",
             categoria: "Item Mágico",
             tipo: "Armadura",
-            espacos: "3",
+            espacos: "2",
             descricao: "Cota de malha leve e silenciosa feita por elfos; concede +8 na Defesa e +5 em Furtividade."
         },
         {
@@ -203,7 +203,7 @@ const itensMagicosData = {
             preco: "T$ 36.000",
             categoria: "Item Mágico",
             tipo: "Armadura",
-            espacos: "3",
+            espacos: "2",
             descricao: "Feita de peles e escamas de bestas mágicas; concede resistência 10 a um tipo de energia."
         },
         {
@@ -211,7 +211,7 @@ const itensMagicosData = {
             preco: "T$ 45.000",
             categoria: "Item Mágico",
             tipo: "Escudo",
-            espacos: "2",
+            espacos: "1",
             descricao: "Concede +2 na Defesa e permite ignorar a chance de falha arcana ao conjurar magias com escudo."
         },
         {
@@ -219,7 +219,7 @@ const itensMagicosData = {
             preco: "T$ 45.000",
             categoria: "Item Mágico",
             tipo: "Armadura",
-            espacos: "4",
+            espacos: "5",
             descricao: "Armadura de escamas +3 que concede +2 em testes de Guerra e Intimidação."
         },
         {
@@ -235,7 +235,7 @@ const itensMagicosData = {
             preco: "T$ 45.000",
             categoria: "Item Mágico",
             tipo: "Armadura",
-            espacos: "4",
+            espacos: "5",
             descricao: "Couraça +3 que concede +2 em testes de Carisma e permite inspirar aliados como uma ação de movimento."
         },
         {
@@ -243,7 +243,7 @@ const itensMagicosData = {
             preco: "T$ 50.000",
             categoria: "Item Mágico",
             tipo: "Escudo",
-            espacos: "3",
+            espacos: "5",
             descricao: "Escudo pesado +3 feito de aço anão; concede RD 5 e vantagem em testes de resistência contra efeitos de empurrão."
         },
         {
@@ -304,7 +304,7 @@ const itensMagicosData = {
         { nome: "Garrafa da Fumaça Eterna", preco: "T$ 3.000", categoria: "Item Mágico", tipo: "Acessório", espacos: "—", descricao: "Emite fumaça densa continuamente; pode ser tampada para interromper." },
         { nome: "Gema da Luminosidade", preco: "T$ 3.000", categoria: "Item Mágico", tipo: "Acessório", espacos: "—", descricao: "Emite luz como uma tocha; pode ser acesa ou apagada com comando." },
         { nome: "Manto Élfico", preco: "T$ 3.000", categoria: "Item Mágico", tipo: "Acessório", espacos: "1", descricao: "Concede +5 em Furtividade." },
-        { nome: "Mochila de Carga", preco: "T$ 3.000", categoria: "Item Mágico", tipo: "Acessório", espacos: "2", descricao: "Reduz o peso carregado pela metade para efeitos de carga." },
+        { nome: "Mochila de Carga", preco: "T$ 3.000", categoria: "Item Mágico", tipo: "Acessório", espacos: "0", descricao: "Reduz o peso carregado pela metade para efeitos de carga." },
         { nome: "Brincos da Sagacidade", preco: "T$ 4.500", categoria: "Item Mágico", tipo: "Acessório", espacos: "1", descricao: "Concede +1 em Inteligência (após 1 dia de uso)." },
         { nome: "Luvas da Delicadeza", preco: "T$ 4.500", categoria: "Item Mágico", tipo: "Acessório", espacos: "1", descricao: "Concede +1 em Destreza (após 1 dia de uso)." },
         { nome: "Manoplas da Força do Ogro", preco: "T$ 4.500", categoria: "Item Mágico", tipo: "Acessório", espacos: "1", descricao: "Concede +1 em Força (após 1 dia de uso)." },
