@@ -13,16 +13,18 @@
     --text-secondary: #cbd5e1;
     --text-muted: #94a3b8;
     --border-color: #475569;
-    --accent-color: #c026d3; /* Cor T20 */
+    --accent-color: #c026d3;
+    /* Cor T20 */
     --accent-hover: #a21caf;
     --danger-color: #f43f5e;
-    --success-color: #22c55e; /* Verde para "Vestido" */
-    
+    --success-color: #22c55e;
+    /* Verde para "Vestido" */
+
     --spacing-sm: 0.5rem;
     --spacing-md: 1rem;
     --spacing-lg: 1.5rem;
     --spacing-xl: 2rem;
-    
+
     --radius-md: 0.5rem;
     --radius-lg: 0.75rem;
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
@@ -220,7 +222,8 @@ body {
     margin-top: auto;
 }
 
-.loading, .no-results {
+.loading,
+.no-results {
     grid-column: 1 / -1;
     text-align: center;
     padding: var(--spacing-xl);
@@ -583,7 +586,8 @@ body {
     border-collapse: collapse;
     background-color: var(--secondary-bg);
     border-radius: var(--radius-lg);
-    overflow: hidden; /* Para o radius funcionar */
+    overflow: hidden;
+    /* Para o radius funcionar */
 }
 
 .item-table thead {
@@ -617,7 +621,8 @@ body {
     border-bottom: none;
 }
 
-.item-table td:first-child { /* Coluna do Nome */
+.item-table td:first-child {
+    /* Coluna do Nome */
     font-weight: 600;
     color: var(--text-primary);
 }
@@ -682,11 +687,31 @@ body {
 
 /* Ajusta o stat-box de item vestido no modal */
 #modalVestido .stat-value {
-    color: var(--success-color); /* Usando a var do seu CSS */
+    color: var(--success-color);
+    /* Usando a var do seu CSS */
 }
 
 /* Badge de Vestido (você já tem, mas garantindo) */
 .badge-vestido {
-    background-color: rgba(34, 197, 94, 0.2); /* var(--success-color) com alfa */
+    background-color: rgba(34, 197, 94, 0.2);
+    /* var(--success-color) com alfa */
     color: var(--success-color);
+}
+
+.filter-label {
+    font-weight: 600;
+    color: var(--text-secondary);
+    align-self: center;
+}
+
+.curse-checkbox {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--accent-color);
+}
+
+#curseQuantityContainer {
+    display: none;
+    /* Começa escondido */
+    margin-top: var(--spacing-sm);
 }
