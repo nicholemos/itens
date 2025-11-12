@@ -22,14 +22,32 @@ const enchantmentPrices = {
 const modificationPrereqs = {
     "Atroz": "Cruel",
     "Pungente": "Certeira",
-    "Sob Medida": "Ajustada"
+    "Sob Medida": "Ajustada",
+    "Harmonizada (Arma)": "Outra melhoria qualquer",
+    "Tesoura": "Arma Perfurante",
+    "Penetrante": "Cruel",
+    "Balístico": "Reforçado",
+    "Deslumbrante": "Banhado a Ouro / Cravejado de Gemas",
+    "Farpada": "Cruel",
+    "Potencializador": "Canalizador"
     // Adicione outros pré-requisitos aqui
 };
 
 // Mapa de pré-requisitos (Encantamentos)
 const enchantmentPrereqs = {
     "Encanto Magnífica": "Encanto Formidável",
-    "Encanto Guardião": "Encanto Defensor"
+    "Encanto Energética": "Encanto Formidável",
+    "Encanto Lacinante": "Encanto Dilacerante",
+    "Encanto Guardião": "Encanto Defensor",
+    "Encanto Cronal": "Encanto Formidável",
+    "Encanto Manáfaga": "Encanto Formidável",
+    "Encanto Reflexiva": "Encanto Cristalina",
+    "Encanto Sepulcral": "Encanto Tumular",
+    "Encanto Anulador": "Abascanto",
+    "Encanto Estígio": "Abençoado",
+    "Encanto Implacável": "Outro encanto", // <-- ADICIONE
+    "Encanto Majestoso": "Outro encanto", // <-- ADICIONE
+    "Encanto Pulverizante": "Outro encanto"  // <-- ADICIONE
     // Adicione outros pré-requisitos aqui
 };
 
@@ -38,6 +56,8 @@ const enchantmentPrereqs = {
 let allModifications = [];
 let allMaterials = [];
 let allEnchantments = [];
+let allEsotericEnchantments = [];
+let allCurses = []; // <-- ADICIONE ESTA LINHA
 const materialEspecialPlaceholder = {
     nome: "Material Especial",
     tipo: "Melhoria",
@@ -54,6 +74,7 @@ let currentType = 'todos';
 let searchTerm = '';
 let currentView = 'grid';
 let currentEmpunhadura = 'todas';
+let currentSource = 'todas'; // NOVO: Estado para o filtro de Fonte
 
 // ===== ELEMENTOS DO DOM =====
 // (Declaramos as variáveis aqui, mas pegamos elas dentro do 'window.onload')
@@ -62,12 +83,15 @@ let searchInput, itemsGrid, itemModal, modalOverlay, closeModalBtn,
     totalSpacesEl, totalVestidosEl, clearInventoryBtn, modalQuantityInput,
     addItemBtn, viewGridBtn, viewTableBtn, empunhaduraFiltersContainer,
     empunhaduraButtons, itemCustomizer, modQuantitySelect, modSelectorsContainer,
-    enchantQuantitySelect, enchantSelectorsContainer, modalVestidoBox;
+    enchantQuantitySelect, enchantSelectorsContainer, modalVestidoBox, sourceFilterSelect,
+    curseCheckbox, curseQuantityContainer, curseQuantitySelect, curseSelectorsContainer;
 
 // ===== INICIALIZAÇÃO =====
 // ATUALIZADO: Usamos window.onload para esperar TUDO (incluindo armas.js) carregar
+// SUBSTITUA A FUNÇÃO "window.onload" INTEIRA POR ESTA:
+
 window.onload = () => {
-    // 1. Pega os elementos do DOM depois que tudo carregou
+    // 1. Pega os elementos do DOM
     searchInput = document.getElementById('searchInput');
     itemsGrid = document.getElementById('itemsGrid');
     itemModal = document.getElementById('itemModal');
@@ -92,6 +116,13 @@ window.onload = () => {
     enchantQuantitySelect = document.getElementById('enchantQuantity');
     enchantSelectorsContainer = document.getElementById('enchantSelectorsContainer');
     modalVestidoBox = document.getElementById('modalVestido');
+    sourceFilterSelect = document.getElementById('sourceFilter');
+
+    // NOVO: Pega os elementos de Maldição
+    curseCheckbox = document.getElementById('curseCheckbox');
+    curseQuantityContainer = document.getElementById('curseQuantityContainer');
+    curseQuantitySelect = document.getElementById('curseQuantity');
+    curseSelectorsContainer = document.getElementById('curseSelectorsContainer');
 
     // 2. Carrega os dados e o inventário
     loadInventory();
@@ -101,32 +132,29 @@ window.onload = () => {
 };
 
 // ===== CARREGAR DADOS (REESCRITO) =====
+
+
 // SUBSTITUA A FUNÇÃO "loadItems" INTEIRA POR ESTA:
 
-// ===== CARREGAR DADOS (REESCRITO) =====
 function loadItems() {
     try {
         // 1. Combina todos os arrays dos arquivos .js externos
-        // CORREÇÃO: Adicionamos .item e .itemMagico
         const combinedData = [
             ...(window.armasData?.arma || []),
             ...(window.armadurasData?.armadura || []),
-            ...(window.escudosData?.escudo || []),
-            ...(window.itensData?.item || []),             // <-- ADICIONADO
-            ...(window.itensMagicosData?.item || []),      // <-- ADICIONADO
+            ...(window.itensData?.item || []),
+            ...(window.itensMagicosData?.item || []),
             ...(window.modificacoesData?.modificacao || []),
-            ...(window.enchantmentosData?.encantamento || [])
+            ...(window.enchantmentosData?.encantamento || []),
+            ...(window.maldicaoData?.maldicao || []) // <-- ADICIONADO
         ];
 
-        // 2. Processa os dados (esta parte do código não muda)
+        // 2. Processa os dados
         allModifications = combinedData
             .filter(item => item.categoria === 'Item Superior' && item.tipo === 'Melhoria')
             .map(item => ({
-                nome: item.nome,
-                tipo: item.tipo,
-                descricao: item.descricao,
-                preco: item.preco, // Copia o preço
-                prereq: modificationPrereqs[item.nome] || null
+                nome: item.nome, tipo: item.tipo, descricao: item.descricao,
+                preco: item.preco, prereq: modificationPrereqs[item.nome] || null
             }));
 
         allMaterials = combinedData
@@ -134,25 +162,44 @@ function loadItems() {
             .map(item => ({ nome: item.nome, tipo: item.tipo, descricao: item.descricao, preco: item.preco }));
 
         allEnchantments = combinedData
-            .filter(item =>
-                item.categoria === 'Item Mágico' &&
-                (item.tipo === 'Arma' || item.tipo === 'Armadura/Escudo')
-            )
+            .filter(item => item.categoria === 'Item Mágico' && (item.tipo === 'Arma' || item.tipo === 'Armadura/Escudo'))
             .map(item => ({
-                nome: item.nome,
-                tipo: item.tipo,
-                descricao: item.descricao,
-                preco: item.preco, // Copia o preço
-                prereq: enchantmentPrereqs[item.nome] || null
+                nome: item.nome, tipo: item.tipo, descricao: item.descricao,
+                preco: item.preco, prereq: enchantmentPrereqs[item.nome] || null
             }));
 
-        // 3. Limpa a lista principal "allItems" (não muda)
+        allEsotericEnchantments = combinedData
+            .filter(item => item.categoria === 'Item Mágico' && item.tipo === 'Esotérico')
+            .map(item => ({
+                nome: item.nome, tipo: item.tipo, descricao: item.descricao,
+                preco: item.preco, prereq: enchantmentPrereqs[item.nome] || null
+            }));
+
+        allAccessoryEnchantments = combinedData
+            .filter(item => item.categoria === 'Item Mágico' && (item.tipo === 'Encantamento de Acessório'))
+            .map(item => ({
+                nome: item.nome, tipo: item.tipo, descricao: item.descricao,
+                preco: item.preco, prereq: enchantmentPrereqs[item.nome] || null
+            }));
+
+        // NOVO: Popula a lista de Maldições
+        allCurses = combinedData
+            .filter(item => item.categoria === 'Maldição')
+            .map(item => ({
+                nome: item.nome, tipo: item.tipo, descricao: item.descricao,
+                preco: item.preco, fonte: item.fonte
+            }));
+
+        // 3. Limpa a lista principal "allItems"
         allItems = combinedData.filter(item =>
             item.categoria !== 'Item Superior' &&
-            !allEnchantments.some(enc => enc.nome === item.nome)
+            item.categoria !== 'Maldição' && // <-- ADICIONADO
+            !allEnchantments.some(enc => enc.nome === item.nome) &&
+            !allEsotericEnchantments.some(enc => enc.nome === item.nome) &&
+            !allAccessoryEnchantments.some(enc => enc.nome === item.nome)
         );
 
-        // 4. Continua como antes (não muda)
+        // 4. Continua como antes
         filteredItems = allItems;
         renderItems();
 
@@ -177,6 +224,12 @@ function loadInventory() {
 }
 
 // ===== EVENT LISTENERS =====
+// SUBSTITUA A FUNÇÃO "setupEventListeners" INTEIRA POR ESTA:
+
+// SUBSTITUA A FUNÇÃO "setupEventListeners" INTEIRA POR ESTA:
+
+// SUBSTITUA A FUNÇÃO "setupEventListeners" INTEIRA POR ESTA:
+
 function setupEventListeners() {
     searchInput.addEventListener('input', (e) => {
         searchTerm = e.target.value.toLowerCase();
@@ -197,12 +250,14 @@ function setupEventListeners() {
 
             currentType = 'todos';
             currentEmpunhadura = 'todas';
+            currentSource = 'todas';
 
             empunhaduraButtons.forEach(b => b.classList.remove('active'));
             document.querySelector('[data-empunhadura="todas"]').classList.add('active');
 
+            sourceFilterSelect.value = 'todas';
 
-            if (currentCategory === 'Item Superior' || currentCategory === 'Item Mágico') {
+            if (currentCategory === 'Item Superior' || currentCategory === 'Item Mágico' || currentCategory === 'Maldição') {
                 currentType = 'todos';
                 updateSpecificFilters();
             } else {
@@ -258,16 +313,46 @@ function setupEventListeners() {
         });
     });
 
+    sourceFilterSelect.addEventListener('change', (e) => {
+        currentSource = e.target.value;
+        applyFilters();
+    });
+
     modQuantitySelect.addEventListener('change', (e) => {
         updateCustomSelectors(parseInt(e.target.value), modSelectorsContainer, allModifications, currentModalItem);
     });
 
     enchantQuantitySelect.addEventListener('change', (e) => {
-        updateCustomSelectors(parseInt(e.target.value), enchantSelectorsContainer, allEnchantments, currentModalItem);
+        let sourceList = [];
+        if (currentModalItem.tipo === 'Esotérico') {
+            sourceList = allEsotericEnchantments;
+        } else if (currentModalItem.tipo === 'Vestuário' || currentModalItem.tipo === 'Ferramenta' || currentModalItem.tipo === 'Acessório') {
+            sourceList = allAccessoryEnchantments;
+        } else {
+            sourceList = allEnchantments;
+        }
+        updateCustomSelectors(parseInt(e.target.value), enchantSelectorsContainer, sourceList, currentModalItem);
     });
 
     modSelectorsContainer.addEventListener('change', (e) => {
         handleModSelection(e);
+    });
+
+    // --- Listeners para Maldição ---
+    curseCheckbox.addEventListener('change', (e) => {
+        if (e.target.checked) {
+            curseQuantityContainer.style.display = 'flex';
+        } else {
+            curseQuantityContainer.style.display = 'none';
+            curseQuantitySelect.value = 0;
+            // Dispara o evento de 'change' para limpar os seletores
+            curseQuantitySelect.dispatchEvent(new Event('change'));
+        }
+    });
+
+    // NOVO: Adiciona o listener para a QUANTIDADE de Maldições
+    curseQuantitySelect.addEventListener('change', (e) => {
+        updateCustomSelectors(parseInt(e.target.value), curseSelectorsContainer, allCurses, currentModalItem);
     });
 }
 
@@ -431,16 +516,23 @@ function createFilterButton(value, label) {
 }
 
 // ===== APLICAR FILTROS =====
+// SUBSTITUA A FUNÇÃO "applyFilters" INTEIRA POR ESTA:
+
 function applyFilters() {
     let sourceList;
     if (currentCategory === 'Item Superior') {
         sourceList = allModifications.concat(allMaterials);
     } else if (currentCategory === 'Item Mágico') {
-        sourceList = allItems.filter(i => i.categoria === 'Item Mágico').concat(allEnchantments);
+        sourceList = allItems.filter(i => i.categoria === 'Item Mágico')
+            .concat(allEnchantments)
+            .concat(allEsotericEnchantments)
+            .concat(allAccessoryEnchantments);
+    } else if (currentCategory === 'Maldição') { // <-- ADICIONADO
+        sourceList = allCurses;
     } else if (currentCategory !== 'todos') {
         sourceList = allItems.filter(item => item.categoria === currentCategory);
     } else {
-        sourceList = allItems.concat(allModifications).concat(allMaterials).concat(allEnchantments);
+        sourceList = allItems.concat(allModifications).concat(allMaterials).concat(allEnchantments).concat(allEsotericEnchantments).concat(allAccessoryEnchantments).concat(allCurses); // <-- ADICIONADO "allCurses"
     }
 
     let filtered = sourceList;
@@ -451,6 +543,14 @@ function applyFilters() {
 
     if (currentCategory === 'Arma' && currentEmpunhadura !== 'todas') {
         filtered = filtered.filter(item => item.empunhadura === currentEmpunhadura);
+    }
+
+    if (currentSource !== 'todas') {
+        if (currentSource === 'Livro Básico') {
+            filtered = filtered.filter(item => !item.fonte);
+        } else {
+            filtered = filtered.filter(item => item.fonte === currentSource);
+        }
     }
 
     if (searchTerm) {
@@ -494,6 +594,9 @@ function renderAsGrid() {
     }
 
     itemsGrid.innerHTML = filteredItems.map((item, index) => {
+        // NOVO: Adiciona a tag de fonte se ela existir
+        const sourceBadge = item.fonte ? `<span class="badge badge-fonte">${item.fonte}</span>` : '';
+
         return ` 
         <div class="item-card" onclick="openModal(${index})">
             <div class="item-name">${item.nome}</div>
@@ -502,6 +605,7 @@ function renderAsGrid() {
                 ${item.categoria ? `<span class="badge badge-cat">${item.categoria}</span>` : ''}
                 ${item.tipo ? `<span class="badge badge-tipo">${item.tipo}</span>` : ''}
                 ${isVestido(item) ? '<span class="badge badge-vestido">Vestido</span>' : ''}
+                ${sourceBadge}
             </div>
             <div class="item-spaces">Espaços: ${item.espacos || '—'}</div>
         </div>
@@ -605,6 +709,8 @@ function getItemRows(items, category) {
 
 // ===== LÓGICA DO INVENTÁRIO =====
 
+// SUBSTITUA A FUNÇÃO "addItemToInventory" INTEIRA POR ESTA:
+
 function addItemToInventory() {
     if (!currentModalItem) return;
 
@@ -619,19 +725,22 @@ function addItemToInventory() {
     let selectedMods = [];
     let materialPrice = 0; // Preço do material é separado
 
-    // Itera por TODOS os seletores no container de modificações
     modSelectorsContainer.querySelectorAll('select').forEach(select => {
         const value = select.value;
-        if (value === "nenhum/a") {
-            // Ignora o placeholder
-        } else if (value === "Material Especial") {
-            // Ignora o placeholder
+        if (value === "nenhum/a" || value === "Material Especial") {
+            // Ignora placeholders
         } else if (select.classList.contains('material-selector')) {
             // É um seletor de material
             const material = allMaterials.find(m => m.nome === value);
             if (material) {
                 selectedMods.push(material.nome);
-                materialPrice += parsePrice(material.preco, currentModalItem);
+                let precoMaterial = parsePrice(material.preco, currentModalItem);
+
+                // APLICA REGRA DE MUNIÇÃO AO PREÇO DO MATERIAL
+                if (currentModalItem.tipo === 'Munição') {
+                    precoMaterial /= 2;
+                }
+                materialPrice += precoMaterial;
             }
         } else {
             // É uma melhoria normal
@@ -644,8 +753,18 @@ function addItemToInventory() {
         .filter(val => val !== "nenhum/a");
 
     const basePrice = parsePrice(currentModalItem.preco);
-    const modSlotPrice = modificationPrices[modQty] || 0; // Preço dos "espaços" de modificação
-    const enchantPrice = enchantmentPrices[enchantQty] || 0;
+    let modSlotPrice = modificationPrices[modQty] || 0; // Preço dos "espaços"
+    let enchantPrice = enchantmentPrices[enchantQty] || 0;
+
+    // =======================================================
+    // AQUI ESTÁ A NOVA REGRA DE PREÇO PELA METADE
+    // =======================================================
+    if (currentModalItem.tipo === 'Munição') {
+        modSlotPrice /= 2;
+        enchantPrice /= 2;
+        // O preço do material já foi dividido no loop acima
+    }
+    // =======================================================
 
     const finalPrice = (basePrice + modSlotPrice + materialPrice + enchantPrice);
 
@@ -762,39 +881,72 @@ function parseSpaces(spaceString) {
 
 
 // ===== MODAL (ATUALIZADO) =====
+// SUBSTITUA A FUNÇÃO "updateCustomSelectors" INTEIRA POR ESTA:
+
+// SUBSTITUA A FUNÇÃO "updateCustomSelectors" INTEIRA POR ESTA:
+
 function updateCustomSelectors(quantity, container, sourceList, item) {
     container.innerHTML = '';
     if (quantity === 0) return;
 
     let availableOptions = [];
     const isModList = sourceList.some(s => s.tipo === 'Melhoria');
+    const isCurseList = sourceList.some(s => s.categoria === 'Maldição'); // NOVO
 
     if (isModList) {
-        // Lógica de filtro para MODIFICAÇÕES
+        // Lógica de filtro para MODIFICAÇÕES (Correta)
         availableOptions = sourceList.filter(m => m.descricao?.includes('Todos'));
 
-        if (item.categoria === 'Arma') {
-            availableOptions = availableOptions.concat(sourceList.filter(m => m.descricao?.includes('Armas')));
+        if (item.categoria === 'Arma' || item.tipo === 'Munição') {
+            availableOptions = availableOptions.concat(sourceList.filter(m => m.descricao?.includes('Armas') || m.descricao?.includes('Munições')));
         } else if (item.categoria === 'Armadura') {
             availableOptions = availableOptions.concat(sourceList.filter(m => m.descricao?.includes('Armaduras')));
         } else if (item.categoria === 'Escudo') {
             availableOptions = availableOptions.concat(sourceList.filter(m => m.descricao?.includes('Escudos')));
+        } else if (item.tipo === 'Esotérico') {
+            availableOptions = availableOptions.concat(sourceList.filter(m => m.descricao?.includes('Esotéricos')));
+        } else if (item.tipo === 'Ferramenta' || item.tipo === 'Vestuário') {
+            availableOptions = availableOptions.concat(sourceList.filter(m => m.descricao?.includes('Ferramentas/Vestuário') || m.descricao?.includes(item.tipo)));
         }
 
-        availableOptions.push(materialEspecialPlaceholder);
+        const isMaterialCustomizable = ['Arma', 'Armadura', 'Escudo'].includes(item.categoria) || ['Esotérico', 'Munição'].includes(item.tipo);
+        if (isMaterialCustomizable) {
+            availableOptions.push(materialEspecialPlaceholder);
+        }
 
+    } else if (isCurseList) { // --- NOVO BLOCO PARA MALDIÇÕES ---
+        const itemCat = item.categoria;
+        const itemTipo = item.tipo;
+
+        // Filtra maldições de Arma
+        if (itemCat === 'Arma' || itemTipo === 'Munição') {
+            availableOptions = sourceList.filter(m => m.tipo === 'Arma');
+        }
+        // Filtra maldições de Armadura/Escudo/Acessório (etc.)
+        else if (itemCat === 'Armadura' || itemCat === 'Escudo' ||
+            itemTipo === 'Acessório' || itemTipo === 'Vestuário' ||
+            itemTipo === 'Ferramenta' || itemTipo === 'Esotérico' ||
+            itemTipo === 'Esotérico Mágico') { // Esotérico Mágico também
+            availableOptions = sourceList.filter(m => m.tipo === 'Armadura/Escudo/Acessório');
+        }
+        // --- FIM DO NOVO BLOCO ---
     } else {
         // Lógica de filtro para ENCANTAMENTOS
-        if (item.categoria === 'Arma') {
-            availableOptions = sourceList.filter(m => m.tipo?.includes('Arma') || m.tipo?.includes('Todos'));
+        if (item.categoria === 'Arma' || item.tipo === 'Munição') {
+            availableOptions = sourceList.filter(m => m.tipo === 'Arma' || m.tipo?.includes('Todos'));
         } else if (item.categoria === 'Armadura' || item.categoria === 'Escudo') {
-            availableOptions = sourceList.filter(m => m.tipo?.includes('Armadura/Escudo') || m.tipo?.includes('Todos'));
+            availableOptions = sourceList.filter(m => m.tipo === 'Armadura/Escudo' || m.tipo?.includes('Todos'));
+        } else if (item.tipo === 'Esotérico' || item.tipo === 'Esotérico Mágico') {
+            availableOptions = sourceList.filter(m => m.tipo === 'Esotérico' || m.tipo?.includes('Todos'));
+        } else if (item.tipo === 'Ferramenta' || item.tipo === 'Vestuário' || item.tipo === 'Acessório') {
+            availableOptions = sourceList.filter(m => m.tipo === 'Encantamento de Acessório' || m.tipo?.includes('Todos'));
         }
     }
 
     const optionsHTML = `<option value="nenhum/a">--- Escolha ---</option>` +
         availableOptions.map(opt => {
             const prereqText = opt.prereq ? ` (Req: ${opt.prereq})` : '';
+            // As maldições não têm pré-requisitos, então 'prereqText' será vazio
             return `<option value="${opt.nome}">${opt.nome}${prereqText}</option>`
         }).join('');
 
@@ -805,6 +957,12 @@ function updateCustomSelectors(quantity, container, sourceList, item) {
     }
 }
 
+// SUBSTITUA A FUNÇÃO "openModal" INTEIRA POR ESTA:
+
+// SUBSTITUA A FUNÇÃO "openModal" INTEIRA POR ESTA:
+
+// SUBSTITUA A FUNÇÃO "openModal" INTEIRA POR ESTA:
+
 function openModal(index) {
     currentModalItem = filteredItems[index];
     const item = currentModalItem;
@@ -814,22 +972,50 @@ function openModal(index) {
         return;
     }
 
+    // Reseta o customizador
     itemCustomizer.style.display = 'none';
     modQuantitySelect.value = 0;
     enchantQuantitySelect.value = 0;
     modSelectorsContainer.innerHTML = '';
     enchantSelectorsContainer.innerHTML = '';
 
+    // NOVO: Reseta o customizador de maldição
+    curseCheckbox.checked = false;
+    curseQuantityContainer.style.display = 'none';
+    curseQuantitySelect.value = 0;
+    curseSelectorsContainer.innerHTML = '';
+
+
     addItemBtn.style.display = 'flex';
     document.querySelector('.modal-add-item').style.display = 'flex';
 
 
-    const isCustomizable = ['Arma', 'Armadura', 'Escudo'].includes(item.categoria);
-    const isModOrEnchant = item.categoria === 'Item Superior' || allEnchantments.some(enc => enc.nome === item.nome);
+    const isCustomizable = [
+        'Arma',
+        'Armadura',
+        'Escudo'
+    ].includes(item.categoria) || [
+        'Esotérico',
+        'Ferramenta',
+        'Vestuário',
+        'Munição',
+        'Acessório' // Acessórios também podem ser customizados
+    ].includes(item.tipo);
+
+    const isModOrEnchant = item.categoria === 'Item Superior' || allEnchantments.some(enc => enc.nome === item.nome) || allEsotericEnchantments.some(enc => enc.nome === item.nome) || allAccessoryEnchantments.some(enc => enc.nome === item.nome);
+    const isCurse = item.categoria === 'Maldição';
 
     if (isCustomizable) {
         itemCustomizer.style.display = 'flex';
-    } else if (isModOrEnchant) {
+
+        // Esconde encantamentos para itens que não os têm
+        if (item.tipo === 'Ferramenta' || item.tipo === 'Vestuário') {
+            enchantQuantitySelect.parentElement.parentElement.style.display = 'none';
+        } else {
+            enchantQuantitySelect.parentElement.parentElement.style.display = 'block';
+        }
+
+    } else if (isModOrEnchant || isCurse) {
         document.querySelector('.modal-add-item').style.display = 'none';
     } else if (item.preco.startsWith('+') || item.preco === 'Variável' || item.preco === "") {
         document.querySelector('.modal-add-item').style.display = 'none';
@@ -837,7 +1023,10 @@ function openModal(index) {
 
 
     document.getElementById('modalTitle').textContent = item.nome;
-    document.getElementById('modalPrice').textContent = item.preco || "—"; // Agora isso funciona
+    document.getElementById('modalPrice').textContent = item.preco || "—";
+
+    // ... (O resto da sua função openModal continua igual) ...
+    // ... (Copie do seu script.js, da linha "const modalImage..." até o final da função) ...
 
     const modalImage = document.getElementById('modalImage');
     const imagePath = getImagePath(item.nome);
@@ -849,12 +1038,14 @@ function openModal(index) {
         modalImage.style.display = 'none';
     }
 
+    const sourceBadge = item.fonte ? `<span class="badge badge-fonte">${item.fonte}</span>` : '';
     const badgesContainer = document.getElementById('modalBadges');
     badgesContainer.innerHTML = `
         ${item.categoria ? `<span class="badge badge-cat">${item.categoria}</span>` : ''}
         ${item.tipo ? `<span class="badge badge-tipo">${item.tipo}</span>` : ''}
         ${item.empunhadura ? `<span class="badge badge-extra">${item.empunhadura}</span>` : ''}
         ${isVestido(item) ? '<span class="badge badge-vestido">Vestido</span>' : ''}
+        ${sourceBadge}
     `;
 
     document.getElementById('modalDescription').textContent = item.descricao;
