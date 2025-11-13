@@ -41,6 +41,17 @@
                         <button class="filter-btn" data-category="Maldição">Maldições</button>
                     </div>
                     <div class="filter-group">
+                        <div class="filter-group">
+                            <label for="sortSelect" class="filter-label">Ordem:</label>
+                            <select id="sortSelect" class="quantity-select">
+                                <option value="name-asc">Nome (A-Z)</option>
+                                <option value="name-desc">Nome (Z-A)</option>
+                                <option value="price-asc">Preço (Menor &rarr; Maior)</option>
+                                <option value="price-desc">Preço (Maior &rarr; Menor)</option>
+                                <option value="spaces-asc">Espaços (Leve &rarr; Pesado)</option>
+                                <option value="spaces-desc">Espaços (Pesado &rarr; Leve)</option>
+                            </select>
+                        </div>
                         <label for="sourceFilter" class="filter-label">Fonte:</label>
                         <select id="sourceFilter" class="quantity-select">
                             <option value="todas">Todas as Fontes</option>
@@ -59,6 +70,7 @@
                         <button class="filter-btn" data-empunhadura="Uma Mão">Uma Mão</button>
                         <button class="filter-btn" data-empunhadura="Duas Mãos">Duas Mãos</button>
                     </div>
+
 
                     <div id="specificFilters" class="filter-group"></div>
 
@@ -184,25 +196,22 @@
                         </div>
                         <div id="enchantSelectorsContainer" class="customizer-selectors">
                         </div>
-                        <br>
-                        <div class="customizer-section">
-                            <div class="customizer-header">
-                                <label for="curseCheckbox">Item Amaldiçoado?</label>
-                                <input type="checkbox" id="curseCheckbox" class="curse-checkbox" />
-                            </div>
-
-                            <div id="curseQuantityContainer" class="customizer-header" style="display: none;">
-                                <label for="curseQuantity">Qtd. Maldições:</label>
-                                <select id="curseQuantity" class="quantity-select">
-                                    <option value="0">0</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                </select>
-                            </div>
-
-                            <div id="curseSelectorsContainer" class="customizer-selectors">
-                            </div>
+                    </div>
+                    <div class="customizer-section">
+                        <div class="customizer-header">
+                            <label for="curseCheckbox">Item Amaldiçoado?</label>
+                            <input type="checkbox" id="curseCheckbox" class="curse-checkbox" />
+                        </div>
+                        <div id="curseQuantityContainer" class="customizer-header" style="display: none;">
+                            <label for="curseQuantity">Qtd. Maldições:</label>
+                            <select id="curseQuantity" class="quantity-select">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </div>
+                        <div id="curseSelectorsContainer" class="customizer-selectors">
                         </div>
                     </div>
                 </div>
