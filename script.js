@@ -910,15 +910,20 @@ function renderInventory() {
     saveInventory();
 }
 
+// SUBSTITUA A FUNÇÃO "updateInventorySummary" INTEIRA POR ESTA:
+
 function updateInventorySummary() {
     let totalCost = 0;
     let totalSpaces = 0;
     let totalVestidos = 0;
-    let totalItemsCount = 0; // NOVO
+    let totalItemsCount = 0; // NOVO: Variável para contar itens
 
     inventory.forEach(invItem => {
         totalCost += invItem.finalPrice * invItem.quantity;
         totalSpaces += invItem.finalSpaces * invItem.quantity;
+
+        // NOVO: Soma a quantidade de cada item ao total
+        totalItemsCount += invItem.quantity;
 
         if (isVestido(invItem.baseItem)) {
             totalVestidos += 1;
@@ -928,8 +933,18 @@ function updateInventorySummary() {
     totalCostEl.textContent = `T$ ${totalCost.toLocaleString('pt-BR')}`;
     totalSpacesEl.textContent = totalSpaces.toLocaleString('pt-BR');
     totalVestidosEl.textContent = `${totalVestidos} / 4`;
-    // NOVO: Atualiza o badge no botão mobile
-    if (mobileInvCount) mobileInvCount.textContent = totalItemsCount;
+
+    // NOVO: Atualiza o contador vermelho no botão mobile
+    if (mobileInvCount) {
+        mobileInvCount.textContent = totalItemsCount;
+
+        // Opcional: Se quiser esconder a bolinha quando for 0
+        if (totalItemsCount > 0) {
+            mobileInvCount.style.display = 'flex';
+        } else {
+            mobileInvCount.style.display = 'none';
+        }
+    }
 }
 
 function parsePrice(priceString, itemContext = null) {
