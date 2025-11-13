@@ -29,7 +29,8 @@ const modificationPrereqs = {
     "Balístico": "Reforçado",
     "Deslumbrante": "Banhado a Ouro / Cravejado de Gemas",
     "Farpada": "Cruel",
-    "Potencializador": "Canalizador"
+    "Potencializador": "Canalizador",
+    "Devotado": "Inscrito"
     // Adicione outros pré-requisitos aqui
 };
 
@@ -75,6 +76,7 @@ let searchTerm = '';
 let currentView = 'grid';
 let currentEmpunhadura = 'todas';
 let currentSource = 'todas'; // NOVO: Estado para o filtro de Fonte
+let currentSort = 'name-asc'; // <-- NOVO
 
 // ===== ELEMENTOS DO DOM =====
 // (Declaramos as variáveis aqui, mas pegamos elas dentro do 'window.onload')
@@ -83,7 +85,7 @@ let searchInput, itemsGrid, itemModal, modalOverlay, closeModalBtn,
     totalSpacesEl, totalVestidosEl, clearInventoryBtn, modalQuantityInput,
     addItemBtn, viewGridBtn, viewTableBtn, empunhaduraFiltersContainer,
     empunhaduraButtons, itemCustomizer, modQuantitySelect, modSelectorsContainer,
-    enchantQuantitySelect, enchantSelectorsContainer, modalVestidoBox, sourceFilterSelect,
+    enchantQuantitySelect, enchantSelectorsContainer, modalVestidoBox, sourceFilterSelect, sortSelect,
     curseCheckbox, curseQuantityContainer, curseQuantitySelect, curseSelectorsContainer,
     backToTopBtn, mobileInventoryBtn, inventoryContainer, closeInventoryBtn, mobileInvCount;
 
@@ -118,6 +120,7 @@ window.onload = () => {
     enchantSelectorsContainer = document.getElementById('enchantSelectorsContainer');
     modalVestidoBox = document.getElementById('modalVestido');
     sourceFilterSelect = document.getElementById('sourceFilter');
+    sortSelect = document.getElementById('sortSelect'); // <-- NOVO
 
     // NOVO: Pega os elementos de Maldição
     curseCheckbox = document.getElementById('curseCheckbox');
@@ -325,6 +328,12 @@ function setupEventListeners() {
 
     sourceFilterSelect.addEventListener('change', (e) => {
         currentSource = e.target.value;
+        applyFilters();
+    });
+
+    // NOVO: Listener de Ordenação
+    sortSelect.addEventListener('change', (e) => {
+        currentSort = e.target.value;
         applyFilters();
     });
 
@@ -568,6 +577,7 @@ function createFilterButton(value, label) {
 
 function applyFilters() {
     let sourceList;
+    // 1. Define a lista base (Source List)
     if (currentCategory === 'Item Superior') {
         sourceList = allModifications.concat(allMaterials);
     } else if (currentCategory === 'Item Mágico') {
@@ -575,16 +585,17 @@ function applyFilters() {
             .concat(allEnchantments)
             .concat(allEsotericEnchantments)
             .concat(allAccessoryEnchantments);
-    } else if (currentCategory === 'Maldição') { // <-- ADICIONADO
+    } else if (currentCategory === 'Maldição') {
         sourceList = allCurses;
     } else if (currentCategory !== 'todos') {
         sourceList = allItems.filter(item => item.categoria === currentCategory);
     } else {
-        sourceList = allItems.concat(allModifications).concat(allMaterials).concat(allEnchantments).concat(allEsotericEnchantments).concat(allAccessoryEnchantments).concat(allCurses); // <-- ADICIONADO "allCurses"
+        sourceList = allItems.concat(allModifications).concat(allMaterials).concat(allEnchantments).concat(allEsotericEnchantments).concat(allAccessoryEnchantments).concat(allCurses);
     }
 
     let filtered = sourceList;
 
+    // 2. Filtros
     if (currentView === 'grid' && currentType !== 'todos') {
         filtered = filtered.filter(item => item.tipo === currentType);
     }
@@ -608,10 +619,32 @@ function applyFilters() {
         );
     }
 
+    // =======================================================
+    // NOVO: LÓGICA DE ORDENAÇÃO
+    // =======================================================
+    filtered.sort((a, b) => {
+        switch (currentSort) {
+            case 'name-asc':
+                return a.nome.localeCompare(b.nome);
+            case 'name-desc':
+                return b.nome.localeCompare(a.nome);
+            case 'price-asc':
+                return parsePrice(a.preco) - parsePrice(b.preco);
+            case 'price-desc':
+                return parsePrice(b.preco) - parsePrice(a.preco);
+            case 'spaces-asc':
+                return parseSpaces(a.espacos) - parseSpaces(b.espacos);
+            case 'spaces-desc':
+                return parseSpaces(b.espacos) - parseSpaces(a.espacos);
+            default:
+                return 0;
+        }
+    });
+    // =======================================================
+
     filteredItems = filtered;
     renderItems();
 }
-
 // ===== RENDERIZAÇÃO DE ITENS (Controlador) =====
 function renderItems() {
     if (currentView === 'table') {
@@ -1008,11 +1041,6 @@ function updateCustomSelectors(quantity, container, sourceList, item) {
     }
 }
 
-// SUBSTITUA A FUNÇÃO "openModal" INTEIRA POR ESTA:
-
-// SUBSTITUA A FUNÇÃO "openModal" INTEIRA POR ESTA:
-
-// SUBSTITUA A FUNÇÃO "openModal" INTEIRA POR ESTA:
 
 function openModal(index) {
     currentModalItem = filteredItems[index];
@@ -1076,9 +1104,6 @@ function openModal(index) {
     document.getElementById('modalTitle').textContent = item.nome;
     document.getElementById('modalPrice').textContent = item.preco || "—";
 
-    // ... (O resto da sua função openModal continua igual) ...
-    // ... (Copie do seu script.js, da linha "const modalImage..." até o final da função) ...
-
     const modalImage = document.getElementById('modalImage');
     const imagePath = getImagePath(item.nome);
 
@@ -1101,66 +1126,79 @@ function openModal(index) {
 
     document.getElementById('modalDescription').textContent = item.descricao;
 
-    const weaponStatsContainer = document.getElementById('weaponStats');
+    // --- LÓGICA DE ESTATÍSTICAS UNIFICADA (LINHA ÚNICA) ---
+
+    // 1. Limpa os containers antigos para não duplicar
+    document.getElementById('weaponStats').innerHTML = '';
+    document.getElementById('armorStats').innerHTML = '';
+
+    // Esconde a seção antiga de espaços/vestido que ficava lá embaixo
+    // (Assumindo que ela é a div .modal-section que contém o #modalSpaces)
+    const oldSpacesContainer = document.getElementById('modalSpaces')?.closest('.modal-section');
+    if (oldSpacesContainer) oldSpacesContainer.style.display = 'none';
+
+    // 2. Constrói a lista de HTML das estatísticas
+    let statsHTML = '';
+
+    // Se for Arma
     if (item.dano) {
-        weaponStatsContainer.innerHTML = `
-            <div class="modal-section">
-                <h3>Estatísticas de Arma</h3>
-                <div class="modal-stats">
-                    <div class="stat-box">
-                        <p class="stat-label">Dano</p>
-                        <p class="stat-value">${item.dano}</p>
-                    </div>
-                    <div class="stat-box">
-                        <p class="stat-label">Crítico</p>
-                        <p class="stat-value">${item.critico}</p>
-                    </div>
-                    ${item.alcance && item.alcance !== "—" ? `
-                    <div class="stat-box">
-                        <p class="stat-label">Alcance</p>
-                        <p class="stat-value">${item.alcance}</p>
-                    </div>
-                    ` : ''}
-                    ${item.tipo_dano && item.tipo_dano !== "—" ? `
-                    <div class="stat-box">
-                        <p class="stat-label">Tipo de Dano</p>
-                        <p class="stat-value">${item.tipo_dano}</p>
-                    </div>
-                    ` : ''}
-                </div>
+        statsHTML += `
+            <div class="stat-box">
+                <p class="stat-label">Dano</p>
+                <p class="stat-value">${item.dano}</p>
+            </div>
+            <div class="stat-box">
+                <p class="stat-label">Crítico</p>
+                <p class="stat-value">${item.critico}</p>
+            </div>
+            <div class="stat-box">
+                <p class="stat-label">Alcance</p>
+                <p class="stat-value">${item.alcance || "—"}</p>
+            </div>
+            <div class="stat-box">
+                <p class="stat-label">Tipo</p>
+                <p class="stat-value">${item.tipo_dano || "—"}</p>
             </div>
         `;
-    } else {
-        weaponStatsContainer.innerHTML = '';
     }
 
-    const armorStatsContainer = document.getElementById('armorStats');
+    // Se for Armadura/Escudo
     if (item.bonus_defesa) {
-        armorStatsContainer.innerHTML = `
-            <div class="modal-section">
-                <h3>Estatísticas de Defesa</h3>
-                <div class="modal-stats">
-                    <div class="stat-box">
-                        <p class="stat-label">Bônus de Defesa</p>
-                        <p class="stat-value">${item.bonus_defesa}</p>
-                    </div>
-                    <div class="stat-box">
-                        <p class="stat-label">Penalidade de Armadura</p>
-                        <p class="stat-value">${item.penalidade_armadura}</p>
-                    </div>
-                </div>
+        statsHTML += `
+            <div class="stat-box">
+                <p class="stat-label">Defesa</p>
+                <p class="stat-value">${item.bonus_defesa}</p>
+            </div>
+            <div class="stat-box">
+                <p class="stat-label">Penalidade</p>
+                <p class="stat-value">${item.penalidade_armadura}</p>
             </div>
         `;
-    } else {
-        armorStatsContainer.innerHTML = '';
     }
 
+    // Sempre adiciona Espaços
+    statsHTML += `
+        <div class="stat-box">
+            <p class="stat-label">Espaços</p>
+            <p class="stat-value">${item.espacos || "—"}</p>
+        </div>
+    `;
+
+    // Se for Item Vestido, adiciona o box verde
     if (isVestido(item)) {
-        modalVestidoBox.style.display = 'block';
-    } else {
-        modalVestidoBox.style.display = 'none';
+        statsHTML += `
+            <div class="stat-box" style="background-color: rgba(74, 222, 128, 0.1); border: 1px solid var(--success-color);">
+                <p class="stat-label" style="color: var(--success-color);">Vestido</p>
+                <p class="stat-value" style="color: var(--success-color);">Sim</p>
+            </div>
+        `;
     }
 
+    // 3. Injeta tudo no container principal (usamos o weaponStats como container genérico)
+    const mainStatsContainer = document.getElementById('weaponStats');
+    mainStatsContainer.innerHTML = `<div class="modal-stats">${statsHTML}</div>`;
+
+    // --- FIM DA LÓGICA UNIFICADA ---
     document.getElementById('modalSpaces').textContent = item.espacos || '—';
     modalQuantityInput.value = "1";
 
@@ -1179,8 +1217,10 @@ function closeModal() {
 // ===== MAPA DE IMAGENS (SIMPLIFICADO) =====
 function getImagePath(itemName) {
     const imageMap = {
-        'Adaga': 'https://media.tenor.com/VgHsv5o4gmUAAAAj/dagger-knife.gif',
-        // 'Adaga': 'https://media.tenor.com/VgHsv5o4gmUAAAAj/dagger-knife.gif',
+        'Adaga': 'https://www.pngmart.com/files/8/Dagger-PNG-File.png',
+        'Espada curta': 'https://images.squarespace-cdn.com/content/v1/59aa8bee197aea4ad67f52ae/1504463915011-AHPSUZ67KRCE81OBNFLM/shortsword.png',
+        'Foice': 'https://www.pngmart.com/files/23/Sickle-PNG-Isolated-Photo.png',
+        // 'Foice': 'https://www.pngmart.com/files/23/Sickle-PNG-Isolated-Photo.png',
     };
     return imageMap[itemName] || null;
 }
