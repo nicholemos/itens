@@ -692,31 +692,59 @@ body {
     line-height: 1.8;
 }
 
-.modal-stats-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: var(--spacing-md);
+.modal-stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    width: 100%;
+    margin-top: 10px;
+    padding: 5px;
+    background-color: var(--secondary-bg);
+    border-radius: var(--radius-md);
+    overflow-x: auto;
+    /* Permite rolar lateralmente em telas muito pequenas */
 }
 
 .stat-box {
+    flex: 1;
+    /* Faz todos terem o mesmo tamanho base */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: var(--tertiary-bg);
-    border: 2px solid var(--border-color);
-    border-radius: var(--radius-md);
-    padding: var(--spacing-md);
-    text-align: center;
+    padding: 8px 4px;
+    border-radius: var(--radius-sm);
+    min-width: 0;
+    /* Permite que o item encolha se faltar espaço */
 }
 
 .stat-label {
-    font-size: 0.85rem;
+    font-size: 0.7rem;
+    text-transform: uppercase;
     color: var(--text-muted);
-    margin-bottom: 0.5rem;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    /* Impede que o título quebre linha */
 }
 
 .stat-value {
-    font-family: 'Cinzel', serif;
-    font-size: 1.3rem;
-    color: var(--gold-color);
-    font-weight: 600;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    white-space: nowrap;
+    /* Impede que o valor quebre linha */
+    text-align: center;
+}
+
+
+.modal-stats::-webkit-scrollbar {
+    height: 4px;
+}
+
+.modal-stats::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
 }
 
 .modal-add-item {
