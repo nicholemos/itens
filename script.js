@@ -84,7 +84,8 @@ let searchInput, itemsGrid, itemModal, modalOverlay, closeModalBtn,
     addItemBtn, viewGridBtn, viewTableBtn, empunhaduraFiltersContainer,
     empunhaduraButtons, itemCustomizer, modQuantitySelect, modSelectorsContainer,
     enchantQuantitySelect, enchantSelectorsContainer, modalVestidoBox, sourceFilterSelect,
-    curseCheckbox, curseQuantityContainer, curseQuantitySelect, curseSelectorsContainer;
+    curseCheckbox, curseQuantityContainer, curseQuantitySelect, curseSelectorsContainer,
+    backToTopBtn, mobileInventoryBtn, inventoryContainer, closeInventoryBtn, mobileInvCount;
 
 // ===== INICIALIZAÇÃO =====
 // ATUALIZADO: Usamos window.onload para esperar TUDO (incluindo armas.js) carregar
@@ -123,6 +124,13 @@ window.onload = () => {
     curseQuantityContainer = document.getElementById('curseQuantityContainer');
     curseQuantitySelect = document.getElementById('curseQuantity');
     curseSelectorsContainer = document.getElementById('curseSelectorsContainer');
+
+    // NOVO: Elementos Mobile/UX
+    backToTopBtn = document.getElementById('backToTopBtn');
+    mobileInventoryBtn = document.getElementById('mobileInventoryBtn');
+    inventoryContainer = document.getElementById('inventoryContainer');
+    closeInventoryBtn = document.getElementById('closeInventoryBtn');
+    mobileInvCount = document.getElementById('mobileInvCount');
 
     // 2. Carrega os dados e o inventário
     loadInventory();
@@ -266,6 +274,8 @@ function setupEventListeners() {
 
             applyFilters();
         });
+
+
     });
 
     closeModalBtn.addEventListener('click', closeModal);
@@ -354,6 +364,33 @@ function setupEventListeners() {
     curseQuantitySelect.addEventListener('change', (e) => {
         updateCustomSelectors(parseInt(e.target.value), curseSelectorsContainer, allCurses, currentModalItem);
     });
+
+    // Abrir inventário no mobile
+    mobileInventoryBtn.addEventListener('click', () => {
+        inventoryContainer.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Trava o scroll do fundo
+    });
+
+    // Fechar inventário no mobile
+    closeInventoryBtn.addEventListener('click', () => {
+        inventoryContainer.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    });
+
+    // Scroll para o topo
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Monitorar o scroll para mostrar/esconder o botão de topo
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopBtn.classList.add('visible');
+        } else {
+            backToTopBtn.classList.remove('visible');
+        }
+    });
+
 }
 
 // ===== Handler para "Material Especial" =====
@@ -440,7 +477,18 @@ function isVestido(item) {
             "Estatueta Animista",
             "Orbe das Tempestades",
             "Espelho do Aprisionamento",
-            "Tapete Voador"      // Item que você mencionou
+            "Tapete Voador",
+            "Asas (Implante)",
+            "Braço de Ogro",
+            "Cauda com Ferrão",
+            "Escamas (+2 Defesa)",
+            "Escamas (Melhoria +5 Defesa)",
+            "Garras (Implante)",
+            "Olho Anulador",
+            "Olho Desintegrador",
+            "Olho Petrificante",
+            "Patas de Aranha",
+            "Tentáculo com Garras"
             // Adicione aqui outros itens (Ex: "Bolsa de Carga", "Manual do Bom Exercício")
         ];
 
@@ -833,6 +881,7 @@ function updateInventorySummary() {
     let totalCost = 0;
     let totalSpaces = 0;
     let totalVestidos = 0;
+    let totalItemsCount = 0; // NOVO
 
     inventory.forEach(invItem => {
         totalCost += invItem.finalPrice * invItem.quantity;
@@ -846,6 +895,8 @@ function updateInventorySummary() {
     totalCostEl.textContent = `T$ ${totalCost.toLocaleString('pt-BR')}`;
     totalSpacesEl.textContent = totalSpaces.toLocaleString('pt-BR');
     totalVestidosEl.textContent = `${totalVestidos} / 4`;
+    // NOVO: Atualiza o badge no botão mobile
+    if (mobileInvCount) mobileInvCount.textContent = totalItemsCount;
 }
 
 function parsePrice(priceString, itemContext = null) {
@@ -1128,7 +1179,8 @@ function closeModal() {
 // ===== MAPA DE IMAGENS (SIMPLIFICADO) =====
 function getImagePath(itemName) {
     const imageMap = {
-        // 'Adaga': 'img/adaga.png',
+        'Adaga': 'https://media.tenor.com/VgHsv5o4gmUAAAAj/dagger-knife.gif',
+        // 'Adaga': 'https://media.tenor.com/VgHsv5o4gmUAAAAj/dagger-knife.gif',
     };
     return imageMap[itemName] || null;
 }
