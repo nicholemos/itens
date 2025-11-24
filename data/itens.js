@@ -762,7 +762,7 @@ const itensData = {
             "descricao": "Veneno (Ingestão). Perde 4d12 PV por rodada durante 5 rodadas (Fort CD Int+5 reduz para 4d12 PV). (p. 161)"
         },
         {
-            "nome": "Riso de Nimb",
+            "nome": "Riso de Deus do Caos",
             "preco": "T$ 150",
             "espacos": "0,5",
             "categoria": "Item Geral",
@@ -772,7 +772,7 @@ const itensData = {
 
         // ---------- ALIMENTAÇÃO (Tabela 3-5) ----------
         {
-            "nome": "Batata valkariana",
+            "nome": "Batata Deusa da Ambiçãona",
             "preco": "T$ 2",
             "espacos": "0,5",
             "categoria": "Item Geral",
@@ -1619,7 +1619,7 @@ const itensData = {
             fonte: "Heróis de Arton"
         },
         {
-            nome: "Livro de Métodos Anti-Nimb",
+            nome: "Livro de Métodos Anti-Deus do Caos",
             preco: "T$ 100",
             espacos: "1",
             categoria: "Item Geral",
@@ -2847,7 +2847,7 @@ const itensData = {
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Amuleto de Khalmyr",
+            nome: "Amuleto do Deus da Justiça",
             preco: "T$ 30",
             espacos: "1",
             categoria: "Item Geral",
@@ -2856,7 +2856,7 @@ const itensData = {
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Amuleto de Nimb",
+            nome: "Amuleto de Deus do Caos",
             preco: "T$ 30",
             espacos: "1",
             categoria: "Item Geral",
@@ -3474,7 +3474,7 @@ const itensData = {
             espacos: "—",
             categoria: "Item Geral",
             tipo: "Alimentação",
-            descricao: "(Tenebra). Até o fim do dia, pode usar Carícia Sombria 1 vez (se já tem, causa 4d6). Funciona em mortos-vivos.",
+            descricao: "(Deusa da Noite). Até o fim do dia, pode usar Carícia Sombria 1 vez (se já tem, causa 4d6). Funciona em mortos-vivos.",
             fonte: "Deuses de Arton"
         },
         {
@@ -3483,7 +3483,7 @@ const itensData = {
             espacos: "—",
             categoria: "Item Geral",
             tipo: "Alimentação",
-            descricao: "(Megalokk). Até o fim do dia, pode invocar instintos para receber +1 dano corpo a corpo por uma cena.",
+            descricao: "(Deus dos Monstros). Até o fim do dia, pode invocar instintos para receber +1 dano corpo a corpo por uma cena.",
             fonte: "Deuses de Arton"
         },
         {
@@ -3501,7 +3501,7 @@ const itensData = {
             espacos: "—",
             categoria: "Item Geral",
             tipo: "Alimentação",
-            descricao: "(Lin-Wu). Até o fim do dia, pode usar Kiai Divino 1 vez (se já tem, usa 1x sem custo de PM).",
+            descricao: "(Deus da Honra). Até o fim do dia, pode usar Kiai Divino 1 vez (se já tem, usa 1x sem custo de PM).",
             fonte: "Deuses de Arton"
         },
         {
@@ -3510,16 +3510,16 @@ const itensData = {
             espacos: "—",
             categoria: "Item Geral",
             tipo: "Alimentação",
-            descricao: "(Tanna-Toh). 1/dia, ao fazer um teste de perícia, pode receber benefícios de ser treinado nela para esse teste.",
+            descricao: "(Deusa do Conhecimento). 1/dia, ao fazer um teste de perícia, pode receber benefícios de ser treinado nela para esse teste.",
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Caldo de Lena",
+            nome: "Caldo da Deusa da Vida",
             preco: "T$ 3",
             espacos: "—",
             categoria: "Item Geral",
             tipo: "Alimentação",
-            descricao: "(Lena). Quando recebe cura mágica de luz, recupera +2 PV.",
+            descricao: "(Deusa da Vida). Quando recebe cura mágica de luz, recupera +2 PV.",
             fonte: "Deuses de Arton"
         },
         {
@@ -3528,7 +3528,7 @@ const itensData = {
             espacos: "—",
             categoria: "Item Geral",
             tipo: "Alimentação",
-            descricao: "(Arsenal). 1/dia, quando faz a ação agredir, pode executar um ataque extra.",
+            descricao: "(Deus da Guerra). 1/dia, quando faz a ação agredir, pode executar um ataque extra.",
             fonte: "Deuses de Arton"
         },
         {
@@ -3537,16 +3537,16 @@ const itensData = {
             espacos: "—",
             categoria: "Item Geral",
             tipo: "Alimentação",
-            descricao: "(Wynna). Ao consumir, escolha uma magia de 1º círculo. Até o fim do dia, pode lançá-la 1 vez (sem aprimoramentos, custo 2 PM, atrb. Sabedoria).",
+            descricao: "(Deusa da Magia). Ao consumir, escolha uma magia de 1º círculo. Até o fim do dia, pode lançá-la 1 vez (sem aprimoramentos, custo 2 PM, atrb. Sabedoria).",
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Frescor de Nimb",
+            nome: "Frescor do Deus do Caos",
             preco: "T$ 1",
             espacos: "—",
             categoria: "Item Geral",
             tipo: "Alimentação",
-            descricao: "(Nimb). Ao ingerir, escolha um deus aleatoriamente. Recebe o benefício do prato desse deus (se cair Nimb, role 2x).",
+            descricao: "(Deus do Caos). Ao ingerir, escolha um deus aleatoriamente. Recebe o benefício do prato desse deus (se cair Deus do Caos, role 2x).",
             fonte: "Deuses de Arton"
         },
         {
@@ -3559,12 +3559,12 @@ const itensData = {
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Justos de Khalmyr",
+            nome: "Justos de Deus da Justiça",
             preco: "T$ 2",
             espacos: "—",
             categoria: "Item Geral",
             tipo: "Alimentação",
-            descricao: "(Khalmyr). Até o fim do dia, ao fazer um teste de perícia, pode escolher 10 (em vez de rolar).",
+            descricao: "(Deus da Justiça). Até o fim do dia, ao fazer um teste de perícia, pode escolher 10 (em vez de rolar).",
             fonte: "Deuses de Arton"
         },
         {
@@ -3573,7 +3573,7 @@ const itensData = {
             espacos: "—",
             categoria: "Item Geral",
             tipo: "Alimentação",
-            descricao: "(Sszzaas). 1/dia, quando inimigo em alcance curto usa habilidade, você pode ser afetado como se fosse aliado dele.",
+            descricao: "(Deus da Traição). 1/dia, quando inimigo em alcance curto usa habilidade, você pode ser afetado como se fosse aliado dele.",
             fonte: "Deuses de Arton"
         },
         {
@@ -3582,7 +3582,7 @@ const itensData = {
             espacos: "—",
             categoria: "Item Geral",
             tipo: "Alimentação",
-            descricao: "(Marah). 1/dia, quando criatura em alcance curto ataca, você pode forçá-la a rolar 2 dados e usar o pior.",
+            descricao: "(Deusa da Paz). 1/dia, quando criatura em alcance curto ataca, você pode forçá-la a rolar 2 dados e usar o pior.",
             fonte: "Deuses de Arton"
         },
         {
@@ -3591,7 +3591,7 @@ const itensData = {
             espacos: "—",
             categoria: "Item Geral",
             tipo: "Alimentação",
-            descricao: "(Kallyadranoch). 1/dia, pode receber +1 em testes de ataque por uma cena.",
+            descricao: "(Deus dos Dragões). 1/dia, pode receber +1 em testes de ataque por uma cena.",
             fonte: "Deuses de Arton"
         },
         {
@@ -3604,12 +3604,12 @@ const itensData = {
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Pão de Thwor",
+            nome: "Pão do Deus dos Goblinóides",
             preco: "T$ 1",
             espacos: "—",
             categoria: "Item Geral",
             tipo: "Alimentação",
-            descricao: "(Thwor). 1/dia, pode rolar novamente um teste de Fortitude ou perícia baseada em Força.",
+            descricao: "(Deus dos Goblinóides). 1/dia, pode rolar novamente um teste de Fortitude ou perícia baseada em Força.",
             fonte: "Deuses de Arton"
         },
         {
@@ -3627,7 +3627,7 @@ const itensData = {
             espacos: "—",
             categoria: "Item Geral",
             tipo: "Alimentação",
-            descricao: "(Thyatis). A primeira vez no dia em que seus PV forem reduzidos a 0 ou menos, ficam em 1.",
+            descricao: "(Deus da Resurreição). A primeira vez no dia em que seus PV forem reduzidos a 0 ou menos, ficam em 1.",
             fonte: "Deuses de Arton"
         },
         {
@@ -3640,12 +3640,12 @@ const itensData = {
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Tesouro de Valkaria",
+            nome: "Tesouro da Deusa da Ambição",
             preco: "T$ 2",
             espacos: "—",
             categoria: "Item Geral",
             tipo: "Alimentação",
-            descricao: "(Valkaria). 1/dia, recebe +5 em um teste de resistência contra efeitos de movimento.",
+            descricao: "(Deusa da Ambição). 1/dia, recebe +5 em um teste de resistência contra efeitos de movimento.",
             fonte: "Deuses de Arton"
         },
         {
