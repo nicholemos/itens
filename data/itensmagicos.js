@@ -142,7 +142,7 @@ const itensMagicosData = {
             descricao: "Besta que dispara virotes explosivos causando dano em área."
         },
         {
-            nome: "Punhal Sszzaazita",
+            nome: "Punhal Traidor",
             preco: "T$ 100.000",
             categoria: "Item Mágico",
             tipo: "Arma Mágica Maior",
@@ -272,7 +272,7 @@ const itensMagicosData = {
             descricao: "Escudo +4 que pode gerar uma área de escuridão mágica uma vez por dia."
         },
         {
-            nome: "Escudo de Azgher",
+            nome: "Escudo do Deus do Sol",
             preco: "T$ 140.000",
             categoria: "Item Mágico",
             tipo: "Escudo Mágico Maior",
@@ -321,7 +321,7 @@ const itensMagicosData = {
         { nome: "Anel da Vitalidade", preco: "T$ 21.000", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Concede +10 PV (após 1 dia de uso)." },
         { nome: "Manto da Invisibilidade", preco: "T$ 21.000", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Permite ficar invisível por uma cena, até realizar uma ação hostil." },
         { nome: "Braçadeiras do Arqueiro", preco: "T$ 21.000", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Concede +2 em testes de ataque e dano com arcos e bestas." },
-        { nome: "Brincos de Marah", preco: "T$ 21.000", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Permitem lançar Curar Ferimentos Leves 3/dia." },
+        { nome: "Brincos da Deusa da Paz", preco: "T$ 21.000", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Permitem lançar Curar Ferimentos Leves 3/dia." },
         { nome: "Faixas do Pugilista", preco: "T$ 21.000", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Concede +2 em ataques desarmados e dano corpo a corpo." },
         { nome: "Manto da Aranha", preco: "T$ 21.000", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Permite escalar superfícies e paredes como uma aranha." },
         { nome: "Vassoura Voadora", preco: "T$ 21.000", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "—", descricao: "Permite voar com deslocamento de 9 m; suporta até 100 kg." },
@@ -339,7 +339,7 @@ const itensMagicosData = {
         { nome: "Manual da Saúde Corporal", preco: "T$ 30.000", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Ao ser lido, concede +1 permanente em Constituição." },
         { nome: "Manual do Bom Exercício", preco: "T$ 30.000", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Ao ser lido, concede +1 permanente em Força." },
         { nome: "Manual dos Movimentos Precisos", preco: "T$ 30.000", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Ao ser lido, concede +1 permanente em Destreza." },
-        { nome: "Medalhão de Lena", preco: "T$ 30.000", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Permite usar a magia Curar Ferimentos Graves uma vez por dia." },
+        { nome: "Medalhão da Deusa da Vida", preco: "T$ 30.000", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Permite usar a magia Curar Ferimentos Graves uma vez por dia." },
         { nome: "Tomo da Compreensão", preco: "T$ 30.000", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Ao ser lido, concede +1 permanente em Inteligência." },
         { nome: "Tomo da Liderança e Influência", preco: "T$ 30.000", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Ao ser lido, concede +1 permanente em Carisma." },
         { nome: "Tomo dos Grandes Pensamentos", preco: "T$ 30.000", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Ao ser lido, concede +1 permanente em Sabedoria." },
@@ -994,7 +994,7 @@ const itensMagicosData = {
             fonte: "Heróis de Arton"
         },
         {
-            nome: "Varinha Milenar",
+            nome: "Varinha MiDeusa da Vidar",
             preco: "T$ 200.000",
             espacos: "1",
             categoria: "Item Mágico",
@@ -1405,7 +1405,7 @@ const itensMagicosData = {
             espacos: "1",
             categoria: "Item Mágico",
             tipo: "Acessório Médio",
-            descricao: "Gema. Pode lançar a magia Purificação. Custo -1 PM se for devoto de deus de energia positiva e/ou já conhecer a magia (cumulativo).",
+            descricao: "Gema. Pode lançar a magia Purificação. Custo -1 PM se for devoto do Deus de energia positiva e/ou já conhecer a magia (cumulativo).",
             fonte: "Heróis de Arton"
         },
         {
@@ -1554,7 +1554,7 @@ const itensMagicosData = {
             fonte: "Heróis de Arton"
         },
         {
-            nome: "Sandálias de Valkaria",
+            nome: "Sandálias da Deusa da Ambição",
             preco: "T$ 12.000",
             espacos: "1",
             categoria: "Item Mágico",
@@ -1581,7 +1581,7 @@ const itensMagicosData = {
             fonte: "Heróis de Arton"
         },
 
-        // (Itens de Deuses de Arton - Itens Litúrgicos 2)
+        // (Itens do Deuses de Arton - Itens Litúrgicos 2)
         {
             nome: "Armadura dos Neladriel",
             preco: "T$ 65.000",
@@ -1594,16 +1594,16 @@ const itensMagicosData = {
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Varinha da Generosidade Wynna",
+            nome: "Varinha da Generosidada Deusa da Magia",
             preco: "T$ 30.000",
             espacos: "1",
             categoria: "Item Mágico",
             tipo: "Acessório Médio",
-            descricao: " Varinha arcana poderosa (+2 CD) de madeira Tollon. Se devoto de Wynna: fornece RD 5. Quando lança magia, transfere mana para aliado em alcance curto (1 PM temporário por círculo, máx. custo da magia). 1/dia por aliado.",
+            descricao: " Varinha arcana poderosa (+2 CD) de madeira Tollon. Se devoto da Deusa da Magia: fornece RD 5. Quando lança magia, transfere mana para aliado em alcance curto (1 PM temporário por círculo, máx. custo da magia). 1/dia por aliado.",
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Machado Lamnoriano Thwor",
+            nome: "Machado Lamnoriano do Deus dos Goblinóides",
             preco: "T$ 22.500",
             dano: "1d12",
             critico: "x3",
@@ -1616,7 +1616,7 @@ const itensMagicosData = {
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Espada Imaculada Thyatis",
+            nome: "Espada Imaculada Deus da Ressurreição",
             preco: "T$ 45.000",
             dano: "1d8",
             critico: "19",
@@ -1625,29 +1625,29 @@ const itensMagicosData = {
             espacos: "1",
             categoria: "Item Mágico",
             tipo: "Arma Mágica Média",
-            descricao: " Espada longa precisa (crit +1). Se devoto de Thyatis: torna-se formidável (+2). Pode gastar 2 PM (cena) para virar plasma vermelho: ataque +4, dano aumenta 2 passos (fogo não letal) e ignora 20 RD.",
+            descricao: " Espada longa precisa (crit +1). Se devoto do Deus da Ressurreição: torna-se formidável (+2). Pode gastar 2 PM (cena) para virar plasma vermelho: ataque +4, dano aumenta 2 passos (fogo não letal) e ignora 20 RD.",
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Pira Póstera Thyatis",
+            nome: "Pira Póstera Deus da Ressurreição",
             preco: "T$ 15.000",
             espacos: "1",
             categoria: "Item Mágico",
             tipo: "Acessório Médio",
-            descricao: " Se devoto de Thyatis: +1 Sabedoria (após 1 dia). 1/dia, pode rolar novamente um teste de Iniciativa, Percepção ou resistência.",
+            descricao: " Se devoto do Deus da Ressurreição: +1 Sabedoria (após 1 dia). 1/dia, pode rolar novamente um teste de Iniciativa, Percepção ou resistência.",
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Botas Inquietas Valkaria",
+            nome: "Botas Inquietas Deusa da Ambição",
             preco: "T$ 15.000",
             espacos: "1",
             categoria: "Item Mágico",
             tipo: "Acessório Médio",
-            descricao: " Se devoto de Valkaria: +1 Constituição (após 1 dia) e +5 Fortitude (marcha forçada). Ao fazer investida, recebe 1 PM temporário cumulativo (máx. 3 PM/patamar por dia).",
+            descricao: " Se devoto da Deusa da Ambição: +1 Constituição (após 1 dia) e +5 Fortitude (marcha forçada). Ao fazer investida, recebe 1 PM temporário cumulativo (máx. 3 PM/patamar por dia).",
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Mangual Aventureiro Valkaria",
+            nome: "Mangual Aventureiro Deusa da Ambição",
             preco: "T$ 40.000",
             dano: "1d8",
             critico: "x2",
@@ -1656,20 +1656,20 @@ const itensMagicosData = {
             espacos: "1",
             categoria: "Item Mágico",
             tipo: "Arma Mágica Maior",
-            descricao: "Média. Mangual certeiro (+1 ataque) e cruel (+1 dano). Se devoto de Valkaria: torna-se dançarino (flutua) e formidável (+2). Se estiver em lugar inédito, dano aumenta 2 passos.",
+            descricao: "Média. Mangual certeiro (+1 ataque) e cruel (+1 dano). Se devoto da Deusa da Ambição: torna-se dançarino (flutua) e formidável (+2). Se estiver em lugar inédito, dano aumenta 2 passos.",
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Argolas Místicas Wynna",
+            nome: "Argolas Místicas Deusa da Magia",
             preco: "T$ 25.500",
             espacos: "1",
             categoria: "Item Mágico",
             tipo: "Acessório Médio",
-            descricao: " Vestuário. Se devoto de Wynna: ao lançar magia, recebe +2 PM para aprimoramentos (pode exceder limite). Pode ser usada sobre outras roupas.",
+            descricao: " Vestuário. Se devoto da Deusa da Magia: ao lançar magia, recebe +2 PM para aprimoramentos (pode exceder limite). Pode ser usada sobre outras roupas.",
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Maça Monstruosa Megalokk",
+            nome: "Maça Monstruosa Deus dos Monstros",
             preco: "T$ 27.000",
             dano: "1d8",
             critico: "x2",
@@ -1682,7 +1682,7 @@ const itensMagicosData = {
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Alguma Coisa de Nimb...",
+            nome: "Alguma Coisa do Deus do Caos...",
             preco: "T$ 54.000",
             dano: "3d8",
             critico: "x2",
@@ -1691,20 +1691,20 @@ const itensMagicosData = {
             espacos: "1",
             categoria: "Item Mágico",
             tipo: "Arma Mágica Maior",
-            descricao: "Média. Forma variável. Se devoto de Nimb: Arma simples (uma mão), formidável (+2), veloz (ataque extra). Dano 3d8 (1d3: 1=corte, 2=impacto, 3=perfuração). Pode gastar 1 PM ao acertar: para cada dado de dano ímpar, rola um dado extra (repetindo se for ímpar).",
+            descricao: "Média. Forma variável. Se devoto do Deus do Caos: Arma simples (uma mão), formidável (+2), veloz (ataque extra). Dano 3d8 (1d3: 1=corte, 2=impacto, 3=perfuração). Pode gastar 1 PM ao acertar: para cada dado de dano ímpar, rola um dado extra (repetindo se for ímpar).",
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Jarro das Profundezas Oceano",
+            nome: "Jarro das Profundezas Deus dos Mares",
             preco: "T$ 9.000",
             espacos: "1",
             categoria: "Item Mágico",
             tipo: "Acessório Menor",
-            descricao: ". Se devoto de Oceano: 1 PM cria água salgada; 1 PM cone 6m de água (derruba, Ref CD Sab); 2 PM invoca elemental da água (parceiro destruidor/frio ou guardião veterano) por 1 cena.",
+            descricao: ". Se devoto do Deus dos Mares: 1 PM cria água salgada; 1 PM cone 6m de água (derruba, Ref CD Sab); 2 PM invoca elemental da água (parceiro destruidor/frio ou guardião veterano) por 1 cena.",
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Tridente Aquoso Oceano",
+            nome: "Tridente Aquoso Deus dos Mares",
             preco: "T$ 54.000",
             dano: "1d8",
             critico: "x2",
@@ -1717,7 +1717,7 @@ const itensMagicosData = {
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Adaga Ofídica Sszzaas",
+            nome: "Adaga Ofídica Deus da Traição",
             preco: "T$ 36.000",
             dano: "1d4",
             critico: "19",
@@ -1726,11 +1726,11 @@ const itensMagicosData = {
             espacos: "1",
             categoria: "Item Mágico",
             tipo: "Arma Mágica Maior",
-            descricao: "Média. Adaga cruel (+1 dano). Possui veneno (peçonha concentrada, reposta magicamente). Se devoto de Sszzaas: torna-se formidável (+2) e ignora imunidade a veneno. Se Patamar Campeão+, veneno vira peçonha potente.",
+            descricao: "Média. Adaga cruel (+1 dano). Possui veneno (peçonha concentrada, reposta magicamente). Se devoto do Deus da Traição: torna-se formidável (+2) e ignora imunidade a veneno. Se Patamar Campeão+, veneno vira peçonha potente.",
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Bordão Sabichão Tanna-Toh",
+            nome: "Bordão Sabichão Deusa do Conhecimento",
             preco: "T$ 72.000",
             dano: "1d6/1d6",
             critico: "x2",
@@ -1739,30 +1739,30 @@ const itensMagicosData = {
             espacos: "2",
             categoria: "Item Mágico",
             tipo: "Arma Mágica Maior",
-            descricao: "Maior. Bordão maciço (crit +1). Se devoto de Tanna-Toh: torna-se formidável (+2) e piedoso (+1d6 luz). Pode gastar 2 PM para somar Sabedoria a um teste de perícia.",
+            descricao: "Maior. Bordão maciço (crit +1). Se devoto da Deusa do Conhecimento: torna-se formidável (+2) e piedoso (+1d6 luz). Pode gastar 2 PM para somar Sabedoria a um teste de perícia.",
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Escrivaninha Consagrada Tanna-Toh",
+            nome: "Escrivaninha Consagrada Deusa do Conhecimento",
             preco: "T$ 9.000",
             espacos: "2",
             categoria: "Item Mágico",
             tipo: "Acessório Menor",
-            descricao: ". Se devoto de Tanna-Toh: Estudar 1h dobra bônus de treino em perícia (Int/Sab) por 1 dia. 1/aventura, recebe 1d3 pergaminhos que poderia criar.",
+            descricao: ". Se devoto da Deusa do Conhecimento: Estudar 1h dobra bônus de treino em perícia (Int/Sab) por 1 dia. 1/aventura, recebe 1d3 pergaminhos que poderia criar.",
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Vestido Noturno Tenebra",
+            nome: "Vestido Noturno Deusa da Noite",
             preco: "T$ 21.000",
             espacos: "1",
             categoria: "Item Mágico",
             tipo: "Acessório Médio",
-            descricao: " Conta como Veste de Seda aprimorada (+1) cravejada de gemas (+2 Enganação). Total +2 Enganação/Reflexos. Se devoto de Tenebra: Pode gastar (Ação Padrão, 5 PM) para ficar invisível (veja magia Invisibilidade) até o fim da cena ou atacar.",
+            descricao: " Conta como Veste de Seda aprimorada (+1) cravejada de gemas (+2 Enganação). Total +2 Enganação/Reflexos. Se devoto da Deusa da Noite: Pode gastar (Ação Padrão, 5 PM) para ficar invisível (veja magia Invisibilidade) até o fim da cena ou atacar.",
             fonte: "Deuses de Arton"
         },
-        // (Itens de Deuses de Arton - Itens Litúrgicos 1)
+        // (Itens do Deuses de Arton - Itens Litúrgicos 1)
         {
-            nome: "Espada Monástica Khalmyr",
+            nome: "Espada Monástica Deus da Justiça",
             preco: "T$ 54.000",
             dano: "1d8",
             critico: "19",
@@ -1771,31 +1771,31 @@ const itensMagicosData = {
             espacos: "1",
             categoria: "Item Mágico",
             tipo: "Arma Mágica Média",
-            descricao: " Espada longa certeira (+1 ataque). Se devoto de Khalmyr: pode gastar (Ação Mov.) para ler versículo e fazer teste de Religião (CD 20). Sucesso: torna-se formidável (+2). Por 10+: gera efeito Oração. Por 20+: torna-se magnífica (+4). Dura pela cena.",
+            descricao: " Espada longa certeira (+1 ataque). Se devoto do Deus da Justiça: pode gastar (Ação Mov.) para ler versículo e fazer teste de Religião (CD 20). Sucesso: torna-se formidável (+2). Por 10+: gera efeito Oração. Por 20+: torna-se magnífica (+4). Dura pela cena.",
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Armadura do Julgamento Khalmyr",
+            nome: "Armadura do Julgamento Deus da Justiça",
             preco: "T$ 54.000",
             bonus_defesa: "+11",
             penalidade_armadura: "–5",
             espacos: "5",
             categoria: "Item Mágico",
             tipo: "Armadura Mágica Média",
-            descricao: "Armadura completa polida (+5 Def 1ª rodada) e reforçada (+1). Se devoto de Khalmyr: torna-se defensora (+2). Quando criatura ataca, pode gastar 2 PM para deixá-la pasma (1 rodada, 1/cena) e frustrada (Vontade CD Sab reduz para frustrada). Se Patamar Campeão+, torna-se guardiã (+4).",
+            descricao: "Armadura completa polida (+5 Def 1ª rodada) e reforçada (+1). Se devoto do Deus da Justiça: torna-se defensora (+2). Quando criatura ataca, pode gastar 2 PM para deixá-la pasma (1 rodada, 1/cena) e frustrada (Vontade CD Sab reduz para frustrada). Se Patamar Campeão+, torna-se guardiã (+4).",
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Caldeirão da Vida Lena",
+            nome: "Caldeirão da Vida Deusa da Vida",
             preco: "T$ 25.000",
             espacos: "1",
             categoria: "Item Mágico",
             tipo: "Acessório Médio",
-            descricao: " Panela de ferro. Gastando 1h e T$ 5 (Ofício Cozinheiro CD 15), cria comida para 5 pessoas. Comensais recebem +2 em TR por 1 dia (devotos de Lena recebem +10 PV temp.). Pode acumular com Prato Especial (+5 CD).",
+            descricao: " Panela de ferro. Gastando 1h e T$ 5 (Ofício Cozinheiro CD 15), cria comida para 5 pessoas. Comensais recebem +2 em TR por 1 dia (devotos da Deusa da Vida recebem +10 PV temp.). Pode acumular com Prato Especial (+5 CD).",
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Alabarda da Coragem Lin-Wu",
+            nome: "Alabarda da Coragem Deus da Honra",
             preco: "T$ 36.000",
             dano: "1d10",
             critico: "x3",
@@ -1804,11 +1804,11 @@ const itensMagicosData = {
             espacos: "2",
             categoria: "Item Mágico",
             tipo: "Arma Mágica Média",
-            descricao: " Alabarda certeira (+1 ataque) e precisa (crit +1). Se devoto de Lin-Wu: torna-se formidável (+2) e fornece +5 Iniciativa. Se for o primeiro a agir, recebe 2 PM temporários por nível (cena).",
+            descricao: " Alabarda certeira (+1 ataque) e precisa (crit +1). Se devoto do Deus da Honra: torna-se formidável (+2) e fornece +5 Iniciativa. Se for o primeiro a agir, recebe 2 PM temporários por nível (cena).",
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Katana da Determinação Lin-Wu",
+            nome: "Katana da Determinação Deus da Honra",
             preco: "T$ 54.000",
             dano: "1d8/1d10",
             critico: "19",
@@ -1821,34 +1821,34 @@ const itensMagicosData = {
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Instrumento da Alegria Marah",
+            nome: "Instrumento da Alegria Deusa da Paz",
             preco: "T$ 10.500",
             espacos: "1",
             categoria: "Item Mágico",
             tipo: "Acessório Médio",
-            descricao: " Instrumento musical aprimorado (+1). Se treinado em Atuação, pode gastar (Ação Padrão, 1 PM) para dar +2 em perícias para aliados em alcance médio (cena). Se devoto de Marah e usar Música, ativa como ação livre.",
+            descricao: " Instrumento musical aprimorado (+1). Se treinado em Atuação, pode gastar (Ação Padrão, 1 PM) para dar +2 em perícias para aliados em alcance médio (cena). Se devoto da Deusa da Paz e usar Música, ativa como ação livre.",
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Véu Diáfano Marah",
+            nome: "Véu Diáfano Deusa da Paz",
             preco: "T$ 13.500",
             espacos: "1",
             categoria: "Item Mágico",
             tipo: "Acessório Médio",
-            descricao: " Conta como Veste de Seda aprimorada (+1 Reflexos). Se devoto de Marah: fornece +1 Carisma (após 1 dia) e +2 Defesa (cumulativo).",
+            descricao: " Conta como Veste de Seda aprimorada (+1 Reflexos). Se devoto da Deusa da Paz: fornece +1 Carisma (após 1 dia) e +2 Defesa (cumulativo).",
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Colar de Presas Megalokk",
+            nome: "Colar de Presas Deus dos Monstros",
             preco: "T$ 21.000",
             espacos: "1",
             categoria: "Item Mágico",
             tipo: "Acessório Médio",
-            descricao: " Colar. Fornece +2 Intimidação e -2 Diplomacia. Se devoto de Megalokk: fornece +2 em ataque e dano com armas naturais.",
+            descricao: " Colar. Fornece +2 Intimidação e -2 Diplomacia. Se devoto do Deus dos Monstros: fornece +2 em ataque e dano com armas naturais.",
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Machado da Bravura Arsenal",
+            nome: "Machado da Bravura Deus da Guerra",
             preco: "T$ 25.000",
             dano: "1d8",
             critico: "x3",
@@ -1861,7 +1861,7 @@ const itensMagicosData = {
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Alfange Dourado Azgher",
+            nome: "Alfange Dourado Deus do Sol",
             preco: "T$ 36.000",
             dano: "2d6",
             critico: "18",
@@ -1870,11 +1870,11 @@ const itensMagicosData = {
             espacos: "2",
             categoria: "Item Mágico",
             tipo: "Arma Mágica Média",
-            descricao: " Alfange maciço (crit +1, -2 ataque, 2d6 dano). Se devoto de Azgher: pode gastar (Ação Completa) para sacrificar ouro. Remove penalidade e dá bônus (dia): T$ 10 (+2), T$ 100 (+3), T$ 500 (+4), T$ 1.000 (+5).",
+            descricao: " Alfange maciço (crit +1, -2 ataque, 2d6 dano). Se devoto do Deus do Sol: pode gastar (Ação Completa) para sacrificar ouro. Remove penalidade e dá bônus (dia): T$ 10 (+2), T$ 100 (+3), T$ 500 (+4), T$ 1.000 (+5).",
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Cimitarra Solar Azgher",
+            nome: "Cimitarra Solar Deus do Sol",
             preco: "T$ 54.000",
             dano: "1d6",
             critico: "18",
@@ -1887,7 +1887,7 @@ const itensMagicosData = {
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Adaga Sorrateira Hyninn",
+            nome: "Adaga Sorrateira Deus dos Ladrões",
             preco: "T$ 22.500",
             dano: "1d4",
             critico: "19",
@@ -1896,20 +1896,20 @@ const itensMagicosData = {
             espacos: "1",
             categoria: "Item Mágico",
             tipo: "Arma Mágica Menor",
-            descricao: "Adaga. Se devoto de Hyninn: torna-se formidável (+2). Na 1ª vez na cena que passar em Enganação ou Furtividade, recebe +5 em um teste à escolha (cena). Se Patamar Campeão+, torna-se magnífica (+4).",
+            descricao: "Adaga. Se devoto do Deus dos Ladrões: torna-se formidável (+2). Na 1ª vez na cena que passar em Enganação ou Furtividade, recebe +5 em um teste à escolha (cena). Se Patamar Campeão+, torna-se magnífica (+4).",
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Cubo Armadilha Hyninn",
+            nome: "Cubo Armadilha Deus dos Ladrões",
             preco: "T$ 25.000",
             espacos: "1",
             categoria: "Item Mágico",
             tipo: "Acessório Médio",
-            descricao: " Se devoto de Hyninn: Pode gastar (Ação Padrão) para armar o cubo em espaço curto (invisível). 1º inimigo a entrar sofre 10d8 corte (Ref CD Int reduz). Dados '1' ou '8' explodem (rolam de novo). Pode ser percebido com Investigação (CD 30 + Int).",
+            descricao: " Se devoto do Deus dos Ladrões: Pode gastar (Ação Padrão) para armar o cubo em espaço curto (invisível). 1º inimigo a entrar sofre 10d8 corte (Ref CD Int reduz). Dados '1' ou '8' explodem (rolam de novo). Pode ser percebido com Investigação (CD 30 + Int).",
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Lança da Dominação Kallyadranoch",
+            nome: "Lança da Dominação Deus dos Dragões",
             preco: "T$ 45.000",
             dano: "1d6",
             critico: "x3",
@@ -1922,7 +1922,7 @@ const itensMagicosData = {
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Ossos Dracônicos Kallyadranoch",
+            nome: "Ossos Dracônicos Deus dos Dragões",
             preco: "T$ 90.000",
             espacos: "1",
             categoria: "Item Mágico",
@@ -1931,34 +1931,34 @@ const itensMagicosData = {
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Cilício Vivo Aharadak",
+            nome: "Cilício Vivo Deus da Tormenta",
             preco: "T$ 37.000",
             espacos: "1",
             categoria: "Item Mágico",
             tipo: "Acessório Maior",
-            descricao: " Item vestido (cinta com anzóis). Reduz PV máx em 1/nível. Fornece +1 em todos os testes (cumulativo). Se devoto de Aharadak: bônus +2. Se Patamar Campeão+, aumenta PM máx em +1/nível.",
+            descricao: " Item vestido (cinta com anzóis). Reduz PV máx em 1/nível. Fornece +1 em todos os testes (cumulativo). Se devoto do Deus da Tormenta: bônus +2. Se Patamar Campeão+, aumenta PM máx em +1/nível.",
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Coração Corrompido Aharadak",
+            nome: "Coração Corrompido Deus da Tormenta",
             preco: "T$ 45.000",
             espacos: "1",
             categoria: "Item Mágico",
             tipo: "Acessório Maior",
-            descricao: " Baú com coração. Se devoto de Aharadak sacrificar criatura inteligente, item absorve dano/condições do devoto (até 100 PV e 3 condições). Funciona à distância.",
+            descricao: " Baú com coração. Se devoto do Deus da Tormenta sacrificar criatura inteligente, item absorve dano/condições do devoto (até 100 PV e 3 condições). Funciona à distância.",
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Coroa de Flores Allihanna",
+            nome: "Coroa de Flores Deusa da Natureza",
             preco: "T$ 9.000",
             espacos: "1",
             categoria: "Item Mágico",
             tipo: "Acessório Menor",
-            descricao: ". Tiara. Se devoto de Allihanna: +1 Sabedoria (após 1 dia) e magias com efeitos numéricos variáveis recebem +1 por dado.",
+            descricao: ". Tiara. Se devoto da Deusa da Natureza: +1 Sabedoria (após 1 dia) e magias com efeitos numéricos variáveis recebem +1 por dado.",
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Cajado das Matas Allihanna",
+            nome: "Cajado das Matas Deusa da Natureza",
             preco: "T$ 27.000",
             dano: "1d6/1d6",
             critico: "x2",
@@ -1967,16 +1967,16 @@ const itensMagicosData = {
             espacos: "2",
             categoria: "Item Mágico",
             tipo: "Arma Mágica Menor",
-            descricao: "Bordão. Se devoto de Allihanna: torna-se formidável (+2) e fornece +2 Defesa ao ar livre (cumulativo). Se Patamar Campeão+, torna-se magnífico (+4).",
+            descricao: "Bordão. Se devoto da Deusa da Natureza: torna-se formidável (+2) e fornece +2 Defesa ao ar livre (cumulativo). Se Patamar Campeão+, torna-se magnífico (+4).",
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Tapeçaria da Guerra Arsenal",
+            nome: "Tapeçaria da Guerra Deus da Guerra",
             preco: "T$ 35.000",
             espacos: "2",
             categoria: "Item Mágico",
             tipo: "Acessório Maior",
-            descricao: " Ferramenta de Guerra aprimorada (+2). Se devoto de Arsenal: pode gastar (Ação Completa, CD 20 Guerra). Sucesso: bônus em Guerra aplica a todos os testes de perícia de aliados em alcance curto (cena). Sucesso por 20+: aliados recebem ação padrão extra.",
+            descricao: " Ferramenta de Guerra aprimorada (+2). Se devoto do Deus da Guerra: pode gastar (Ação Completa, CD 20 Guerra). Sucesso: bônus em Guerra aplica a todos os testes de perícia de aliados em alcance curto (cena). Sucesso por 20+: aliados recebem ação padrão extra.",
             fonte: "Deuses de Arton"
         }
 
