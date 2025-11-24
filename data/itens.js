@@ -2222,7 +2222,7 @@ const itensData = {
             fonte: "Heróis de Arton"
         },
         {
-            nome: "Presa de Hyninn",
+            nome: "Presa do Deus da Trapaça",
             preco: "T$ 45",
             espacos: "0,5",
             categoria: "Item Geral",
@@ -3492,7 +3492,7 @@ const itensData = {
             espacos: "—",
             categoria: "Item Geral",
             tipo: "Alimentação",
-            descricao: "(Oceano). Até o fim do dia, pode invocar poder para receber deslocamento de natação igual ao seu deslocamento (ou +3m se já tem) por uma cena.",
+            descricao: "(Deus dos Mares). Até o fim do dia, pode invocar poder para receber deslocamento de natação igual ao seu deslocamento (ou +3m se já tem) por uma cena.",
             fonte: "Deuses de Arton"
         },
         {
@@ -3555,7 +3555,7 @@ const itensData = {
             espacos: "—",
             categoria: "Item Geral",
             tipo: "Alimentação",
-            descricao: "(Azgher). 1/dia, arma de corte causa +1d6 fogo (+2d6 vs mortos-vivos). Dura 3 acertos ou fim da cena.",
+            descricao: "(Deus do Sol). 1/dia, arma de corte causa +1d6 fogo (+2d6 vs mortos-vivos). Dura 3 acertos ou fim da cena.",
             fonte: "Deuses de Arton"
         },
         {
@@ -3600,7 +3600,7 @@ const itensData = {
             espacos: "—",
             categoria: "Item Geral",
             tipo: "Alimentação",
-            descricao: "(Hyninn). 1/dia, pode rolar novamente um teste de Enganação ou Ladinagem recém-feito.",
+            descricao: "(Deus da Trapaça). 1/dia, pode rolar novamente um teste de Enganação ou Ladinagem recém-feito.",
             fonte: "Deuses de Arton"
         },
         {
@@ -3618,7 +3618,7 @@ const itensData = {
             espacos: "—",
             categoria: "Item Geral",
             tipo: "Alimentação",
-            descricao: "(Allihanna). Pode ser fabricado com Sobrevivência. 1/dia, pode rolar novamente teste de Adestramento ou Sobrevivência.",
+            descricao: "(Deusa da Natureza). Pode ser fabricado com Sobrevivência. 1/dia, pode rolar novamente teste de Adestramento ou Sobrevivência.",
             fonte: "Deuses de Arton"
         },
         {
@@ -3636,7 +3636,7 @@ const itensData = {
             espacos: "—",
             categoria: "Item Geral",
             tipo: "Alimentação",
-            descricao: "(Aharadak). Início de cena de ação: role 1d6. Ímpar: fascinado na 1ª rodada. Par: +5 em um teste de perícia até fim do próximo turno.",
+            descricao: "(Deus da Tormenta). Início de cena de ação: role 1d6. Ímpar: fascinado na 1ª rodada. Par: +5 em um teste de perícia até fim do próximo turno.",
             fonte: "Deuses de Arton"
         },
         {
@@ -3880,4 +3880,5 @@ const itensData = {
 };
 
 // Publica a variável para o script.js
+
 window.itensData = itensData;
