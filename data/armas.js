@@ -27,7 +27,7 @@ const armasData = {
             "categoria": "Arma",
             "tipo": "Simples",
             "empunhadura": "Leve",
-            "descricao": "Espada de 40-50cm que causa 1d6 de dano de perfuração (crítico 19). Arma leve e versátil, comum entre guardas."
+            "descricao": "Espada de 40-50cm que causa 1d6 de dano de perfuração (crítico 19). Arma leve, comum entre guardas."
         },
         {
             "nome": "Foice",
@@ -210,7 +210,7 @@ const armasData = {
             "categoria": "Arma",
             "tipo": "Marcial",
             "empunhadura": "Uma Mão",
-            "descricao": "Espada de 70-80cm que causa 1d8 de dano de corte (crítico 19). Arma versátil que pode ser usada com uma ou duas mãos."
+            "descricao": "Espada de 70-80cm que causa 1d8 de dano de corte (crítico 19)."
         },
         {
             "nome": "Florete",
@@ -353,7 +353,7 @@ const armasData = {
             "categoria": "Arma",
             "tipo": "Marcial",
             "empunhadura": "Duas Mãos",
-            "descricao": "Machado grande que causa 1d10 de dano de corte (crítico x3) com uma mão ou 1d12 com duas mãos. Arma versátil."
+            "descricao": "Machado grande."
         },
         {
             "nome": "Marreta",
