@@ -428,7 +428,7 @@ const enchantmentosData = {
             nome: "Encanto Alvorada",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Arma",
             descricao: "Causa +1d8 dano de luz contra mortos-vivos/criaturas com sensibilidade à luz. 1/rodada, pode gastar 2 PM para cegar (alcance curto, 1 rodada, Fort CD For/Des evita, 1/cena por criatura).",
             fonte: "Heróis de Arton"
@@ -437,7 +437,7 @@ const enchantmentosData = {
             nome: "Encanto Anátema",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Arma",
             descricao: "Quando atinge, a CD para resistir às habilidades mágicas do alvo diminui em –2 por 1 rodada.",
             fonte: "Heróis de Arton"
@@ -446,7 +446,7 @@ const enchantmentosData = {
             nome: "Encanto Brumosa",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Arma",
             descricao: "Envolta em névoa. Toda vez que acerta um ataque, recebe camuflagem leve por 1 rodada.",
             fonte: "Heróis de Arton"
@@ -455,7 +455,7 @@ const enchantmentosData = {
             nome: "Encanto Cantante",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Arma",
             descricao: "Recebe +2 em Atuação. Pode gastar 1 PM para que você e aliados em alcance curto recebam +1 em testes de ataque por 1 rodada.",
             fonte: "Heróis de Arton"
@@ -464,7 +464,7 @@ const enchantmentosData = {
             nome: "Encanto Ciclônica",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Arma",
             descricao: "Recebe +2 em testes contra manobras. 1/rodada, pode gastar 1 PM para criar uma rajada de vento (cone 9m) que empurra criaturas 3m (Fort CD For/Des evita).",
             fonte: "Heróis de Arton"
@@ -473,7 +473,7 @@ const enchantmentosData = {
             nome: "Encanto Crescente",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Arma",
             descricao: "Apenas (Armas Corpo a Corpo). Pode gastar 2 PM para o dano da arma aumentar em um passo e o alcance em +1,5m até o fim do turno.",
             fonte: "Heróis de Arton"
@@ -482,7 +482,7 @@ const enchantmentosData = {
             nome: "Encanto Cristalina",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Arma",
             descricao: "Feita de cristal. Causa +1d6 de dano de luz. 1/rodada, ao atacar, pode gastar 1 PM; se acertar, o alvo fica ofuscado por 1 rodada.",
             fonte: "Heróis de Arton"
@@ -491,7 +491,7 @@ const enchantmentosData = {
             nome: "Encanto Cronal",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Arma",
             descricao: "Ao atacar, pode gastar 3 PM para rolar 2 dados (use o melhor). No próximo ataque que sofrer, o atacante rola 2 dados (use o pior). Pré-requisito: Formidável.",
             fonte: "Heróis de Arton"
@@ -500,7 +500,7 @@ const enchantmentosData = {
             nome: "Encanto Cuidadora",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Arma",
             descricao: "Quando erra um ataque, recebe +2 na Defesa por 1 rodada. 1/rodada, quando sofre dano, pode gastar 2 PM para receber RD 10 contra esse dano.",
             fonte: "Heróis de Arton"
@@ -509,7 +509,7 @@ const enchantmentosData = {
             nome: "Encanto Espreitadora",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Arma",
             descricao: "Quando ataca, pode gastar 2 PM para deixar o oponente desprevenido (1/cena por criatura; Von CD For/Des evita).",
             fonte: "Heróis de Arton"
@@ -518,7 +518,7 @@ const enchantmentosData = {
             nome: "Encanto Frenética",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Arma",
             descricao: "Sempre que acerta um ataque, pode gastar 1 PM para receber +1 em ataque e dano com ela (cumulativo até +5) até o fim da cena.",
             fonte: "Heróis de Arton"
@@ -527,7 +527,7 @@ const enchantmentosData = {
             nome: "Encanto Gárgula",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Arma",
             descricao: "Pode gastar 2 PM para convocar uma pequena gárgula (parceiro combatente iniciante) até o fim da cena.",
             fonte: "Heróis de Arton"
@@ -536,7 +536,7 @@ const enchantmentosData = {
             nome: "Encanto Horrenda",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Arma",
             descricao: "Exala medo. Você recebe +2 em Intimidação e o custo de suas habilidades de medo diminui em –1 PM.",
             fonte: "Heróis de Arton"
@@ -545,7 +545,7 @@ const enchantmentosData = {
             nome: "Encanto Infestada",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Arma",
             descricao: "Sempre que acerta um ataque, pode gastar 2 PM para o alvo perder 2d6 PV (veneno) e ficar enjoado por 1d4 rodadas (Fort CD For/Des evita condição).",
             fonte: "Heróis de Arton"
@@ -554,7 +554,7 @@ const enchantmentosData = {
             nome: "Encanto Manáfaga",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Arma",
             descricao: "Ao acertar, alvo faz Vontade (CD For/Des). Se falhar, você recebe 1 PM temporário e ele perde 1d4 PM. Pré-requisito: Formidável.",
             fonte: "Heróis de Arton"
@@ -563,7 +563,7 @@ const enchantmentosData = {
             nome: "Encanto Indignada",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Arma",
             descricao: "Sempre que erra um ataque, concede +2 no próximo teste de ataque que fizer até o fim da cena (cumulativo).",
             fonte: "Heróis de Arton"
@@ -572,7 +572,7 @@ const enchantmentosData = {
             nome: "Encanto Rebote",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Arma",
             descricao: "Sempre que erra um ataque, ganha 1 carga (máx. 3). Ao acertar, gasta todas as cargas, causando +1d6 de dano por carga gasta.",
             fonte: "Heróis de Arton"
@@ -581,7 +581,7 @@ const enchantmentosData = {
             nome: "Encanto Reflexiva",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Arma",
             descricao: "1/rodada, quando é alvo de uma magia, pode gastar PM (igual ao círculo da magia) para refleti-la de volta ao conjurador. Pré-requisito: Cristalina.",
             fonte: "Heróis de Arton"
@@ -590,7 +590,7 @@ const enchantmentosData = {
             nome: "Encanto Ressonante",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Arma",
             descricao: "Ao acertar, pode gastar 2 PM para emitir onda de choque em outra criatura (alcance curto). Compare o ataque com a Defesa do 2º alvo. Se acertar, sofre metade do dano (psíquico).",
             fonte: "Heróis de Arton"
@@ -599,7 +599,7 @@ const enchantmentosData = {
             nome: "Encanto Sepulcral",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Arma",
             descricao: "Quando gasta PM para ativar o efeito de Tumular, se acertar, a criatura não pode recuperar PV por 1d4 rodadas. Pré-requisito: Tumular.",
             fonte: "Heróis de Arton"
@@ -608,7 +608,7 @@ const enchantmentosData = {
             nome: "Encanto Sombria",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Arma",
             descricao: "Recebe +2 em Furtividade. Permite lançar a magia Escuridão (se já a conhece, custo -1 PM).",
             fonte: "Heróis de Arton"
@@ -617,7 +617,7 @@ const enchantmentosData = {
             nome: "Encanto Vampírica",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Arma",
             descricao: "Quando ataca, pode gastar 1 PM. Se fizer isso, causa +2d6 de dano de trevas e você recupera PV igual ao dano de trevas causado.",
             fonte: "Heróis de Arton"
@@ -627,7 +627,7 @@ const enchantmentosData = {
             nome: "Encanto Abissal",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Armadura/Escudo",
             descricao: "Recebe RD ácido 10 e RD fogo 10. 1/rodada, pode gastar 1 PM para causar 2d6 dano (ácido ou fogo) a uma criatura adjacente.",
             fonte: "Heróis de Arton"
@@ -636,7 +636,7 @@ const enchantmentosData = {
             nome: "Encanto Ancorada",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Armadura/Escudo",
             descricao: "Recebe +5 em Atletismo para escalar. Pode gastar 1 PM para receber deslocamento de escalada 12m (duração sustentada).",
             fonte: "Heróis de Arton"
@@ -645,7 +645,7 @@ const enchantmentosData = {
             nome: "Encanto Anulador",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Armadura/Escudo",
             descricao: "1/rodada, quando é alvo de uma magia, pode gastar 3 PM por círculo da magia para anulá-la. Pré-requisito: Abascanto.",
             fonte: "Heróis de Arton"
@@ -654,7 +654,7 @@ const enchantmentosData = {
             nome: "Encanto Arbóreo",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Armadura/Escudo",
             descricao: "Recebe resistência a magia divina +5. Pode lançar Controlar Plantas (CD Sab). Se já conhece a magia, custo -1 PM.",
             fonte: "Heróis de Arton"
@@ -663,7 +663,7 @@ const enchantmentosData = {
             nome: "Encanto Astuto",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Armadura/Escudo",
             descricao: "Recebe +5 em Intuição e Percepção. 1/rodada, pode gastar 3 PM para detectar criaturas escondidas/invisíveis em alcance curto.",
             fonte: "Heróis de Arton"
@@ -672,7 +672,7 @@ const enchantmentosData = {
             nome: "Encanto Densa",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Armadura/Escudo",
             descricao: "Reduz o deslocamento de inimigos em alcance curto em –3m. 1/rodada, pode gastar (Ação Mov., 2 PM) para deixar inimigos em alcance curto abalados e lentos por 1d4 rodadas (CD For/Des evita).",
             fonte: "Heróis de Arton"
@@ -681,7 +681,7 @@ const enchantmentosData = {
             nome: "Encanto Égide",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Armadura/Escudo",
             descricao: "Bônus na Defesa contra ataques à distância aumenta em +5. 1/cena, quando sofre dano de ataque à distância, pode gastar 3 PM para ignorar esse dano.",
             fonte: "Heróis de Arton"
@@ -690,7 +690,7 @@ const enchantmentosData = {
             nome: "Encanto Enraizada",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Armadura/Escudo",
             descricao: "Recebe +5 em testes para resistir a derrubar e empurrar. Pode gastar 2 PM para receber +5 em testes de resistência contra outros efeitos de movimento.",
             fonte: "Heróis de Arton"
@@ -699,7 +699,7 @@ const enchantmentosData = {
             nome: "Encanto Esmérico",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Armadura/Escudo",
             descricao: "Recebe RD ácido 10 e resistência a veneno +5. Pode gastar 1 PM para estender essa proteção a aliados em alcance curto (duração sustentada).",
             fonte: "Heróis de Arton"
@@ -708,7 +708,7 @@ const enchantmentosData = {
             nome: "Encanto Estígio",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Armadura/Escudo",
             descricao: "1/cena, se for reduzido a 0 PV ou menos, pode gastar 5 PM para, em vez disso, ser reduzido a 1 PV. Pré-requisito: Abençoado.",
             fonte: "Heróis de Arton"
@@ -717,7 +717,7 @@ const enchantmentosData = {
             nome: "Encanto Etéreo",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Armadura/Escudo",
             descricao: "1/cena, pode gastar 3 PM para se tornar incorpóreo por 1 rodada (ignora efeitos não mágicos, pode atravessar sólidos, Força nula).",
             fonte: "Heróis de Arton"
@@ -726,7 +726,7 @@ const enchantmentosData = {
             nome: "Encanto Geomântico",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Armadura/Escudo",
             descricao: "Recebe RD 10/impacto e fortificação 25%. Pode lançar Controlar Terra (CD Car). Se já conhece a magia, custo -1 PM.",
             fonte: "Heróis de Arton"
@@ -735,7 +735,7 @@ const enchantmentosData = {
             nome: "Encanto Ligeira",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Armadura/Escudo",
             descricao: "A armadura pode ser vestida ou removida com uma ação livre.",
             fonte: "Heróis de Arton"
@@ -744,7 +744,7 @@ const enchantmentosData = {
             nome: "Encanto Luminescente",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Armadura/Escudo",
             descricao: "Pode lançar Luz (CD Car). Se já conhece a magia, custo -1 PM. Ao lançar, criaturas com sensibilidade à luz devem fazer Vontade ou ficam cegas (1 rodada, 1/cena).",
             fonte: "Heróis de Arton"
@@ -753,7 +753,7 @@ const enchantmentosData = {
             nome: "Encanto Prístino",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Armadura/Escudo",
             descricao: "Recebe resistência a necromancia e veneno +5. Pode gastar 2 PM para remover condição (doente, enjoado ou envenenado) de criatura adjacente.",
             fonte: "Heróis de Arton"
@@ -762,7 +762,7 @@ const enchantmentosData = {
             nome: "Encanto Purificador",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Armadura/Escudo",
             descricao: "Recebe resistência a medo e mental +5. Pode gastar 2 PM para permitir que um aliado (alcance curto) repita um TR contra esses efeitos.",
             fonte: "Heróis de Arton"
@@ -771,7 +771,7 @@ const enchantmentosData = {
             nome: "Encanto Reanimador",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Armadura/Escudo",
             descricao: "Pode lançar Curar Ferimentos (CD Sab). Se já conhece a magia, custo -1 PM.",
             fonte: "Heróis de Arton"
@@ -780,7 +780,7 @@ const enchantmentosData = {
             nome: "Encanto Replicante",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Armadura/Escudo",
             descricao: "Quando é atingido por ataque corpo a corpo, pode gastar 1 PM para causar 2d6 de dano (mesmo tipo) ao atacante e reduzir o dano sofrido nessa mesma quantidade.",
             fonte: "Heróis de Arton"
@@ -789,7 +789,7 @@ const enchantmentosData = {
             nome: "Encanto Resiliente",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Armadura/Escudo",
             descricao: "Recebe resistência a atordoamento, paralisia e petrificação +5. Pode gastar 1 PM para repetir um TR contra uma dessas condições (1/efeito).",
             fonte: "Heróis de Arton"
@@ -798,7 +798,7 @@ const enchantmentosData = {
             nome: "Encanto Vórtice",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Armadura/Escudo",
             descricao: "Pode gastar 1 PM para puxar uma criatura em alcance curto até um ponto adjacente a você (Fort CD For evita).",
             fonte: "Heróis de Arton"
@@ -1006,7 +1006,7 @@ const enchantmentosData = {
             nome: "Encanto Retaliador",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Esotérico",
             descricao: "Quando evitar dano de inimigo com RD de uma magia, a CD da sua próxima magia de dano (até fim do próximo turno) aumenta em +1 para cada 10 de dano evitado.",
             fonte: "Heróis de Arton"
@@ -1015,7 +1015,7 @@ const enchantmentosData = {
             nome: "Encanto Sanguessuga",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Esotérico",
             descricao: "Se lançar magia e um ou mais inimigos falharem no TR, você recebe 10 PV temporários.",
             fonte: "Heróis de Arton"
@@ -1024,7 +1024,7 @@ const enchantmentosData = {
             nome: "Encanto Traiçoeiro",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Esotérico",
             descricao: "Se lançar magia hostil e afetar um aliado (que não tenha resistência/imunidade ao efeito), todas as criaturas afetadas sofrem –2 nos TR.",
             fonte: "Heróis de Arton"
@@ -1033,7 +1033,7 @@ const enchantmentosData = {
             nome: "Encanto Verdugo",
             preco: "",
             espacos: "—",
-            categoria: "Item Mágico",
+            categoria: "encantamento",
             tipo: "Esotérico",
             descricao: "1/cena, quando reduz inimigo a 0 PV com magia, o dano de suas magias aumenta em +1 por dado até o fim da cena.",
             fonte: "Heróis de Arton"
