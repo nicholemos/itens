@@ -7,7 +7,7 @@ const enchantmentosData = {
             "nome": "Encanto Ameaçadora",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Arma",
             "descricao": "Encantamento que duplica a margem de ameaça da arma, aumentando a chance de acertos críticos."
         },
@@ -15,7 +15,7 @@ const enchantmentosData = {
             "nome": "Encanto Anticriatura",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Arma",
             "descricao": "Encantamento que torna a arma letal contra um tipo de criatura específico. Causa +4d8 de dano (custo 2 PM) ao acertar esse tipo."
         },
@@ -23,7 +23,7 @@ const enchantmentosData = {
             "nome": "Encanto Assassina",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Arma",
             "descricao": "Encantamento que aumenta dados de dano extra de ataque furtivo para d8. Permite rolar novamente resultados 1 (custo 2 PM)."
         },
@@ -31,7 +31,7 @@ const enchantmentosData = {
             "nome": "Encanto Caçadora",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Arma",
             "descricao": "Encantamento que anula penalidades por camuflagem e cobertura. Aumenta alcance de armas à distância em uma categoria."
         },
@@ -39,7 +39,7 @@ const enchantmentosData = {
             "nome": "Encanto Congelante",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Arma",
             "descricao": "Encantamento que causa +1d6 de dano de frio. Pode enredar o alvo por 1 rodada (custo 2 PM)."
         },
@@ -47,7 +47,7 @@ const enchantmentosData = {
             "nome": "Encanto Conjuradora",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Arma",
             "descricao": "Encantamento que armazena uma magia. Permite lançar a magia ao acertar um ataque (ação livre)."
         },
@@ -55,7 +55,7 @@ const enchantmentosData = {
             "nome": "Encanto Corrosiva",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Arma",
             "descricao": "Encantamento que causa +1d6 de dano de ácido. Causa 4d4 de dano de ácido na próxima rodada (custo 2 PM)."
         },
@@ -63,7 +63,7 @@ const enchantmentosData = {
             "nome": "Encanto Dançarina",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Arma",
             "descricao": "Encantamento que permite a arma flutuar e atacar sozinha com duração sustentada (custo 1 PM)."
         },
@@ -71,7 +71,7 @@ const enchantmentosData = {
             "nome": "Encanto Defensora",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Arma",
             "descricao": "Encantamento que fornece +2 na Defesa do portador."
         },
@@ -79,7 +79,7 @@ const enchantmentosData = {
             "nome": "Encanto Destruidora",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Arma",
             "descricao": "Encantamento que fornece +2 em testes contra construtos e objetos, causando +2d8 de dano."
         },
@@ -87,7 +87,7 @@ const enchantmentosData = {
             "nome": "Encanto Dilacerante",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Arma",
             "descricao": "Encantamento que causa +10 pontos de dano em acertos críticos."
         },
@@ -95,7 +95,7 @@ const enchantmentosData = {
             "nome": "Encanto Drenante",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Arma",
             "descricao": "Encantamento que causa +1d6 de dano de trevas em acertos críticos e cura metade do dano. Ação livre causa +2d6 (custo 2 PM)."
         },
@@ -103,7 +103,7 @@ const enchantmentosData = {
             "nome": "Encanto Elétrica",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Arma",
             "descricao": "A arma causa +1d6 de dano de eletricidade. Uma vez por rodada, quando ataca, você pode gastar 2 PM. Se fizer isso e acertar o ataque, um raio atinge outra criatura em alcance curto, causando 3d8 pontos de dano de eletricidade"
         },
@@ -111,7 +111,7 @@ const enchantmentosData = {
             "nome": "Encanto Energética",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Arma",
             "descricao": "Concede +4 em testes de ataque, ignora 20 RD, causa dano de essência, emite luz (9m). Pré-Requisito: Formidável. (p. 335)"
         },
@@ -119,7 +119,7 @@ const enchantmentosData = {
             "nome": "Encanto Excruciante",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Arma",
             "descricao": "Uma criatura viva atingida fica fraca. Se já estiver fraca, mesmo por este efeito, fica debilitada (a condição máxima que esta arma pode causar)."
         },
@@ -127,7 +127,7 @@ const enchantmentosData = {
             "nome": "Encanto Flamejante",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Arma",
             "descricao": "Encantamento que causa +1d6 de dano de fogo. Alvo pega fogo (sofre 1d6 de dano por rodada)."
         },
@@ -135,7 +135,7 @@ const enchantmentosData = {
             "nome": "Encanto Formidável",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Arma",
             "descricao": "Encantamento que aumenta dados de dano em um passo e fornece +1 em testes de ataque."
         },
@@ -143,7 +143,7 @@ const enchantmentosData = {
             "nome": "Encanto Lacinante",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Arma",
             "descricao": "A arma inflige ferimentos mortais. Quando faz um acerto crítico com a arma, você causa +10 pontos de dano ou, além de multiplicar os dados de dano, multiplica também quaisquer bônus numéricos, a sua escolha. Este efeito substitui o efeito de dilacerante. Pré-requisito: dilacerante."
         },
@@ -151,7 +151,7 @@ const enchantmentosData = {
             "nome": "Encanto Magnífica",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Arma",
             "descricao": "Concede +4 em testes de ataque e rolagens de dano. Pré-Requisito: Formidável. (p. 336)"
         },
@@ -159,7 +159,7 @@ const enchantmentosData = {
             "nome": "Encanto Piedosa",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Arma",
             "descricao": "+1d8 de dano, mas todo o dano causado é não letal. Você pode gastar 1 PM para desativar e ativar este encanto. (p. 336)"
         },
@@ -167,7 +167,7 @@ const enchantmentosData = {
             "nome": "Encanto Profana",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Arma",
             "descricao": "Causa +2d8 de dano contra devotos de deuses de energia positiva e criaturas bondosas. (p. 336)"
         },
@@ -175,7 +175,7 @@ const enchantmentosData = {
             "nome": "Encanto Sagrada",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Arma",
             "descricao": "Encantamento que causa +1d6 de dano de luz contra criaturas do mal."
         },
@@ -183,7 +183,7 @@ const enchantmentosData = {
             "nome": "Encanto Sanguinaria",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Arma",
             "descricao": "Uma criatura viva atingida fica sangrando. A perda de PV por sangramento causada pela arma é cumulativa — uma criatura atingida duas vezes perde 2d6 PV por sangramento por rodada."
         },
@@ -191,7 +191,7 @@ const enchantmentosData = {
             "nome": "Encanto Trovejante",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Arma",
             "descricao": "Quando você faz um acerto crítico, a vítima fica atordoada por uma rodada (apenas uma vez por cena; Fort CD For ou Des, a sua escolha, evita). (p. 336)"
         },
@@ -199,7 +199,7 @@ const enchantmentosData = {
             "nome": "Encanto Tumular",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Arma",
             "descricao": "Encantamento que causa +1d6 de dano de trevas. Impede cura da vítima por 1d4 rodadas."
         },
@@ -207,7 +207,7 @@ const enchantmentosData = {
             "nome": "Encanto Veloz",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Arma",
             "descricao": "Você recebe a habilidade Ataque Extra, do guerreiro, mas só pode usá-la com esta arma. Se já a possui, em vez disso, o custo para usá-la com esta arma diminui em –1 PM. (p. 336)"
         },
@@ -216,7 +216,7 @@ const enchantmentosData = {
             "nome": "Encanto Venenosa",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Arma",
             "descricao": "Encantamento que causa +1d6 de dano de veneno. Alvo fica envenenado (Fort CD 15 evita)."
         },
@@ -227,7 +227,7 @@ const enchantmentosData = {
             "nome": "Encanto Abascanto",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Armadura/Escudo",
             "descricao": "Você recebe resistência a magia +5. (p. 338)"
         },
@@ -235,7 +235,7 @@ const enchantmentosData = {
             "nome": "Encanto Abençoado",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Armadura/Escudo",
             "descricao": "Você recebe redução de trevas 10 e +5 em testes de resistência contra efeitos de necromancia. (p. 338)"
         },
@@ -243,7 +243,7 @@ const enchantmentosData = {
             "nome": "Encanto Acrobático",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Armadura/Escudo",
             "descricao": "+5 em Acrobacia e Ignora a penalidade de armadura do item para testes dessa perícia. (p. 338)"
         },
@@ -251,7 +251,7 @@ const enchantmentosData = {
             "nome": "Encanto Alado",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Armadura/Escudo",
             "descricao": "Você pode gastar 2 PM para fazer asas emergirem de suas costas e receber deslocamento de voo 12m com duração sustentada. (p. 338)"
         },
@@ -259,7 +259,7 @@ const enchantmentosData = {
             "nome": "Encanto Animado",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Armadura/Escudo",
             "descricao": "Você pode gastar uma ação de movimento e 1 PM para fazer o escudo flutuar ao seu redor até o fim da cena. Você recebe o mesmo bônus na Defesa que receberia se estivesse empunhando o escudo, mas fica com as duas mãos livres. Você só pode ser protegido por um escudo ao mesmo tempo. (p. 338)"
         },
@@ -267,7 +267,7 @@ const enchantmentosData = {
             "nome": "Encanto Assustador",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Armadura/Escudo",
             "descricao": "Você pode gastar uma ação de movimento e 2 PM para gerar uma onda de medo. Inimigos em alcance curto devem passar num teste de Vontade (CD Car) ou ficarão abalados até o fim da cena. (p. 338)"
         },
@@ -275,7 +275,7 @@ const enchantmentosData = {
             "nome": "Encanto Cáustica",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Armadura/Escudo",
             "descricao": "Você recebe redução de ácido 10 e pode gastar uma ação de movimento e 2 PM para fazer o item gotejar ácido. Se fizer isso, seus ataques causam +1d4 de dano de ácido até o fim da cena"
         },
@@ -283,7 +283,7 @@ const enchantmentosData = {
             "nome": "Encanto Defensor",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Armadura/Escudo",
             "descricao": "O bônus na Defesa do item aumenta em +2. (p. 338)"
         },
@@ -291,7 +291,7 @@ const enchantmentosData = {
             "nome": "Encanto Escorregadio",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Armadura/Escudo",
             "descricao": "Você recebe +10 em testes de Acrobacia para escapar e em testes de manobra contra agarrar. (p. 339)"
         },
@@ -299,7 +299,7 @@ const enchantmentosData = {
             "nome": "Encanto Esmagador (apenas Escudos)",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Armadura/Escudo",
             "descricao": "Este escudo fornece +2 em ataques e dano e tem seu dano aumentado em um passo. (p. 339)"
         },
@@ -307,7 +307,7 @@ const enchantmentosData = {
             "nome": "Encanto Fantasmagórico",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Armadura/Escudo",
             "descricao": "Você pode lançar a magia Manto de Sombras. (p. 339)"
         },
@@ -315,7 +315,7 @@ const enchantmentosData = {
             "nome": "Encanto Fortificado",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Armadura/Escudo",
             "descricao": "Chance de ignorar dano extra de acerto crítico e ataques furtivos (25% escudo, 50% armadura). (p. 339)"
         },
@@ -323,7 +323,7 @@ const enchantmentosData = {
             "nome": "Encanto Gelido",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Armadura/Escudo",
             "descricao": "Você recebe redução de frio 10 e pode gastar uma ação de movimento e 2 PM para se cobrir de gelo até o fim da cena. Se fizer isso, recebe 10 PV temporários. (p. 339)"
         },
@@ -331,7 +331,7 @@ const enchantmentosData = {
             "nome": "Encanto Guardião",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Armadura/Escudo",
             "descricao": "O bônus na Defesa do item aumenta em +4. Pré-Requisito: Defensor. (p. 339)"
         },
@@ -339,7 +339,7 @@ const enchantmentosData = {
             "nome": "Encanto Hipnotico",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Armadura/Escudo",
             "descricao": "Você pode gastar uma ação padrão e 3 PM para emitir luzes coloridas. Inimigos em alcance curto devem passar num teste de Vontade (CD Car) ou ficarão fascinados por 1d6 rodadas. O efeito termina se qualquer criatura afetada for atacada. (p. 339)"
         },
@@ -347,7 +347,7 @@ const enchantmentosData = {
             "nome": "Encanto Ilusório",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Armadura/Escudo",
             "descricao": "Você pode gastar uma ação de movimento e 1 PM para fazer o item adquirir a aparência de uma roupa comum, mas mantendo suas propriedades (bônus na Defesa, penalidade de armadura...). A magia Visão da Verdade revela o item disfarçado. (p. 339)"
         },
@@ -355,7 +355,7 @@ const enchantmentosData = {
             "nome": "Encanto Incandescente",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Armadura/Escudo",
             "descricao": "Você recebe redução de fogo 10 e pode gastar uma ação de movimento e 2 PM para fazer o item emitir labaredas até o fim da cena. Se fizer isso, no início de cada um de seus turnos você causa 1d6 pontos de dano de fogo em todas as criaturas adjacentes. (p. 339)"
         },
@@ -363,7 +363,7 @@ const enchantmentosData = {
             "nome": "Encanto Invulnerável (RD 2/5)",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Armadura/Escudo",
             "descricao": "Concede RD 2 (escudo) ou RD 5 (armadura). (p. 339)"
         },
@@ -371,7 +371,7 @@ const enchantmentosData = {
             "nome": "Encanto Opaco",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Armadura/Escudo",
             "descricao": "Concede Redução de Dano 10 contra ácido, frio, fogo e eletricidade. (p. 339)"
         },
@@ -379,7 +379,7 @@ const enchantmentosData = {
             "nome": "Encanto Protetor (+2 TR)",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Armadura/Escudo",
             "descricao": "Concede +2 em testes de resistência. (p. 339)"
         },
@@ -387,7 +387,7 @@ const enchantmentosData = {
             "nome": "Encanto Refletor",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Armadura/Escudo",
             "descricao": "Uma vez por rodada, quando você é alvo de uma magia, pode gastar PM igual ao custo dela para refleti-la de volta ao conjurador. As características da magia (efeitos, CD...) se mantêm, mas você toma qualquer decisão exigida por ela. Um item refletor parece espelhado e fica com os mesmos efeitos que o item que o reflete. (p. 339)"
         },
@@ -395,7 +395,7 @@ const enchantmentosData = {
             "nome": "Encanto Relampejante",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Armadura/Escudo",
             "descricao": "ocê recebe redução de eletricidade 10 e pode gastar uma ação de movimento e 2 PM para gerar arcos voltaicos até o fim da cena. Se fizer isso, qualquer criatura que o ataque em corpo a corpo sofre 2d6 pontos de dano de eletricidade. (p. 339)"
         },
@@ -403,7 +403,7 @@ const enchantmentosData = {
             "nome": "Encanto Reluzente",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Armadura/Escudo",
             "descricao": "Você pode gastar uma ação de movimento e 2 PM para emitir um clarão de luz. Todos os inimigos em alcance curto devem passar num teste de Reflexos (CD Car) ou ficarão cegos por uma rodada. (p. 339)"
         },
@@ -411,7 +411,7 @@ const enchantmentosData = {
             "nome": "Encanto Sombrio",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Armadura/Escudo",
             "descricao": "Você recebe +5 em Furtividade e ignora a penalidade de armadura do item para testes dessa perícia. (p. 339)"
         },
@@ -419,7 +419,7 @@ const enchantmentosData = {
             "nome": "Encanto Zeloso",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Armadura/Escudo",
             "descricao": "Uma vez por rodada, se um aliado adjacente for alvo de um ataque, você pode gastar 1 PM para se tornar o alvo do ataque, que então é resolvido normalmente. (p. 339)"
         },
@@ -808,7 +808,7 @@ const enchantmentosData = {
             "nome": "Encanto Abafador",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Esotérico",
             "descricao": "Se uma criatura falhar num TR contra uma magia sua, a CD das habilidades dela diminui em –2 por uma rodada.",
             "fonte": "Heróis de Arton"
@@ -817,7 +817,7 @@ const enchantmentosData = {
             "nome": "Encanto Bélico",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Esotérico",
             "descricao": "O esotérico se parece com uma arma. Quando lança uma magia de dano, você causa +1d10 pontos de dano de essência.",
             "fonte": "Heróis de Arton"
@@ -826,7 +826,7 @@ const enchantmentosData = {
             "nome": "Encanto Caridoso",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Esotérico",
             "descricao": "Quando lança uma magia em um aliado (custo >= 1 PM), recebe 1 PM temporário (não conta no limite) para gastar em aprimoramentos na próxima magia da cena.",
             "fonte": "Heróis de Arton"
@@ -835,7 +835,7 @@ const enchantmentosData = {
             "nome": "Encanto Chocante",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Esotérico",
             "descricao": "Suas magias de dano de eletricidade causam +1 dado extra e deixam o alvo ofuscado por 1 rodada.",
             "fonte": "Heróis de Arton"
@@ -844,7 +844,7 @@ const enchantmentosData = {
             "nome": "Encanto Clemente",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Esotérico",
             "descricao": "Suas magias de cura curam +1 dado extra do mesmo tipo.",
             "fonte": "Heróis de Arton"
@@ -853,7 +853,7 @@ const enchantmentosData = {
             "nome": "Encanto Contido",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Esotérico",
             "descricao": "Quando lança uma magia de dano, pode gastar +1 PM para que ela cause dano não letal. Não pode ser Pulverizante.",
             "fonte": "Heróis de Arton"
@@ -862,7 +862,7 @@ const enchantmentosData = {
             "nome": "Encanto Embusteiro",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Esotérico",
             "descricao": "Tem aparência de item mundano. Permite usar Magia Discreta (custo -1 PM se já o possui, e +Car na CD de Misticismo para perceber).",
             "fonte": "Heróis de Arton"
@@ -871,7 +871,7 @@ const enchantmentosData = {
             "nome": "Encanto Emergencial",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Esotérico",
             "descricao": "1/rodada, quando você ou um aliado em alcance curto sofre dano, pode gastar 4 PM para lançar uma magia de cura (com execução de ação) na vítima como reação.",
             "fonte": "Heróis de Arton"
@@ -880,7 +880,7 @@ const enchantmentosData = {
             "nome": "Encanto Encadeado",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Esotérico",
             "descricao": "1/cena, quando reduz um inimigo a 0 PV com uma magia, pode causar metade do dano da magia a outro inimigo (mesmo TR, sem efeitos extras).",
             "fonte": "Heróis de Arton"
@@ -889,7 +889,7 @@ const enchantmentosData = {
             "nome": "Encanto Escultor",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Esotérico",
             "descricao": "Ao lançar magia (cone ou linha), pode gastar 1 PM para mudar a área (cone para linha [dobra] ou linha para cone [1/3]).",
             "fonte": "Heróis de Arton"
@@ -898,7 +898,7 @@ const enchantmentosData = {
             "nome": "Encanto Frugal",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Esotérico",
             "descricao": "Ao lançar magia (com TR, afeta inimigos), pode diminuir a CD em –2. Se fizer, o custo da magia diminui em –2 PM.",
             "fonte": "Heróis de Arton"
@@ -907,7 +907,7 @@ const enchantmentosData = {
             "nome": "Encanto Glacial",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Esotérico",
             "descricao": "Suas magias de dano de frio causam +1 dado extra e deixam os alvos vulneráveis por 1 rodada.",
             "fonte": "Heróis de Arton"
@@ -916,7 +916,7 @@ const enchantmentosData = {
             "nome": "Encanto Imperioso",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Esotérico",
             "descricao": "Magias que exigem ação para comandar (ex: Conjurar Monstro): a ação diminui em uma categoria (mín. livre). Limite de 1 comando/ação livre por rodada.",
             "fonte": "Heróis de Arton"
@@ -925,7 +925,7 @@ const enchantmentosData = {
             "nome": "Encanto Implacável",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Esotérico",
             "descricao": "Ao lançar magia, pode gastar +2 PM para afetar um alvo contra o qual não tenha linha de efeito (deve vê-lo ou tê-lo visto no último turno). Pré-requisito: outro encanto.",
             "fonte": "Heróis de Arton"
@@ -934,7 +934,7 @@ const enchantmentosData = {
             "nome": "Encanto Incriminador",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Esotérico",
             "descricao": "1/cena, ao lançar magia, pode gastar 3 PM para criar ilusão de que ela foi lançada por outra criatura (alcance médio). Criaturas que identificam a magia podem fazer Vontade (CD da magia) para desacreditar.",
             "fonte": "Heróis de Arton"
@@ -943,7 +943,7 @@ const enchantmentosData = {
             "nome": "Encanto Inflamável",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Esotérico",
             "descricao": "Suas magias de dano de fogo causam +1 dado extra e deixam o alvo em chamas (+1d6 de dano se já causa chamas).",
             "fonte": "Heróis de Arton"
@@ -952,7 +952,7 @@ const enchantmentosData = {
             "nome": "Encanto Inquisidor",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Esotérico",
             "descricao": "Marcado com símbolo sagrado. Magias divinas contra não devotos da divindade têm CD +1 (+2 se tiver Devoto Fiel).",
             "fonte": "Heróis de Arton"
@@ -961,7 +961,7 @@ const enchantmentosData = {
             "nome": "Encanto Insistente",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Esotérico",
             "descricao": "Magias com dano por mais de uma rodada (ex: Flecha Ácida): efeitos que só se aplicam no lançamento (ex: Arcano de Batalha) aplicam-se também à 2ª rodada.",
             "fonte": "Heróis de Arton"
@@ -970,7 +970,7 @@ const enchantmentosData = {
             "nome": "Encanto Khalmyrita",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Esotérico",
             "descricao": "Ao lançar magia com efeito variável, pode escolher um valor igual à média da rolagem (em vez de rolar). Não pode ser Nímbico.",
             "fonte": "Heróis de Arton"
@@ -979,7 +979,7 @@ const enchantmentosData = {
             "nome": "Encanto Majestoso",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Esotérico",
             "descricao": "A CD para resistir a suas magias arcanas aumenta em +1 (+2 se tiver a habilidade de classe Magias). Pré-requisito: outro encanto.",
             "fonte": "Heróis de Arton"
@@ -988,7 +988,7 @@ const enchantmentosData = {
             "nome": "Encanto Nímbico",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Esotérico",
             "descricao": "Ao lançar magia com efeito variável, pode rolar novamente dados (limite de PM atuais). A cada resultado par nas novas rolagens, perde 1 PM. Não pode ser Khalmyrita.",
             "fonte": "Heróis de Arton"
@@ -997,7 +997,7 @@ const enchantmentosData = {
             "nome": "Encanto Pulverizante",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Esotérico",
             "descricao": "Ao lançar magia que reduz PV de criatura a 0 ou menos, pode gastar 2 PM para desintegrá-la (resta pó, equipamento não-mágico é destruído). Não pode ser Contido. Pré-requisito: outro encanto.",
             "fonte": "Heróis de Arton"
@@ -1043,7 +1043,7 @@ const enchantmentosData = {
             "nome": "Encanto Aconchegante",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Encantamento de Acessório",
             "descricao": "Aplicável em: Vestuário. Melhora seu descanso em uma categoria (confortável para luxuoso).",
             "fonte": "Heróis de Arton"
@@ -1052,7 +1052,7 @@ const enchantmentosData = {
             "nome": "Encanto Ajudante",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Encantamento de Acessório",
             "descricao": "Aplicável em: Ferramenta (que modifica perícia). O bônus em perícia da ferramenta aumenta em +2.",
             "fonte": "Heróis de Arton"
@@ -1061,7 +1061,7 @@ const enchantmentosData = {
             "nome": "Encanto Autoritário",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Encantamento de Acessório",
             "descricao": "Aplicável em: Vestuário. Fornece +2 em Intimidação (cumulativo) e aumenta a CD de seus efeitos de medo em +2.",
             "fonte": "Heróis de Arton"
@@ -1070,7 +1070,7 @@ const enchantmentosData = {
             "nome": "Encanto Compacto",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Encantamento de Acessório",
             "descricao": "Aplicável em: Itens Gerais. O equipamento não ocupa espaços.",
             "fonte": "Heróis de Arton"
@@ -1079,7 +1079,7 @@ const enchantmentosData = {
             "nome": "Encanto Imaculado",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Encantamento de Acessório",
             "descricao": "Aplicável em: Vestuário. Está sempre limpo e perfumado. Fornece +2 em Diplomacia (cumulativo) e aumenta a CD de Aparência Inofensiva, etc., em +2.",
             "fonte": "Heróis de Arton"
@@ -1088,7 +1088,7 @@ const enchantmentosData = {
             "nome": "Encanto Insinuante",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Encantamento de Acessório",
             "descricao": "Aplicável em: Vestuário. Fornece +2 em Enganação (cumulativo) e aumenta a CD de seus efeitos mentais em +2.",
             "fonte": "Heróis de Arton"
@@ -1097,7 +1097,7 @@ const enchantmentosData = {
             "nome": "Encanto Ligeiro",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Encantamento de Acessório",
             "descricao": "Aplicável em: Vestuário. O item pode ser vestido ou removido com uma ação livre.",
             "fonte": "Heróis de Arton"
@@ -1106,7 +1106,7 @@ const enchantmentosData = {
             "nome": "Encanto Prontidão",
             "preco": "",
             "espacos": "—",
-            "categoria": "Item Mágico",
+            "categoria": "encantamento",
             "tipo": "Encantamento de Acessório",
             "descricao": "Aplicável em: Itens Gerais. Se o item estiver em alcance curto, você pode empunhá-lo ou guardá-lo como uma ação livre. Pode empunhá-lo como parte de uma reação.",
             "fonte": "Heróis de Arton"
