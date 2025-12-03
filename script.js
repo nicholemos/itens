@@ -144,9 +144,6 @@ window.onload = () => {
 
 // ===== CARREGAR DADOS (REESCRITO) =====
 
-
-// SUBSTITUA A FUNÇÃO "loadItems" INTEIRA POR ESTA:
-
 function loadItems() {
     try {
         // 1. Combina todos os arrays dos arquivos .js externos
@@ -157,7 +154,7 @@ function loadItems() {
             ...(window.itensMagicosData?.item || []),
             ...(window.modificacoesData?.modificacao || []),
             ...(window.enchantmentosData?.encantamento || []),
-            ...(window.maldicaoData?.maldicao || []) // <-- ADICIONADO
+            ...(window.maldicaoData?.maldicao || [])
         ];
 
         // 2. Processa os dados
@@ -172,22 +169,25 @@ function loadItems() {
             .filter(item => item.categoria === 'Item Superior' && item.tipo === 'Material')
             .map(item => ({ nome: item.nome, tipo: item.tipo, descricao: item.descricao, preco: item.preco }));
 
+        // CORREÇÃO: Usando a categoria 'encantamento' em vez de 'Item Mágico'
         allEnchantments = combinedData
-            .filter(item => item.categoria === 'Item Mágico' && (item.tipo === 'Arma' || item.tipo === 'Armadura/Escudo'))
+            .filter(item => item.categoria === 'encantamento' && (item.tipo === 'Arma' || item.tipo === 'Armadura/Escudo'))
             .map(item => ({
                 nome: item.nome, tipo: item.tipo, descricao: item.descricao,
                 preco: item.preco, prereq: enchantmentPrereqs[item.nome] || null
             }));
 
+        // CORREÇÃO: Usando a categoria 'encantamento'
         allEsotericEnchantments = combinedData
-            .filter(item => item.categoria === 'Item Mágico' && item.tipo === 'Esotérico')
+            .filter(item => item.categoria === 'encantamento' && item.tipo === 'Esotérico')
             .map(item => ({
                 nome: item.nome, tipo: item.tipo, descricao: item.descricao,
                 preco: item.preco, prereq: enchantmentPrereqs[item.nome] || null
             }));
 
+        // CORREÇÃO: Usando a categoria 'encantamento' para Encantamento de Acessório
         allAccessoryEnchantments = combinedData
-            .filter(item => item.categoria === 'Item Mágico' && (item.tipo === 'Encantamento de Acessório'))
+            .filter(item => item.categoria === 'encantamento' && (item.tipo === 'Encantamento de Acessório'))
             .map(item => ({
                 nome: item.nome, tipo: item.tipo, descricao: item.descricao,
                 preco: item.preco, prereq: enchantmentPrereqs[item.nome] || null
@@ -219,7 +219,6 @@ function loadItems() {
         itemsGrid.innerHTML = '<div class="no-results">Erro fatal ao carregar dados. Verifique o console (F12).</div>';
     }
 }
-
 // ===== Salvar e Carregar Inventário =====
 function saveInventory() {
     localStorage.setItem('t20Inventory', JSON.stringify(inventory));
