@@ -789,8 +789,6 @@ function getItemRows(items, category) {
 
 // ===== LÓGICA DO INVENTÁRIO =====
 
-// SUBSTITUA A FUNÇÃO "addItemToInventory" INTEIRA POR ESTA:
-
 function addItemToInventory() {
     if (!currentModalItem) return;
 
@@ -803,8 +801,8 @@ function addItemToInventory() {
     const enchantQty = parseInt(enchantQuantitySelect.value, 10);
 
     let selectedMods = [];
-    let materialPrice = 0; // Preço do material é separado
-    let hasHibrida = false; // <-- NOVO: Flag para a modificação Híbrida
+    let materialPrice = 0;
+    let hasHibrida = false; // Flag para a modificação Híbrida
 
     modSelectorsContainer.querySelectorAll('select').forEach(select => {
         const value = select.value;
@@ -827,7 +825,7 @@ function addItemToInventory() {
             // É uma melhoria normal
             selectedMods.push(value);
             
-            // NOVO: Verifica se a modificação Híbrida está selecionada
+            // Verifica se a modificação Híbrida está selecionada
             if (value === "Híbrida") { 
                 hasHibrida = true;
             }
@@ -842,20 +840,22 @@ function addItemToInventory() {
     let modSlotPrice = modificationPrices[modQty] || 0; // Preço dos "espaços"
     let enchantPrice = enchantmentPrices[enchantQty] || 0;
 
-    // =======================================================
-    // NOVO: Lógica para duplicar o preço base se for Híbrida (x2)
-    // =======================================================
-    if (hasHibrida) {
-        basePrice *= 2;
-    }
-    // =======================================================
-
-    // AQUI ESTÁ A REGRA DE PREÇO PELA METADE (para Munição)
+    // 1. Aplica a regra de Munição (divide por 2)
     if (currentModalItem.tipo === 'Munição') {
         modSlotPrice /= 2;
         enchantPrice /= 2;
-        // O preço do material já foi dividido no loop acima
+        // materialPrice já foi dividido por 2 no loop acima
     }
+    
+    // =======================================================
+    // 2. CORREÇÃO APLICADA: Híbrida dobra o custo dos aprimoramentos
+    // =======================================================
+    if (hasHibrida) {
+        modSlotPrice *= 2;
+        materialPrice *= 2;
+        enchantPrice *= 2;
+    }
+    // =======================================================
 
     const finalPrice = (basePrice + modSlotPrice + materialPrice + enchantPrice);
 
@@ -881,6 +881,7 @@ function addItemToInventory() {
     renderInventory();
     closeModal();
 }
+
 function removeItemFromInventory(index) {
     inventory.splice(index, 1);
     renderInventory();
