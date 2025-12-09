@@ -804,6 +804,7 @@ function addItemToInventory() {
 
     let selectedMods = [];
     let materialPrice = 0; // Preço do material é separado
+    let hasHibrida = false; // <-- NOVO: Flag para a modificação Híbrida
 
     modSelectorsContainer.querySelectorAll('select').forEach(select => {
         const value = select.value;
@@ -825,6 +826,11 @@ function addItemToInventory() {
         } else {
             // É uma melhoria normal
             selectedMods.push(value);
+            
+            // NOVO: Verifica se a modificação Híbrida está selecionada
+            if (value === "Híbrida") { 
+                hasHibrida = true;
+            }
         }
     });
 
@@ -832,19 +838,24 @@ function addItemToInventory() {
         .map(select => select.value)
         .filter(val => val !== "nenhum/a");
 
-    const basePrice = parsePrice(currentModalItem.preco);
+    let basePrice = parsePrice(currentModalItem.preco);
     let modSlotPrice = modificationPrices[modQty] || 0; // Preço dos "espaços"
     let enchantPrice = enchantmentPrices[enchantQty] || 0;
 
     // =======================================================
-    // AQUI ESTÁ A NOVA REGRA DE PREÇO PELA METADE
+    // NOVO: Lógica para duplicar o preço base se for Híbrida (x2)
     // =======================================================
+    if (hasHibrida) {
+        basePrice *= 2;
+    }
+    // =======================================================
+
+    // AQUI ESTÁ A REGRA DE PREÇO PELA METADE (para Munição)
     if (currentModalItem.tipo === 'Munição') {
         modSlotPrice /= 2;
         enchantPrice /= 2;
         // O preço do material já foi dividido no loop acima
     }
-    // =======================================================
 
     const finalPrice = (basePrice + modSlotPrice + materialPrice + enchantPrice);
 
@@ -870,7 +881,6 @@ function addItemToInventory() {
     renderInventory();
     closeModal();
 }
-
 function removeItemFromInventory(index) {
     inventory.splice(index, 1);
     renderInventory();
