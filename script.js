@@ -153,7 +153,7 @@ function loadItems() {
             ...(window.itensData?.item || []),
             ...(window.itensMagicosData?.item || []),
             ...(window.modificacoesData?.modificacao || []),
-            ...(window.enchantamentosData?.encantamento || []),
+            ...(window.enchantmentosData?.encantamento || []),
             ...(window.maldicaoData?.maldicao || [])
         ];
 
@@ -576,7 +576,10 @@ function createFilterButton(value, label) {
 function applyFilters() {
     let sourceList;
     // 1. Define a lista base (Source List)
-    if (currentCategory === 'Item Superior') {
+    if (currentCategory === 'encantamento') {
+        // CORREÇÃO: Combina as três listas de encantamentos para exibição
+        sourceList = allEnchantments.concat(allEsotericEnchantments).concat(allAccessoryEnchantments);
+    } else if (currentCategory === 'Item Superior') {
         sourceList = allModifications.concat(allMaterials);
     } else if (currentCategory === 'Item Mágico') {
         sourceList = allItems.filter(i => i.categoria === 'Item Mágico')
