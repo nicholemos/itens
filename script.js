@@ -153,7 +153,7 @@ function loadItems() {
             ...(window.itensData?.item || []),
             ...(window.itensMagicosData?.item || []),
             ...(window.modificacoesData?.modificacao || []),
-            ...(window.enchantmentosData?.encantamento || []),
+            ...(window.enchantamentosData?.encantamento || []),
             ...(window.maldicaoData?.maldicao || [])
         ];
 
@@ -572,7 +572,6 @@ function createFilterButton(value, label) {
 }
 
 // ===== APLICAR FILTROS =====
-// SUBSTITUA A FUNÇÃO "applyFilters" INTEIRA POR ESTA:
 
 function applyFilters() {
     let sourceList;
