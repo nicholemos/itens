@@ -246,6 +246,15 @@ function setupEventListeners() {
         applyFilters();
     });
 
+    if (mobileInventoryBtn && inventoryContainer) {
+  mobileInventoryBtn.addEventListener('click', () => {
+    if (itemModal?.classList.contains('active')) closeModal();
+    inventoryContainer.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+}
+
+
     categoryButtons.forEach(btn => {
         btn.addEventListener('click', () => {
             categoryButtons.forEach(b => b.classList.remove('active'));
