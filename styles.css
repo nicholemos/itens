@@ -789,3 +789,23 @@ button[title*="Limpar"],
     flex: 1;
   }
 }
+
+
+/* ===== FIX DESKTOP: INVENTÁRIO VOLTAR NO PC (sem mexer no mobile) ===== */
+@media (min-width: 1024px) {
+  .inventory-container {
+    position: sticky;
+    top: 18px;
+    right: auto;            /* cancela o right:-100% */
+    width: auto;
+    max-width: none;
+    height: auto;
+    max-height: calc(100vh - 36px);
+    overflow: auto;
+
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: none;
+    transition: none;
+  }
+}
