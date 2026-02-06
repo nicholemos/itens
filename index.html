@@ -21,15 +21,6 @@
 
             <div class="content-column">
                 <div class="filters-section">
-                    <div class="search-bar">
-                        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <path d="m21 21-4.35-4.35"></path>
-                        </svg>
-                        <input type="text" id="searchInput" placeholder="Buscar por nome do item..."
-                            class="search-input">
-                    </div>
-
                     <div class="filter-group">
                         <button class="filter-btn active" data-category="todos">Todos</button>
                         <button class="filter-btn" data-category="Arma">Armas</button>
@@ -41,6 +32,16 @@
                         <button class="filter-btn" data-category="encantamento">Encantamentos</button>
                         <button class="filter-btn" data-category="Maldição">Maldições</button>
                     </div>
+
+                    <div class="search-bar">
+                        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                        <input type="text" id="searchInput" placeholder="Buscar por nome do item..."
+                            class="search-input">
+                    </div>
+
                     <div class="filter-group">
                         <div class="filter-group">
                             <label for="sortSelect" class="filter-label">Ordem:</label>
@@ -110,9 +111,9 @@
 
                 <h2 class="inventory-title">Inventário</h2>
 
-                <ul id="inventoryList" class="inventory-list">
-                    <li class="inventory-empty">Seu inventário está vazio.</li>
-                </ul>
+                <div id="inventoryList" class="inventory-list">
+                    <div class="inventory-empty">Seu inventário está vazio.</div>
+                </div>
 
                 <div id="inventorySummary" class="inventory-summary">
                     <div class="summary-row">
@@ -127,9 +128,22 @@
                         <span>Itens Vestidos:</span>
                         <span id="totalVestidos">0 / 4</span>
                     </div>
+
                     <button id="clearInventoryBtn" class="filter-btn clear-btn">Limpar Inventário</button>
+
+                    <!-- seta AGORA fica abaixo do inventário -->
+                    <button id="backToTopBtn" class="inventory-top-btn" type="button" aria-label="Voltar ao topo">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m18 15-6-6-6 6" />
+                        </svg>
+                    </button>
                 </div>
+
+
             </aside>
+
+
         </div>
     </main>
 
@@ -229,13 +243,6 @@
 
     <div id="modalOverlay" class="modal-overlay"></div>
     <div class="floating-buttons">
-        <button id="backToTopBtn" class="float-btn" aria-label="Voltar ao topo">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="m18 15-6-6-6 6" />
-            </svg>
-        </button>
-
         <button id="mobileInventoryBtn" class="float-btn mobile-inv-trigger" aria-label="Abrir Inventário">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
