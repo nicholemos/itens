@@ -826,9 +826,9 @@ function addItemToInventory() {
         } else {
             // É uma melhoria normal
             selectedMods.push(value);
-            
+
             // Verifica se a modificação Híbrida está selecionada
-            if (value === "Híbrida") { 
+            if (value === "Híbrida") {
                 hasHibrida = true;
             }
         }
@@ -848,7 +848,7 @@ function addItemToInventory() {
         enchantPrice /= 2;
         // materialPrice já foi dividido por 2 no loop acima
     }
-    
+
     // =======================================================
     // 2. CORREÇÃO APLICADA: Híbrida dobra o custo dos aprimoramentos
     // =======================================================
@@ -896,31 +896,54 @@ function clearInventory() {
 
 function renderInventory() {
     if (inventory.length === 0) {
-        inventoryList.innerHTML = '<li class="inventory-empty">Seu inventário está vazio.</li>';
+        inventoryList.innerHTML = '<div class="inventory-empty">Seu inventário está vazio.</div>';
     } else {
-        inventoryList.innerHTML = inventory.map((invItem, index) => {
+        const rows = inventory.map((invItem, index) => {
             const item = invItem.baseItem;
-            const vestidoIndicator = isVestido(item) ? '<span class="vestido-indicator">[Vestido]</span>' : '';
+
+            const spacesTotal = (invItem.finalSpaces || 0) * (invItem.quantity || 0);
+            const isWorn = isVestido(item);
 
             return `
-                <li class="inventory-item">
-                    <div class="item-info">
-                        <span class="item-name">${invItem.customName} (x${invItem.quantity}) ${vestidoIndicator}</span>
-                        <span class="item-details">
-                            Custo Un: T$ ${invItem.finalPrice.toLocaleString('pt-BR')} | Espaços: ${invItem.finalSpaces || '—'}
-                        </span>
-                    </div>
-                    <div class="item-actions">
-                        <button class="remove-item-btn" data-index="${index}">&times;</button>
-                    </div>
-                </li>
-            `;
+        <tr>
+          <td>
+            <span class="inv-name">${invItem.customName}</span>
+            ${isWorn ? '<span class="inv-muted">[Vestido]</span>' : ''}
+          </td>
+          <td class="inv-num">T$ ${Number(invItem.finalPrice || 0).toLocaleString('pt-BR')}</td>
+          <td class="inv-num">${invItem.quantity || 0}</td>
+          <td class="inv-num">${spacesTotal || '—'}</td>
+          <td class="inv-actions">
+            <button class="remove-item-btn" data-index="${index}" title="Remover">&times;</button>
+          </td>
+        </tr>
+      `;
         }).join('');
+
+        inventoryList.innerHTML = `
+      <div class="inventory-table-wrap">
+        <table class="inventory-table">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Custo</th>
+              <th>Qtde</th>
+              <th>Espaços</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            ${rows}
+          </tbody>
+        </table>
+      </div>
+    `;
     }
 
     updateInventorySummary();
     saveInventory();
 }
+
 
 // SUBSTITUA A FUNÇÃO "updateInventorySummary" INTEIRA POR ESTA:
 
