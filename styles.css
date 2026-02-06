@@ -701,3 +701,60 @@ button[title*="Limpar"],
     display: flex;
   }
 }
+
+
+/* ===== MODAL: FIX MOBILE ===== */
+@media (max-width: 720px) {
+  .modal-content{
+    width: calc(100vw - 20px);
+    max-height: calc(100svh - 20px);
+    padding: 12px;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .modal-body{
+    gap: 10px;
+  }
+
+  /* trava a imagem para não explodir no celular */
+  .modal-image-container{
+    width: 100%;
+    max-height: 220px;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .modal-image-container img,
+  #modalImage{
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    display: block;
+  }
+
+  /* badges não podem empurrar layout */
+  .modal-badges{
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  /* caixas de stats quebram linha em telas pequenas */
+  .modal-stats{
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* seção de adicionar item não estoura lateral */
+  .modal-add-item{
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .modal-add-item .quantity-input{
+    min-width: 120px;
+    flex: 1;
+  }
+  .modal-add-item .add-item-btn{
+    flex: 1;
+  }
+}
