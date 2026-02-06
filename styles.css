@@ -548,16 +548,8 @@ button[title*="Limpar"],
 }
 
 /* ===== COMPORTAMENTO MOBILE CORRIGIDO ===== */
-@media (max-width: 1023px) {
-    #mobileInventoryBtn {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-        pointer-events: auto; /* Garante que o clique funcione */
-    }
-
-    .inventory-container {
-        position: fixed;
+.inventory-container {
+  position: fixed;
   top: 0;
   right: -100%;
   width: 92%;
@@ -578,6 +570,7 @@ button[title*="Limpar"],
   box-shadow: -10px 0 30px rgba(0,0,0,.35);
 }
 .inventory-container.active { right: 0; }
+
 
     .inventory-close-mobile {
         display: block;
@@ -656,6 +649,31 @@ button[title*="Limpar"],
 
 .remove-item-btn:hover {
   filter: brightness(.96);
+}
+
+/* ===== Botão "voltar ao topo" dentro do inventário ===== */
+.inventory-top-btn {
+  margin: 12px auto 0;
+  /* centraliza */
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  border: 2px solid rgba(0, 0, 0, .20);
+  background: #e53935;
+  /* pode trocar pelo seu --accent se tiver */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, .18);
+}
+
+.inventory-top-btn:hover {
+  filter: brightness(.98);
+  transform: translateY(-1px);
+}
+
 
 /* ===== Botão flutuante do inventário (MOBILE) ===== */
 .floating-buttons{
