@@ -198,3 +198,19 @@ select {
   color: var(--str-accent);
   margin-bottom: 10px;
 }
+
+
+/* ===== LUPA DO FUNDO ===== */
+.search-hero img,
+.search-hero svg {
+  width: 160px;
+  max-width: 35%;
+  opacity: 0.08;
+}
+
+.search-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0 20px;
+}
