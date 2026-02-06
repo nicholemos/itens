@@ -645,3 +645,59 @@ button[title*="Limpar"],
   filter: brightness(.98);
   transform: translateY(-1px);
 }
+
+
+/* ===== Botão flutuante do inventário (MOBILE) ===== */
+.floating-buttons{
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 2000;
+  pointer-events: none; /* só o botão recebe clique */
+}
+
+#mobileInventoryBtn.float-btn{
+  pointer-events: auto;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  border: 2px solid var(--border);
+  background: var(--str-accent);
+  color: #fff;
+  display: none;            /* desktop: escondido */
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 22px rgba(0,0,0,.18);
+  cursor: pointer;
+  position: relative;
+}
+
+#mobileInventoryBtn.float-btn:hover{
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+/* badge com contador */
+#mobileInvCount.mobile-badge{
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: #e53935;
+  color: #fff;
+  border: 2px solid #fff;
+  font-size: 12px;
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+}
+
+/* mobile: aparece */
+@media (max-width: 1023px){
+  #mobileInventoryBtn.float-btn{
+    display: flex;
+  }
+}
