@@ -1043,7 +1043,7 @@ const itensData = {
             "espacos": "0,5",
             "categoria": "Item Geral",
             "tipo": "Alimentação",
-            "descricao": "Prato especial. Fornece +1d6 num único teste a sua escolha até o fim do dia. (p. 163)"
+            "descricao": " Fornece +1d6 num único teste a sua escolha até o fim do dia. (p. 163)"
         },
         {
             "nome": "Gorad quente",
@@ -1051,7 +1051,7 @@ const itensData = {
             "espacos": "0,5",
             "categoria": "Item Geral",
             "tipo": "Alimentação",
-            "descricao": "Prato especial. Fornece +2 PM temporários. (p. 163)"
+            "descricao": " Fornece +2 PM temporários. (p. 163)"
         },
         {
             "nome": "Macarrão de Yuvalin",
@@ -1059,7 +1059,7 @@ const itensData = {
             "espacos": "0,5",
             "categoria": "Item Geral",
             "tipo": "Alimentação",
-            "descricao": "Prato especial. Fornece +5 PV temporários. (p. 163)"
+            "descricao": " Fornece +5 PV temporários. (p. 163)"
         },
         {
             "nome": "Prato do aventureiro",
@@ -1067,7 +1067,7 @@ const itensData = {
             "espacos": "0,5",
             "categoria": "Item Geral",
             "tipo": "Alimentação",
-            "descricao": "Prato especial. Aumenta a recuperação de PV em +1 por nível na próxima noite de sono. (p. 163)"
+            "descricao": " Aumenta a recuperação de PV em +1 por nível na próxima noite de sono. (p. 163)"
         },
         {
             "nome": "Ração de viagem (por dia)",
@@ -1091,7 +1091,7 @@ const itensData = {
             "espacos": "0,5",
             "categoria": "Item Geral",
             "tipo": "Alimentação",
-            "descricao": "Prato especial. Aumenta a recuperação de PM em +1 por nível na próxima noite de sono. (p. 163)"
+            "descricao": " Aumenta a recuperação de PM em +1 por nível na próxima noite de sono. (p. 163)"
         },
 
         {
@@ -3691,4 +3691,5 @@ const itensData = {
 // Publica a variável para o script.js
 
 window.itensData = itensData;
+
 
