@@ -850,88 +850,88 @@ const itensData = {
             "preco": "T$ 1.500",
             "espacos": "0,5",
             "categoria": "Item Geral",
-            "tipo": "Alquímico",
-            "descricao": "Veneno (Ingestão). Vítima fica paralisada (lenta) por 3 rodadas (Fort CD Int+5 anula/reduz). (p. 161)"
+            "tipo": "Venenos",
+            "descricao": "Ingestão. Vítima fica paralisada (lenta) por 3 rodadas (Fort CD Int+5 anula/reduz). (p. 161)"
         },
         {
             "nome": "Bruma sonolenta",
             "preco": "T$ 150",
             "espacos": "0,5",
             "categoria": "Item Geral",
-            "tipo": "Alquímico",
-            "descricao": "Veneno (Inalação). Vítima fica inconsciente (enjoada por 1 rodada) (Fort CD Int anula/reduz). (p. 161)"
+            "tipo": "Venenos",
+            "descricao": "Inalação. Vítima fica inconsciente (enjoada por 1 rodada) (Fort CD Int anula/reduz). (p. 161)"
         },
         {
             "nome": "Cicuta",
             "preco": "T$ 60",
             "espacos": "0,5",
             "categoria": "Item Geral",
-            "tipo": "Alquímico",
-            "descricao": "Veneno (Ingestão). Perde 1d12 PV por rodada durante 3 rodadas (Fort CD Int reduz para 1d12 PV). (p. 161)"
+            "tipo": "Venenos",
+            "descricao": "Ingestão. Perde 1d12 PV por rodada durante 3 rodadas (Fort CD Int reduz para 1d12 PV). (p. 161)"
         },
         {
             "nome": "Essência de sombra",
             "preco": "T$ 100",
             "espacos": "0,5",
             "categoria": "Item Geral",
-            "tipo": "Alquímico",
-            "descricao": "Veneno (Contato). Vítima fica debilitada (fraca) (Fort CD Int anula/reduz). (p. 161)"
+            "tipo": "Venenos",
+            "descricao": "Contato. Vítima fica debilitada (fraca) (Fort CD Int anula/reduz). (p. 161)"
         },
         {
             "nome": "Névoa tóxica",
             "preco": "T$ 30",
             "espacos": "0,5",
             "categoria": "Item Geral",
-            "tipo": "Alquímico",
-            "descricao": "Veneno (Inalação). Perde 1d12 PV por rodada durante 3 rodadas (Fort CD Int reduz para 1d12 PV). (p. 161)"
+            "tipo": "Venenos",
+            "descricao": "Inalação. Perde 1d12 PV por rodada durante 3 rodadas (Fort CD Int reduz para 1d12 PV). (p. 161)"
         },
         {
             "nome": "Peçonha comum",
             "preco": "T$ 15",
             "espacos": "0,5",
             "categoria": "Item Geral",
-            "tipo": "Alquímico",
-            "descricao": "Veneno (Contato). Perde 1d12 PV (Fort CD Int anula). (p. 161)"
+            "tipo": "Venenos",
+            "descricao": "Contato. Perde 1d12 PV (Fort CD Int anula). (p. 161)"
         },
         {
             "nome": "Peçonha concentrada",
             "preco": "T$ 90",
             "espacos": "0,5",
             "categoria": "Item Geral",
-            "tipo": "Alquímico",
-            "descricao": "Veneno (Contato). Perde 1d12 PV por rodada durante 3 rodadas (Fort CD Int reduz para 1d12 PV). (p. 161)"
+            "tipo": "Venenos",
+            "descricao": "Contato. Perde 1d12 PV por rodada durante 3 rodadas (Fort CD Int reduz para 1d12 PV). (p. 161)"
         },
         {
             "nome": "Peçonha potente",
             "preco": "T$ 600",
             "espacos": "0,5",
             "categoria": "Item Geral",
-            "tipo": "Alquímico",
-            "descricao": "Veneno (Contato). Perde 2d12 PV por rodada durante 3 rodadas (Fort CD Int reduz para 2d12 PV). (p. 161)"
+            "tipo": "Venenos",
+            "descricao": "Contato. Perde 2d12 PV por rodada durante 3 rodadas (Fort CD Int reduz para 2d12 PV). (p. 161)"
         },
         {
             "nome": "Pó de lich",
             "preco": "T$ 3.000",
             "espacos": "0,5",
             "categoria": "Item Geral",
-            "tipo": "Alquímico",
-            "descricao": "Veneno (Ingestão). Perde 4d12 PV por rodada durante 5 rodadas (Fort CD Int+5 reduz para 4d12 PV). (p. 161)"
+            "tipo": "Venenos",
+            "descricao": "Ingestão. Perde 4d12 PV por rodada durante 5 rodadas (Fort CD Int+5 reduz para 4d12 PV). (p. 161)"
         },
         {
             "nome": "Riso de Deus do Caos",
             "preco": "T$ 150",
             "espacos": "0,5",
             "categoria": "Item Geral",
-            "tipo": "Alquímico",
-            "descricao": "Veneno (Inalação). Vítima fica confusa (lenta por 1 rodada) (Fort CD Int anula/reduz). (p. 161)"
+            "tipo": "Venenos",
+            "descricao": "Inalação. Vítima fica confusa (lenta por 1 rodada) (Fort CD Int anula/reduz). (p. 161)"
         },
         {
             nome: "Esporos de Cogumelo",
             preco: "T$ 75",
             espacos: "0,5",
             categoria: "Item Geral",
-            "tipo": "Veneno",
-            descricao: "Veneno (Inalação). Vítima fica paralisada (lenta) por 1 rodada (Fort CD Int anula), depois imune por 1 cena.",
+            "tipo": "Venenos",
+            descricao: "Inalação. Vítima fica paralisada (lenta) por 1 rodada (Fort CD Int anula), depois imune por 1 cena.",
             fonte: "Ameaças de Arton"
         },
         {
@@ -939,8 +939,8 @@ const itensData = {
             preco: "T$ 1.800",
             espacos: "0,5",
             categoria: "Item Geral",
-            "tipo": "Veneno",
-            descricao: "Veneno (Contato). Perde 3d12 PV por rodada (3 rodadas). Ignora imunidade a venenos (perde 3d12 PV). Fort CD Int reduz à metade/nega.",
+            "tipo": "Venenos",
+            descricao: "Contato. Perde 3d12 PV por rodada (3 rodadas). Ignora imunidade a venenos (perde 3d12 PV). Fort CD Int reduz à metade/nega.",
             fonte: "Ameaças de Arton"
         },
         {
@@ -948,8 +948,8 @@ const itensData = {
             preco: "T$ 10",
             espacos: "0,5",
             categoria: "Item Geral",
-            "tipo": "Veneno",
-            descricao: "Veneno (Contato). Perde 1d6 PV (sem TR).",
+            "tipo": "Venenos",
+            descricao: "Contato. Perde 1d6 PV (sem TR).",
             fonte: "Ameaças de Arton"
         },
         {
@@ -957,8 +957,8 @@ const itensData = {
             preco: "T$ 30",
             espacos: "0,5",
             categoria: "Item Geral",
-            "tipo": "Veneno",
-            descricao: "Veneno (Contato). Perde 1d12 PV e fica enjoado por 1 rodada (perde 1d6 PV). Fort CD Int reduz à metade/nega.",
+            "tipo": "Venenos",
+            descricao: "Contato. Perde 1d12 PV e fica enjoado por 1 rodada (perde 1d6 PV). Fort CD Int reduz à metade/nega.",
             fonte: "Ameaças de Arton"
         },
         {
@@ -966,8 +966,8 @@ const itensData = {
             preco: "Variável",
             espacos: "0,5",
             categoria: "Item Geral",
-            "tipo": "Veneno",
-            descricao: "Veneno (Contato). Perde 1d12 PV e fica em chamas durante 3 rodadas (perde 1d12 PV).",
+            "tipo": "Venenos",
+            descricao: "Contato. Perde 1d12 PV e fica em chamas durante 3 rodadas (perde 1d12 PV).",
             fonte: "Duelo de Dragões"
         },
         {
@@ -975,8 +975,8 @@ const itensData = {
             preco: "T$ 60",
             espacos: "0,5",
             categoria: "Item Geral",
-            "tipo": "Veneno",
-            descricao: "Veneno (Contato). Vítima fica sangrando e a CD para remover essa condição aumenta em +5 (fica sangrando). Fort CD Int anula.",
+            "tipo": "Venenos",
+            descricao: "Contato. Vítima fica sangrando e a CD para remover essa condição aumenta em +5 (fica sangrando). Fort CD Int anula.",
             fonte: "Heróis de Arton"
         },
         {
@@ -984,8 +984,8 @@ const itensData = {
             preco: "T$ 150",
             espacos: "0,5",
             categoria: "Item Geral",
-            "tipo": "Veneno",
-            descricao: "Veneno (Inalação). Vítima fica fascinada por 3 rodadas (ofuscada por 1 rodada). Apenas 1/cena. Vontade CD Int anula.",
+            "tipo": "Venenos",
+            descricao: "Inalação. Vítima fica fascinada por 3 rodadas (ofuscada por 1 rodada). Apenas 1/cena. Vontade CD Int anula.",
             fonte: "Heróis de Arton"
         },
         {
@@ -993,8 +993,8 @@ const itensData = {
             preco: "T$ 60",
             espacos: "0,5",
             categoria: "Item Geral",
-            "tipo": "Veneno",
-            descricao: "Veneno (Inalação). Vítima fica vulnerável (vulnerável por 1 rodada). Fort CD Int anula.",
+            "tipo": "Venenos",
+            descricao: "Inalação. Vítima fica vulnerável (vulnerável por 1 rodada). Fort CD Int anula.",
             fonte: "Heróis de Arton"
         },
         {
@@ -1002,10 +1002,11 @@ const itensData = {
             preco: "T$ 120",
             espacos: "0,5",
             categoria: "Item Geral",
-            "tipo": "Veneno",
-            descricao: "Veneno (Contato). Perde 2d6 PV por rodada (3 rodadas) (perde 2d6 PV). PV perdidos só podem ser recuperados com efeitos mágicos de luz. Fort CD Int reduz à metade/nega.",
+            "tipo": "Venenos",
+            descricao: "Contato. Perde 2d6 PV por rodada (3 rodadas) (perde 2d6 PV). PV perdidos só podem ser recuperados com efeitos mágicos de luz. Fort CD Int reduz à metade/nega.",
             fonte: "Heróis de Arton"
         },
+
 
         // ---------- ALIMENTAÇÃO  ----------
         {
@@ -1013,7 +1014,7 @@ const itensData = {
             preco: "T$ 15",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
+            tipo: "Pratos Especiais",
             descricao: "Prato especial. Todo dano de queda que você sofre é reduzido em −1d6.",
             fonte: "Heróis de Arton"
         },
@@ -1022,7 +1023,7 @@ const itensData = {
             preco: "T$ 10",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
+            tipo: "Pratos Especiais",
             descricao: "Prato especial. Fornece +1 em Fortitude (cumulativo com bônus de outros itens).",
             fonte: "Heróis de Arton"
         },
@@ -1031,7 +1032,7 @@ const itensData = {
             preco: "T$ 20",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
+            tipo: "Pratos Especiais",
             descricao: "Prato especial. Você ignora os próximos 10 pontos de dano de trevas que sofrer.",
             fonte: "Heróis de Arton"
         },
@@ -1098,7 +1099,7 @@ const itensData = {
             preco: "T$ 36",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
+            tipo: "Pratos Especiais",
             descricao: "Prato especial. Você recebe 1d4+1 dados de auxílio (d6 com Mestre Cuca) para gastar em testes de perícia.",
             fonte: "Ameaças de Arton"
         },
@@ -1107,7 +1108,7 @@ const itensData = {
             preco: "T$ 54",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
+            tipo: "Pratos Especiais",
             descricao: "Prato especial. Ao consumir, escolha uma habilidade com custo em PM. Seu custo diminui em –1 PM.",
             fonte: "Ameaças de Arton"
         },
@@ -1116,7 +1117,7 @@ const itensData = {
             preco: "T$ 12",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
+            tipo: "Pratos Especiais",
             descricao: "Prato especial. Requer teste estendido de Ofício (cozinheiro) (CD 20, 3 sucessos). Se passar, fornece +1 em todos os testes de perícia. Se falhar, é envenenado.",
             fonte: "Ameaças de Arton"
         },
@@ -1125,7 +1126,7 @@ const itensData = {
             preco: "T$ 6",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
+            tipo: "Pratos Especiais",
             descricao: "Prato especial. Em sua próxima noite de sono, aumenta a recuperação de PV e PM em +1 por nível.",
             fonte: "Ameaças de Arton"
         },
@@ -1134,7 +1135,7 @@ const itensData = {
             preco: "T$ 3",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
+            tipo: "Pratos Especiais",
             descricao: "Prato especial. Você recebe +2 em rolagens de dano e –2 em testes de Sabedoria. Com ovos de dragão, muda para +5 e –5.",
             fonte: "Ameaças de Arton"
         },
@@ -1143,7 +1144,7 @@ const itensData = {
             preco: "T$ 60",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
+            tipo: "Pratos Especiais",
             descricao: "Prato especial. Você recebe +2 em Diplomacia (cumulativo) e 5 PM temporários.",
             fonte: "Ameaças de Arton"
         },
@@ -1152,7 +1153,7 @@ const itensData = {
             preco: "T$ 5",
             espacos: "0,5",
             categoria: "Item Geral",
-            tipo: "Comida",
+            tipo: "Pratos Especiais",
             descricao: "Prato especial. Recebe +2 em testes de Fortitude contra marcha forçada e em testes contra o perigo complexo jornada pelos ermos.",
             fonte: "Atlas de Arton"
         },
@@ -1161,7 +1162,7 @@ const itensData = {
             preco: "T$ 10",
             espacos: "0,5",
             categoria: "Item Geral",
-            tipo: "Comida",
+            tipo: "Pratos Especiais",
             descricao: "Prato especial. Até o fim do dia, você pode rolar novamente um único teste recém realizado (exceto testes de ataque), mas deve ficar com o segundo resultado.",
             fonte: "Atlas de Arton"
         },
@@ -1170,7 +1171,7 @@ const itensData = {
             preco: "T$ 150",
             espacos: "0,5",
             categoria: "Item Geral",
-            tipo: "Comida",
+            tipo: "Pratos Especiais",
             descricao: "Prato especial. Efeitos que recuperem seus pontos de mana recuperam 1 PM a mais.",
             fonte: "Atlas de Arton"
         },
@@ -1179,7 +1180,7 @@ const itensData = {
             preco: "T$ 5",
             espacos: "0,5",
             categoria: "Item Geral",
-            tipo: "Comida",
+            tipo: "Pratos Especiais",
             descricao: "Prato especial. O acolhedor e reconfortante bolo dos pequenos. Concede +2 em Atletismo e Iniciativa.",
             fonte: "Duelo de Dragões"
         },
@@ -1189,7 +1190,7 @@ const itensData = {
             preco: "T$ 10",
             espacos: "0,5",
             categoria: "Item Geral",
-            tipo: "Comida",
+            tipo: "Pratos Especiais",
             descricao: "Prato especial. Doce de mel, farinha de grão-de-bico e polpa de treckod. Fornece resistência a cansaço +2.",
             fonte: "Duelo de Dragões"
         },
@@ -1198,8 +1199,8 @@ const itensData = {
             preco: "T$ 3",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
-            descricao: "(Deusa da Noite). Até o fim do dia, pode usar Carícia Sombria 1 vez (se já tem, causa 4d6). Funciona em mortos-vivos.",
+            tipo: "Pratos Especiais Divinos",
+            descricao: "(Só pode ser preparado por devotos de Tenebra). Até o fim do dia, pode usar Carícia Sombria 1 vez (se já tem, causa 4d6). Funciona em mortos-vivos.",
             fonte: "Deuses de Arton"
         },
         {
@@ -1207,8 +1208,8 @@ const itensData = {
             preco: "T$ 2",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
-            descricao: "(Deus dos Monstros). Até o fim do dia, pode invocar instintos para receber +1 dano corpo a corpo por uma cena.",
+            tipo: "Pratos Especiais Divinos",
+            descricao: "(Só pode ser preparado por devotos de Megalokk). Até o fim do dia, pode invocar instintos para receber +1 dano corpo a corpo por uma cena.",
             fonte: "Deuses de Arton"
         },
         {
@@ -1216,8 +1217,8 @@ const itensData = {
             preco: "T$ 4",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
-            descricao: "(Deus dos Mares). Até o fim do dia, pode invocar poder para receber deslocamento de natação igual ao seu deslocamento (ou +3m se já tem) por uma cena.",
+            tipo: "Pratos Especiais Divinos",
+            descricao: "(Só pode ser preparado por devotos de Oceano). Até o fim do dia, pode invocar poder para receber deslocamento de natação igual ao seu deslocamento (ou +3m se já tem) por uma cena.",
             fonte: "Deuses de Arton"
         },
         {
@@ -1225,8 +1226,8 @@ const itensData = {
             preco: "T$ 4",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
-            descricao: "(Deus da Honra). Até o fim do dia, pode usar Kiai Divino 1 vez (se já tem, usa 1x sem custo de PM).",
+            tipo: "Pratos Especiais Divinos",
+            descricao: "(Só pode ser preparado por devotos de Lin-Wu). Até o fim do dia, pode usar Kiai Divino 1 vez (se já tem, usa 1x sem custo de PM).",
             fonte: "Deuses de Arton"
         },
         {
@@ -1234,17 +1235,17 @@ const itensData = {
             preco: "T$ 4",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
-            descricao: "(Deusa do Conhecimento). 1/dia, ao fazer um teste de perícia, pode receber benefícios de ser treinado nela para esse teste.",
+            tipo: "Pratos Especiais Divinos",
+            descricao: "(Só pode ser preparado por devotos de Tanna-Toh). 1/dia, ao fazer um teste de perícia, pode receber benefícios de ser treinado nela para esse teste.",
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Caldo da Deusa da Vida",
+            nome: "Caldo de Lena",
             preco: "T$ 3",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
-            descricao: "(Deusa da Vida). Quando recebe cura mágica de luz, recupera +2 PV.",
+            tipo: "Pratos Especiais Divinos",
+            descricao: "(Só pode ser preparado por devotos de Lena). Quando recebe cura mágica de luz, recupera +2 PV.",
             fonte: "Deuses de Arton"
         },
         {
@@ -1252,8 +1253,8 @@ const itensData = {
             preco: "T$ 4",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
-            descricao: "(Deus da Guerra). 1/dia, quando faz a ação agredir, pode executar um ataque extra.",
+            tipo: "Pratos Especiais Divinos",
+            descricao: "(Só pode ser preparado por devotos de Arsenal). 1/dia, quando faz a ação agredir, pode executar um ataque extra.",
             fonte: "Deuses de Arton"
         },
         {
@@ -1261,17 +1262,17 @@ const itensData = {
             preco: "T$ 18",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
-            descricao: "(Deusa da Magia). Ao consumir, escolha uma magia de 1º círculo. Até o fim do dia, pode lançá-la 1 vez (sem aprimoramentos, custo 2 PM, atrb. Sabedoria).",
+            tipo: "Pratos Especiais Divinos",
+            descricao: "(Só pode ser preparado por devotos de Wynna). Ao consumir, escolha uma magia de 1º círculo. Até o fim do dia, pode lançá-la 1 vez (sem aprimoramentos, custo 2 PM, atrb. Sabedoria).",
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Frescor do Deus do Caos",
+            nome: "Frescor de Nimb",
             preco: "T$ 1",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
-            descricao: "(Deus do Caos). Ao ingerir, escolha um deus aleatoriamente. Recebe o benefício do prato desse deus (se cair Deus do Caos, role 2x).",
+            tipo: "Pratos Especiais Divinos",
+            descricao: "(Só pode ser preparado por devotos de Nimb). Ao ingerir, escolha um deus aleatoriamente. Recebe o benefício do prato desse deus (se cair Deus do Caos, role 2x).",
             fonte: "Deuses de Arton"
         },
         {
@@ -1279,17 +1280,17 @@ const itensData = {
             preco: "T$ 5",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
-            descricao: "(Deus do Sol). 1/dia, arma de corte causa +1d6 fogo (+2d6 vs mortos-vivos). Dura 3 acertos ou fim da cena.",
+            tipo: "Pratos Especiais Divinos",
+            descricao: "(Só pode ser preparado por devotos de Azgher). 1/dia, arma de corte causa +1d6 fogo (+2d6 vs mortos-vivos). Dura 3 acertos ou fim da cena.",
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Justos de Deus da Justiça",
+            nome: "Justos de Khalmyr",
             preco: "T$ 2",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
-            descricao: "(Deus da Justiça). Até o fim do dia, ao fazer um teste de perícia, pode escolher 10 (em vez de rolar).",
+            tipo: "Pratos Especiais Divinos",
+            descricao: "(Só pode ser preparado por devotos de Khalmyr). Até o fim do dia, ao fazer um teste de perícia, pode escolher 10 (em vez de rolar).",
             fonte: "Deuses de Arton"
         },
         {
@@ -1297,8 +1298,8 @@ const itensData = {
             preco: "T$ 6",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
-            descricao: "(Deus da Traição). 1/dia, quando inimigo em alcance curto usa habilidade, você pode ser afetado como se fosse aliado dele.",
+            tipo: "Pratos Especiais Divinos",
+            descricao: "(Só pode ser preparado por devotos de Sszzaas). 1/dia, quando inimigo em alcance curto usa habilidade, você pode ser afetado como se fosse aliado dele.",
             fonte: "Deuses de Arton"
         },
         {
@@ -1306,8 +1307,8 @@ const itensData = {
             preco: "T$ 7",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
-            descricao: "(Deusa da Paz). 1/dia, quando criatura em alcance curto ataca, você pode forçá-la a rolar 2 dados e usar o pior.",
+            tipo: "Pratos Especiais Divinos",
+            descricao: "(Só pode ser preparado por devotos de Marah). 1/dia, quando criatura em alcance curto ataca, você pode forçá-la a rolar 2 dados e usar o pior.",
             fonte: "Deuses de Arton"
         },
         {
@@ -1315,8 +1316,8 @@ const itensData = {
             preco: "T$ 6",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
-            descricao: "(Deus dos Dragões). 1/dia, pode receber +1 em testes de ataque por uma cena.",
+            tipo: "Pratos Especiais Divinos",
+            descricao: "(Só pode ser preparado por devotos de Kallyadranoch). 1/dia, pode receber +1 em testes de ataque por uma cena.",
             fonte: "Deuses de Arton"
         },
         {
@@ -1324,17 +1325,17 @@ const itensData = {
             preco: "T$ 3",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
-            descricao: "(Deus da Trapaça). 1/dia, pode rolar novamente um teste de Enganação ou Ladinagem recém-feito.",
+            tipo: "Pratos Especiais Divinos",
+            descricao: "(Só pode ser preparado por devotos de Hynnin). 1/dia, pode rolar novamente um teste de Enganação ou Ladinagem recém-feito.",
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Pão do Deus dos Goblinóides",
+            nome: "Pão de Thwor",
             preco: "T$ 1",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
-            descricao: "(Deus dos Goblinóides). 1/dia, pode rolar novamente um teste de Fortitude ou perícia baseada em Força.",
+            tipo: "Pratos Especiais Divinos",
+            descricao: "(Só pode ser preparado por devotos de Thwor). 1/dia, pode rolar novamente um teste de Fortitude ou perícia baseada em Força.",
             fonte: "Deuses de Arton"
         },
         {
@@ -1342,8 +1343,8 @@ const itensData = {
             preco: "T$ 3",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
-            descricao: "(Deusa da Natureza). Pode ser fabricado com Sobrevivência. 1/dia, pode rolar novamente teste de Adestramento ou Sobrevivência.",
+            tipo: "Pratos Especiais Divinos",
+            descricao: "(Só pode ser preparado por devotos de Allihanna). Pode ser fabricado com Sobrevivência. 1/dia, pode rolar novamente teste de Adestramento ou Sobrevivência.",
             fonte: "Deuses de Arton"
         },
         {
@@ -1351,8 +1352,8 @@ const itensData = {
             preco: "T$ 30",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
-            descricao: "(Deus da Resurreição). A primeira vez no dia em que seus PV forem reduzidos a 0 ou menos, ficam em 1.",
+            tipo: "Pratos Especiais Divinos",
+            descricao: "(Só pode ser preparado por devotos de Thyatis). A primeira vez no dia em que seus PV forem reduzidos a 0 ou menos, ficam em 1.",
             fonte: "Deuses de Arton"
         },
         {
@@ -1360,17 +1361,17 @@ const itensData = {
             preco: "T$ 3",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
-            descricao: "(Deus da Tormenta). Início de cena de ação: role 1d6. Ímpar: fascinado na 1ª rodada. Par: +5 em um teste de perícia até fim do próximo turno.",
+            tipo: "Pratos Especiais Divinos",
+            descricao: "(Só pode ser preparado por devotos de Aharadak). Início de cena de ação: role 1d6. Ímpar: fascinado na 1ª rodada. Par: +5 em um teste de perícia até fim do próximo turno.",
             fonte: "Deuses de Arton"
         },
         {
-            nome: "Tesouro da Deusa da Ambição",
+            nome: "Tesouro de Valkaria",
             preco: "T$ 2",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
-            descricao: "(Deusa da Ambição). 1/dia, recebe +5 em um teste de resistência contra efeitos de movimento.",
+            tipo: "Pratos Especiais Divinos",
+            descricao: "(Só pode ser preparado por devotos de Valkaria). 1/dia, recebe +5 em um teste de resistência contra efeitos de movimento.",
             fonte: "Deuses de Arton"
         },
         {
@@ -1378,7 +1379,7 @@ const itensData = {
             preco: "T$ 60",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
+            tipo: "Pratos Especiais",
             descricao: "Recebe +2 em rolagens de dano corpo a corpo.",
             fonte: "Heróis de Arton"
         },
@@ -1387,7 +1388,7 @@ const itensData = {
             preco: "T$ 60",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
+            tipo: "Pratos Especiais",
             descricao: "Recebe +2 em rolagens de dano de magias.",
             fonte: "Heróis de Arton"
         },
@@ -1396,7 +1397,7 @@ const itensData = {
             preco: "T$ 150",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
+            tipo: "Pratos Especiais",
             descricao: "Recebe +1 em um atributo a sua escolha (não oferece PV/PM/perícias adicionais).",
             fonte: "Heróis de Arton"
         },
@@ -1405,7 +1406,7 @@ const itensData = {
             preco: "T$ 4",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
+            tipo: "Pratos Especiais",
             descricao: "Fornece +2 em testes de Percepção.",
             fonte: "Heróis de Arton"
         },
@@ -1414,7 +1415,7 @@ const itensData = {
             preco: "T$ 200",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
+            tipo: "Pratos Especiais",
             descricao: "Escolha uma habilidade. Seu custo diminui em –1 PM (mínimo 1).",
             fonte: "Heróis de Arton"
         },
@@ -1423,7 +1424,7 @@ const itensData = {
             preco: "T$ 12",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
+            tipo: "Pratos Especiais",
             descricao: "Recebe +20 PV temporários, mas seu deslocamento diminui em –1,5m.",
             fonte: "Heróis de Arton"
         },
@@ -1432,7 +1433,7 @@ const itensData = {
             preco: "T$ 18",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
+            tipo: "Pratos Especiais",
             descricao: "Recebe +2 em testes de Vontade.",
             fonte: "Heróis de Arton"
         },
@@ -1441,7 +1442,7 @@ const itensData = {
             preco: "T$ 12",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
+            tipo: "Pratos Especiais",
             descricao: "Recebe +2 em testes de Diplomacia.",
             fonte: "Heróis de Arton"
         },
@@ -1450,7 +1451,7 @@ const itensData = {
             preco: "T$ 90",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
+            tipo: "Pratos Especiais",
             descricao: "Fornece +5 PM temporários.",
             fonte: "Heróis de Arton"
         },
@@ -1459,7 +1460,7 @@ const itensData = {
             preco: "T$ 60",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
+            tipo: "Pratos Especiais",
             descricao: "Recebe +2 na Defesa.",
             fonte: "Heróis de Arton"
         },
@@ -1468,7 +1469,7 @@ const itensData = {
             preco: "T$ 150",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
+            tipo: "Pratos Especiais",
             descricao: "Recebe +1d4 em testes de perícias baseadas em Força, Destreza ou Constituição.",
             fonte: "Heróis de Arton"
         },
@@ -1477,7 +1478,7 @@ const itensData = {
             preco: "T$ 30",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
+            tipo: "Pratos Especiais",
             descricao: "Recebe +10 PV temporários.",
             fonte: "Heróis de Arton"
         },
@@ -1486,7 +1487,7 @@ const itensData = {
             preco: "T$ 10",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
+            tipo: "Pratos Especiais",
             descricao: "Recebe +2 em testes de Fortitude.",
             fonte: "Heróis de Arton"
         },
@@ -1495,7 +1496,7 @@ const itensData = {
             preco: "T$ 150",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
+            tipo: "Pratos Especiais",
             descricao: "Recebe +1d4 em testes de perícias baseadas em Inteligência, Sabedoria ou Carisma.",
             fonte: "Heróis de Arton"
         },
@@ -1504,7 +1505,7 @@ const itensData = {
             preco: "T$ 6",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
+            tipo: "Pratos Especiais",
             descricao: "Recebe +1 em todos os testes de resistência.",
             fonte: "Heróis de Arton"
         },
@@ -1513,7 +1514,7 @@ const itensData = {
             preco: "T$ 36",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
+            tipo: "Pratos Especiais",
             descricao: "Recebe +1 em testes de ataque corpo a corpo.",
             fonte: "Heróis de Arton"
         },
@@ -1522,7 +1523,7 @@ const itensData = {
             preco: "T$ 4",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
+            tipo: "Pratos Especiais",
             descricao: "Aumenta seu deslocamento em +1,5m.",
             fonte: "Heróis de Arton"
         },
@@ -1531,7 +1532,7 @@ const itensData = {
             preco: "T$ 4",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
+            tipo: "Pratos Especiais",
             descricao: "Fornece +1 em testes de ataque à distância.",
             fonte: "Heróis de Arton"
         },
@@ -1540,7 +1541,7 @@ const itensData = {
             preco: "T$ 6",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
+            tipo: "Pratos Especiais",
             descricao: "Fornece +2 em testes de Iniciativa.",
             fonte: "Heróis de Arton"
         },
@@ -1549,7 +1550,7 @@ const itensData = {
             preco: "T$ 60",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
+            tipo: "Pratos Especiais",
             descricao: "Recebe +2 em rolagens de dano à distância.",
             fonte: "Heróis de Arton"
         },
@@ -1558,7 +1559,7 @@ const itensData = {
             preco: "T$ 6",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
+            tipo: "Pratos Especiais",
             descricao: "Recebe +2 em testes de Misticismo.",
             fonte: "Heróis de Arton"
         },
@@ -1567,7 +1568,7 @@ const itensData = {
             preco: "T$ 2",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Comida",
+            tipo: "Pratos Especiais",
             descricao: "Fornece resistência a veneno +5.",
             fonte: "Heróis de Arton"
         },
@@ -1577,8 +1578,8 @@ const itensData = {
             preco: "T$ 8",
             espacos: "0,5",
             categoria: "Item Geral",
-            tipo: "Bebida",
-            descricao: "Prato especial. Bebida alcoólica. Fornece +5 em Vontade, mas se falhar em algum teste de Vontade pela duração do prato, fica esmorecido.",
+            tipo: "Bebidas",
+            descricao: "Bebida (alcoólica, CD 15). Fornece +5 em Vontade, mas se falhar em algum teste de Vontade pela duração do prato, fica esmorecido.",
             fonte: "Duelo de Dragões"
         },
 
@@ -1587,7 +1588,7 @@ const itensData = {
             preco: "T$ 30",
             espacos: "0,5",
             categoria: "Item Geral",
-            tipo: "Bebida",
+            tipo: "Bebidas",
             descricao: "Bebida (não alcoólica). Fornece +1d4 em um teste a sua escolha até o fim do dia.",
             fonte: "Heróis de Arton"
         },
@@ -1596,7 +1597,7 @@ const itensData = {
             preco: "T$ 45",
             espacos: "0,5",
             categoria: "Item Geral",
-            tipo: "Bebida",
+            tipo: "Bebidas",
             descricao: "Bebida (alcoólica, CD 20). Cerveja anã. Fornece redução de dano 2.",
             fonte: "Heróis de Arton"
         },
@@ -1605,7 +1606,7 @@ const itensData = {
             preco: "T$ 15",
             espacos: "0,5",
             categoria: "Item Geral",
-            tipo: "Bebida",
+            tipo: "Bebidas",
             descricao: "Bebida (alcoólica, CD 15). Bebida comum no Reinado. Fornece +1 em testes de resistência.",
             fonte: "Heróis de Arton"
         },
@@ -1614,7 +1615,7 @@ const itensData = {
             preco: "T$ 600",
             espacos: "0,5",
             categoria: "Item Geral",
-            tipo: "Bebida",
+            tipo: "Bebidas",
             descricao: "Bebida (alcoólica, CD 20). Destilado raro. Seu limite de gasto de PM aumenta em +1. Não pode ser fabricado.",
             fonte: "Heróis de Arton"
         },
@@ -1623,7 +1624,7 @@ const itensData = {
             preco: "T$ 15",
             espacos: "0,5",
             categoria: "Item Geral",
-            tipo: "Bebida",
+            tipo: "Bebidas",
             descricao: "Bebida (alcoólica, CD 15). Rum pirata. Quando você usa Audácia, o bônus fornecido pelo poder aumenta em +1.",
             fonte: "Heróis de Arton"
         },
@@ -1632,7 +1633,7 @@ const itensData = {
             preco: "T$ 45",
             espacos: "0,5",
             categoria: "Item Geral",
-            tipo: "Bebida",
+            tipo: "Bebidas",
             descricao: "Bebida (alcoólica, CD 20). Variação picante do Grogue Negro. Você pode usar Audácia para testes de ataque.",
             fonte: "Heróis de Arton"
         },
@@ -1641,7 +1642,7 @@ const itensData = {
             preco: "T$ 21",
             espacos: "0,5",
             categoria: "Item Geral",
-            tipo: "Bebida",
+            tipo: "Bebidas",
             descricao: "Bebida (alcoólica, CD 20). Fabricada nas montanhas geladas. Fornece +2 em rolagens de dano corpo a corpo.",
             fonte: "Heróis de Arton"
         },
@@ -1650,7 +1651,7 @@ const itensData = {
             preco: "T$ 450",
             espacos: "0,5",
             categoria: "Item Geral",
-            tipo: "Bebida",
+            tipo: "Bebidas",
             descricao: "Bebida (alcoólica, CD 25). De aparência enevoada. Escolha uma habilidade; seu custo para ativar diminui em –1 PM.",
             fonte: "Heróis de Arton"
         },
@@ -1659,7 +1660,7 @@ const itensData = {
             preco: "T$ 45",
             espacos: "0,5",
             categoria: "Item Geral",
-            tipo: "Bebida",
+            tipo: "Bebidas",
             descricao: "Bebida (alcoólica, CD 15). Bebida doce. Fornece +2 em testes de perícias originalmente baseadas em Carisma.",
             fonte: "Heróis de Arton"
         },
@@ -1668,7 +1669,7 @@ const itensData = {
             preco: "T$ 60",
             espacos: "0,5",
             categoria: "Item Geral",
-            tipo: "Bebida",
+            tipo: "Bebidas",
             descricao: "Bebida (alcoólica, CD 15). Batizado em homenagem ao Rei-Imperador Thormy. Fornece 3 PM temporários.",
             fonte: "Heróis de Arton"
         },
@@ -1677,7 +1678,7 @@ const itensData = {
             preco: "T$ 90",
             espacos: "0,5",
             categoria: "Item Geral",
-            tipo: "Bebida",
+            tipo: "Bebidas",
             descricao: "Bebida (alcoólica, CD 20). Aguça a mente, fornecendo +1 na CD para resistir a suas habilidades.",
             fonte: "Heróis de Arton"
         },
@@ -1686,7 +1687,7 @@ const itensData = {
             preco: "T$ 3",
             espacos: "—",
             categoria: "Item Geral",
-            tipo: "Bebida",
+            tipo: "Bebidas",
             descricao: "Bebida alcoólica. Fornece +1 em perícias de Carisma (cumulativo com outros itens e doses). Cada dose além da 1ª exige Fort (CD 15 + 5/dose) ou fica enjoado.",
             fonte: "Ameaças de Arton"
         },
