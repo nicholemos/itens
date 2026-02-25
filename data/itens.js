@@ -591,13 +591,14 @@ const itensData = {
         },
 
         // ---------- ITENS ALQUÍMICOS (CATALISADORES) ----------
+
         {
             "nome": "Baga-de-fogo",
             "preco": "T$ 30",
             "espacos": "0,5",
             "categoria": "Item Geral",
             "tipo": "Alquímico",
-            "descricao": "Catalisador. Adiciona +1d6 de dano de fogo a magias. (p. 160)"
+            "descricao": "Adiciona +1d6 de dano de fogo a magias. (p. 160)"
         },
         {
             "nome": "Dente-de-dragão",
@@ -605,7 +606,7 @@ const itensData = {
             "espacos": "0,5",
             "categoria": "Item Geral",
             "tipo": "Alquímico",
-            "descricao": "Catalisador. Aumenta o dano de magias em um dado do mesmo tipo. (p. 160)"
+            "descricao": "Aumenta o dano de magias em um dado do mesmo tipo. (p. 160)"
         },
         {
             "nome": "Essência abissal",
@@ -613,7 +614,7 @@ const itensData = {
             "espacos": "0,5",
             "categoria": "Item Geral",
             "tipo": "Alquímico",
-            "descricao": "Catalisador. Aumenta os dados de dano de magias de fogo em uma categoria (ex: d6 para d8). (p. 160)"
+            "descricao": "Aumenta os dados de dano de magias de fogo em uma categoria (ex: d6 para d8). (p. 160)"
         },
         {
             "nome": "Líquen lilás",
@@ -621,7 +622,7 @@ const itensData = {
             "espacos": "0,5",
             "categoria": "Item Geral",
             "tipo": "Alquímico",
-            "descricao": "Catalisador. Adiciona +1d6 de dano de frio a magias. (p. 160)"
+            "descricao": "Adiciona +1d6 de dano de frio a magias. (p. 160)"
         },
         {
             "nome": "Musgo púrpura",
@@ -629,7 +630,7 @@ const itensData = {
             "espacos": "0,5",
             "categoria": "Item Geral",
             "tipo": "Alquímico",
-            "descricao": "Catalisador. Fornece +2 na CD de magias de ilusão. (p. 160)"
+            "descricao": "Fornece +2 na CD de magias de ilusão. (p. 160)"
         },
         {
             "nome": "Ossos de monstro",
@@ -637,7 +638,7 @@ const itensData = {
             "espacos": "0,5",
             "categoria": "Item Geral",
             "tipo": "Alquímico",
-            "descricao": "Catalisador. Fornece +2 na CD de magias de necromancia. (p. 160)"
+            "descricao": "Fornece +2 na CD de magias de necromancia. (p. 160)"
         },
         {
             "nome": "Pó de cristal",
@@ -645,7 +646,7 @@ const itensData = {
             "espacos": "0,5",
             "categoria": "Item Geral",
             "tipo": "Alquímico",
-            "descricao": "Catalisador. Diminui o custo de magias de encantamento em –1 PM. (p. 160)"
+            "descricao": "Diminui o custo de magias de encantamento em –1 PM. (p. 160)"
         },
         {
             "nome": "Pó de giz",
@@ -653,7 +654,7 @@ const itensData = {
             "espacos": "0,5",
             "categoria": "Item Geral",
             "tipo": "Alquímico",
-            "descricao": "Catalisador. Diminui o custo de magias de convocação em –1 PM. (p. 160)"
+            "descricao": "Diminui o custo de magias de convocação em –1 PM. (p. 160)"
         },
         {
             "nome": "Ramo verdejante",
@@ -661,7 +662,7 @@ const itensData = {
             "espacos": "0,5",
             "categoria": "Item Geral",
             "tipo": "Alquímico",
-            "descricao": "Catalisador. Aumenta a cura de magias em +1 PV por dado. (p. 160)"
+            "descricao": "Aumenta a cura de magias em +1 PV por dado. (p. 160)"
         },
         {
             "nome": "Saco de sal",
@@ -669,7 +670,7 @@ const itensData = {
             "espacos": "0,5",
             "categoria": "Item Geral",
             "tipo": "Alquímico",
-            "descricao": "Catalisador. Fornece +2 na CD de magias de abjuração. (p. 160)"
+            "descricao": "Fornece +2 na CD de magias de abjuração. (p. 160)"
         },
         {
             "nome": "Seixo de âmbar",
@@ -677,7 +678,7 @@ const itensData = {
             "espacos": "0,5",
             "categoria": "Item Geral",
             "tipo": "Alquímico",
-            "descricao": "Catalisador. Diminui o custo de magias de transmutação em –1 PM. (p. 160)"
+            "descricao": "Diminui o custo de magias de transmutação em –1 PM. (p. 160)"
         },
         {
             "nome": "Terra de cemitério",
@@ -685,8 +686,163 @@ const itensData = {
             "espacos": "0,5",
             "categoria": "Item Geral",
             "tipo": "Alquímico",
-            "descricao": "Catalisador. Adiciona +1d6 de dano de trevas a magias. (p. 160)"
+            "descricao": "Adiciona +1d6 de dano de trevas a magias. (p. 160)"
         },
+        {
+            nome: "Corrosivo Mineral",
+            preco: "T$ 150",
+            espacos: "0,5",
+            categoria: "Item Geral",
+            "tipo": "Catalisador",
+            descricao: "Aumenta os dados de dano de magias de ácido em uma categoria (máx. d12).",
+            fonte: "Ameaças de Arton"
+        },
+        {
+            nome: "Gelo Extremo",
+            preco: "T$ 150",
+            espacos: "0,5",
+            categoria: "Item Geral",
+            "tipo": "Catalisador",
+            descricao: "Aumenta os dados de dano de magias de frio em uma categoria (máx. d12).",
+            fonte: "Ameaças de Arton"
+        },
+        {
+            nome: "Pedaço de Língua",
+            preco: "T$ 30",
+            espacos: "0,5",
+            categoria: "Item Geral",
+            "tipo": "Catalisador",
+            descricao: "Fornece +1 na CD dos testes de Fortitude para resistir a suas magias.",
+            fonte: "Ameaças de Arton"
+        },
+        {
+            nome: "Raio Cristalizado",
+            preco: "T$ 150",
+            espacos: "0,5",
+            categoria: "Item Geral",
+            "tipo": "Catalisador",
+            descricao: "Aumenta os dados de dano de magias de eletricidade em uma categoria (máx. d12).",
+            fonte: "Ameaças de Arton"
+        },
+        {
+            nome: "Cristal Reflexivo",
+            preco: "T$ 30",
+            espacos: "0,5",
+            categoria: "Item Geral",
+            "tipo": "Catalisador",
+            descricao: "Quando lança uma magia de adivinhação, você recebe +1 na Defesa pela duração da magia.",
+            fonte: "Heróis de Arton"
+        },
+        {
+            nome: "Essência Fantasmal",
+            preco: "T$ 30",
+            espacos: "0,5",
+            categoria: "Item Geral",
+            "tipo": "Catalisador",
+            descricao: "A magia ignora 5 pontos da RD de todas as criaturas afetadas.",
+            fonte: "Heróis de Arton"
+        },
+        {
+            nome: "Noz Saltadora",
+            preco: "T$ 90",
+            espacos: "0,5",
+            categoria: "Item Geral",
+            "tipo": "Catalisador",
+            descricao: "Após lançar a magia, pode se teletransportar para um espaço desocupado em 4,5m.",
+            fonte: "Heróis de Arton"
+        },
+        {
+            nome: "Presa do Deus da Trapaça",
+            preco: "T$ 45",
+            espacos: "0,5",
+            categoria: "Item Geral",
+            "tipo": "Catalisador",
+            descricao: "Você recebe 25% de chance de ignorar ataques e efeitos (incluindo de área) por 1 rodada.",
+            fonte: "Heróis de Arton"
+        },
+        {
+            nome: "Água Benta (Catalisador)",
+            preco: "T$ 10",
+            espacos: "0,5",
+            categoria: "Item Geral",
+            "tipo": "Catalisador",
+            descricao: "Abissais e mortos-vivos afetados por magia divina sofrem –2 em TR e +2 dados de dano.",
+            fonte: "Deuses de Arton"
+        },
+        {
+            nome: "Favo de Mel",
+            preco: "T$ 30",
+            espacos: "0,5",
+            categoria: "Item Geral",
+            "tipo": "Catalisador",
+            descricao: "Ao lançar magia divina, remove condição 'cansado' de um alvo. Pode usar múltiplos favos para múltiplos alvos na mesma magia.",
+            fonte: "Deuses de Arton"
+        },
+        {
+            nome: "Fitilho Consagrado",
+            preco: "T$ 30",
+            espacos: "0,5",
+            categoria: "Item Geral",
+            "tipo": "Catalisador",
+            descricao: "Amarrado ao pulso (não ocupa mão). Pode gastar para receber +1 PM para aprimoramento em magia divina.",
+            fonte: "Deuses de Arton"
+        },
+        {
+            nome: "Flor de Orlyn",
+            preco: "T$ 30",
+            espacos: "0,5",
+            categoria: "Item Geral",
+            "tipo": "Catalisador",
+            descricao: "Ao lançar cura em uma criatura, uma 2ª criatura no alcance recupera PV igual à metade do efeito.",
+            fonte: "Deuses de Arton"
+        },
+        {
+            nome: "Frasco de Luz",
+            preco: "T$ 30",
+            espacos: "0,5",
+            categoria: "Item Geral",
+            "tipo": "Catalisador",
+            descricao: "Fornece +2 na CD de magias de luz.",
+            fonte: "Deuses de Arton"
+        },
+        {
+            nome: "Lantejoula",
+            preco: "T$ 30",
+            espacos: "0,5",
+            categoria: "Item Geral",
+            "tipo": "Catalisador",
+            descricao: "Diminui o custo de magias de ilusão em –1 PM.",
+            fonte: "Deuses de Arton"
+        },
+        {
+            nome: "Pena de Anjo",
+            preco: "T$ 30",
+            espacos: "0,5",
+            categoria: "Item Geral",
+            "tipo": "Catalisador",
+            descricao: "Alvos de magia divina recuperam 1d8 PV (além do efeito).",
+            fonte: "Deuses de Arton"
+        },
+        {
+            nome: "Pedra de Sombras",
+            preco: "T$ 30",
+            espacos: "0,5",
+            categoria: "Item Geral",
+            "tipo": "Catalisador",
+            descricao: "Reduz em –1 PM o custo de magias de trevas.",
+            fonte: "Deuses de Arton"
+        },
+        {
+            nome: "Vela Eclesiástica",
+            preco: "T$ 60",
+            espacos: "0,5",
+            categoria: "Item Geral",
+            "tipo": "Catalisador",
+            descricao: "Magia divina sustentada não conta no limite de sustentadas. Deve ser empunhada por toda a duração (é consumida). Limite de 1 magia extra.",
+            fonte: "Deuses de Arton"
+        },
+
+
 
         // ---------- ITENS ALQUÍMICOS (VENENOS) ----------
         {
@@ -769,8 +925,117 @@ const itensData = {
             "tipo": "Alquímico",
             "descricao": "Veneno (Inalação). Vítima fica confusa (lenta por 1 rodada) (Fort CD Int anula/reduz). (p. 161)"
         },
+        {
+            nome: "Esporos de Cogumelo",
+            preco: "T$ 75",
+            espacos: "0,5",
+            categoria: "Item Geral",
+            "tipo": "Veneno",
+            descricao: "Veneno (Inalação). Vítima fica paralisada (lenta) por 1 rodada (Fort CD Int anula), depois imune por 1 cena.",
+            fonte: "Ameaças de Arton"
+        },
+        {
+            nome: "Peçonha Anciã",
+            preco: "T$ 1.800",
+            espacos: "0,5",
+            categoria: "Item Geral",
+            "tipo": "Veneno",
+            descricao: "Veneno (Contato). Perde 3d12 PV por rodada (3 rodadas). Ignora imunidade a venenos (perde 3d12 PV). Fort CD Int reduz à metade/nega.",
+            fonte: "Ameaças de Arton"
+        },
+        {
+            nome: "Peçonha Irritante",
+            preco: "T$ 10",
+            espacos: "0,5",
+            categoria: "Item Geral",
+            "tipo": "Veneno",
+            descricao: "Veneno (Contato). Perde 1d6 PV (sem TR).",
+            fonte: "Ameaças de Arton"
+        },
+        {
+            nome: "Veneno Batráquio",
+            preco: "T$ 30",
+            espacos: "0,5",
+            categoria: "Item Geral",
+            "tipo": "Veneno",
+            descricao: "Veneno (Contato). Perde 1d12 PV e fica enjoado por 1 rodada (perde 1d6 PV). Fort CD Int reduz à metade/nega.",
+            fonte: "Ameaças de Arton"
+        },
+        {
+            nome: "Peçonha Flamejante",
+            preco: "Variável",
+            espacos: "0,5",
+            categoria: "Item Geral",
+            "tipo": "Veneno",
+            descricao: "Veneno (Contato). Perde 1d12 PV e fica em chamas durante 3 rodadas (perde 1d12 PV).",
+            fonte: "Duelo de Dragões"
+        },
+        {
+            nome: "Bolor Hemorrágico",
+            preco: "T$ 60",
+            espacos: "0,5",
+            categoria: "Item Geral",
+            "tipo": "Veneno",
+            descricao: "Veneno (Contato). Vítima fica sangrando e a CD para remover essa condição aumenta em +5 (fica sangrando). Fort CD Int anula.",
+            fonte: "Heróis de Arton"
+        },
+        {
+            nome: "Fumaça Onírica",
+            preco: "T$ 150",
+            espacos: "0,5",
+            categoria: "Item Geral",
+            "tipo": "Veneno",
+            descricao: "Veneno (Inalação). Vítima fica fascinada por 3 rodadas (ofuscada por 1 rodada). Apenas 1/cena. Vontade CD Int anula.",
+            fonte: "Heróis de Arton"
+        },
+        {
+            nome: "Gás Moroso",
+            preco: "T$ 60",
+            espacos: "0,5",
+            categoria: "Item Geral",
+            "tipo": "Veneno",
+            descricao: "Veneno (Inalação). Vítima fica vulnerável (vulnerável por 1 rodada). Fort CD Int anula.",
+            fonte: "Heróis de Arton"
+        },
+        {
+            nome: "Seiva Necrótica",
+            preco: "T$ 120",
+            espacos: "0,5",
+            categoria: "Item Geral",
+            "tipo": "Veneno",
+            descricao: "Veneno (Contato). Perde 2d6 PV por rodada (3 rodadas) (perde 2d6 PV). PV perdidos só podem ser recuperados com efeitos mágicos de luz. Fort CD Int reduz à metade/nega.",
+            fonte: "Heróis de Arton"
+        },
 
-        // ---------- ALIMENTAÇÃO (Tabela 3-5) ----------
+        // ---------- ALIMENTAÇÃO  ----------
+        {
+            nome: "Baga Celeste Cozida",
+            preco: "T$ 15",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "Prato especial. Todo dano de queda que você sofre é reduzido em −1d6.",
+            fonte: "Heróis de Arton"
+        },
+        {
+            nome: "Cozido de Pimenta",
+            preco: "T$ 10",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "Prato especial. Fornece +1 em Fortitude (cumulativo com bônus de outros itens).",
+            fonte: "Heróis de Arton"
+        },
+        {
+            nome: "Manjar de Sombras",
+            preco: "T$ 20",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "Prato especial. Você ignora os próximos 10 pontos de dano de trevas que sofrer.",
+            fonte: "Heróis de Arton"
+        },
+
         {
             "nome": "Batata Deusa da Ambiçãona",
             "preco": "T$ 2",
@@ -826,6 +1091,604 @@ const itensData = {
             "categoria": "Item Geral",
             "tipo": "Alimentação",
             "descricao": "Prato especial. Aumenta a recuperação de PM em +1 por nível na próxima noite de sono. (p. 163)"
+        },
+
+        {
+            nome: "Banquete de Canceronte",
+            preco: "T$ 36",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "Prato especial. Você recebe 1d4+1 dados de auxílio (d6 com Mestre Cuca) para gastar em testes de perícia.",
+            fonte: "Ameaças de Arton"
+        },
+        {
+            nome: "Coc-au-Triz",
+            preco: "T$ 54",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "Prato especial. Ao consumir, escolha uma habilidade com custo em PM. Seu custo diminui em –1 PM.",
+            fonte: "Ameaças de Arton"
+        },
+        {
+            nome: "Cozido de Serpe",
+            preco: "T$ 12",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "Prato especial. Requer teste estendido de Ofício (cozinheiro) (CD 20, 3 sucessos). Se passar, fornece +1 em todos os testes de perícia. Se falhar, é envenenado.",
+            fonte: "Ameaças de Arton"
+        },
+        {
+            nome: "Gorlogg Ensopado",
+            preco: "T$ 6",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "Prato especial. Em sua próxima noite de sono, aumenta a recuperação de PV e PM em +1 por nível.",
+            fonte: "Ameaças de Arton"
+        },
+        {
+            nome: "Omelete Monstruosa",
+            preco: "T$ 3",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "Prato especial. Você recebe +2 em rolagens de dano e –2 em testes de Sabedoria. Com ovos de dragão, muda para +5 e –5.",
+            fonte: "Ameaças de Arton"
+        },
+        {
+            nome: "Sashimi de Kraken",
+            preco: "T$ 60",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "Prato especial. Você recebe +2 em Diplomacia (cumulativo) e 5 PM temporários.",
+            fonte: "Ameaças de Arton"
+        },
+        {
+            nome: "Macarrão de Caravana",
+            preco: "T$ 5",
+            espacos: "0,5",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "Prato especial. Recebe +2 em testes de Fortitude contra marcha forçada e em testes contra o perigo complexo jornada pelos ermos.",
+            fonte: "Atlas de Arton"
+        },
+        {
+            nome: "Assado Deheoni",
+            preco: "T$ 10",
+            espacos: "0,5",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "Prato especial. Até o fim do dia, você pode rolar novamente um único teste recém realizado (exceto testes de ataque), mas deve ficar com o segundo resultado.",
+            fonte: "Atlas de Arton"
+        },
+        {
+            nome: "Buquê de Thantalla",
+            preco: "T$ 150",
+            espacos: "0,5",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "Prato especial. Efeitos que recuperem seus pontos de mana recuperam 1 PM a mais.",
+            fonte: "Atlas de Arton"
+        },
+        {
+            nome: "Bolo de Linhaça",
+            preco: "T$ 5",
+            espacos: "0,5",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "Prato especial. O acolhedor e reconfortante bolo dos pequenos. Concede +2 em Atletismo e Iniciativa.",
+            fonte: "Duelo de Dragões"
+        },
+
+        {
+            nome: "Treckodimm",
+            preco: "T$ 10",
+            espacos: "0,5",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "Prato especial. Doce de mel, farinha de grão-de-bico e polpa de treckod. Fornece resistência a cansaço +2.",
+            fonte: "Duelo de Dragões"
+        },
+        {
+            nome: "Abraço da Noite",
+            preco: "T$ 3",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "(Deusa da Noite). Até o fim do dia, pode usar Carícia Sombria 1 vez (se já tem, causa 4d6). Funciona em mortos-vivos.",
+            fonte: "Deuses de Arton"
+        },
+        {
+            nome: "Assado de Entranhas",
+            preco: "T$ 2",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "(Deus dos Monstros). Até o fim do dia, pode invocar instintos para receber +1 dano corpo a corpo por uma cena.",
+            fonte: "Deuses de Arton"
+        },
+        {
+            nome: "Bênção dos Mares",
+            preco: "T$ 4",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "(Deus dos Mares). Até o fim do dia, pode invocar poder para receber deslocamento de natação igual ao seu deslocamento (ou +3m se já tem) por uma cena.",
+            fonte: "Deuses de Arton"
+        },
+        {
+            nome: "Bolinho de Jade",
+            preco: "T$ 4",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "(Deus da Honra). Até o fim do dia, pode usar Kiai Divino 1 vez (se já tem, usa 1x sem custo de PM).",
+            fonte: "Deuses de Arton"
+        },
+        {
+            nome: "Bombas de Saber",
+            preco: "T$ 4",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "(Deusa do Conhecimento). 1/dia, ao fazer um teste de perícia, pode receber benefícios de ser treinado nela para esse teste.",
+            fonte: "Deuses de Arton"
+        },
+        {
+            nome: "Caldo da Deusa da Vida",
+            preco: "T$ 3",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "(Deusa da Vida). Quando recebe cura mágica de luz, recupera +2 PV.",
+            fonte: "Deuses de Arton"
+        },
+        {
+            nome: "Coragem de Sangue",
+            preco: "T$ 4",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "(Deus da Guerra). 1/dia, quando faz a ação agredir, pode executar um ataque extra.",
+            fonte: "Deuses de Arton"
+        },
+        {
+            nome: "Deleite Mágico",
+            preco: "T$ 18",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "(Deusa da Magia). Ao consumir, escolha uma magia de 1º círculo. Até o fim do dia, pode lançá-la 1 vez (sem aprimoramentos, custo 2 PM, atrb. Sabedoria).",
+            fonte: "Deuses de Arton"
+        },
+        {
+            nome: "Frescor do Deus do Caos",
+            preco: "T$ 1",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "(Deus do Caos). Ao ingerir, escolha um deus aleatoriamente. Recebe o benefício do prato desse deus (se cair Deus do Caos, role 2x).",
+            fonte: "Deuses de Arton"
+        },
+        {
+            nome: "Joia do Deserto",
+            preco: "T$ 5",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "(Deus do Sol). 1/dia, arma de corte causa +1d6 fogo (+2d6 vs mortos-vivos). Dura 3 acertos ou fim da cena.",
+            fonte: "Deuses de Arton"
+        },
+        {
+            nome: "Justos de Deus da Justiça",
+            preco: "T$ 2",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "(Deus da Justiça). Até o fim do dia, ao fazer um teste de perícia, pode escolher 10 (em vez de rolar).",
+            fonte: "Deuses de Arton"
+        },
+        {
+            nome: "Justos Virtuosos",
+            preco: "T$ 6",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "(Deus da Traição). 1/dia, quando inimigo em alcance curto usa habilidade, você pode ser afetado como se fosse aliado dele.",
+            fonte: "Deuses de Arton"
+        },
+        {
+            nome: "Manjar da Paz",
+            preco: "T$ 7",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "(Deusa da Paz). 1/dia, quando criatura em alcance curto ataca, você pode forçá-la a rolar 2 dados e usar o pior.",
+            fonte: "Deuses de Arton"
+        },
+        {
+            nome: "Ouro de Dragão",
+            preco: "T$ 6",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "(Deus dos Dragões). 1/dia, pode receber +1 em testes de ataque por uma cena.",
+            fonte: "Deuses de Arton"
+        },
+        {
+            nome: "Ovos de Raposa",
+            preco: "T$ 3",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "(Deus da Trapaça). 1/dia, pode rolar novamente um teste de Enganação ou Ladinagem recém-feito.",
+            fonte: "Deuses de Arton"
+        },
+        {
+            nome: "Pão do Deus dos Goblinóides",
+            preco: "T$ 1",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "(Deus dos Goblinóides). 1/dia, pode rolar novamente um teste de Fortitude ou perícia baseada em Força.",
+            fonte: "Deuses de Arton"
+        },
+        {
+            nome: "Presente da Terra",
+            preco: "T$ 3",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "(Deusa da Natureza). Pode ser fabricado com Sobrevivência. 1/dia, pode rolar novamente teste de Adestramento ou Sobrevivência.",
+            fonte: "Deuses de Arton"
+        },
+        {
+            nome: "Renascer Gentil",
+            preco: "T$ 30",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "(Deus da Resurreição). A primeira vez no dia em que seus PV forem reduzidos a 0 ou menos, ficam em 1.",
+            fonte: "Deuses de Arton"
+        },
+        {
+            nome: "Suflê Rubro",
+            preco: "T$ 3",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "(Deus da Tormenta). Início de cena de ação: role 1d6. Ímpar: fascinado na 1ª rodada. Par: +5 em um teste de perícia até fim do próximo turno.",
+            fonte: "Deuses de Arton"
+        },
+        {
+            nome: "Tesouro da Deusa da Ambição",
+            preco: "T$ 2",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "(Deusa da Ambição). 1/dia, recebe +5 em um teste de resistência contra efeitos de movimento.",
+            fonte: "Deuses de Arton"
+        },
+        {
+            nome: "Assado de Carnes",
+            preco: "T$ 60",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "Recebe +2 em rolagens de dano corpo a corpo.",
+            fonte: "Heróis de Arton"
+        },
+        {
+            nome: "Balinhas",
+            preco: "T$ 60",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "Recebe +2 em rolagens de dano de magias.",
+            fonte: "Heróis de Arton"
+        },
+        {
+            nome: "Banquete dos Heróis",
+            preco: "T$ 150",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "Recebe +1 em um atributo a sua escolha (não oferece PV/PM/perícias adicionais).",
+            fonte: "Heróis de Arton"
+        },
+        {
+            nome: "Bolo de Cenoura",
+            preco: "T$ 4",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "Fornece +2 em testes de Percepção.",
+            fonte: "Heróis de Arton"
+        },
+        {
+            nome: "Bolo do Panteão",
+            preco: "T$ 200",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "Escolha uma habilidade. Seu custo diminui em –1 PM (mínimo 1).",
+            fonte: "Heróis de Arton"
+        },
+        {
+            nome: "Ensopado Reforçado",
+            preco: "T$ 12",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "Recebe +20 PV temporários, mas seu deslocamento diminui em –1,5m.",
+            fonte: "Heróis de Arton"
+        },
+        {
+            nome: "Estrogonofe",
+            preco: "T$ 18",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "Recebe +2 em testes de Vontade.",
+            fonte: "Heróis de Arton"
+        },
+        {
+            nome: "Futomaki",
+            preco: "T$ 12",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "Recebe +2 em testes de Diplomacia.",
+            fonte: "Heróis de Arton"
+        },
+        {
+            nome: "Gorvelã",
+            preco: "T$ 90",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "Fornece +5 PM temporários.",
+            fonte: "Heróis de Arton"
+        },
+        {
+            nome: "Javali do Bosque Enevoado",
+            preco: "T$ 60",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "Recebe +2 na Defesa.",
+            fonte: "Heróis de Arton"
+        },
+        {
+            nome: "Manjar dos Titãs",
+            preco: "T$ 150",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "Recebe +1d4 em testes de perícias baseadas em Força, Destreza ou Constituição.",
+            fonte: "Heróis de Arton"
+        },
+        {
+            nome: "Ovo de Monstro Frito",
+            preco: "T$ 30",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "Recebe +10 PV temporários.",
+            fonte: "Heróis de Arton"
+        },
+        {
+            nome: "Pão de Queijo",
+            preco: "T$ 10",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "Recebe +2 em testes de Fortitude.",
+            fonte: "Heróis de Arton"
+        },
+        {
+            nome: "Pavão Celestial",
+            preco: "T$ 150",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "Recebe +1d4 em testes de perícias baseadas em Inteligência, Sabedoria ou Carisma.",
+            fonte: "Heróis de Arton"
+        },
+        {
+            nome: "Pizza",
+            preco: "T$ 6",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "Recebe +1 em todos os testes de resistência.",
+            fonte: "Heróis de Arton"
+        },
+        {
+            nome: "Porco Deheoni",
+            preco: "T$ 36",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "Recebe +1 em testes de ataque corpo a corpo.",
+            fonte: "Heróis de Arton"
+        },
+        {
+            nome: "Salada de Salistick",
+            preco: "T$ 4",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "Aumenta seu deslocamento em +1,5m.",
+            fonte: "Heróis de Arton"
+        },
+        {
+            nome: "Salada Élfica",
+            preco: "T$ 4",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "Fornece +1 em testes de ataque à distância.",
+            fonte: "Heróis de Arton"
+        },
+        {
+            nome: "Salada Imperial",
+            preco: "T$ 6",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "Fornece +2 em testes de Iniciativa.",
+            fonte: "Heróis de Arton"
+        },
+        {
+            nome: "Sashimi",
+            preco: "T$ 60",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "Recebe +2 em rolagens de dano à distância.",
+            fonte: "Heróis de Arton"
+        },
+        {
+            nome: "Sopa de Cogumelos",
+            preco: "T$ 6",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "Recebe +2 em testes de Misticismo.",
+            fonte: "Heróis de Arton"
+        },
+        {
+            nome: "Torta de Maçã",
+            preco: "T$ 2",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Comida",
+            descricao: "Fornece resistência a veneno +5.",
+            fonte: "Heróis de Arton"
+        },
+        // Bebidas
+        {
+            nome: "Licor de Lágrimas",
+            preco: "T$ 8",
+            espacos: "0,5",
+            categoria: "Item Geral",
+            tipo: "Bebida",
+            descricao: "Prato especial. Bebida alcoólica. Fornece +5 em Vontade, mas se falhar em algum teste de Vontade pela duração do prato, fica esmorecido.",
+            fonte: "Duelo de Dragões"
+        },
+
+        {
+            nome: "Baba de Troll",
+            preco: "T$ 30",
+            espacos: "0,5",
+            categoria: "Item Geral",
+            tipo: "Bebida",
+            descricao: "Bebida (não alcoólica). Fornece +1d4 em um teste a sua escolha até o fim do dia.",
+            fonte: "Heróis de Arton"
+        },
+        {
+            nome: "Barba Queimada",
+            preco: "T$ 45",
+            espacos: "0,5",
+            categoria: "Item Geral",
+            tipo: "Bebida",
+            descricao: "Bebida (alcoólica, CD 20). Cerveja anã. Fornece redução de dano 2.",
+            fonte: "Heróis de Arton"
+        },
+        {
+            nome: "Cerveja Deheoni",
+            preco: "T$ 15",
+            espacos: "0,5",
+            categoria: "Item Geral",
+            tipo: "Bebida",
+            descricao: "Bebida (alcoólica, CD 15). Bebida comum no Reinado. Fornece +1 em testes de resistência.",
+            fonte: "Heróis de Arton"
+        },
+        {
+            nome: "Dilínio",
+            preco: "T$ 600",
+            espacos: "0,5",
+            categoria: "Item Geral",
+            tipo: "Bebida",
+            descricao: "Bebida (alcoólica, CD 20). Destilado raro. Seu limite de gasto de PM aumenta em +1. Não pode ser fabricado.",
+            fonte: "Heróis de Arton"
+        },
+        {
+            nome: "Grogue Negro",
+            preco: "T$ 15",
+            espacos: "0,5",
+            categoria: "Item Geral",
+            tipo: "Bebida",
+            descricao: "Bebida (alcoólica, CD 15). Rum pirata. Quando você usa Audácia, o bônus fornecido pelo poder aumenta em +1.",
+            fonte: "Heróis de Arton"
+        },
+        {
+            nome: "Grogue Rubro",
+            preco: "T$ 45",
+            espacos: "0,5",
+            categoria: "Item Geral",
+            tipo: "Bebida",
+            descricao: "Bebida (alcoólica, CD 20). Variação picante do Grogue Negro. Você pode usar Audácia para testes de ataque.",
+            fonte: "Heróis de Arton"
+        },
+        {
+            nome: "Hidromel Uivante",
+            preco: "T$ 21",
+            espacos: "0,5",
+            categoria: "Item Geral",
+            tipo: "Bebida",
+            descricao: "Bebida (alcoólica, CD 20). Fabricada nas montanhas geladas. Fornece +2 em rolagens de dano corpo a corpo.",
+            fonte: "Heróis de Arton"
+        },
+        {
+            nome: "Licor Feérico",
+            preco: "T$ 450",
+            espacos: "0,5",
+            categoria: "Item Geral",
+            tipo: "Bebida",
+            descricao: "Bebida (alcoólica, CD 25). De aparência enevoada. Escolha uma habilidade; seu custo para ativar diminui em –1 PM.",
+            fonte: "Heróis de Arton"
+        },
+        {
+            nome: "Sidra Ahleniense",
+            preco: "T$ 45",
+            espacos: "0,5",
+            categoria: "Item Geral",
+            tipo: "Bebida",
+            descricao: "Bebida (alcoólica, CD 15). Bebida doce. Fornece +2 em testes de perícias originalmente baseadas em Carisma.",
+            fonte: "Heróis de Arton"
+        },
+        {
+            nome: "Vinho Pruss",
+            preco: "T$ 60",
+            espacos: "0,5",
+            categoria: "Item Geral",
+            tipo: "Bebida",
+            descricao: "Bebida (alcoólica, CD 15). Batizado em homenagem ao Rei-Imperador Thormy. Fornece 3 PM temporários.",
+            fonte: "Heróis de Arton"
+        },
+        {
+            nome: "Vinho Élfico",
+            preco: "T$ 90",
+            espacos: "0,5",
+            categoria: "Item Geral",
+            tipo: "Bebida",
+            descricao: "Bebida (alcoólica, CD 20). Aguça a mente, fornecendo +1 na CD para resistir a suas habilidades.",
+            fonte: "Heróis de Arton"
+        },
+        {
+            nome: "Algravia",
+            preco: "T$ 3",
+            espacos: "—",
+            categoria: "Item Geral",
+            tipo: "Bebida",
+            descricao: "Bebida alcoólica. Fornece +1 em perícias de Carisma (cumulativo com outros itens e doses). Cada dose além da 1ª exige Fort (CD 15 + 5/dose) ou fica enjoado.",
+            fonte: "Ameaças de Arton"
         },
 
         // ---------- ANIMAIS E VEÍCULOS (Tabela 3-5) ----------
@@ -1116,141 +1979,6 @@ const itensData = {
             fonte: "Ameaças de Arton"
         },
         {
-            nome: "Corrosivo Mineral",
-            preco: "T$ 150",
-            espacos: "0,5",
-            categoria: "Item Geral",
-            tipo: "Alquímico",
-            descricao: "Catalisador. Aumenta os dados de dano de magias de ácido em uma categoria (máx. d12).",
-            fonte: "Ameaças de Arton"
-        },
-        {
-            nome: "Gelo Extremo",
-            preco: "T$ 150",
-            espacos: "0,5",
-            categoria: "Item Geral",
-            tipo: "Alquímico",
-            descricao: "Catalisador. Aumenta os dados de dano de magias de frio em uma categoria (máx. d12).",
-            fonte: "Ameaças de Arton"
-        },
-        {
-            nome: "Pedaço de Língua",
-            preco: "T$ 30",
-            espacos: "0,5",
-            categoria: "Item Geral",
-            tipo: "Alquímico",
-            descricao: "Catalisador. Fornece +1 na CD dos testes de Fortitude para resistir a suas magias.",
-            fonte: "Ameaças de Arton"
-        },
-        {
-            nome: "Raio Cristalizado",
-            preco: "T$ 150",
-            espacos: "0,5",
-            categoria: "Item Geral",
-            tipo: "Alquímico",
-            descricao: "Catalisador. Aumenta os dados de dano de magias de eletricidade em uma categoria (máx. d12).",
-            fonte: "Ameaças de Arton"
-        },
-        {
-            nome: "Esporos de Cogumelo",
-            preco: "T$ 75",
-            espacos: "0,5",
-            categoria: "Item Geral",
-            tipo: "Alquímico",
-            descricao: "Veneno (Inalação). Vítima fica paralisada (lenta) por 1 rodada (Fort CD Int anula), depois imune por 1 cena.",
-            fonte: "Ameaças de Arton"
-        },
-        {
-            nome: "Peçonha Anciã",
-            preco: "T$ 1.800",
-            espacos: "0,5",
-            categoria: "Item Geral",
-            tipo: "Alquímico",
-            descricao: "Veneno (Contato). Perde 3d12 PV por rodada (3 rodadas). Ignora imunidade a venenos (perde 3d12 PV). Fort CD Int reduz à metade/nega.",
-            fonte: "Ameaças de Arton"
-        },
-        {
-            nome: "Peçonha Irritante",
-            preco: "T$ 10",
-            espacos: "0,5",
-            categoria: "Item Geral",
-            tipo: "Alquímico",
-            descricao: "Veneno (Contato). Perde 1d6 PV (sem TR).",
-            fonte: "Ameaças de Arton"
-        },
-        {
-            nome: "Veneno Batráquio",
-            preco: "T$ 30",
-            espacos: "0,5",
-            categoria: "Item Geral",
-            tipo: "Alquímico",
-            descricao: "Veneno (Contato). Perde 1d12 PV e fica enjoado por 1 rodada (perde 1d6 PV). Fort CD Int reduz à metade/nega.",
-            fonte: "Ameaças de Arton"
-        },
-        {
-            nome: "Algravia",
-            preco: "T$ 3",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Bebida alcoólica. Fornece +1 em perícias de Carisma (cumulativo com outros itens e doses). Cada dose além da 1ª exige Fort (CD 15 + 5/dose) ou fica enjoado.",
-            fonte: "Ameaças de Arton"
-        },
-        {
-            nome: "Banquete de Canceronte",
-            preco: "T$ 36",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Prato especial. Você recebe 1d4+1 dados de auxílio (d6 com Mestre Cuca) para gastar em testes de perícia.",
-            fonte: "Ameaças de Arton"
-        },
-        {
-            nome: "Coc-au-Triz",
-            preco: "T$ 54",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Prato especial. Ao consumir, escolha uma habilidade com custo em PM. Seu custo diminui em –1 PM.",
-            fonte: "Ameaças de Arton"
-        },
-        {
-            nome: "Cozido de Serpe",
-            preco: "T$ 12",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Prato especial. Requer teste estendido de Ofício (cozinheiro) (CD 20, 3 sucessos). Se passar, fornece +1 em todos os testes de perícia. Se falhar, é envenenado.",
-            fonte: "Ameaças de Arton"
-        },
-        {
-            nome: "Gorlogg Ensopado",
-            preco: "T$ 6",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Prato especial. Em sua próxima noite de sono, aumenta a recuperação de PV e PM em +1 por nível.",
-            fonte: "Ameaças de Arton"
-        },
-        {
-            nome: "Omelete Monstruosa",
-            preco: "T$ 3",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Prato especial. Você recebe +2 em rolagens de dano e –2 em testes de Sabedoria. Com ovos de dragão, muda para +5 e –5.",
-            fonte: "Ameaças de Arton"
-        },
-        {
-            nome: "Sashimi de Kraken",
-            preco: "T$ 60",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Prato especial. Você recebe +2 em Diplomacia (cumulativo) e 5 PM temporários.",
-            fonte: "Ameaças de Arton"
-        },
-        {
             nome: "Bulette (Animal)",
             preco: "T$ 500",
             espacos: "—",
@@ -1332,33 +2060,6 @@ const itensData = {
             fonte: "Ameaças de Arton"
         },
         // (Itens do Atlas de Arton)
-        {
-            nome: "Macarrão de Caravana",
-            preco: "T$ 5",
-            espacos: "0,5",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Prato especial. Recebe +2 em testes de Fortitude contra marcha forçada e em testes contra o perigo complexo jornada pelos ermos.",
-            fonte: "Atlas de Arton"
-        },
-        {
-            nome: "Assado Deheoni",
-            preco: "T$ 10",
-            espacos: "0,5",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Prato especial. Até o fim do dia, você pode rolar novamente um único teste recém realizado (exceto testes de ataque), mas deve ficar com o segundo resultado.",
-            fonte: "Atlas de Arton"
-        },
-        {
-            nome: "Buquê de Thantalla",
-            preco: "T$ 150",
-            espacos: "0,5",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Prato especial. Efeitos que recuperem seus pontos de mana recuperam 1 PM a mais.",
-            fonte: "Atlas de Arton"
-        },
 
         // (Itens de Guerra Artoniana)
         {
@@ -1390,42 +2091,7 @@ const itensData = {
         },
 
         // (Item de Duelo de Dragões)
-        {
-            nome: "Bolo de Linhaça",
-            preco: "T$ 5",
-            espacos: "0,5",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Prato especial. O acolhedor e reconfortante bolo dos pequenos. Concede +2 em Atletismo e Iniciativa.",
-            fonte: "Duelo de Dragões"
-        },
-        {
-            nome: "Licor de Lágrimas",
-            preco: "T$ 8",
-            espacos: "0,5",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Prato especial. Bebida alcoólica. Fornece +5 em Vontade, mas se falhar em algum teste de Vontade pela duração do prato, fica esmorecido.",
-            fonte: "Duelo de Dragões"
-        },
-        {
-            nome: "Treckodimm",
-            preco: "T$ 10",
-            espacos: "0,5",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Prato especial. Doce de mel, farinha de grão-de-bico e polpa de treckod. Fornece resistência a cansaço +2.",
-            fonte: "Duelo de Dragões"
-        },
-        {
-            nome: "Peçonha Flamejante",
-            preco: "Variável",
-            espacos: "0,5",
-            categoria: "Item Geral",
-            tipo: "Alquímico",
-            descricao: "Veneno (Contato). Perde 1d12 PV e fica em chamas durante 3 rodadas (perde 1d12 PV).",
-            fonte: "Duelo de Dragões"
-        },
+
         // (Itens de Heróis de Arton - Munições)
         {
             "nome": "Bola de Ferro (1)",
@@ -2195,78 +2861,6 @@ const itensData = {
             fonte: "Heróis de Arton"
         },
         {
-            nome: "Cristal Reflexivo",
-            preco: "T$ 30",
-            espacos: "0,5",
-            categoria: "Item Geral",
-            tipo: "Alquímico",
-            descricao: "Catalisador. Quando lança uma magia de adivinhação, você recebe +1 na Defesa pela duração da magia.",
-            fonte: "Heróis de Arton"
-        },
-        {
-            nome: "Essência Fantasmal",
-            preco: "T$ 30",
-            espacos: "0,5",
-            categoria: "Item Geral",
-            tipo: "Alquímico",
-            descricao: "Catalisador. A magia ignora 5 pontos da RD de todas as criaturas afetadas.",
-            fonte: "Heróis de Arton"
-        },
-        {
-            nome: "Noz Saltadora",
-            preco: "T$ 90",
-            espacos: "0,5",
-            categoria: "Item Geral",
-            tipo: "Alquímico",
-            descricao: "Catalisador. Após lançar a magia, pode se teletransportar para um espaço desocupado em 4,5m.",
-            fonte: "Heróis de Arton"
-        },
-        {
-            nome: "Presa do Deus da Trapaça",
-            preco: "T$ 45",
-            espacos: "0,5",
-            categoria: "Item Geral",
-            tipo: "Alquímico",
-            descricao: "Catalisador. Você recebe 25% de chance de ignorar ataques e efeitos (incluindo de área) por 1 rodada.",
-            fonte: "Heróis de Arton"
-        },
-        {
-            nome: "Bolor Hemorrágico",
-            preco: "T$ 60",
-            espacos: "0,5",
-            categoria: "Item Geral",
-            tipo: "Alquímico",
-            descricao: "Veneno (Contato). Vítima fica sangrando e a CD para remover essa condição aumenta em +5 (fica sangrando). Fort CD Int anula.",
-            fonte: "Heróis de Arton"
-        },
-        {
-            nome: "Fumaça Onírica",
-            preco: "T$ 150",
-            espacos: "0,5",
-            categoria: "Item Geral",
-            tipo: "Alquímico",
-            descricao: "Veneno (Inalação). Vítima fica fascinada por 3 rodadas (ofuscada por 1 rodada). Apenas 1/cena. Vontade CD Int anula.",
-            fonte: "Heróis de Arton"
-        },
-        {
-            nome: "Gás Moroso",
-            preco: "T$ 60",
-            espacos: "0,5",
-            categoria: "Item Geral",
-            tipo: "Alquímico",
-            descricao: "Veneno (Inalação). Vítima fica vulnerável (vulnerável por 1 rodada). Fort CD Int anula.",
-            fonte: "Heróis de Arton"
-        },
-        {
-            nome: "Seiva Necrótica",
-            preco: "T$ 120",
-            espacos: "0,5",
-            categoria: "Item Geral",
-            tipo: "Alquímico",
-            descricao: "Veneno (Contato). Perde 2d6 PV por rodada (3 rodadas) (perde 2d6 PV). PV perdidos só podem ser recuperados com efeitos mágicos de luz. Fort CD Int reduz à metade/nega.",
-            fonte: "Heróis de Arton"
-        },
-        {
             nome: "Aparatos (Geral)",
             preco: "Variável",
             espacos: "—",
@@ -2411,133 +3005,7 @@ const itensData = {
             fonte: "Heróis de Arton"
         },
 
-        // (Itens de Heróis de Arton - Alimentação, Animais, Veículos, Serviços)
-        {
-            nome: "Baga Celeste Cozida",
-            preco: "T$ 15",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Prato especial. Todo dano de queda que você sofre é reduzido em −1d6.",
-            fonte: "Heróis de Arton"
-        },
-        {
-            nome: "Cozido de Pimenta",
-            preco: "T$ 10",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Prato especial. Fornece +1 em Fortitude (cumulativo com bônus de outros itens).",
-            fonte: "Heróis de Arton"
-        },
-        {
-            nome: "Manjar de Sombras",
-            preco: "T$ 20",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Prato especial. Você ignora os próximos 10 pontos de dano de trevas que sofrer.",
-            fonte: "Heróis de Arton"
-        },
-        {
-            nome: "Baba de Troll",
-            preco: "T$ 30",
-            espacos: "0,5",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Bebida (não alcoólica). Fornece +1d4 em um teste a sua escolha até o fim do dia.",
-            fonte: "Heróis de Arton"
-        },
-        {
-            nome: "Barba Queimada",
-            preco: "T$ 45",
-            espacos: "0,5",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Bebida (alcoólica, CD 20). Cerveja anã. Fornece redução de dano 2.",
-            fonte: "Heróis de Arton"
-        },
-        {
-            nome: "Cerveja Deheoni",
-            preco: "T$ 15",
-            espacos: "0,5",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Bebida (alcoólica, CD 15). Bebida comum no Reinado. Fornece +1 em testes de resistência.",
-            fonte: "Heróis de Arton"
-        },
-        {
-            nome: "Dilínio",
-            preco: "T$ 600",
-            espacos: "0,5",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Bebida (alcoólica, CD 20). Destilado raro. Seu limite de gasto de PM aumenta em +1. Não pode ser fabricado.",
-            fonte: "Heróis de Arton"
-        },
-        {
-            nome: "Grogue Negro",
-            preco: "T$ 15",
-            espacos: "0,5",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Bebida (alcoólica, CD 15). Rum pirata. Quando você usa Audácia, o bônus fornecido pelo poder aumenta em +1.",
-            fonte: "Heróis de Arton"
-        },
-        {
-            nome: "Grogue Rubro",
-            preco: "T$ 45",
-            espacos: "0,5",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Bebida (alcoólica, CD 20). Variação picante do Grogue Negro. Você pode usar Audácia para testes de ataque.",
-            fonte: "Heróis de Arton"
-        },
-        {
-            nome: "Hidromel Uivante",
-            preco: "T$ 21",
-            espacos: "0,5",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Bebida (alcoólica, CD 20). Fabricada nas montanhas geladas. Fornece +2 em rolagens de dano corpo a corpo.",
-            fonte: "Heróis de Arton"
-        },
-        {
-            nome: "Licor Feérico",
-            preco: "T$ 450",
-            espacos: "0,5",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Bebida (alcoólica, CD 25). De aparência enevoada. Escolha uma habilidade; seu custo para ativar diminui em –1 PM.",
-            fonte: "Heróis de Arton"
-        },
-        {
-            nome: "Sidra Ahleniense",
-            preco: "T$ 45",
-            espacos: "0,5",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Bebida (alcoólica, CD 15). Bebida doce. Fornece +2 em testes de perícias originalmente baseadas em Carisma.",
-            fonte: "Heróis de Arton"
-        },
-        {
-            nome: "Vinho Pruss",
-            preco: "T$ 60",
-            espacos: "0,5",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Bebida (alcoólica, CD 15). Batizado em homenagem ao Rei-Imperador Thormy. Fornece 3 PM temporários.",
-            fonte: "Heróis de Arton"
-        },
-        {
-            nome: "Vinho Élfico",
-            preco: "T$ 90",
-            espacos: "0,5",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Bebida (alcoólica, CD 20). Aguça a mente, fornecendo +1 na CD para resistir a suas habilidades.",
-            fonte: "Heróis de Arton"
-        },
+        // (Itens de Heróis de Arton - Animais, Veículos, Serviços)
         {
             nome: "Armadura de Montaria Leve",
             preco: "T$ 600",
@@ -3183,269 +3651,8 @@ const itensData = {
             descricao: "Preparado. Arremessar (ação mov. acender + padrão, alcance curto). Mortos-vivos e abissais a 3m sofrem 6d12 dano de luz (Ref CD Sab reduz). Apenas devotos de energia positiva podem fabricar.",
             fonte: "Deuses de Arton"
         },
-        {
-            nome: "Água Benta (Catalisador)",
-            preco: "T$ 10",
-            espacos: "0,5",
-            categoria: "Item Geral",
-            tipo: "Alquímico",
-            descricao: "Catalisador. Abissais e mortos-vivos afetados por magia divina sofrem –2 em TR e +2 dados de dano.",
-            fonte: "Deuses de Arton"
-        },
-        {
-            nome: "Favo de Mel",
-            preco: "T$ 30",
-            espacos: "0,5",
-            categoria: "Item Geral",
-            tipo: "Alquímico",
-            descricao: "Catalisador. Ao lançar magia divina, remove condição 'cansado' de um alvo. Pode usar múltiplos favos para múltiplos alvos na mesma magia.",
-            fonte: "Deuses de Arton"
-        },
-        {
-            nome: "Fitilho Consagrado",
-            preco: "T$ 30",
-            espacos: "0,5",
-            categoria: "Item Geral",
-            tipo: "Alquímico",
-            descricao: "Catalisador. Amarrado ao pulso (não ocupa mão). Pode gastar para receber +1 PM para aprimoramento em magia divina.",
-            fonte: "Deuses de Arton"
-        },
-        {
-            nome: "Flor de Orlyn",
-            preco: "T$ 30",
-            espacos: "0,5",
-            categoria: "Item Geral",
-            tipo: "Alquímico",
-            descricao: "Catalisador. Ao lançar cura em uma criatura, uma 2ª criatura no alcance recupera PV igual à metade do efeito.",
-            fonte: "Deuses de Arton"
-        },
-        {
-            nome: "Frasco de Luz",
-            preco: "T$ 30",
-            espacos: "0,5",
-            categoria: "Item Geral",
-            tipo: "Alquímico",
-            descricao: "Catalisador. Fornece +2 na CD de magias de luz.",
-            fonte: "Deuses de Arton"
-        },
-        {
-            nome: "Lantejoula",
-            preco: "T$ 30",
-            espacos: "0,5",
-            categoria: "Item Geral",
-            tipo: "Alquímico",
-            descricao: "Catalisador. Diminui o custo de magias de ilusão em –1 PM.",
-            fonte: "Deuses de Arton"
-        },
-        {
-            nome: "Pena de Anjo",
-            preco: "T$ 30",
-            espacos: "0,5",
-            categoria: "Item Geral",
-            tipo: "Alquímico",
-            descricao: "Catalisador. Alvos de magia divina recuperam 1d8 PV (além do efeito).",
-            fonte: "Deuses de Arton"
-        },
-        {
-            nome: "Pedra de Sombras",
-            preco: "T$ 30",
-            espacos: "0,5",
-            categoria: "Item Geral",
-            tipo: "Alquímico",
-            descricao: "Catalisador. Reduz em –1 PM o custo de magias de trevas.",
-            fonte: "Deuses de Arton"
-        },
-        {
-            nome: "Vela Eclesiástica",
-            preco: "T$ 60",
-            espacos: "0,5",
-            categoria: "Item Geral",
-            tipo: "Alquímico",
-            descricao: "Catalisador. Magia divina sustentada não conta no limite de sustentadas. Deve ser empunhada por toda a duração (é consumida). Limite de 1 magia extra.",
-            fonte: "Deuses de Arton"
-        },
 
-        // (Itens de Deuses de Arton - Alimentação e Serviços)
-        {
-            nome: "Abraço da Noite",
-            preco: "T$ 3",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "(Deusa da Noite). Até o fim do dia, pode usar Carícia Sombria 1 vez (se já tem, causa 4d6). Funciona em mortos-vivos.",
-            fonte: "Deuses de Arton"
-        },
-        {
-            nome: "Assado de Entranhas",
-            preco: "T$ 2",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "(Deus dos Monstros). Até o fim do dia, pode invocar instintos para receber +1 dano corpo a corpo por uma cena.",
-            fonte: "Deuses de Arton"
-        },
-        {
-            nome: "Bênção dos Mares",
-            preco: "T$ 4",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "(Deus dos Mares). Até o fim do dia, pode invocar poder para receber deslocamento de natação igual ao seu deslocamento (ou +3m se já tem) por uma cena.",
-            fonte: "Deuses de Arton"
-        },
-        {
-            nome: "Bolinho de Jade",
-            preco: "T$ 4",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "(Deus da Honra). Até o fim do dia, pode usar Kiai Divino 1 vez (se já tem, usa 1x sem custo de PM).",
-            fonte: "Deuses de Arton"
-        },
-        {
-            nome: "Bombas de Saber",
-            preco: "T$ 4",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "(Deusa do Conhecimento). 1/dia, ao fazer um teste de perícia, pode receber benefícios de ser treinado nela para esse teste.",
-            fonte: "Deuses de Arton"
-        },
-        {
-            nome: "Caldo da Deusa da Vida",
-            preco: "T$ 3",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "(Deusa da Vida). Quando recebe cura mágica de luz, recupera +2 PV.",
-            fonte: "Deuses de Arton"
-        },
-        {
-            nome: "Coragem de Sangue",
-            preco: "T$ 4",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "(Deus da Guerra). 1/dia, quando faz a ação agredir, pode executar um ataque extra.",
-            fonte: "Deuses de Arton"
-        },
-        {
-            nome: "Deleite Mágico",
-            preco: "T$ 18",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "(Deusa da Magia). Ao consumir, escolha uma magia de 1º círculo. Até o fim do dia, pode lançá-la 1 vez (sem aprimoramentos, custo 2 PM, atrb. Sabedoria).",
-            fonte: "Deuses de Arton"
-        },
-        {
-            nome: "Frescor do Deus do Caos",
-            preco: "T$ 1",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "(Deus do Caos). Ao ingerir, escolha um deus aleatoriamente. Recebe o benefício do prato desse deus (se cair Deus do Caos, role 2x).",
-            fonte: "Deuses de Arton"
-        },
-        {
-            nome: "Joia do Deserto",
-            preco: "T$ 5",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "(Deus do Sol). 1/dia, arma de corte causa +1d6 fogo (+2d6 vs mortos-vivos). Dura 3 acertos ou fim da cena.",
-            fonte: "Deuses de Arton"
-        },
-        {
-            nome: "Justos de Deus da Justiça",
-            preco: "T$ 2",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "(Deus da Justiça). Até o fim do dia, ao fazer um teste de perícia, pode escolher 10 (em vez de rolar).",
-            fonte: "Deuses de Arton"
-        },
-        {
-            nome: "Justos Virtuosos",
-            preco: "T$ 6",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "(Deus da Traição). 1/dia, quando inimigo em alcance curto usa habilidade, você pode ser afetado como se fosse aliado dele.",
-            fonte: "Deuses de Arton"
-        },
-        {
-            nome: "Manjar da Paz",
-            preco: "T$ 7",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "(Deusa da Paz). 1/dia, quando criatura em alcance curto ataca, você pode forçá-la a rolar 2 dados e usar o pior.",
-            fonte: "Deuses de Arton"
-        },
-        {
-            nome: "Ouro de Dragão",
-            preco: "T$ 6",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "(Deus dos Dragões). 1/dia, pode receber +1 em testes de ataque por uma cena.",
-            fonte: "Deuses de Arton"
-        },
-        {
-            nome: "Ovos de Raposa",
-            preco: "T$ 3",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "(Deus da Trapaça). 1/dia, pode rolar novamente um teste de Enganação ou Ladinagem recém-feito.",
-            fonte: "Deuses de Arton"
-        },
-        {
-            nome: "Pão do Deus dos Goblinóides",
-            preco: "T$ 1",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "(Deus dos Goblinóides). 1/dia, pode rolar novamente um teste de Fortitude ou perícia baseada em Força.",
-            fonte: "Deuses de Arton"
-        },
-        {
-            nome: "Presente da Terra",
-            preco: "T$ 3",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "(Deusa da Natureza). Pode ser fabricado com Sobrevivência. 1/dia, pode rolar novamente teste de Adestramento ou Sobrevivência.",
-            fonte: "Deuses de Arton"
-        },
-        {
-            nome: "Renascer Gentil",
-            preco: "T$ 30",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "(Deus da Resurreição). A primeira vez no dia em que seus PV forem reduzidos a 0 ou menos, ficam em 1.",
-            fonte: "Deuses de Arton"
-        },
-        {
-            nome: "Suflê Rubro",
-            preco: "T$ 3",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "(Deus da Tormenta). Início de cena de ação: role 1d6. Ímpar: fascinado na 1ª rodada. Par: +5 em um teste de perícia até fim do próximo turno.",
-            fonte: "Deuses de Arton"
-        },
-        {
-            nome: "Tesouro da Deusa da Ambição",
-            preco: "T$ 2",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "(Deusa da Ambição). 1/dia, recebe +5 em um teste de resistência contra efeitos de movimento.",
-            fonte: "Deuses de Arton"
-        },
+        // (Itens de Deuses de Arton - Serviços)
         {
             nome: "Casamento (Serviço)",
             preco: "T$ 150",
@@ -3472,207 +3679,10 @@ const itensData = {
             tipo: "Serviço",
             descricao: "Escolha uma magia divina de 1º círculo. Até o fim da aventura, pode lançá-la 1 vez (sem aprimoramentos, custo 2 PM, atrb. Sabedoria). Apenas devotos.",
             fonte: "Deuses de Arton"
-        },
-
-        // (Itens de Heróis de Arton - Alimentação)
-        {
-            nome: "Assado de Carnes",
-            preco: "T$ 60",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Recebe +2 em rolagens de dano corpo a corpo.",
-            fonte: "Heróis de Arton"
-        },
-        {
-            nome: "Balinhas",
-            preco: "T$ 60",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Recebe +2 em rolagens de dano de magias.",
-            fonte: "Heróis de Arton"
-        },
-        {
-            nome: "Banquete dos Heróis",
-            preco: "T$ 150",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Recebe +1 em um atributo a sua escolha (não oferece PV/PM/perícias adicionais).",
-            fonte: "Heróis de Arton"
-        },
-       {
-            nome: "Bolo de Cenoura",
-            preco: "T$ 4",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Fornece +2 em testes de Percepção.",
-            fonte: "Heróis de Arton"
-        },
-        {
-            nome: "Bolo do Panteão",
-            preco: "T$ 200",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Escolha uma habilidade. Seu custo diminui em –1 PM (mínimo 1).",
-            fonte: "Heróis de Arton"
-        },
-        {
-            nome: "Ensopado Reforçado",
-            preco: "T$ 12",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Recebe +20 PV temporários, mas seu deslocamento diminui em –1,5m.",
-            fonte: "Heróis de Arton"
-        },
-        {
-            nome: "Estrogonofe",
-            preco: "T$ 18",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Recebe +2 em testes de Vontade.",
-            fonte: "Heróis de Arton"
-        },
-        {
-            nome: "Futomaki",
-            preco: "T$ 12",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Recebe +2 em testes de Diplomacia.",
-            fonte: "Heróis de Arton"
-        },
-        {
-            nome: "Gorvelã",
-            preco: "T$ 90",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Fornece +5 PM temporários.",
-            fonte: "Heróis de Arton"
-        },
-        {
-            nome: "Javali do Bosque Enevoado",
-            preco: "T$ 60",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Recebe +2 na Defesa.",
-            fonte: "Heróis de Arton"
-        },
-        {
-            nome: "Manjar dos Titãs",
-            preco: "T$ 150",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Recebe +1d4 em testes de perícias baseadas em Força, Destreza ou Constituição.",
-            fonte: "Heróis de Arton"
-        },
-        {
-            nome: "Ovo de Monstro Frito",
-            preco: "T$ 30",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Recebe +10 PV temporários.",
-            fonte: "Heróis de Arton"
-        },
-        {
-            nome: "Pão de Queijo",
-            preco: "T$ 10",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Recebe +2 em testes de Fortitude.",
-            fonte: "Heróis de Arton"
-        },
-        {
-            nome: "Pavão Celestial",
-            preco: "T$ 150",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Recebe +1d4 em testes de perícias baseadas em Inteligência, Sabedoria ou Carisma.",
-            fonte: "Heróis de Arton"
-        },
-        {
-            nome: "Pizza",
-            preco: "T$ 6",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Recebe +1 em todos os testes de resistência.",
-            fonte: "Heróis de Arton"
-        },
-        {
-            nome: "Porco Deheoni",
-            preco: "T$ 36",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Recebe +1 em testes de ataque corpo a corpo.",
-            fonte: "Heróis de Arton"
-        },
-        {
-            nome: "Salada de Salistick",
-            preco: "T$ 4",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Aumenta seu deslocamento em +1,5m.",
-            fonte: "Heróis de Arton"
-        },
-        {
-            nome: "Salada Élfica",
-            preco: "T$ 4",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Fornece +1 em testes de ataque à distância.",
-            fonte: "Heróis de Arton"
-        },
-        {
-            nome: "Salada Imperial",
-            preco: "T$ 6",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Fornece +2 em testes de Iniciativa.",
-            fonte: "Heróis de Arton"
-        },
-        {
-            nome: "Sashimi",
-            preco: "T$ 60",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Recebe +2 em rolagens de dano à distância.",
-            fonte: "Heróis de Arton"
-        },
-        {
-            nome: "Sopa de Cogumelos",
-            preco: "T$ 6",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Recebe +2 em testes de Misticismo.",
-            fonte: "Heróis de Arton"
-        },
-        {
-            nome: "Torta de Maçã",
-            preco: "T$ 2",
-            espacos: "—",
-            categoria: "Item Geral",
-            tipo: "Alimentação",
-            descricao: "Fornece resistência a veneno +5.",
-            fonte: "Heróis de Arton"
         }
+
+
+
 
     ]
 };
