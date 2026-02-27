@@ -92,7 +92,7 @@ const armasData = {
             "categoria": "Arma",
             "tipo": "Simples",
             "empunhadura": "Duas Mãos",
-            "descricao": "Cajado de madeira que causa 1d6 de dano de impacto (crítico x2) em cada ponta. Arma dupla de preço zero. Ocupa 2 espaços."
+            "descricao": "Cajado de madeira que causa 1d6 de dano de impacto (crítico x2) em cada ponta. Arma dupla de preço zero. Ocupa 2 espaços. (Opcional DH: quando empunhada corpo a corpo recebe a habilidade de arma ágil)"
         },
         {
             "nome": "Pique",
@@ -131,7 +131,7 @@ const armasData = {
             "categoria": "Arma",
             "tipo": "Simples",
             "empunhadura": "Uma Mão",
-            "descricao": "Lança leve e flexível que causa 1d6 de dano de perfuração (crítico x2). Arremessável com alcance médio. Sofre -5 em ataques corpo a corpo."
+            "descricao": "Lança leve e flexível que causa 1d6 de dano de perfuração (crítico x2). Arremessável com alcance médio. Sofre -5 em ataques corpo a corpo. (Opcional DH: quando empunhada corpo a corpo recebe a habilidade de arma ágil)"
         },
         {
             "nome": "Besta leve",
@@ -197,7 +197,7 @@ const armasData = {
             "categoria": "Arma",
             "tipo": "Marcial",
             "empunhadura": "Uma Mão",
-            "descricao": "Espada curva que causa 1d8 de dano de corte (crítico 18). Arma que fornece +2 em testes de Luta."
+            "descricao": "Espada curva que causa 1d8 de dano de corte (crítico 18). Arma ágil."
         },
         {
             "nome": "Espada longa",
@@ -223,7 +223,7 @@ const armasData = {
             "categoria": "Arma",
             "tipo": "Marcial",
             "empunhadura": "Uma Mão",
-            "descricao": "Espada fina que causa 1d6 de dano de perfuração (crítico 18). Arma que fornece +2 em testes de Acrobacia."
+            "descricao": "Espada fina que causa 1d6 de dano de perfuração (crítico 18). Arma ágil."
         },
         {
             "nome": "Machado de batalha",
@@ -275,7 +275,7 @@ const armasData = {
             "categoria": "Arma",
             "tipo": "Marcial",
             "empunhadura": "Uma Mão",
-            "descricao": "Arma com ponta e gancho que causa 1d6 de dano de perfuração (crítico x4). Arma que fornece +2 em testes de Luta para quebrar."
+            "descricao": "Arma com ponta e gancho que causa 1d6 de dano de perfuração (crítico x4)."
         },
         {
             "nome": "Tridente",
@@ -419,7 +419,7 @@ const armasData = {
             "categoria": "Arma",
             "tipo": "Exótica",
             "empunhadura": "Uma Mão",
-            "descricao": "Arma flexível que causa 1d4 de dano de corte (crítico x2). Arma que fornece +2 em testes de Luta para desarmar."
+            "descricao": "Arma flexível que causa 1d3 de dano de corte (crítico x2). Arma que fornece +2 em testes de Luta para desarmar e derrubar."
         },
         {
             "nome": "Espada bastarda (1 Mão)",
@@ -1325,7 +1325,7 @@ const armasData = {
             categoria: "Arma",
             tipo: "Exótica",
             empunhadura: "Uma Mão",
-            descricao: "Arma híbrida (ágil). Quando faz um ataque corpo a corpo, pode acionar seu mecanismo para disparar a bala (+2d6 dano). Recarregar é uma ação padrão.",
+            descricao: "Arma híbrida e ágil. Quando faz um ataque corpo a corpo, pode acionar seu mecanismo para disparar a bala (+2d6 dano). Recarregar é uma ação padrão.",
             fonte: "Heróis de Arton"
         },
         {
@@ -1339,7 +1339,7 @@ const armasData = {
             categoria: "Arma",
             tipo: "De Fogo",
             empunhadura: "Uma Mão",
-            descricao: "Arma híbrida. Para atacar com ela como arma de fogo, você deve também ter proficiência em armas de fogo. Recarregar é uma ação padrão.",
+            descricao: "Arma híbrida e ágil. Para atacar com ela como arma de fogo, você deve também ter proficiência em armas de fogo. Recarregar é uma ação padrão.",
             fonte: "Heróis de Arton"
         },
         {
