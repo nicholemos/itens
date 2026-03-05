@@ -1273,27 +1273,34 @@ function closeModal() {
     currentModalItem = null;
 }
 
-function enviarParaFicha(nomeItem, pesoItem) {
-    // 1. Obtém os dados atuais da ficha ou cria um objeto vazio se não existir
+function enviarInventarioCompletoParaFicha() {
+    // 1. Obtém os dados atuais da ficha (para não apagar nada)
     let fichaRaw = localStorage.getItem('t20SheetData');
     let fichaData = fichaRaw ? JSON.parse(fichaRaw) : {};
 
-    // 2. Garante que a estrutura de inventário exista
+    // 2. Garante que a estrutura de inventário da ficha exista
     if (!fichaData.inventory) fichaData.inventory = [];
 
-    // 3. Adiciona o novo item ao array (sem apagar os antigos)
-    fichaData.inventory.push({
-        name: nomeItem,
-        qtd: "1",
-        slots: pesoItem || "0"
-    });
+    // 3. Pega a sua lista de itens do Compilado (ajuste o nome da variável se necessário)
+    // Supondo que seus itens selecionados estejam em um array chamado 'itensSelecionados'
+    if (typeof itensSelecionados !== 'undefined' && itensSelecionados.length > 0) {
+        
+        itensSelecionados.forEach(item => {
+            fichaData.inventory.push({
+                name: item.nome, // Aqui pegamos o nome real do objeto
+                qtd: item.quantidade || "1",
+                slots: item.peso || "0"
+            });
+        });
 
-    // 4. Salva os dados atualizados de volta no localStorage
-    localStorage.setItem('t20SheetData', JSON.stringify(fichaData));
+        // 4. Salva tudo de volta no localStorage
+        localStorage.setItem('t20SheetData', JSON.stringify(fichaData));
 
-    // 5. Feedback visual e abertura da ficha em nova aba
-    alert(`${nomeItem} enviado para a sua ficha!`);
-    window.open('https://nicholemos.github.io/ficha/', '_blank');
+        alert(`${itensSelecionados.length} itens enviados com sucesso para a ficha!`);
+        window.open('https://nicholemos.github.io/ficha/', '_blank');
+    } else {
+        alert("O inventário está vazio!");
+    }
 }
 
 // ===== MAPA DE IMAGENS (SIMPLIFICADO) =====
