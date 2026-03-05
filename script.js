@@ -1273,6 +1273,29 @@ function closeModal() {
     currentModalItem = null;
 }
 
+function enviarParaFicha(nomeItem, pesoItem) {
+    // 1. Obtém os dados atuais da ficha ou cria um objeto vazio se não existir
+    let fichaRaw = localStorage.getItem('t20SheetData');
+    let fichaData = fichaRaw ? JSON.parse(fichaRaw) : {};
+
+    // 2. Garante que a estrutura de inventário exista
+    if (!fichaData.inventory) fichaData.inventory = [];
+
+    // 3. Adiciona o novo item ao array (sem apagar os antigos)
+    fichaData.inventory.push({
+        name: nomeItem,
+        qtd: "1",
+        slots: pesoItem || "0"
+    });
+
+    // 4. Salva os dados atualizados de volta no localStorage
+    localStorage.setItem('t20SheetData', JSON.stringify(fichaData));
+
+    // 5. Feedback visual e abertura da ficha em nova aba
+    alert(`${nomeItem} enviado para a sua ficha!`);
+    window.open('https://nicholemos.github.io/ficha/', '_blank');
+}
+
 // ===== MAPA DE IMAGENS (SIMPLIFICADO) =====
 function getImagePath(itemName) {
     const imageMap = {
