@@ -965,3 +965,41 @@ button[title*="Limpar"],
   color: rgba(15, 23, 42, .68);
   font-size: 12px;
 }
+
+
+/* Botão "Enviar para Ficha" Estilo Épico */
+.btn-exportar-ficha {
+    background: linear-gradient(135deg, #8b0000 0%, #a52a2a 100%); /* Vermelho Escuro/Sangue */
+    color: #f1e0c6 !important; /* Bege Claro/Dourado (Cor da fonte da Ficha) */
+    border: 2px solid #5d0000;
+    font-family: 'Tormenta', sans-serif; /* Usando a fonte temática */
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    width: 100%; /* Ocupa a largura total do container */
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Espaço entre o ícone e o texto */
+}
+
+/* Efeito ao passar o mouse (Hover) - O botão "acende" */
+.btn-exportar-ficha:hover {
+    background: linear-gradient(135deg, #a52a2a 0%, #bf3636 100%); /* Vermelho mais claro */
+    border-color: #f1e0c6; /* Borda dourada acende */
+    box-shadow: 0 0 15px rgba(241, 224, 198, 0.5); /* Brilho suave dourado */
+    transform: translateY(-2px); /* Levanta levemente */
+    color: #ffffff !important;
+}
+
+/* Efeito ao clicar */
+.btn-exportar-ficha:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
