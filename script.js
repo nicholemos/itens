@@ -1274,48 +1274,34 @@ function closeModal() {
 }
 
 function enviarInventarioCompletoParaFicha() {
-    // 1. Carrega os dados atuais da ficha para não apagar nada
-    let fichaRaw = localStorage.getItem('t20SheetData');
-    let fichaData = fichaRaw ? JSON.parse(fichaRaw) : { inventory: [] };
+    // 1. Verifica se há itens no inventário
+    if (!inventory || inventory.length === 0) {
+        alert("O inventário está vazio! Adicione itens antes de exportar.");
+        return;
+    }
 
-    // 2. Garante que a estrutura de inventário exista
+    // 2. Carrega os dados atuais da ficha para não apagar nada
+    let fichaRaw = localStorage.getItem('t20SheetData');
+    let fichaData = fichaRaw ? JSON.parse(fichaRaw) : {};
     if (!fichaData.inventory) fichaData.inventory = [];
 
-    // 3. Seleciona os itens dentro do seu inventoryContainer
-    // Usando os seletores baseados no que o seu script.js cria dinamicamente
-    const container = document.getElementById('inventoryContainer');
-    const itensNoCarrinho = container.querySelectorAll('.inventory-item');
+    // 3. Mapeia os itens do inventário para o formato da ficha { name, qtd, slots }
+    const itensParaEnviar = inventory.map(invItem => ({
+        name: invItem.customName || invItem.baseItem?.nome || "Item",
+        qtd: String(invItem.quantity || 1),
+        slots: String(invItem.finalSpaces ?? 0)
+    }));
 
-    if (itensNoCarrinho.length > 0) {
-        itensNoCarrinho.forEach(itemElement => {
-            // Busca o nome dentro do h5 ou span do item
-            const nome = itemElement.querySelector('h5')?.innerText || 
-                         itemElement.querySelector('strong')?.innerText || "Item";
-            
-            // Busca o peso/espaço (slots)
-            // O seu script geralmente coloca algo como "Peso: 1" em um <p> ou <small>
-            const infoTexto = itemElement.innerText;
-            const regexPeso = /Peso:\s*([\d.]+)/i;
-            const match = infoTexto.match(regexPeso);
-            const peso = match ? match[1] : "0";
+    // 4. Adiciona os itens ao equipamento da ficha (sem apagar o que já existe)
+    fichaData.inventory = fichaData.inventory.concat(itensParaEnviar);
 
-            fichaData.inventory.push({
-                name: nome.trim(),
-                qtd: "1",
-                slots: peso
-            });
-        });
+    // 5. Salva no localStorage compartilhado (mesmo domínio: nicholemos.github.io)
+    localStorage.setItem('t20SheetData', JSON.stringify(fichaData));
 
-        // 4. Salva no localStorage comum ao seu domínio
-        localStorage.setItem('t20SheetData', JSON.stringify(fichaData));
+    alert(`${itensParaEnviar.length} item(s) enviado(s) para a ficha com sucesso!\n\nA ficha será aberta em uma nova aba.`);
 
-        alert(`${itensNoCarrinho.length} itens enviados para a ficha!`);
-        
-        // Abre a ficha em uma nova aba
-        window.open('https://nicholemos.github.io/ficha/', '_blank');
-    } else {
-        alert("O inventário do carrinho está vazio!");
-    }
+    // 6. Abre a ficha em uma nova aba
+    window.open('https://nicholemos.github.io/ficha/', '_blank');
 }
 
 // ===== MAPA DE IMAGENS (SIMPLIFICADO) =====
