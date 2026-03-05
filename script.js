@@ -82,7 +82,7 @@ let currentSort = 'name-asc'; // <-- NOVO
 // (Declaramos as variáveis aqui, mas pegamos elas dentro do 'window.onload')
 let searchInput, itemsGrid, itemModal, modalOverlay, closeModalBtn,
     categoryButtons, specificFiltersContainer, inventoryList, totalCostEl,
-    totalSpacesEl, totalVestidosEl, clearInventoryBtn, modalQuantityInput,
+    totalSpacesEl, totalVestidosEl, limparCarrinho, modalQuantityInput,
     addItemBtn, viewGridBtn, viewTableBtn, empunhaduraFiltersContainer,
     empunhaduraButtons, itemCustomizer, modQuantitySelect, modSelectorsContainer,
     enchantQuantitySelect, enchantSelectorsContainer, modalVestidoBox, sourceFilterSelect, sortSelect,
@@ -106,7 +106,7 @@ window.onload = () => {
     totalCostEl = document.getElementById('totalCost');
     totalSpacesEl = document.getElementById('totalSpaces');
     totalVestidosEl = document.getElementById('totalVestidos');
-    clearInventoryBtn = document.getElementById('clearInventoryBtn');
+    limparCarrinho = document.getElementById('limparCarrinho');
     modalQuantityInput = document.getElementById('modalQuantity');
     addItemBtn = document.getElementById('addItemBtn');
     viewGridBtn = document.getElementById('viewGridBtn');
@@ -302,7 +302,7 @@ function setupEventListeners() {
     });
 
     addItemBtn.addEventListener('click', addItemToInventory);
-    clearInventoryBtn.addEventListener('click', clearInventory);
+    limparCarrinho.addEventListener('click', limparCarrinho);
 
     inventoryList.addEventListener('click', (e) => {
         if (e.target.classList.contains('remove-item-btn')) {
@@ -898,9 +898,23 @@ function removeItemFromInventory(index) {
     renderInventory();
 }
 
-function clearInventory() {
-    inventory = [];
-    renderInventory();
+function limparCarrinho() {
+    if (inventory.length === 0) {
+        alert("O inventário já está vazio!");
+        return;
+    }
+
+    if (confirm("Deseja realmente apagar todos os itens do carrinho?")) {
+        // 1. Limpa o array global que o seu script usa
+        inventory = [];
+
+        // 2. Chama a função de renderização que você já tem no script.js
+        // para atualizar o HTML do inventoryContainer
+        renderInventory();
+
+        // 3. Opcional: Feedback visual
+        console.log("Inventário limpo com sucesso.");
+    }
 }
 
 function renderInventory() {
