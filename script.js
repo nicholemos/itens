@@ -1274,40 +1274,50 @@ function closeModal() {
 }
 
 function enviarInventarioCompletoParaFicha() {
-    // 1. Carrega o que já existe na ficha para não sobrescrever
+    // 1. Carrega os dados atuais da ficha para não apagar nada
     let fichaRaw = localStorage.getItem('t20SheetData');
-    let fichaData = fichaRaw ? JSON.parse(fichaRaw) : {};
+    let fichaData = fichaRaw ? JSON.parse(fichaRaw) : { inventory: [] };
 
-    // 2. Garante a estrutura de inventário
+    // 2. Garante que a estrutura de inventário exista
     if (!fichaData.inventory) fichaData.inventory = [];
 
-    // 3. Seleciona todos os itens que estão dentro do seu container de inventário
-    // Ajustado para ler os elementos que o seu script.js gera no inventoryContainer
-    const itensNoCarrinho = document.querySelectorAll('#inventoryContainer .inventory-item');
+    // 3. Seleciona os itens dentro do seu inventoryContainer
+    // Usando os seletores baseados no que o seu script.js cria dinamicamente
+    const container = document.getElementById('inventoryContainer');
+    const itensNoCarrinho = container.querySelectorAll('.inventory-item');
 
     if (itensNoCarrinho.length > 0) {
         itensNoCarrinho.forEach(itemElement => {
-            // Captura o nome e o peso de dentro do elemento HTML
-            const nome = itemElement.querySelector('.item-name')?.innerText || "Item Desconhecido";
-            const pesoTexto = itemElement.querySelector('.item-weight')?.innerText || "0";
-            const peso = pesoTexto.replace(/[^0-9.]/g, ''); // Remove letras (ex: "1.5 kg" vira "1.5")
+            // Busca o nome dentro do h5 ou span do item
+            const nome = itemElement.querySelector('h5')?.innerText || 
+                         itemElement.querySelector('strong')?.innerText || "Item";
+            
+            // Busca o peso/espaço (slots)
+            // O seu script geralmente coloca algo como "Peso: 1" em um <p> ou <small>
+            const infoTexto = itemElement.innerText;
+            const regexPeso = /Peso:\s*([\d.]+)/i;
+            const match = infoTexto.match(regexPeso);
+            const peso = match ? match[1] : "0";
 
             fichaData.inventory.push({
-                name: nome,
+                name: nome.trim(),
                 qtd: "1",
-                slots: peso || "0"
+                slots: peso
             });
         });
 
-        // 4. Salva no localStorage e abre a ficha
+        // 4. Salva no localStorage comum ao seu domínio
         localStorage.setItem('t20SheetData', JSON.stringify(fichaData));
 
-        alert(`${itensNoCarrinho.length} itens enviados para https://nicholemos.github.io/ficha/`);
+        alert(`${itensNoCarrinho.length} itens enviados para a ficha!`);
+        
+        // Abre a ficha em uma nova aba
         window.open('https://nicholemos.github.io/ficha/', '_blank');
     } else {
-        alert("O inventoryContainer está vazio! Adicione itens primeiro.");
+        alert("O inventário do carrinho está vazio!");
     }
 }
+
 // ===== MAPA DE IMAGENS (SIMPLIFICADO) =====
 function getImagePath(itemName) {
     const imageMap = {
