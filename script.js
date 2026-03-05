@@ -1274,35 +1274,40 @@ function closeModal() {
 }
 
 function enviarInventarioCompletoParaFicha() {
-    // 1. Obtém os dados atuais da ficha (para não apagar nada)
+    // 1. Carrega o que já existe na ficha para não sobrescrever
     let fichaRaw = localStorage.getItem('t20SheetData');
     let fichaData = fichaRaw ? JSON.parse(fichaRaw) : {};
 
-    // 2. Garante que a estrutura de inventário da ficha exista
+    // 2. Garante a estrutura de inventário
     if (!fichaData.inventory) fichaData.inventory = [];
 
-    // 3. Pega a sua lista de itens do Compilado (ajuste o nome da variável se necessário)
-    // Supondo que seus itens selecionados estejam em um array chamado 'itensSelecionados'
-    if (typeof itensSelecionados !== 'undefined' && itensSelecionados.length > 0) {
-        
-        itensSelecionados.forEach(item => {
+    // 3. Seleciona todos os itens que estão dentro do seu container de inventário
+    // Ajustado para ler os elementos que o seu script.js gera no inventoryContainer
+    const itensNoCarrinho = document.querySelectorAll('#inventoryContainer .inventory-item');
+
+    if (itensNoCarrinho.length > 0) {
+        itensNoCarrinho.forEach(itemElement => {
+            // Captura o nome e o peso de dentro do elemento HTML
+            const nome = itemElement.querySelector('.item-name')?.innerText || "Item Desconhecido";
+            const pesoTexto = itemElement.querySelector('.item-weight')?.innerText || "0";
+            const peso = pesoTexto.replace(/[^0-9.]/g, ''); // Remove letras (ex: "1.5 kg" vira "1.5")
+
             fichaData.inventory.push({
-                name: item.nome, // Aqui pegamos o nome real do objeto
-                qtd: item.quantidade || "1",
-                slots: item.peso || "0"
+                name: nome,
+                qtd: "1",
+                slots: peso || "0"
             });
         });
 
-        // 4. Salva tudo de volta no localStorage
+        // 4. Salva no localStorage e abre a ficha
         localStorage.setItem('t20SheetData', JSON.stringify(fichaData));
 
-        alert(`${itensSelecionados.length} itens enviados com sucesso para a ficha!`);
+        alert(`${itensNoCarrinho.length} itens enviados para https://nicholemos.github.io/ficha/`);
         window.open('https://nicholemos.github.io/ficha/', '_blank');
     } else {
-        alert("O inventário está vazio!");
+        alert("O inventoryContainer está vazio! Adicione itens primeiro.");
     }
 }
-
 // ===== MAPA DE IMAGENS (SIMPLIFICADO) =====
 function getImagePath(itemName) {
     const imageMap = {
