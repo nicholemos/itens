@@ -126,6 +126,10 @@
             <span>Itens Vestidos:</span>
             <span id="totalVestidos">0 / 4</span>
           </div>
+          <button class="btn btn-sm btn-success" 
+              onclick="enviarParaFicha('${item.nome}', '${item.peso}')">
+              <i class="bi bi-send-plus"></i> Enviar p/ Ficha
+          </button>
 
           <button id="clearInventoryBtn" class="filter-btn clear-btn">Limpar Inventário</button>
 
