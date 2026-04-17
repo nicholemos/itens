@@ -71,7 +71,7 @@ let filteredItems = [];
 let inventory = [];
 let currentModalItem = null;
 let currentCategory = 'todos';
-let currentType = 'todos';
+let selectedTypes = []; // Multi-seleção de sub-tipos (vazio = todos)
 let searchTerm = '';
 let currentView = 'grid';
 let currentEmpunhadura = 'todas';
@@ -267,22 +267,16 @@ function setupEventListeners() {
                 empunhaduraFiltersContainer.style.display = 'none';
             }
 
-            currentType = 'todos';
             currentEmpunhadura = 'todas';
             currentSource = 'todas';
+            selectedTypes = []; // Limpa os sub-tipos ao trocar de categoria
 
             empunhaduraButtons.forEach(b => b.classList.remove('active'));
             document.querySelector('[data-empunhadura="todas"]').classList.add('active');
 
             sourceFilterSelect.value = 'todas';
 
-            if (currentCategory === 'Item Superior' || currentCategory === 'Item Mágico' || currentCategory === 'Maldição') {
-                currentType = 'todos';
-                updateSpecificFilters();
-            } else {
-                updateSpecificFilters();
-            }
-
+            updateSpecificFilters();
             applyFilters();
         });
 
@@ -550,7 +544,21 @@ function updateSpecificFilters() {
 
     if (types.length === 0) return;
 
-    const allBtn = createFilterButton('todos', 'Todos');
+    // Hint de multi-seleção
+    const hint = document.createElement('span');
+    hint.className = 'subfilter-hint';
+    hint.textContent = 'Tipo (selecione um ou mais):';
+    specificFiltersContainer.appendChild(hint);
+
+    // Botão "Todos" — limpa a seleção
+    const allBtn = document.createElement('button');
+    allBtn.className = 'filter-btn' + (selectedTypes.length === 0 ? ' active' : '');
+    allBtn.textContent = 'Todos';
+    allBtn.addEventListener('click', () => {
+        selectedTypes = [];
+        updateSpecificFilters();
+        applyFilters();
+    });
     specificFiltersContainer.appendChild(allBtn);
 
     types.sort().forEach(type => {
@@ -561,20 +569,18 @@ function updateSpecificFilters() {
 
 function createFilterButton(value, label) {
     const btn = document.createElement('button');
-
-    if (value === currentType) {
-        btn.className = 'filter-btn active';
-    } else {
-        btn.className = 'filter-btn';
-    }
-
+    btn.className = 'filter-btn' + (selectedTypes.includes(value) ? ' active' : '');
     btn.textContent = label;
+
     btn.addEventListener('click', () => {
-        document.querySelectorAll('#specificFilters .filter-btn').forEach(b => {
-            b.classList.remove('active');
-        });
-        btn.classList.add('active');
-        currentType = value;
+        // Alterna o tipo na seleção múltipla
+        if (selectedTypes.includes(value)) {
+            selectedTypes = selectedTypes.filter(t => t !== value);
+        } else {
+            selectedTypes.push(value);
+        }
+        // Atualiza visual de todos os botões do container
+        updateSpecificFilters();
         applyFilters();
     });
     return btn;
@@ -606,8 +612,8 @@ function applyFilters() {
     let filtered = sourceList;
 
     // 2. Filtros
-    if (currentView === 'grid' && currentType !== 'todos') {
-        filtered = filtered.filter(item => item.tipo === currentType);
+    if (currentView === 'grid' && selectedTypes.length > 0) {
+        filtered = filtered.filter(item => selectedTypes.includes(item.tipo));
     }
 
     if (currentCategory === 'Arma' && currentEmpunhadura !== 'todas') {
