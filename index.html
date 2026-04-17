@@ -22,6 +22,7 @@
       <div class="content-column">
         <div class="filters-section">
           <div class="filter-group">
+            <div class="filter-label-hint">Categorias <span class="filter-hint-text"></span></div>
             <button class="filter-btn active" data-category="todos">Todos</button>
             <button class="filter-btn" data-category="Arma">Armas</button>
             <button class="filter-btn" data-category="Armadura">Armaduras</button>
@@ -128,13 +129,13 @@
             <span id="totalVestidos">0 / 4</span>
           </div>
           <button class="btn-exportar-ficha" onclick="enviarInventarioCompletoParaFicha()">
-              <i class="bi bi-box-arrow-right"></i> Enviar p/ Ficha
+            <i class="bi bi-box-arrow-right"></i> Enviar p/ Ficha
           </button>
-          
+
           <button id="clearInventoryBtn" class="filter-btn clear-btn" onclick="clearInventory()">
-              Limpar Inventário
+            Limpar Inventário
           </button>
-                    
+
           <!-- seta AGORA fica abaixo do inventário -->
           <button id="backToTopBtn" class="inventory-top-btn" type="button" aria-label="Voltar ao topo">
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
