@@ -1819,7 +1819,7 @@ const itensData = {
         },
         {
             nome: "Gema de Força",
-            preco: "T$ 500",
+            preco: "",
             espacos: "1",
             categoria: "Item Geral",
             tipo: "Equipamento de Aventura",
@@ -2359,7 +2359,7 @@ const itensData = {
         },
         {
             nome: "Gema de Força",
-            preco: "T$ 500",
+            preco: "",
             espacos: "1",
             categoria: "Item Geral",
             tipo: "Equipamento de Aventura",
