@@ -144,6 +144,23 @@ select {
   color: #fff;
 }
 
+/* ===== MULTI-SELECT SUB-FILTROS ===== */
+.subfilter-hint {
+  font-size: .72rem;
+  font-weight: 700;
+  color: #6b7a8d;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  width: 100%;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* Destaque extra quando múltiplos tipos estão ativos */
+#specificFilters .filter-btn.active {
+  box-shadow: 0 0 0 2px rgba(224, 72, 63, 0.35);
+}
+
 /* ===== GRID DE ITENS ===== */
 .items-grid {
   display: grid;
