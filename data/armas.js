@@ -1553,6 +1553,51 @@ const armasData = {
             fonte: "Heróis de Arton"
         },
         {
+            nome: "Pistola-Tambor",
+            preco: "T$ 2.100",
+            dano: "2d6",
+            critico: "19/x3",
+            alcance: "Médio",
+            tipo_dano: "Perfuração",
+            espacos: "1",
+            categoria: "Arma",
+            tipo: "De Fogo",
+            empunhadura: "Uma mão",
+            descricao: "Esta arma de fogo possui um tambor giratório que armazena 4 munições. Esse tambor é parte de um mecanismo complexo e por isso conta como uma melhoria para a arma. Recarregar uma pistola-tambor é uma ação completa.",
+            fonte: "Guia de NPCs"
+        },
+        {
+            nome: "Cajado de Batalha",
+            preco: "T$ 10",
+            dano: "1d8/1d8",
+            critico: "x2",
+            alcance: "",
+            tipo_dano: "Impacto",
+            espacos: "2",
+            categoria: "Arma",
+            tipo: "Marcial",
+            empunhadura: "Duas Mãos",
+            descricao: "Um cajado reforçado com chapas de metal nas pontas. Uma arma discreta, usada por andarilhos que não querem levantar suspeitas. O cajado de batalha é uma arma dupla.",
+            fonte: "Guia de NPCs"
+        },
+        {
+            nome: "Kum’shrak",
+            preco: "_",
+            dano: "1d6",
+            critico: "x2",
+            alcance: "",
+            tipo_dano: "Impacto",
+            espacos: "1",
+            categoria: "Arma",
+            tipo: "Exótica",
+            empunhadura: "Uma mão",
+            descricao: "Um kum’shrak recém-criado é um osso grande, que funciona como uma arma improvisada (–2 em ataques, 1d6 de dano, crítico x2). Quando mata pela primeira vez, torna-se uma clava. Quando mata cinco vítimas, torna-se um machado de batalha. Ao fazer sua décima vítima, o kum’shrak recebe uma melhoria escolhida por seu portador. Depois disso, sempre que dobra seu número de mortes (20, 40 etc.), adquire uma nova melhoria, até um máximo de quatro melhorias. Além das melhorias normais, um kum’shrak tem acesso a três melhorias exclusivas."
+"• Eviscerador. Uma criatura atingida fica sangrando (Fort CD For evita)."
+"• Necrótico. Uma criatura atingida fica fraca (Fort CD For evita)." 
+"• Peçonhento. Uma criatura atingida perde 1d6 pontos de vida por veneno.",
+            fonte: "Guia de NPCs"
+        },
+        {
             nome: "Sifão Cáustico",
             preco: "T$ 600",
             dano: "4d6",
