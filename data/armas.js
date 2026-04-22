@@ -1606,7 +1606,8 @@ const armasData = {
             "categoria": "Arma",
             "tipo": "Exótica",
             "empunhadura": "Uma mão",
-            "descricao": "Arma ritualística Duyshidakk que evolui com mortes. Inicialmente é um osso (arma improvisada, -2 ataque). Evolução: 1ª morte (Clava); 5ª morte (Machado de Batalha); 10ª morte (+1 melhoria). Dobro de mortes subsequentes (20, 40...) conferem novas melhorias (máx. 4). Possui melhorias exclusivas: Eviscerador (Sangramento), Necrótico (Fraco) ou Peçonhento (1d6 veneno); CDs baseadas em Força. Maldição: Se usada como ferramenta ou se o portador fugir, impõe penalidades de -5, envenena comida ou causa 1d4 de dano no dono."
+            "descricao": "Arma ritualística Duyshidakk que evolui com mortes. Inicialmente é um osso (arma improvisada, -2 ataque). Evolução: 1ª morte (Clava); 5ª morte (Machado de Batalha); 10ª morte (+1 melhoria). Dobro de mortes subsequentes (20, 40...) conferem novas melhorias (máx. 4). Possui melhorias exclusivas: Eviscerador (Sangramento), Necrótico (Fraco) ou Peçonhento (1d6 veneno); CDs baseadas em Força. Maldição: Se usada como ferramenta ou se o portador fugir, impõe penalidades de -5, envenena comida ou causa 1d4 de dano no dono.",
+            "fonte": "Guia de NPCs"
         },
         {
             "nome": "Maça de Guerra",
@@ -1619,7 +1620,8 @@ const armasData = {
             "categoria": "Arma",
             "tipo": "Exótica",
             "empunhadura": "Uma mão",
-            "descricao": "Uma versão mais perigosa da maça comum, com uma cabeça formada por grandes placas de metal. Arma desbalanceada (−2 em ataques)."
+            "descricao": "Uma versão mais perigosa da maça comum, com uma cabeça formada por grandes placas de metal. Arma desbalanceada (−2 em ataques).",
+            "fonte": "Guia de NPCs"
         },
         {
             "nome": "Machado de Lenha",
@@ -1632,7 +1634,9 @@ const armasData = {
             "categoria": "Arma",
             "tipo": "Simples",
             "empunhadura": "Uma mão",
-            "descricao": "Uma ferramenta comum para corte de madeira. Devido à sua lâmina projetada para materiais rígidos, ataques desferidos com esta arma ignoram 5 pontos de RD (Redução de Dano) de objetos e construtos."
+            "descricao": "Uma ferramenta comum para corte de madeira. Devido à sua lâmina projetada para materiais rígidos, ataques desferidos com esta arma ignoram 5 pontos de RD (Redução de Dano) de objetos e construtos.",
+            "fonte": "Guia de NPCs"
+
         }
 
     ]
