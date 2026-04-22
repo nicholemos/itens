@@ -1594,6 +1594,45 @@ const armasData = {
             empunhadura: "Duas Mãos",
             descricao: "Dispersa ácido em cone de 6m. Reservatório armazena 2 doses de ácido (10 ataques). Recarregar é ação completa. Aplica bônus de dano de itens alquímicos. Ocupa 1 espaço de item vestido.",
             fonte: "Heróis de Arton"
+        },
+        {
+            "nome": "Kum’shrak",
+            "preco": "T$ —",
+            "dano": "1d6",
+            "critico": "x2",
+            "alcance": "Corpo a corpo",
+            "tipo_dano": "Impacto",
+            "espacos": "1",
+            "categoria": "Arma",
+            "tipo": "Exótica",
+            "empunhadura": "Uma mão",
+            "descricao": "Arma ritualística Duyshidakk que evolui com mortes. Inicialmente é um osso (arma improvisada, -2 ataque). Evolução: 1ª morte (Clava); 5ª morte (Machado de Batalha); 10ª morte (+1 melhoria). Dobro de mortes subsequentes (20, 40...) conferem novas melhorias (máx. 4). Possui melhorias exclusivas: Eviscerador (Sangramento), Necrótico (Fraco) ou Peçonhento (1d6 veneno); CDs baseadas em Força. Maldição: Se usada como ferramenta ou se o portador fugir, impõe penalidades de -5, envenena comida ou causa 1d4 de dano no dono."
+        },
+        {
+            "nome": "Maça de Guerra",
+            "preco": "T$ 25",
+            "dano": "1d12",
+            "critico": "x3",
+            "alcance": "Corpo a corpo",
+            "tipo_dano": "Impacto",
+            "espacos": "1",
+            "categoria": "Arma",
+            "tipo": "Exótica",
+            "empunhadura": "Uma mão",
+            "descricao": "Uma versão mais perigosa da maça comum, com uma cabeça formada por grandes placas de metal. Arma desbalanceada (−2 em ataques)."
+        },
+        {
+            "nome": "Machado de Lenha",
+            "preco": "T$ 15",
+            "dano": "1d6",
+            "critico": "x3",
+            "alcance": "Corpo a corpo",
+            "tipo_dano": "Corte",
+            "espacos": "1",
+            "categoria": "Arma",
+            "tipo": "Simples",
+            "empunhadura": "Uma mão",
+            "descricao": "Uma ferramenta comum para corte de madeira. Devido à sua lâmina projetada para materiais rígidos, ataques desferidos com esta arma ignoram 5 pontos de RD (Redução de Dano) de objetos e construtos."
         }
 
     ]
