@@ -94,19 +94,20 @@ let searchInput, itemsGrid, itemModal, modalOverlay, closeModalBtn,
 // SUBSTITUA A FUNÇÃO "window.onload" INTEIRA POR ESTA:
 
 window.onload = () => {
-    // Injeta estilo para o botão de exportação para a ficha
-    const exportStyle = document.createElement('style');
-    exportStyle.textContent = `
-        .export-sheet-btn {
-            background: none; border: none; cursor: pointer;
-            font-size: 1rem; padding: 2px 5px; border-radius: 4px;
-            transition: transform 0.15s;
-            opacity: 0.8;
+    // Injeta estilos auxiliares
+    const style = document.createElement('style');
+    style.textContent = `
+        .shop-toast {
+            position: fixed; bottom: 1rem; right: 1rem; z-index: 9999;
+            background: #1a1a2e; color: #fff; padding: 0.5rem 1rem;
+            border-radius: 8px; font-size: 0.85rem;
+            display: flex; align-items: center; gap: 0.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            animation: toastIn 0.25s ease;
         }
-        .export-sheet-btn:hover { transform: scale(1.2); opacity: 1; }
-        .export-sheet-btn:disabled { opacity: 0.5; cursor: default; transform: none; }
+        @keyframes toastIn { from { opacity:0; transform: translateY(10px); } to { opacity:1; transform: translateY(0); } }
     `;
-    document.head.appendChild(exportStyle);
+    document.head.appendChild(style);
     // 1. Pega os elementos do DOM
     searchInput = document.getElementById('searchInput');
     itemsGrid = document.getElementById('itemsGrid');
@@ -321,10 +322,6 @@ function setupEventListeners() {
         if (e.target.classList.contains('remove-item-btn')) {
             const index = parseInt(e.target.dataset.index, 10);
             removeItemFromInventory(index);
-        }
-        if (e.target.classList.contains('export-sheet-btn')) {
-            const index = parseInt(e.target.dataset.index, 10);
-            exportToSheet(index, e.target);
         }
     });
 
@@ -917,12 +914,10 @@ function addItemToInventory() {
     };
 
     inventory.push(inventoryItem);
-
+    autoExportToSheet(inventoryItem);
     renderInventory();
     closeModal();
-}
-
-function removeItemFromInventory(index) {
+}(index) {
     inventory.splice(index, 1);
     renderInventory();
 }
@@ -952,7 +947,6 @@ function renderInventory() {
           <td class="inv-num">${invItem.quantity || 0}</td>
           <td class="inv-num">${spacesTotal || '—'}</td>
           <td class="inv-actions">
-            <button class="export-sheet-btn" data-index="${index}" title="Enviar para a Ficha" onclick="exportToSheet(${index})">📤</button>
             <button class="remove-item-btn" data-index="${index}" title="Remover">&times;</button>
           </td>
         </tr>
@@ -1654,11 +1648,63 @@ function exportToSheet(index, btnEl) {
     }
 }
 
+function autoExportToSheet(invItem) {
+    const item = invItem.baseItem;
+
+    const noteLines = [];
+    if (item.descricao) noteLines.push(item.descricao);
+    if (invItem.modifications?.length) noteLines.push('📌 Modificações: ' + invItem.modifications.join(', '));
+    if (invItem.enchantments?.length)  noteLines.push('✨ Encantamentos: ' + invItem.enchantments.join(', '));
+    if (item.dano)         noteLines.push(`⚔️ Dano: ${item.dano} | Crítico: ${item.critico} | Tipo: ${item.tipo_dano || '—'} | Alcance: ${item.alcance || '—'}`);
+    if (item.bonus_defesa) noteLines.push(`🛡️ Defesa: ${item.bonus_defesa} | Penalidade: ${item.penalidade_armadura || '0'}`);
+
+    const transferItem = {
+        name: invItem.customName,
+        qtd: String(invItem.quantity),
+        slots: String(invItem.finalSpaces || 0),
+        note: noteLines.join('\n'),
+        combatData: item.dano ? {
+            nome: invItem.customName,
+            dano: item.dano,
+            critico: item.critico,
+            tipo_dano: item.tipo_dano || '',
+            alcance: item.alcance || ''
+        } : null,
+        defenseData: item.bonus_defesa ? {
+            nome: invItem.customName,
+            bonus: item.bonus_defesa,
+            penalidade: item.penalidade_armadura || '0'
+        } : null
+    };
+
+    // Salva na fila
+    const queue = JSON.parse(localStorage.getItem('t20_sheet_queue') || '[]');
+    queue.push(transferItem);
+    localStorage.setItem('t20_sheet_queue', JSON.stringify(queue));
+
+    // Notifica a ficha em tempo real (mesmo navegador, abas diferentes)
+    try {
+        const bc = new BroadcastChannel('t20_sheet_channel');
+        bc.postMessage({ type: 'new_item', item: transferItem });
+        bc.close();
+    } catch(e) { /* BroadcastChannel não disponível */ }
+
+    showShopToast(`📋 <strong>${invItem.customName}</strong> enviado para a ficha!`);
+}
+
+function showShopToast(html) {
+    const t = document.createElement('div');
+    t.className = 'shop-toast';
+    t.innerHTML = html;
+    document.body.appendChild(t);
+    setTimeout(() => t.remove(), 2800);
+}
+
 function addRandomItemToInventory() {
     if (!currentRandomResult) return;
     const qty = parseInt(document.getElementById('randResultQty').value, 10) || 1;
 
-    inventory.push({
+    const inventoryItem = {
         baseItem: currentRandomResult.baseItem,
         customName: currentRandomResult.customName,
         quantity: qty,
@@ -1666,8 +1712,10 @@ function addRandomItemToInventory() {
         enchantments: currentRandomResult.enchantments.map(e => e.nome),
         finalPrice: currentRandomResult.finalPrice,
         finalSpaces: currentRandomResult.finalSpaces
-    });
+    };
 
+    inventory.push(inventoryItem);
+    autoExportToSheet(inventoryItem);
     renderInventory();
     closeRandomizerModal();
 }
