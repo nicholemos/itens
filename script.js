@@ -1654,12 +1654,11 @@ function exportToSheet(index, btnEl) {
 function autoExportToSheet(invItem) {
     const item = invItem.baseItem;
 
+    // Anotação: apenas descrição e modificações — dados de combate/defesa ficam nos botões
     const noteLines = [];
     if (item.descricao) noteLines.push(item.descricao);
     if (invItem.modifications?.length) noteLines.push('📌 Modificações: ' + invItem.modifications.join(', '));
-    if (invItem.enchantments?.length) noteLines.push('✨ Encantamentos: ' + invItem.enchantments.join(', '));
-    if (item.dano) noteLines.push(`⚔️ Dano: ${item.dano} | Crítico: ${item.critico} | Tipo: ${item.tipo_dano || '—'} | Alcance: ${item.alcance || '—'}`);
-    if (item.bonus_defesa) noteLines.push(`🛡️ Defesa: ${item.bonus_defesa} | Penalidade: ${item.penalidade_armadura || '0'}`);
+    if (invItem.enchantments?.length)  noteLines.push('✨ Encantamentos: ' + invItem.enchantments.join(', '));
 
     const transferItem = {
         name: invItem.customName,
@@ -1676,21 +1675,15 @@ function autoExportToSheet(invItem) {
         defenseData: item.bonus_defesa ? {
             nome: invItem.customName,
             bonus: item.bonus_defesa,
-            penalidade: item.penalidade_armadura || '0'
+            penalidade: item.penalidade_armadura || '0',
+            tipo: item.tipo || ''   // "Armadura Leve", "Armadura Pesada", "Escudo Leve", "Escudo Pesado"
         } : null
     };
 
-    // Salva na fila
+    // Apenas fila no localStorage — o storage event notifica a ficha sem duplicar
     const queue = JSON.parse(localStorage.getItem('t20_sheet_queue') || '[]');
     queue.push(transferItem);
     localStorage.setItem('t20_sheet_queue', JSON.stringify(queue));
-
-    // Notifica a ficha em tempo real (mesmo navegador, abas diferentes)
-    try {
-        const bc = new BroadcastChannel('t20_sheet_channel');
-        bc.postMessage({ type: 'new_item', item: transferItem });
-        bc.close();
-    } catch (e) { /* BroadcastChannel não disponível */ }
 
     showShopToast(`📋 <strong>${invItem.customName}</strong> enviado para a ficha!`);
 }
