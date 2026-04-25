@@ -94,6 +94,19 @@ let searchInput, itemsGrid, itemModal, modalOverlay, closeModalBtn,
 // SUBSTITUA A FUNÇÃO "window.onload" INTEIRA POR ESTA:
 
 window.onload = () => {
+    // Injeta estilo para o botão de exportação para a ficha
+    const exportStyle = document.createElement('style');
+    exportStyle.textContent = `
+        .export-sheet-btn {
+            background: none; border: none; cursor: pointer;
+            font-size: 1rem; padding: 2px 5px; border-radius: 4px;
+            transition: transform 0.15s;
+            opacity: 0.8;
+        }
+        .export-sheet-btn:hover { transform: scale(1.2); opacity: 1; }
+        .export-sheet-btn:disabled { opacity: 0.5; cursor: default; transform: none; }
+    `;
+    document.head.appendChild(exportStyle);
     // 1. Pega os elementos do DOM
     searchInput = document.getElementById('searchInput');
     itemsGrid = document.getElementById('itemsGrid');
@@ -308,6 +321,10 @@ function setupEventListeners() {
         if (e.target.classList.contains('remove-item-btn')) {
             const index = parseInt(e.target.dataset.index, 10);
             removeItemFromInventory(index);
+        }
+        if (e.target.classList.contains('export-sheet-btn')) {
+            const index = parseInt(e.target.dataset.index, 10);
+            exportToSheet(index, e.target);
         }
     });
 
@@ -935,6 +952,7 @@ function renderInventory() {
           <td class="inv-num">${invItem.quantity || 0}</td>
           <td class="inv-num">${spacesTotal || '—'}</td>
           <td class="inv-actions">
+            <button class="export-sheet-btn" data-index="${index}" title="Enviar para a Ficha" onclick="exportToSheet(${index})">📤</button>
             <button class="remove-item-btn" data-index="${index}" title="Remover">&times;</button>
           </td>
         </tr>
@@ -1590,6 +1608,50 @@ function renderRandomResult(result) {
     }
     document.getElementById('randResultCustomizations').innerHTML = custHTML;
     document.getElementById('randResult').style.display = 'flex';
+}
+
+function exportToSheet(index, btnEl) {
+    const invItem = inventory[index];
+    const item = invItem.baseItem;
+
+    // Monta o texto de anotação
+    const noteLines = [];
+    if (item.descricao) noteLines.push(item.descricao);
+    if (invItem.modifications?.length) noteLines.push('📌 Modificações: ' + invItem.modifications.join(', '));
+    if (invItem.enchantments?.length)  noteLines.push('✨ Encantamentos: ' + invItem.enchantments.join(', '));
+    if (item.dano)        noteLines.push(`⚔️ Dano: ${item.dano} | Crítico: ${item.critico} | Tipo: ${item.tipo_dano || '—'} | Alcance: ${item.alcance || '—'}`);
+    if (item.bonus_defesa) noteLines.push(`🛡️ Defesa: ${item.bonus_defesa} | Penalidade: ${item.penalidade_armadura || '0'}`);
+
+    const transferItem = {
+        name: invItem.customName,
+        qtd: String(invItem.quantity),
+        slots: String(invItem.finalSpaces || 0),
+        note: noteLines.join('\n'),
+        combatData: item.dano ? {
+            nome: invItem.customName,
+            dano: item.dano,
+            critico: item.critico,
+            tipo_dano: item.tipo_dano || '',
+            alcance: item.alcance || ''
+        } : null,
+        defenseData: item.bonus_defesa ? {
+            nome: invItem.customName,
+            bonus: item.bonus_defesa,
+            penalidade: item.penalidade_armadura || '0'
+        } : null
+    };
+
+    const queue = JSON.parse(localStorage.getItem('t20_sheet_queue') || '[]');
+    queue.push(transferItem);
+    localStorage.setItem('t20_sheet_queue', JSON.stringify(queue));
+
+    // Feedback visual no botão
+    if (btnEl) {
+        const original = btnEl.textContent;
+        btnEl.textContent = '✅';
+        btnEl.disabled = true;
+        setTimeout(() => { btnEl.textContent = original; btnEl.disabled = false; }, 2500);
+    }
 }
 
 function addRandomItemToInventory() {
