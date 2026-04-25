@@ -161,14 +161,15 @@ window.onload = () => {
 function loadItems() {
     try {
         // 1. Combina todos os arrays dos arquivos .js externos
+        // (const declaradas no topo de scripts não ficam em window.xxx)
         const combinedData = [
-            ...(window.armasData?.arma || []),
-            ...(window.armadurasData?.armadura || []),
-            ...(window.itensData?.item || []),
-            ...(window.itensMagicosData?.item || []),
-            ...(window.modificacoesData?.modificacao || []),
-            ...(window.enchantmentosData?.encantamento || []),
-            ...(window.maldicaoData?.maldicao || [])
+            ...(typeof armasData !== 'undefined' ? (armasData.arma || []) : []),
+            ...(typeof armadurasData !== 'undefined' ? (armadurasData.armadura || []) : []),
+            ...(typeof itensData !== 'undefined' ? (itensData.item || []) : []),
+            ...(typeof itensMagicosData !== 'undefined' ? (itensMagicosData.item || []) : []),
+            ...(typeof modificacoesData !== 'undefined' ? (modificacoesData.modificacao || []) : []),
+            ...(typeof enchantmentosData !== 'undefined' ? (enchantmentosData.encantamento || []) : []),
+            ...(typeof maldicaoData !== 'undefined' ? (maldicaoData.maldicao || []) : [])
         ];
 
         // 2. Processa os dados
@@ -261,12 +262,12 @@ function setupEventListeners() {
     });
 
     if (mobileInventoryBtn && inventoryContainer) {
-  mobileInventoryBtn.addEventListener('click', () => {
-    if (itemModal?.classList.contains('active')) closeModal();
-    inventoryContainer.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  });
-}
+        mobileInventoryBtn.addEventListener('click', () => {
+            if (itemModal?.classList.contains('active')) closeModal();
+            inventoryContainer.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    }
 
 
     categoryButtons.forEach(btn => {
@@ -917,7 +918,9 @@ function addItemToInventory() {
     autoExportToSheet(inventoryItem);
     renderInventory();
     closeModal();
-}(index) {
+}
+
+function removeItemFromInventory(index) {
     inventory.splice(index, 1);
     renderInventory();
 }
@@ -1407,7 +1410,7 @@ function getModAplicavelEm(mod) {
 
     // Extrai o trecho após "Aplicável em:" ou "Melhoria para"
     const match = desc.match(/Aplicável em:\s*([^.(]+)/i)
-                || desc.match(/Melhoria para\s+([^.(,]+)/i);
+        || desc.match(/Melhoria para\s+([^.(,]+)/i);
 
     if (!match) return TODOS; // sem restrição explícita → aplica em tudo
 
@@ -1418,13 +1421,13 @@ function getModAplicavelEm(mod) {
 
     // IMPORTANTE: checar 'Armadura' ANTES de 'Arma', e usar \b para evitar
     // que "Armaduras" dê match no teste de "Armas" (substring collision)
-    if (/\barmaduras?\b/i.test(texto))       result.push('Armadura');
-    if (/\bescudos?\b/i.test(texto))         result.push('Escudo');
-    if (/\barmas?\b/i.test(texto))           result.push('Arma');   // "Armas" mas não "Armaduras"
+    if (/\barmaduras?\b/i.test(texto)) result.push('Armadura');
+    if (/\bescudos?\b/i.test(texto)) result.push('Escudo');
+    if (/\barmas?\b/i.test(texto)) result.push('Arma');   // "Armas" mas não "Armaduras"
     if (/\bmunições?\b|\bmunição\b/i.test(texto)) result.push('Munição');
-    if (/\besotéric/i.test(texto))           result.push('Esotérico');
-    if (/\bferramentas?\b/i.test(texto))     result.push('Ferramenta');
-    if (/\bvestuário\b/i.test(texto))        result.push('Vestuário');
+    if (/\besotéric/i.test(texto)) result.push('Esotérico');
+    if (/\bferramentas?\b/i.test(texto)) result.push('Ferramenta');
+    if (/\bvestuário\b/i.test(texto)) result.push('Vestuário');
 
     return result.length > 0 ? result : TODOS;
 }
@@ -1612,8 +1615,8 @@ function exportToSheet(index, btnEl) {
     const noteLines = [];
     if (item.descricao) noteLines.push(item.descricao);
     if (invItem.modifications?.length) noteLines.push('📌 Modificações: ' + invItem.modifications.join(', '));
-    if (invItem.enchantments?.length)  noteLines.push('✨ Encantamentos: ' + invItem.enchantments.join(', '));
-    if (item.dano)        noteLines.push(`⚔️ Dano: ${item.dano} | Crítico: ${item.critico} | Tipo: ${item.tipo_dano || '—'} | Alcance: ${item.alcance || '—'}`);
+    if (invItem.enchantments?.length) noteLines.push('✨ Encantamentos: ' + invItem.enchantments.join(', '));
+    if (item.dano) noteLines.push(`⚔️ Dano: ${item.dano} | Crítico: ${item.critico} | Tipo: ${item.tipo_dano || '—'} | Alcance: ${item.alcance || '—'}`);
     if (item.bonus_defesa) noteLines.push(`🛡️ Defesa: ${item.bonus_defesa} | Penalidade: ${item.penalidade_armadura || '0'}`);
 
     const transferItem = {
@@ -1654,8 +1657,8 @@ function autoExportToSheet(invItem) {
     const noteLines = [];
     if (item.descricao) noteLines.push(item.descricao);
     if (invItem.modifications?.length) noteLines.push('📌 Modificações: ' + invItem.modifications.join(', '));
-    if (invItem.enchantments?.length)  noteLines.push('✨ Encantamentos: ' + invItem.enchantments.join(', '));
-    if (item.dano)         noteLines.push(`⚔️ Dano: ${item.dano} | Crítico: ${item.critico} | Tipo: ${item.tipo_dano || '—'} | Alcance: ${item.alcance || '—'}`);
+    if (invItem.enchantments?.length) noteLines.push('✨ Encantamentos: ' + invItem.enchantments.join(', '));
+    if (item.dano) noteLines.push(`⚔️ Dano: ${item.dano} | Crítico: ${item.critico} | Tipo: ${item.tipo_dano || '—'} | Alcance: ${item.alcance || '—'}`);
     if (item.bonus_defesa) noteLines.push(`🛡️ Defesa: ${item.bonus_defesa} | Penalidade: ${item.penalidade_armadura || '0'}`);
 
     const transferItem = {
@@ -1687,7 +1690,7 @@ function autoExportToSheet(invItem) {
         const bc = new BroadcastChannel('t20_sheet_channel');
         bc.postMessage({ type: 'new_item', item: transferItem });
         bc.close();
-    } catch(e) { /* BroadcastChannel não disponível */ }
+    } catch (e) { /* BroadcastChannel não disponível */ }
 
     showShopToast(`📋 <strong>${invItem.customName}</strong> enviado para a ficha!`);
 }
