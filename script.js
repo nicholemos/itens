@@ -248,6 +248,22 @@ function loadInventory() {
     }
 }
 
+function clearInventory() {
+    if (confirm("Tem certeza que deseja limpar todo o inventário?")) {
+        inventory = [];
+        saveInventory();
+        if (typeof renderInventory === 'function') {
+            renderInventory();
+        }
+        
+        const toast = document.createElement('div');
+        toast.className = 'shop-toast';
+        toast.innerHTML = `<i class="bi bi-trash"></i> Inventário limpo!`;
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), 3000);
+    }
+}
+
 // ===== EVENT LISTENERS =====
 // SUBSTITUA A FUNÇÃO "setupEventListeners" INTEIRA POR ESTA:
 
@@ -1658,7 +1674,7 @@ function autoExportToSheet(invItem) {
     const noteLines = [];
     if (item.descricao) noteLines.push(item.descricao);
     if (invItem.modifications?.length) noteLines.push('📌 Modificações: ' + invItem.modifications.join(', '));
-    if (invItem.enchantments?.length)  noteLines.push('✨ Encantamentos: ' + invItem.enchantments.join(', '));
+    if (invItem.enchantments?.length) noteLines.push('✨ Encantamentos: ' + invItem.enchantments.join(', '));
 
     const transferItem = {
         name: invItem.customName,
