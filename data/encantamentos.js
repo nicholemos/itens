@@ -20,6 +20,14 @@ const enchantmentosData = {
             "descricao": "Encantamento que torna a arma letal contra um tipo de criatura específico. Causa +4d8 de dano (custo 2 PM) ao acertar esse tipo."
         },
         {
+            "nome": "Encanto Arremesso",
+            "preco": "",
+            "espacos": "—",
+            "categoria": "encantamento",
+            "tipo": "Arma",
+            "descricao": "Encantamento que permite arremessar uma arma em alcance curto sem penalidades. Se a arma já possuía essa capacidade, seu alcance é aumentado em uma categoria. Após o arremesso, a arma retornará voando para você, e pegá-la é uma reação."
+        },
+        {
             "nome": "Encanto Assassina",
             "preco": "",
             "espacos": "—",
