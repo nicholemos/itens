@@ -255,7 +255,7 @@ function clearInventory() {
         if (typeof renderInventory === 'function') {
             renderInventory();
         }
-        
+
         const toast = document.createElement('div');
         toast.className = 'shop-toast';
         toast.innerHTML = `<i class="bi bi-trash"></i> Inventário limpo!`;
@@ -931,7 +931,6 @@ function addItemToInventory() {
     };
 
     inventory.push(inventoryItem);
-    autoExportToSheet(inventoryItem);
     renderInventory();
     closeModal();
 }
@@ -1317,33 +1316,45 @@ function closeModal() {
 }
 
 function enviarInventarioCompletoParaFicha() {
-    // 1. Verifica se há itens no inventário
     if (!inventory || inventory.length === 0) {
         alert("O inventário está vazio! Adicione itens antes de exportar.");
         return;
     }
 
-    // 2. Carrega os dados atuais da ficha para não apagar nada
-    let fichaRaw = localStorage.getItem('t20SheetData');
-    let fichaData = fichaRaw ? JSON.parse(fichaRaw) : {};
-    if (!fichaData.inventory) fichaData.inventory = [];
+    // Monta os itens no formato completo esperado pela ficha
+    const itensParaEnviar = inventory.map(invItem => {
+        const item = invItem.baseItem;
+        const noteLines = [];
+        if (item.descricao) noteLines.push(item.descricao);
+        if (invItem.modifications?.length) noteLines.push('📌 Modificações: ' + invItem.modifications.join(', '));
+        if (invItem.enchantments?.length)  noteLines.push('✨ Encantamentos: ' + invItem.enchantments.join(', '));
 
-    // 3. Mapeia os itens do inventário para o formato da ficha { name, qtd, slots }
-    const itensParaEnviar = inventory.map(invItem => ({
-        name: invItem.customName || invItem.baseItem?.nome || "Item",
-        qtd: String(invItem.quantity || 1),
-        slots: String(invItem.finalSpaces ?? 0)
-    }));
+        return {
+            name: invItem.customName || item.nome || 'Item',
+            qtd:  String(invItem.quantity || 1),
+            slots: String(invItem.finalSpaces ?? 0),
+            note: noteLines.join('\n'),
+            combatData: item.dano ? {
+                nome: invItem.customName || item.nome,
+                dano: item.dano,
+                critico: item.critico,
+                tipo_dano: item.tipo_dano || '',
+                alcance: item.alcance || ''
+            } : null,
+            defenseData: item.bonus_defesa ? {
+                nome: invItem.customName || item.nome,
+                bonus: item.bonus_defesa,
+                penalidade: item.penalidade_armadura || '0',
+                tipo: item.tipo || ''
+            } : null
+        };
+    });
 
-    // 4. Adiciona os itens ao equipamento da ficha (sem apagar o que já existe)
-    fichaData.inventory = fichaData.inventory.concat(itensParaEnviar);
+    // Sobrescreve a fila — ao clicar "Enviar", substitui qualquer envio anterior pendente
+    localStorage.setItem('t20_sheet_queue', JSON.stringify(itensParaEnviar));
 
-    // 5. Salva no localStorage compartilhado (mesmo domínio: nicholemos.github.io)
-    localStorage.setItem('t20SheetData', JSON.stringify(fichaData));
+    alert(`${itensParaEnviar.length} item(s) preparado(s) para a ficha!\n\nClique em "Sync Loja" na ficha para importar, ou ela importará ao abrir.`);
 
-    alert(`${itensParaEnviar.length} item(s) enviado(s) para a ficha com sucesso!\n\nA ficha será aberta em uma nova aba.`);
-
-    // 6. Abre a ficha em uma nova aba
     window.open('https://nicholemos.github.io/ficha/', '_blank');
 }
 
@@ -1727,7 +1738,6 @@ function addRandomItemToInventory() {
     };
 
     inventory.push(inventoryItem);
-    autoExportToSheet(inventoryItem);
     renderInventory();
     closeRandomizerModal();
 }
