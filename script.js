@@ -22,46 +22,46 @@ const enchantmentPrices = {
 // Valor em array: a melhoria só aparece se ao menos UM dos pré-requisitos já estiver selecionado
 const modificationPrereqs = {
     // Armas
-    "Pungente":           ["Certeira"],
-    "Atroz":              ["Cruel"],
-    "Penetrante":         ["Cruel"],
-    "Farpada":            ["Cruel"],
+    "Pungente": ["Certeira"],
+    "Atroz": ["Cruel"],
+    "Penetrante": ["Cruel"],
+    "Farpada": ["Cruel"],
     // Armaduras e Escudos
-    "Sob Medida":         ["Ajustada"],
+    "Sob Medida": ["Ajustada"],
     // Esotéricos
-    "Potencializador":    ["Canalizador"],
+    "Potencializador": ["Canalizador"],
     // Todas as categorias
-    "Deslumbrante":       ["Banhado a Ouro", "Cravejado de Gemas"],
+    "Deslumbrante": ["Banhado a Ouro", "Cravejado de Gemas"],
     // Outros (exibição informativa — pré-req não é uma melhoria selecionável)
     "Harmonizada (Arma)": [],
-    "Tesoura":            [],
-    "Balístico":          ["Reforçada"],
-    "Devotado":           ["Inscrito"]
+    "Tesoura": [],
+    "Balístico": ["Reforçada"],
+    "Devotado": ["Inscrito"]
 };
 
 // Mapa de exclusões mútuas entre modificações
 const modificationExcludes = {
-    "Maciça":    ["Precisa"],
-    "Precisa":   ["Maciça"],
+    "Maciça": ["Precisa"],
+    "Precisa": ["Maciça"],
     "Brasonado": ["Discreto"],
-    "Discreto":  ["Brasonado"]
+    "Discreto": ["Brasonado"]
 };
 const enchantmentPrereqs = {
     // Armas
-    "Encanto Magnífica":    ["Encanto Formidável"],
-    "Encanto Energética":   ["Encanto Formidável"],
-    "Encanto Lacinante":    ["Encanto Dilacerante"],
-    "Encanto Cronal":       ["Encanto Formidável"],
-    "Encanto Manáfaga":     ["Encanto Formidável"],
+    "Encanto Magnífica": ["Encanto Formidável"],
+    "Encanto Energética": ["Encanto Formidável"],
+    "Encanto Lacinante": ["Encanto Dilacerante"],
+    "Encanto Cronal": ["Encanto Formidável"],
+    "Encanto Manáfaga": ["Encanto Formidável"],
     // Armaduras/Escudos
-    "Encanto Guardião":     ["Encanto Defensor"],
-    "Encanto Reflexiva":    ["Encanto Cristalina"],
-    "Encanto Sepulcral":    ["Encanto Tumular"],
-    "Encanto Anulador":     ["Encanto Abascanto"],
-    "Encanto Estígio":      ["Encanto Abençoado"],
+    "Encanto Guardião": ["Encanto Defensor"],
+    "Encanto Reflexiva": ["Encanto Cristalina"],
+    "Encanto Sepulcral": ["Encanto Tumular"],
+    "Encanto Anulador": ["Encanto Abascanto"],
+    "Encanto Estígio": ["Encanto Abençoado"],
     // Sem pré-req enforcado (mantidos por completude)
-    "Encanto Implacável":   [],
-    "Encanto Majestoso":    [],
+    "Encanto Implacável": [],
+    "Encanto Majestoso": [],
     "Encanto Pulverizante": []
 };
 
@@ -414,6 +414,8 @@ function setupEventListeners() {
         // Após qualquer mudança de melhoria, reavalia quais opções devem aparecer
         if (e.target.tagName === 'SELECT' && !e.target.classList.contains('material-selector')) {
             refreshModSelectorOptions();
+        } else if (e.target.tagName === 'SELECT' && e.target.classList.contains('material-selector')) {
+            updateModalStatsFromMods();
         }
     });
 
@@ -498,6 +500,8 @@ function handleModSelection(e) {
             }
         } else if (item.tipo === 'Esotérico') {
             availableMaterials = allMaterials.filter(m => m.nome.includes('(Esotérico)'));
+        } else if (item.tipo === 'Vestuário') {
+            availableMaterials = allMaterials.filter(m => m.nome.includes('Tixonessica'));
         }
 
         const optionsHTML = `<option value="nenhum/a">--- Escolha Material ---</option>` +
@@ -941,8 +945,8 @@ function addItemToInventory() {
     const finalPrice = (basePrice + modSlotPrice + materialPrice + enchantPrice);
 
     // Aplica os efeitos numéricos das melhorias e depois dos encantamentos
-    const modifiedItem   = applyModEffects(currentModalItem, selectedMods);
-    const fullyModified  = applyEnchantEffects(currentModalItem, modifiedItem, selectedEnchants);
+    const modifiedItem = applyModEffects(currentModalItem, selectedMods);
+    const fullyModified = applyEnchantEffects(currentModalItem, modifiedItem, selectedEnchants);
 
     let customName = currentModalItem.nome;
     const customizations = [...selectedMods, ...selectedEnchants];
@@ -1120,7 +1124,7 @@ function getAvailableModOptions(item) {
         opts = opts.concat(allModifications.filter(m => m.descricao?.includes('Ferramentas/Vestuário') || m.descricao?.includes(item.tipo)));
     }
 
-    const isMaterialCustomizable = ['Arma', 'Armadura', 'Escudo'].includes(item.categoria) || ['Esotérico', 'Munição'].includes(item.tipo);
+    const isMaterialCustomizable = ['Arma', 'Armadura', 'Escudo'].includes(item.categoria) || ['Esotérico', 'Munição', 'Vestuário'].includes(item.tipo);
     if (isMaterialCustomizable) {
         const bloqueadas = getModExcecoesPorItem(item);
         if (!bloqueadas.includes('Material Especial')) {
@@ -1133,7 +1137,10 @@ function getAvailableModOptions(item) {
 
 // ===== Verifica se o pré-requisito de uma melhoria está satisfeito =====
 // otherSelected: array de nomes das melhorias já escolhidas nos OUTROS seletores
-function isPrereqMet(nomeMelhoria, otherSelected) {
+function isPrereqMet(nomeMelhoria, otherSelected, hasAnyOtherMod) {
+    if (nomeMelhoria === 'Harmonizada (Arma)') {
+        return hasAnyOtherMod;
+    }
     const prereqs = modificationPrereqs[nomeMelhoria];
     if (!prereqs || prereqs.length === 0) return true; // sem pré-req → sempre visível
     return prereqs.some(p => otherSelected.includes(p));
@@ -1155,20 +1162,23 @@ function refreshModSelectorOptions() {
         const otherSelected = selects
             .filter((_, j) => j !== i)
             .map(s => s.value)
-            .filter(v => v && v !== 'nenhum/a' && v !== 'Material Especial');
+            .filter(v => v && v !== 'nenhum/a');
+
+        const hasAnyOtherMod = selects
+            .filter((_, j) => j !== i)
+            .some(s => s.value && s.value !== 'nenhum/a');
 
         // Filtra: mostra a opção se não tem pré-req OU se o pré-req já está selecionado em outro slot
         // E também remove opções já escolhidas em OUTROS seletores (sem duplicatas)
         // E também remove opções mutuamente excludentes com o que está selecionado
         const visibleOpts = allOpts.filter(opt => {
-            if (opt.nome === 'Material Especial') return true;
             // Impede duplicata
             if (otherSelected.includes(opt.nome)) return false;
             // Impede exclusão mútua
             const excludes = modificationExcludes[opt.nome] || [];
             if (excludes.some(ex => otherSelected.includes(ex))) return false;
             // Verifica pré-requisito
-            return isPrereqMet(opt.nome, otherSelected);
+            return isPrereqMet(opt.nome, otherSelected, hasAnyOtherMod);
         });
 
         const optionsHTML = `<option value="nenhum/a">--- Escolha ---</option>` +
@@ -1246,6 +1256,27 @@ function updateCustomSelectors(quantity, container, sourceList, item) {
 }
 
 
+// ===== HELPER: Reduzir a margem de ameaça =====
+function reduceCritMargin(critString, amount) {
+    if (!critString || critString === '—') return critString;
+    let start = 20;
+    let mult = "x2";
+    if (critString.includes('/')) {
+        start = parseInt(critString.split('/')[0]);
+        mult = critString.split('/')[1];
+    } else if (critString.startsWith('x')) {
+        start = 20;
+        mult = critString;
+    } else {
+        start = parseInt(critString);
+        mult = "x2";
+    }
+    start = Math.max(2, start - amount);
+    if (start === 20) return mult;
+    if (mult === "x2") return String(start);
+    return `${start}/${mult}`;
+}
+
 // ===== EFEITOS NUMÉRICOS DAS MODIFICAÇÕES =====
 /**
  * Recebe o item base e a lista de nomes de melhorias selecionadas.
@@ -1255,8 +1286,8 @@ function applyModEffects(item, selectedModNames) {
     const modified = { ...item };
 
     let penaltyDelta = 0;
-    let defenseDelta  = 0;
-    let spacesDelta   = 0;
+    let defenseDelta = 0;
+    let spacesDelta = 0;
 
     const hasSobMedida = selectedModNames.includes('Sob Medida');
 
@@ -1270,39 +1301,66 @@ function applyModEffects(item, selectedModNames) {
                 break;
 
             case 'Precisa':
-                // +1 na margem de ameaça (reduz o número, ex: "20" → "19", "19" → "18")
-                if (modified.critico) {
-                    modified.critico = modified.critico.replace(/^(\d+)/, (_, n) => `${parseInt(n) - 1}`);
-                }
+                modified.critico = reduceCritMargin(modified.critico, 1);
                 break;
 
             case 'Ajustada':
                 // -1 penalidade — só conta se Sob Medida NÃO estiver selecionada (não acumulam)
-                if (!hasSobMedida) penaltyDelta -= 1;
+                if (!hasSobMedida) penaltyDelta += 1;
                 break;
 
             case 'Sob Medida':
                 // -2 penalidade (substitui Ajustada quando ambas estão presentes)
-                penaltyDelta -= 2;
+                penaltyDelta += 2;
                 break;
 
             case 'Reforçada':
-                defenseDelta  += 1;
-                penaltyDelta  += 1;
+                defenseDelta += 1;
+                penaltyDelta -= 1;
                 break;
 
             case 'Discreto':
                 spacesDelta -= 1;
                 break;
+            case 'Casco Monstruoso (Armadura Leve/Escudo)':
+            case 'Casco Monstruoso (Armadura Pesada)':
+                penaltyDelta += 1;
+                break;
+            case 'Couro de Dragão (Armadura Leve/Escudo)':
+                defenseDelta += 1;
+                break;
+            case 'Couro de Dragão (Armadura Pesada)':
+                defenseDelta += 2;
+                break;
+            case 'Mitral (Arma)':
+                modified.critico = reduceCritMargin(modified.critico, 1);
+                break;
+            case 'Mitral (Armadura Pesada)':
+            case 'Mitral (Armadura Leve/Escudo)':
+                penaltyDelta += 2;
+                break;
+            case 'Quitina Razza (Armadura Leve/Escudo)':
+                defenseDelta += 1;
+                break;
+            case 'Quitina Razza (Armadura Pesada)':
+                defenseDelta += 2;
+                break;
+            case 'Tixonessica (Vestuário)':
+                defenseDelta += 2;
+                spacesDelta += 1;
+                break;
         }
     }
 
     // Aplica deltas numéricos
-    if (penaltyDelta !== 0 && modified.penalidade_armadura !== undefined) {
-        modified.penalidade_armadura = String(parseInt(modified.penalidade_armadura || 0) + penaltyDelta);
+    if (penaltyDelta !== 0) {
+        let penStr = String(modified.penalidade_armadura || 0).replace(/[—–]/g, '-');
+        modified.penalidade_armadura = String(parseInt(penStr) + penaltyDelta);
     }
-    if (defenseDelta !== 0 && modified.bonus_defesa) {
-        modified.bonus_defesa = String(parseInt(modified.bonus_defesa || 0) + defenseDelta);
+    if (defenseDelta !== 0) {
+        let defStr = String(modified.bonus_defesa || 0).replace(/[—–]/g, '-').replace('+', '');
+        let newDef = parseInt(defStr) + defenseDelta;
+        modified.bonus_defesa = (newDef >= 0 ? "+" : "") + newDef;
     }
     if (spacesDelta !== 0) {
         const baseSpaces = parseSpaces(item.espacos); // usa o original, não o acumulado
@@ -1315,7 +1373,7 @@ function applyModEffects(item, selectedModNames) {
 // ===== RENDER DE STATS DO MODAL (reutilizável) =====
 function renderModalStats(item) {
     document.getElementById('weaponStats').innerHTML = '';
-    document.getElementById('armorStats').innerHTML  = '';
+    document.getElementById('armorStats').innerHTML = '';
 
     const oldSpacesContainer = document.getElementById('modalSpaces')?.closest('.modal-section');
     if (oldSpacesContainer) oldSpacesContainer.style.display = 'none';
@@ -1333,7 +1391,7 @@ function renderModalStats(item) {
     if (item.bonus_defesa) {
         statsHTML += `
             <div class="stat-box"><p class="stat-label">Defesa</p><p class="stat-value">${item.bonus_defesa}</p></div>
-            <div class="stat-box"><p class="stat-label">Penalidade</p><p class="stat-value">${item.penalidade_armadura}</p></div>`;
+            <div class="stat-box"><p class="stat-label">Penalidade</p><p class="stat-value">${item.penalidade_armadura || '0'}</p></div>`;
     }
 
     statsHTML += `<div class="stat-box"><p class="stat-label">Espaços</p><p class="stat-value">${item.espacos || '—'}</p></div>`;
@@ -1351,7 +1409,7 @@ function renderModalStats(item) {
 }
 
 function getActiveModNames() {
-    return Array.from(modSelectorsContainer.querySelectorAll('select:not(.material-selector)'))
+    return Array.from(modSelectorsContainer.querySelectorAll('select'))
         .map(s => s.value)
         .filter(v => v && v !== 'nenhum/a' && v !== 'Material Especial');
 }
@@ -1372,14 +1430,15 @@ function applyEnchantEffects(baseItem, modifiedItem, selectedEnchantNames) {
     for (const enchName of selectedEnchantNames) {
         switch (enchName) {
             case 'Encanto Ameaçadora':
-                // Duplica a margem de ameaça sempre sobre o valor BASE da arma
-                if (baseItem.critico) {
-                    result.critico = baseItem.critico.replace(/^(\d+)/, (_, n) => {
-                        const start  = parseInt(n);
-                        const margin = 21 - start;
-                        const newStart = Math.max(2, 21 - margin * 2);
-                        return String(newStart);
-                    });
+                if (baseItem.critico && baseItem.critico !== '—') {
+                    let baseStart = 20;
+                    if (baseItem.critico.includes('/')) {
+                        baseStart = parseInt(baseItem.critico.split('/')[0]);
+                    } else if (!baseItem.critico.startsWith('x')) {
+                        baseStart = parseInt(baseItem.critico);
+                    }
+                    const baseMarginSize = 21 - baseStart;
+                    result.critico = reduceCritMargin(result.critico, baseMarginSize);
                 }
                 break;
 
@@ -1394,7 +1453,8 @@ function applyEnchantEffects(baseItem, modifiedItem, selectedEnchantNames) {
     }
 
     if (defenseDelta !== 0 && result.bonus_defesa) {
-        result.bonus_defesa = String(parseInt(result.bonus_defesa || 0) + defenseDelta);
+        let defStr = String(result.bonus_defesa || 0).replace(/[—–]/g, '-');
+        result.bonus_defesa = String(parseInt(defStr) + defenseDelta);
     }
 
     return result;
@@ -1402,10 +1462,10 @@ function applyEnchantEffects(baseItem, modifiedItem, selectedEnchantNames) {
 
 function updateModalStatsFromMods() {
     if (!currentModalItem) return;
-    const activeMods    = getActiveModNames();
+    const activeMods = getActiveModNames();
     const activeEnchants = getActiveEnchantNames();
     const modifiedByMods = applyModEffects(currentModalItem, activeMods);
-    const fullyModified  = applyEnchantEffects(currentModalItem, modifiedByMods, activeEnchants);
+    const fullyModified = applyEnchantEffects(currentModalItem, modifiedByMods, activeEnchants);
     renderModalStats(fullyModified);
 }
 
@@ -1575,11 +1635,11 @@ function enviarInventarioCompletoParaFicha() {
         const noteLines = [];
         if (item.descricao) noteLines.push(item.descricao);
         if (invItem.modifications?.length) noteLines.push('📌 Modificações: ' + invItem.modifications.join(', '));
-        if (invItem.enchantments?.length)  noteLines.push('✨ Encantamentos: ' + invItem.enchantments.join(', '));
+        if (invItem.enchantments?.length) noteLines.push('✨ Encantamentos: ' + invItem.enchantments.join(', '));
 
         return {
             name: invItem.customName || item.nome || 'Item',
-            qtd:  String(invItem.quantity || 1),
+            qtd: String(invItem.quantity || 1),
             slots: String(invItem.finalSpaces ?? 0),
             note: noteLines.join('\n'),
             combatData: item.dano ? {
