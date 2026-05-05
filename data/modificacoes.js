@@ -208,7 +208,7 @@ const modificacoesData = {
             "espacos": "—",
             "categoria": "Item Superior",
             "tipo": "Melhoria",
-            "descricao": "Melhoria para Armaduras que fornece +1 na Defesa."
+            "descricao": "Melhoria para Armaduras/Escudos que fornece +1 na Defesa."
         },
         {
             "nome": "Selada",
