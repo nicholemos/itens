@@ -444,7 +444,7 @@ const modificacoesData = {
 
         // (Itens de Ameaças de Arton - Materiais)
         {
-            "nome": "Casco de Monstro (Arma)",
+            "nome": "Casco Monstruoso (Arma)",
             "preco": "+ T$ 750",
             "espacos": "—",
             "categoria": "Item Superior",
@@ -453,7 +453,7 @@ const modificacoesData = {
             "fonte": "Ameaças de Arton"
         },
         {
-            "nome": "Casco de Monstro (Armadura Leve/Escudo)",
+            "nome": "Casco Monstruoso (Armadura Leve/Escudo)",
             "preco": "+ T$ 750",
             "espacos": "—",
             "categoria": "Item Superior",
@@ -462,7 +462,7 @@ const modificacoesData = {
             "fonte": "Ameaças de Arton"
         },
         {
-            "nome": "Casco de Monstro (Armadura Pesada)",
+            "nome": "Casco Monstruoso (Armadura Pesada)",
             "preco": "+ T$ 6.000",
             "espacos": "—",
             "categoria": "Item Superior",
@@ -471,7 +471,7 @@ const modificacoesData = {
             "fonte": "Ameaças de Arton"
         },
         {
-            "nome": "Casco de Monstro (Esotérico)",
+            "nome": "Casco Monstruoso (Esotérico)",
             "preco": "+ T$ 6.000",
             "espacos": "—",
             "categoria": "Item Superior",
@@ -714,7 +714,34 @@ const modificacoesData = {
             "descricao": "Exige 1 peça. Sempre que rolar o resultado máximo em um dado do dano básico da magia, role um dado extra, repetindo o processo a cada resultado máximo.",
             "fonte": "Ameaças de Arton"
         },
-        // (Itens de Duelo de Dragões)
+        {
+            "nome": "Couro de Dragão (Armadura Leve/Escudo)",
+            "preco": "Não comercializado",
+            "espacos": "—",
+            "categoria": "Item Superior",
+            "tipo": "Material",
+            "descricao": "Exige 1 peça. Concede +1 na Defesa, RD 10 contra o tipo de dano do sopro do dragão e +2 em testes de resistência contra magia.",
+            "fonte": ""
+        },
+        {
+            "nome": "Couro de Dragão (Armadura Pesada)",
+            "preco": "Não comercializado",
+            "espacos": "—",
+            "categoria": "Item Superior",
+            "tipo": "Material",
+            "descricao": "Exige 3 peças. Concede +2 na Defesa, RD 20 contra o tipo de dano do sopro do dragão e +5 em testes de resistência contra magia.",
+            "fonte": ""
+        },
+        {
+            "nome": "Couro de Dragão (Esotérico)",
+            "preco": "Não comercializado",
+            "espacos": "—",
+            "categoria": "Item Superior",
+            "tipo": "Material",
+            "descricao": "Exige 1 peça. Ao lançar uma magia que cause dano do mesmo tipo do sopro do dragão, você pode gastar 1 PM para aumentar o dano da magia em +1 por dado.",
+            "fonte": ""
+        },
+        // (Itens de Revista Tormenta)
         {
             nome: "Guarda",
             preco: "",
@@ -759,6 +786,24 @@ const modificacoesData = {
             tipo: "Material",
             descricao: "Serve como lente, concedendo +5 em Misticismo para detectar magia.",
             fonte: "Duelo de Dragões"
+        },
+        {
+            "nome": "Tixonessica (Vestuário)",
+            "preco": "Variável",
+            "espacos": "2",
+            "categoria": "Item Superior",
+            "tipo": "Material",
+            "descricao": "Concede +2 na Defesa, mas ocupa 2 espaços em vez de 1. Além disso, concede +2 em testes de perícias baseadas em Carisma com habitantes de Ghallystrix.",
+            "fonte": "Duelo de Dragões"
+        },
+        {
+            "nome": "Vitarium (Esotérico)",
+            "preco": "+ T$ 4.500",
+            "espacos": "—",
+            "categoria": "Item Superior",
+            "tipo": "Material",
+            "descricao": "Potencializa magias de cura de luz, aumentando sua cura em +1 PV por dado.",
+            "fonte": "Só Aventuras"
         },
         // (Itens de Heróis de Arton - Melhorias)
         {

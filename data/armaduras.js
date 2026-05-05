@@ -318,7 +318,7 @@ const armadurasData = {
         {
             nome: "Broquel",
             preco: "T$ 25",
-            bonus_defesa: "—",
+            bonus_defesa: "0",
             penalidade_armadura: "–1",
             espacos: "0,5",
             categoria: "Escudo",

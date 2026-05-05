@@ -3689,6 +3689,15 @@ const itensData = {
             tipo: "Serviço",
             descricao: "Escolha uma magia divina de 1º círculo. Até o fim da aventura, pode lançá-la 1 vez (sem aprimoramentos, custo 2 PM, atrb. Sabedoria). Apenas devotos.",
             fonte: "Deuses de Arton"
+        },
+        {
+            "nome": "Vitarium (Item Vestido)",
+            "preco": "T$ 4.500",
+            "espacos": "—",
+            "categoria": "Vestuário",
+            "tipo": "Material",
+            "descricao": "Uma pedra bruta pode ser usada como um item vestido (como um pingente) que fornece redução de dano 2 contra trevas.",
+            "fonte": "Só Aventuras"
         }
 
 
