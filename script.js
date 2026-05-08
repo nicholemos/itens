@@ -604,50 +604,152 @@ function updateSpecificFilters() {
         return;
     }
 
-    const types = [...new Set(allItems
+    let types = [];
+    types = [...new Set(allItems
         .filter(item => item.categoria === currentCategory)
         .map(item => item.tipo)
         .filter(type => type)
     )];
 
-    if (types.length === 0) return;
+    const foodSubtypes = ['Básico', 'Pratos Especiais', 'Pratos Especiais Divinos', 'Bebidas'];
+
+    const hasAlquimicoSelected = selectedTypes.includes('Alquímico');
+    const hasAlimentacaoSelected = selectedTypes.some(t => foodSubtypes.includes(t));
+
+    // Para Item Geral, agrupar Preparados, Catalisador e Venenos em "Alquímico"
+    if (currentCategory === 'Item Geral') {
+        types = types.filter(t => !['Preparados', 'Catalisador', 'Venenos', 'Alquímico'].includes(t));
+        // Para Item Geral, agrupar tipos de alimentação em "Alimentação"
+        types = types.filter(t => !['Básico', 'Pratos Especiais', 'Pratos Especiais Divinos', 'Bebidas'].includes(t));
+    }
+
+    if (types.length === 0 && !hasAlquimicoSelected && !hasAlimentacaoSelected && currentCategory !== 'Item Geral') return;
+
+    // Para Item Geral, sempre mostrar os grupos se existirem itens
+    if (currentCategory === 'Item Geral' && types.length === 0 && !hasAlquimicoSelected && !hasAlimentacaoSelected) {
+        const hasAlquimicos = allItems.some(item => ['Preparados', 'Catalisador', 'Venenos'].includes(item.tipo));
+        const hasAlimentos = allItems.some(item => foodSubtypes.includes(item.tipo));
+        if (!hasAlquimicos && !hasAlimentos) return;
+    }
 
     // Hint de multi-seleção
     const hint = document.createElement('span');
     hint.className = 'subfilter-hint';
-    hint.textContent = 'Tipo (selecione um ou mais):';
+    hint.textContent = (hasAlquimicoSelected || hasAlimentacaoSelected) ? 'Subtipo (selecione um ou mais):' : 'Tipo (selecione um ou mais):';
     specificFiltersContainer.appendChild(hint);
 
     // Botão "Todos" — limpa a seleção
     const allBtn = document.createElement('button');
-    allBtn.className = 'filter-btn' + (selectedTypes.length === 0 ? ' active' : '');
+    allBtn.className = 'filter-btn' + (!hasAlquimicoSelected && !hasAlimentacaoSelected && selectedTypes.length === 0 ? ' active' : '');
     allBtn.textContent = 'Todos';
     allBtn.addEventListener('click', () => {
-        selectedTypes = [];
+        selectedTypes = selectedTypes.filter(t => !['Alquímico', 'Preparados', 'Catalisador', 'Venenos'].includes(t));
+        selectedTypes = selectedTypes.filter(t => !foodSubtypes.includes(t));
         updateSpecificFilters();
         applyFilters();
     });
     specificFiltersContainer.appendChild(allBtn);
 
-    types.sort().forEach(type => {
-        const btn = createFilterButton(type, type);
-        specificFiltersContainer.appendChild(btn);
-    });
+    // Se Alquímico está selecionado, mostra os subtipos
+    if (hasAlquimicoSelected) {
+        ['Preparados', 'Catalisador', 'Venenos'].forEach(subtipo => {
+            const btn = document.createElement('button');
+            btn.className = 'filter-btn' + (selectedTypes.includes(subtipo) ? ' active' : '');
+            btn.textContent = subtipo;
+            btn.addEventListener('click', () => {
+                if (selectedTypes.includes(subtipo)) {
+                    selectedTypes = selectedTypes.filter(t => t !== subtipo);
+                    if (!selectedTypes.some(t => ['Preparados', 'Catalisador', 'Venenos'].includes(t))) {
+                        selectedTypes = selectedTypes.filter(t => t !== 'Alquímico');
+                    }
+                } else {
+                    selectedTypes.push(subtipo);
+                }
+                updateSpecificFilters();
+                applyFilters();
+            });
+            specificFiltersContainer.appendChild(btn);
+        });
+    } else if (hasAlimentacaoSelected) {
+        // Se Alimentação está selecionado, mostra os subtipos
+        foodSubtypes.forEach(subtipo => {
+            const btn = document.createElement('button');
+            btn.className = 'filter-btn' + (selectedTypes.includes(subtipo) ? ' active' : '');
+            btn.textContent = subtipo;
+            btn.addEventListener('click', () => {
+                if (selectedTypes.includes(subtipo)) {
+                    selectedTypes = selectedTypes.filter(t => t !== subtipo);
+                } else {
+                    selectedTypes.push(subtipo);
+                }
+                updateSpecificFilters();
+                applyFilters();
+            });
+            specificFiltersContainer.appendChild(btn);
+        });
+    } else {
+        // Caso contrário, mostra os tipos normais e os botões de grupo
+        if (currentCategory === 'Item Geral') {
+            const hasAlquimicos = allItems.some(item => item.tipo === 'Preparados');
+            const hasAlimentos = allItems.some(item => foodSubtypes.includes(item.tipo));
+
+            if (hasAlquimicos) {
+                const btn = document.createElement('button');
+                btn.className = 'filter-btn group-btn';
+                btn.textContent = 'Alquímico';
+                btn.addEventListener('click', () => {
+                    selectedTypes.push('Alquímico');
+                    updateSpecificFilters();
+                    applyFilters();
+                });
+                specificFiltersContainer.appendChild(btn);
+            }
+
+            if (hasAlimentos) {
+                const btn = document.createElement('button');
+                btn.className = 'filter-btn group-btn';
+                btn.textContent = 'Alimentação';
+                btn.addEventListener('click', () => {
+                    // Adiciona o primeiro subtipo para ativar o grupo
+                    selectedTypes.push('Básico');
+                    updateSpecificFilters();
+                    applyFilters();
+                });
+                specificFiltersContainer.appendChild(btn);
+            }
+        }
+
+        const sortedTypes = types.sort((a, b) => a.localeCompare(b));
+        sortedTypes.forEach(type => {
+            const btn = createFilterButton(type, type);
+            specificFiltersContainer.appendChild(btn);
+        });
+    }
 }
 
 function createFilterButton(value, label) {
     const btn = document.createElement('button');
-    btn.className = 'filter-btn' + (selectedTypes.includes(value) ? ' active' : '');
+    const isAlquimicoGroup = value === 'Alquímico';
+    const isSelected = isAlquimicoGroup ? 
+        selectedTypes.includes('Alquímico') : 
+        selectedTypes.includes(value);
+    btn.className = 'filter-btn' + (isSelected ? ' active' : '');
     btn.textContent = label;
 
     btn.addEventListener('click', () => {
-        // Alterna o tipo na seleção múltipla
-        if (selectedTypes.includes(value)) {
-            selectedTypes = selectedTypes.filter(t => t !== value);
+        if (isAlquimicoGroup) {
+            if (selectedTypes.includes('Alquímico')) {
+                selectedTypes = selectedTypes.filter(t => t !== 'Alquímico');
+            } else {
+                selectedTypes.push('Alquímico');
+            }
         } else {
-            selectedTypes.push(value);
+            if (selectedTypes.includes(value)) {
+                selectedTypes = selectedTypes.filter(t => t !== value);
+            } else {
+                selectedTypes.push(value);
+            }
         }
-        // Atualiza visual de todos os botões do container
         updateSpecificFilters();
         applyFilters();
     });
@@ -679,9 +781,32 @@ function applyFilters() {
 
     let filtered = sourceList;
 
-    // 2. Filtros
-    if (currentView === 'grid' && selectedTypes.length > 0) {
-        filtered = filtered.filter(item => selectedTypes.includes(item.tipo));
+// 2. Filtros
+    if (currentView === 'grid' && selectedTypes.length > 0 && currentCategory === 'Item Geral') {
+        const foodSubtypes = ['Básico', 'Pratos Especiais', 'Pratos Especiais Divinos', 'Bebidas'];
+        const alquimicoSubtypes = ['Preparados', 'Catalisador', 'Venenos'];
+        
+        const hasAlquimicoGroup = selectedTypes.includes('Alquímico');
+        const hasAlimentacaoGroup = selectedTypes.includes('Alimentação');
+        const hasAlquimicoSubtypes = selectedTypes.some(t => alquimicoSubtypes.includes(t));
+        const hasFoodSubtypes = selectedTypes.some(t => foodSubtypes.includes(t));
+
+        filtered = filtered.filter(item => {
+            // Se "Alquímico" está selecionado (sem subtipos específicos), mostra todos do grupo
+            if (hasAlquimicoGroup && !hasAlquimicoSubtypes) {
+                return alquimicoSubtypes.includes(item.tipo);
+            }
+            // Se "Alimentação" está selecionado (sem subtipos específicos), mostra todos do grupo
+            if (hasAlimentacaoGroup && !hasFoodSubtypes) {
+                return foodSubtypes.includes(item.tipo);
+            }
+            // Se subtipos específicos estão selecionados, filtra por eles
+            if (hasAlquimicoSubtypes || hasAlimentacaoGroup) {
+                return selectedTypes.includes(item.tipo);
+            }
+            // Caso contrário, filtro normal
+            return selectedTypes.includes(item.tipo);
+        });
     }
 
     if (currentCategory === 'Arma' && currentEmpunhadura !== 'todas') {

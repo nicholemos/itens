@@ -77,7 +77,7 @@ body {
   gap: 18px;
 }
 
-/* ===== CARDS ===== */
+/* ===== INVENTÁRIO / MOCHILA ===== */
 .filters-section,
 .inventory-container {
   background: var(--card-bg);
@@ -85,7 +85,199 @@ body {
   border-radius: var(--radius);
   padding: 16px;
   overflow: hidden;
-  /* evita “vazamentos” visuais */
+}
+
+.inventory-container {
+  background: linear-gradient(145deg, #fff 0%, #f8fafc 100%);
+  border: 2px solid var(--border);
+  border-radius: 16px;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.filter-group:last-child {
+  border-bottom: none;
+}
+
+.filter-label-hint,
+.filter-label {
+  font-family: "Tormenta", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #2c3e50;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-right: 8px;
+  white-space: nowrap;
+}
+
+.filter-group select {
+  min-width: 140px;
+  margin-right: 16px;
+}
+
+.filter-label-hint {
+  width: auto;
+  margin-bottom: 0;
+  color: #e74c3c;
+  font-size: 1rem;
+  margin-right: 12px;
+  white-space: nowrap;
+}
+
+.filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.filter-group:has(.filter-label-hint) {
+  flex-direction: row;
+  align-items: center;
+}
+
+/* ===== BOTÕES ===== */
+.filter-btn,
+  background: var(--card-bg);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  overflow: hidden;
+}
+
+.inventory-container {
+  background: linear-gradient(145deg, #fff 0%, #f8fafc 100%);
+  border: 2px solid var(--border);
+  border-radius: 16px;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.inventory-title {
+  font-family: "Tormenta", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(135deg, #000000 0%, #c0392b 100%);
+  padding: 14px 18px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 10px rgba(192, 57, 43, 0.4);
+  position: relative;
+}
+
+.inventory-title::before {
+  content: "🎒";
+  font-size: 1.3rem;
+}
+
+.inventory-list {
+  padding: 12px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.inventory-table-wrap {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.inventory-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.inventory-table thead th {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  color: #ffffff;
+  padding: 12px 14px;
+  text-align: left;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 3px solid #e74c3c;
+}
+
+.inventory-table tbody td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #dee2e6;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.inventory-table tbody tr:hover {
+  background: #f8f9fa;
+}
+
+.inventory-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ===== INVENTORY SUMMARY ===== */
+.inventory-summary {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-top: 2px solid #e9ecef;
+  margin-top: 8px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.summary-price {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  border-radius: 50px;
+  padding: 12px 18px;
+  color: #fff !important;
+}
+
+.summary-price span:first-child {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+#totalCost {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #f1c40f;
+}
+
+#totalSpaces {
+  font-weight: 700;
+  color: #2980b9;
+}
+
+#totalVestidos {
+  font-weight: 700;
+  color: #27ae60;
 }
 
 /* ===== INPUTS ===== */
@@ -145,6 +337,26 @@ select {
 }
 
 /* ===== MULTI-SELECT SUB-FILTROS ===== */
+#specificFilters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+#specificFilters .filter-btn {
+  margin: 0;
+}
+
+#specificFilters .group-btn {
+  border-style: dashed;
+  background: #f8f9fa;
+}
+
+#specificFilters .group-btn:hover {
+  background: #e9ecef;
+}
+
 .subfilter-hint {
   font-size: .72rem;
   font-weight: 700;
@@ -152,8 +364,7 @@ select {
   text-transform: uppercase;
   letter-spacing: .05em;
   width: 100%;
-  display: block;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 /* Destaque extra quando múltiplos tipos estão ativos */
@@ -165,14 +376,19 @@ select {
 .items-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 14px;
+  gap: 18px;
+  margin-top: 20px;
+  padding: 16px;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  border: 2px solid var(--border);
 }
 
 .item-card {
   background: var(--card-bg);
   border: 2px solid var(--border);
   border-radius: var(--radius);
-  padding: 14px;
+  padding: 16px;
   transition: .12s;
 }
 
@@ -271,18 +487,27 @@ select {
   position: absolute;
   top: 12px;
   right: 12px;
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  border: 2px solid var(--border);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #e74c3c;
   background: #fff;
+  color: #e74c3c;
   cursor: pointer;
   font-size: 20px;
-  line-height: 1;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(231, 76, 60, 0.25);
 }
 
 .modal-close:hover {
-  background: #f6f7fb;
+  background: #e74c3c;
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
 }
 
 .modal-header {
@@ -473,31 +698,6 @@ select {
   border-radius: 12px;
 }
 
-.inventory-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 14px;
-}
-
-.inventory-table thead th {
-  text-align: left;
-  font-weight: 700;
-  padding: 10px;
-  background: #f6f7f9;
-  border-bottom: 1px solid rgba(0, 0, 0, .10);
-  white-space: nowrap;
-}
-
-.inventory-table tbody td {
-  padding: 10px;
-  border-bottom: 1px solid rgba(0, 0, 0, .08);
-  vertical-align: middle;
-}
-
-.inventory-table tbody tr:last-child td {
-  border-bottom: 0;
-}
-
 .inv-name {
   font-weight: 700;
 }
@@ -519,17 +719,27 @@ select {
 }
 
 .remove-item-btn {
-  width: 28px;
-  height: 28px;
-  border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, .2);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid #c0392b;
   background: #fff;
+  color: #c0392b;
   cursor: pointer;
-  line-height: 1;
+  font-size: 18px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(192, 57, 43, 0.3);
 }
 
 .remove-item-btn:hover {
-  filter: brightness(.96);
+  background: #c0392b;
+  color: #fff;
+  transform: scale(1.15);
+  box-shadow: 0 4px 12px rgba(192, 57, 43, 0.5);
 }
 
 /* Botão "voltar ao topo" dentro do inventário */
@@ -636,8 +846,18 @@ button[title*="Limpar"],
   }
 }
 
+/* Oculta botão fechar inventário na versão desktop */
+#closeInventoryBtn {
+  display: none;
+}
+
 /* MOBILE (mantém o comportamento atual, mas sem afetar o PC) */
 @media (max-width:1023px) {
+
+  /* Mostrar botão fechar no mobile */
+  #closeInventoryBtn {
+    display: flex;
+  }
 
   /* botão flutuante aparece */
   #mobileInventoryBtn.float-btn {
@@ -666,18 +886,30 @@ button[title*="Limpar"],
   }
 
   .inventory-close-mobile {
+    display: flex;
     position: absolute;
-    /* Garante que ele respeite o topo/direita do container */
     top: 10px;
     right: 10px;
     z-index: 999;
-    /* Um valor alto para garantir que fique à frente de tudo no aside */
-    /* Adicione os estilos de aparência que desejar abaixo */
-    background: none;
-    border: none;
-    font-size: 2rem;
-    color: var(--primary-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background: rgba(255, 255, 255, 0.95);
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #c0392b;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+
+  .inventory-close-mobile:hover {
+    background: #c0392b;
+    color: #fff;
+    transform: scale(1.1);
   }
 
   .inventory-list {
@@ -986,64 +1218,76 @@ button[title*="Limpar"],
 
 /* Botão "Enviar para Ficha" Estilo Épico */
 .btn-exportar-ficha {
-    background: linear-gradient(135deg, #8b0000 0%, #a52a2a 100%); /* Vermelho Escuro/Sangue */
-    color: #f1e0c6 !important; /* Bege Claro/Dourado (Cor da fonte da Ficha) */
-    border: 2px solid #5d0000;
-    font-family: 'Tormenta', sans-serif; /* Usando a fonte temática */
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    padding: 10px 20px;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease-in-out;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    width: 100%; /* Ocupa a largura total do container */
-    margin-top: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px; /* Espaço entre o ícone e o texto */
+  background: linear-gradient(135deg, #8b0000 0%, #a52a2a 100%);
+  /* Vermelho Escuro/Sangue */
+  color: #f1e0c6 !important;
+  /* Bege Claro/Dourado (Cor da fonte da Ficha) */
+  border: 2px solid #5d0000;
+  font-family: 'Tormenta', sans-serif;
+  /* Usando a fonte temática */
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  /* Ocupa a largura total do container */
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  /* Espaço entre o ícone e o texto */
 }
 
 /* Efeito ao passar o mouse (Hover) - O botão "acende" */
 .btn-exportar-ficha:hover {
-    background: linear-gradient(135deg, #a52a2a 0%, #bf3636 100%); /* Vermelho mais claro */
-    border-color: #f1e0c6; /* Borda dourada acende */
-    box-shadow: 0 0 15px rgba(241, 224, 198, 0.5); /* Brilho suave dourado */
-    transform: translateY(-2px); /* Levanta levemente */
-    color: #ffffff !important;
+  background: linear-gradient(135deg, #a52a2a 0%, #bf3636 100%);
+  /* Vermelho mais claro */
+  border-color: #f1e0c6;
+  /* Borda dourada acende */
+  box-shadow: 0 0 15px rgba(241, 224, 198, 0.5);
+  /* Brilho suave dourado */
+  transform: translateY(-2px);
+  /* Levanta levemente */
+  color: #ffffff !important;
 }
 
 /* Efeito ao clicar */
 .btn-exportar-ficha:active {
-    transform: translateY(1px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 
 .btn-limpar-estilo {
-    background: #2b2b2b; /* Fundo escuro neutro */
-    color: #f1e0c6 !important;
-    border: 1px solid #8b0000; /* Borda vermelha fina */
-    font-family: 'Tormenta', sans-serif;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    padding: 8px 15px;
-    border-radius: 5px;
-    width: 100%;
-    transition: all 0.2s;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
+  background: #2b2b2b;
+  /* Fundo escuro neutro */
+  color: #f1e0c6 !important;
+  border: 1px solid #8b0000;
+  /* Borda vermelha fina */
+  font-family: 'Tormenta', sans-serif;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  padding: 8px 15px;
+  border-radius: 5px;
+  width: 100%;
+  transition: all 0.2s;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
 .btn-limpar-estilo:hover {
-    background: #8b0000; /* Fica vermelho ao passar o mouse */
-    color: #ffffff !important;
-    box-shadow: 0 0 10px rgba(139, 0, 0, 0.4);
+  background: #8b0000;
+  /* Fica vermelho ao passar o mouse */
+  color: #ffffff !important;
+  box-shadow: 0 0 10px rgba(139, 0, 0, 0.4);
 }
 
 .modal-image-container {
@@ -1057,7 +1301,8 @@ button[title*="Limpar"],
   border-radius: var(--radius);
   background: #fafafa;
   padding: 10px;
-  overflow: hidden; /* ← adicionar isso */
+  overflow: hidden;
+  /* ← adicionar isso */
 }
 
 /* ===================================================
@@ -1069,114 +1314,228 @@ button[title*="Limpar"],
   color: #fff !important;
   border-color: var(--str-slate) !important;
 }
+
 .rand-inline-btn:hover {
   background: var(--str-accent) !important;
   border-color: var(--str-accent) !important;
   color: #fff !important;
 }
 
-.rand-modal-content { max-width: 560px; }
-.rand-body { padding: 0 4px; }
+.rand-modal-content {
+  max-width: 560px;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.rand-body {
+  padding: 0;
+}
 
 .rand-config {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 20px;
+  padding: 20px;
+  background: linear-gradient(135deg, #fff 0%, #f8fafc 100%);
+  border-radius: 12px;
+  border: 2px solid var(--border);
+  margin: 16px;
 }
 
 .rand-section {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
+  padding: 12px;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #e9ecef;
 }
 
 .rand-label {
-  font-size: .78rem;
+  font-size: .8rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .05em;
-  color: #6b7a8d;
+  color: #2c3e50;
   margin: 0;
 }
 
-.rand-mode-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+.rand-mode-btns {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
 
 .rand-mode-btn {
   flex: 1;
   min-width: 140px;
-  padding: 10px 12px;
+  padding: 12px 14px;
   border: 2px solid var(--border);
-  border-radius: 10px;
+  border-radius: 12px;
   background: #fff;
   font-weight: 700;
-  font-size: .9rem;
+  font-size: .85rem;
   cursor: pointer;
-  transition: .15s;
+  transition: .2s;
 }
-.rand-mode-btn.active {
-  background: var(--str-slate);
-  color: #fff;
-  border-color: var(--str-slate);
-}
-.rand-mode-btn:hover:not(.active) { background: #eaf4ff; }
 
-.rand-row { flex-direction: row; gap: 14px; }
-.rand-col { flex: 1; display: flex; flex-direction: column; gap: 6px; }
-.rand-select { width: 100%; }
+.rand-mode-btn.active {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  color: #fff;
+  border-color: #c0392b;
+  box-shadow: 0 4px 12px rgba(192, 57, 43, 0.3);
+}
+
+.rand-mode-btn:hover:not(.active) {
+  background: #eaf4ff;
+  transform: translateY(-1px);
+}
+
+.rand-row {
+  flex-direction: row;
+  gap: 14px;
+}
+
+.rand-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rand-select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 2px solid var(--border);
+  background: #fff;
+  font-weight: 600;
+}
 
 .rand-generate-btn {
   width: 100%;
-  padding: 13px;
+  padding: 14px;
+  margin-top: 4px;
   font-size: 1rem;
   border-radius: 10px;
   margin-top: 4px;
 }
 
-.rand-result { display: flex; flex-direction: column; gap: 10px; }
-.rand-result-header { display: flex; align-items: center; justify-content: space-between; }
+.rand-result {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+  background: linear-gradient(135deg, #fff 0%, #f8fafc 100%);
+  border-radius: 12px;
+  border: 2px solid var(--border);
+  margin: 16px;
+}
+
+.rand-result-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e9ecef;
+}
+
 .rand-result-label {
-  font-size: .78rem; font-weight: 700; text-transform: uppercase;
-  letter-spacing: .05em; color: #6b7a8d; margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: "Tormenta", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: #e74c3c;
+  margin: 0;
 }
 
 .rand-reroll-btn {
-  background: #f1f5f9;
-  border: 2px solid var(--border);
+  background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+  border: 2px solid #e74c3c;
   border-radius: 8px;
-  padding: 5px 12px;
+  padding: 6px 14px;
   font-weight: 700;
-  cursor: pointer;
   font-size: .85rem;
-  transition: .12s;
+  color: #e74c3c;
+  transition: .2s;
 }
+
 .rand-reroll-btn:hover {
-  background: var(--str-accent);
+  background: #e74c3c;
   color: #fff;
-  border-color: var(--str-accent);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
 }
 
 .rand-result-card {
-  background: #f8fafc;
+  background: #fff;
   border: 2px solid var(--border);
   border-radius: 12px;
-  padding: 16px;
+  padding: 18px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
-.rand-result-name { font-size: 1.25rem; font-weight: 800; margin: 0 0 4px; color: var(--str-slate); }
-.rand-result-price { font-size: .95rem; font-weight: 700; color: var(--str-accent); margin: 0 0 10px; }
-.rand-result-desc { font-size: .88rem; color: #475569; margin: 0; line-height: 1.5; }
+.rand-result-name {
+  font-size: 1.3rem;
+  font-weight: 800;
+  font-family: "Tormenta", sans-serif;
+  margin: 0 0 6px;
+  color: #2c3e50;
+}
 
-.rand-customizations { display: flex; flex-direction: column; gap: 6px; margin-top: 12px; }
+.rand-result-price {
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: "Tormenta", sans-serif;
+  color: #e74c3c;
+  margin: 0 0 12px;
+}
+
+.rand-result-desc {
+  font-size: .9rem;
+  color: #475569;
+  margin: 0;
+  line-height: 1.5;
+  padding: 10px;
+  background: #f8fafc;
+  border-radius: 8px;
+}
+
+.rand-customizations {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 14px;
+}
 
 .rand-custom-group {
-  background: #fff;
-  border: 1.5px solid #e2e8f0;
-  border-radius: 8px;
-  padding: 8px 12px;
+  background: linear-gradient(135deg, #fff 0%, #f8fafc 100%);
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  padding: 12px;
 }
+
 .rand-custom-group-title {
-  font-size: .72rem; font-weight: 700; text-transform: uppercase;
-  letter-spacing: .05em; color: #94a3b8; margin: 0 0 4px;
+  font-size: .78rem;
+  font-weight: 700;
+  font-family: "Tormenta", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: #e74c3c;
+  margin: 0 0 6px;
 }
-.rand-custom-item { font-size: .88rem; font-weight: 600; color: var(--text-main); margin: 2px 0; }
-.rand-custom-item-desc { font-size: .78rem; color: #64748b; margin: 0; }
+
+.rand-custom-item {
+  font-size: .9rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 4px 0;
+}
+
+.rand-custom-item-desc {
+  font-size: .8rem;
+  color: #64748b;
+  margin: 0;
+}
