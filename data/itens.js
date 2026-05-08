@@ -530,7 +530,7 @@ const itensData = {
             "preco": "T$ 10",
             "espacos": "0,5",
             "categoria": "Item Geral",
-            "tipo": "Alquímico",
+            "tipo": "Preparados",
             "descricao": "Frasco de vidro. Causa 2d4 de dano de ácido (Reflexos CD Des reduz à metade). (p. 160)"
         },
         {
@@ -538,7 +538,7 @@ const itensData = {
             "preco": "T$ 10",
             "espacos": "0,5",
             "categoria": "Item Geral",
-            "tipo": "Alquímico",
+            "tipo": "Preparados",
             "descricao": "Pasta de ervas. Recupera 2d4 PV. (p. 160)"
         },
         {
@@ -546,7 +546,7 @@ const itensData = {
             "preco": "T$ 50",
             "espacos": "0,5",
             "categoria": "Item Geral",
-            "tipo": "Alquímico",
+            "tipo": "Preparados",
             "descricao": "Granada rudimentar. Causa 6d6 de dano de impacto em área de 3m (Reflexos CD Des reduz à metade). (p. 160)"
         },
         {
@@ -554,7 +554,7 @@ const itensData = {
             "preco": "T$ 30",
             "espacos": "0,5",
             "categoria": "Item Geral",
-            "tipo": "Alquímico",
+            "tipo": "Preparados",
             "descricao": "Perfume ou maquiagem. Fornece +2 em testes de perícias baseadas em Carisma até o fim da cena. (p. 160)"
         },
         {
@@ -562,7 +562,7 @@ const itensData = {
             "preco": "T$ 100",
             "espacos": "0,5",
             "categoria": "Item Geral",
-            "tipo": "Alquímico",
+            "tipo": "Preparados",
             "descricao": "Humanoide que beba fica enfeitiçado pela primeira criatura que vir (Vontade CD Car anula). Dura 1d3 dias. (p. 160)"
         },
         {
@@ -570,7 +570,7 @@ const itensData = {
             "preco": "T$ 50",
             "espacos": "0,5",
             "categoria": "Item Geral",
-            "tipo": "Alquímico",
+            "tipo": "Preparados",
             "descricao": "Poção de ervas raras. Recupera 1d4 pontos de mana. (p. 160)"
         },
         {
@@ -578,7 +578,7 @@ const itensData = {
             "preco": "T$ 10",
             "espacos": "0,5",
             "categoria": "Item Geral",
-            "tipo": "Alquímico",
+            "tipo": "Preparados",
             "descricao": "Frasco de cerâmica. Causa 1d6 de dano de fogo e deixa em chamas (Reflexos CD Des reduz à metade e evita chamas). (p. 160)"
         },
         {
@@ -586,7 +586,7 @@ const itensData = {
             "preco": "T$ 100",
             "espacos": "0,5",
             "categoria": "Item Geral",
-            "tipo": "Alquímico",
+            "tipo": "Preparados",
             "descricao": "Cobre criatura ou objeto, tornando-o invisível por 2d6 rodadas. (p. 160)"
         },
 
@@ -1038,11 +1038,11 @@ const itensData = {
         },
 
         {
-            "nome": "Batata Deusa da Ambiçãona",
+            "nome": "Batata Valkariana",
             "preco": "T$ 2",
             "espacos": "0,5",
             "categoria": "Item Geral",
-            "tipo": "Alimentação",
+            "tipo": "Básico",
             "descricao": " Fornece +1d6 num único teste a sua escolha até o fim do dia. (p. 163)"
         },
         {
@@ -1050,7 +1050,7 @@ const itensData = {
             "preco": "T$ 18",
             "espacos": "0,5",
             "categoria": "Item Geral",
-            "tipo": "Alimentação",
+            "tipo": "Básico",
             "descricao": " Fornece +2 PM temporários. (p. 163)"
         },
         {
@@ -1058,7 +1058,7 @@ const itensData = {
             "preco": "T$ 6",
             "espacos": "0,5",
             "categoria": "Item Geral",
-            "tipo": "Alimentação",
+            "tipo": "Básico",
             "descricao": " Fornece +5 PV temporários. (p. 163)"
         },
         {
@@ -1066,7 +1066,7 @@ const itensData = {
             "preco": "T$ 1",
             "espacos": "0,5",
             "categoria": "Item Geral",
-            "tipo": "Alimentação",
+            "tipo": "Básico",
             "descricao": " Aumenta a recuperação de PV em +1 por nível na próxima noite de sono. (p. 163)"
         },
         {
@@ -1074,7 +1074,7 @@ const itensData = {
             "preco": "T$ 0,5",
             "espacos": "0,5",
             "categoria": "Item Geral",
-            "tipo": "Alimentação",
+            "tipo": "Básico",
             "descricao": "Alimentos conservados que alimentam uma pessoa por um dia. (p. 163)"
         },
         {
@@ -1082,7 +1082,7 @@ const itensData = {
             "preco": "T$ 0,3",
             "espacos": "0,5",
             "categoria": "Item Geral",
-            "tipo": "Alimentação",
+            "tipo": "Básico",
             "descricao": "Refeição típica em taverna (pão, queijo, cozido, bebida). (p. 163)"
         },
         {
@@ -1090,7 +1090,7 @@ const itensData = {
             "preco": "T$ 1",
             "espacos": "0,5",
             "categoria": "Item Geral",
-            "tipo": "Alimentação",
+            "tipo": "Básico",
             "descricao": " Aumenta a recuperação de PM em +1 por nível na próxima noite de sono. (p. 163)"
         },
 
