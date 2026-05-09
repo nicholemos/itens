@@ -643,8 +643,7 @@ function updateSpecificFilters() {
     allBtn.className = 'filter-btn' + (!hasAlquimicoSelected && !hasAlimentacaoSelected && selectedTypes.length === 0 ? ' active' : '');
     allBtn.textContent = 'Todos';
     allBtn.addEventListener('click', () => {
-        selectedTypes = selectedTypes.filter(t => !['Alquímico', 'Preparados', 'Catalisador', 'Venenos'].includes(t));
-        selectedTypes = selectedTypes.filter(t => !foodSubtypes.includes(t));
+        selectedTypes = [];
         updateSpecificFilters();
         applyFilters();
     });
@@ -695,10 +694,15 @@ function updateSpecificFilters() {
 
             if (hasAlquimicos) {
                 const btn = document.createElement('button');
-                btn.className = 'filter-btn group-btn';
+                btn.className = 'filter-btn group-btn' + (hasAlquimicoSelected ? ' active' : '');
                 btn.textContent = 'Alquímico';
                 btn.addEventListener('click', () => {
-                    selectedTypes.push('Alquímico');
+                    if (selectedTypes.includes('Alquímico')) {
+                        selectedTypes = selectedTypes.filter(t => t !== 'Alquímico');
+                        selectedTypes = selectedTypes.filter(t => !['Preparados', 'Catalisador', 'Venenos'].includes(t));
+                    } else {
+                        selectedTypes.push('Alquímico');
+                    }
                     updateSpecificFilters();
                     applyFilters();
                 });
@@ -707,11 +711,14 @@ function updateSpecificFilters() {
 
             if (hasAlimentos) {
                 const btn = document.createElement('button');
-                btn.className = 'filter-btn group-btn';
+                btn.className = 'filter-btn group-btn' + (hasAlimentacaoSelected ? ' active' : '');
                 btn.textContent = 'Alimentação';
                 btn.addEventListener('click', () => {
-                    // Adiciona o primeiro subtipo para ativar o grupo
-                    selectedTypes.push('Básico');
+                    if (selectedTypes.some(t => foodSubtypes.includes(t))) {
+                        selectedTypes = selectedTypes.filter(t => !foodSubtypes.includes(t));
+                    } else {
+                        selectedTypes.push('Básico');
+                    }
                     updateSpecificFilters();
                     applyFilters();
                 });
