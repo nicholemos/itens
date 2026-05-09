@@ -597,7 +597,7 @@ const itensData = {
             "preco": "T$ 30",
             "espacos": "0,5",
             "categoria": "Item Geral",
-            "tipo": "Alquímico",
+            "tipo": "Preparados",
             "descricao": "Adiciona +1d6 de dano de fogo a magias. (p. 160)"
         },
         {
@@ -605,7 +605,7 @@ const itensData = {
             "preco": "T$ 45",
             "espacos": "0,5",
             "categoria": "Item Geral",
-            "tipo": "Alquímico",
+            "tipo": "Preparados",
             "descricao": "Aumenta o dano de magias em um dado do mesmo tipo. (p. 160)"
         },
         {
@@ -613,7 +613,7 @@ const itensData = {
             "preco": "T$ 150",
             "espacos": "0,5",
             "categoria": "Item Geral",
-            "tipo": "Alquímico",
+            "tipo": "Preparados",
             "descricao": "Aumenta os dados de dano de magias de fogo em uma categoria (ex: d6 para d8). (p. 160)"
         },
         {
@@ -621,7 +621,7 @@ const itensData = {
             "preco": "T$ 30",
             "espacos": "0,5",
             "categoria": "Item Geral",
-            "tipo": "Alquímico",
+            "tipo": "Preparados",
             "descricao": "Adiciona +1d6 de dano de frio a magias. (p. 160)"
         },
         {
@@ -629,7 +629,7 @@ const itensData = {
             "preco": "T$ 45",
             "espacos": "0,5",
             "categoria": "Item Geral",
-            "tipo": "Alquímico",
+            "tipo": "Preparados",
             "descricao": "Fornece +2 na CD de magias de ilusão. (p. 160)"
         },
         {
@@ -637,7 +637,7 @@ const itensData = {
             "preco": "T$ 45",
             "espacos": "0,5",
             "categoria": "Item Geral",
-            "tipo": "Alquímico",
+            "tipo": "Preparados",
             "descricao": "Fornece +2 na CD de magias de necromancia. (p. 160)"
         },
         {
@@ -645,7 +645,7 @@ const itensData = {
             "preco": "T$ 30",
             "espacos": "0,5",
             "categoria": "Item Geral",
-            "tipo": "Alquímico",
+            "tipo": "Preparados",
             "descricao": "Diminui o custo de magias de encantamento em –1 PM. (p. 160)"
         },
         {
@@ -653,7 +653,7 @@ const itensData = {
             "preco": "T$ 30",
             "espacos": "0,5",
             "categoria": "Item Geral",
-            "tipo": "Alquímico",
+            "tipo": "Preparados",
             "descricao": "Diminui o custo de magias de convocação em –1 PM. (p. 160)"
         },
         {
@@ -661,7 +661,7 @@ const itensData = {
             "preco": "T$ 45",
             "espacos": "0,5",
             "categoria": "Item Geral",
-            "tipo": "Alquímico",
+            "tipo": "Preparados",
             "descricao": "Aumenta a cura de magias em +1 PV por dado. (p. 160)"
         },
         {
@@ -669,7 +669,7 @@ const itensData = {
             "preco": "T$ 45",
             "espacos": "0,5",
             "categoria": "Item Geral",
-            "tipo": "Alquímico",
+            "tipo": "Preparados",
             "descricao": "Fornece +2 na CD de magias de abjuração. (p. 160)"
         },
         {
@@ -677,7 +677,7 @@ const itensData = {
             "preco": "T$ 30",
             "espacos": "0,5",
             "categoria": "Item Geral",
-            "tipo": "Alquímico",
+            "tipo": "Preparados",
             "descricao": "Diminui o custo de magias de transmutação em –1 PM. (p. 160)"
         },
         {
@@ -685,7 +685,7 @@ const itensData = {
             "preco": "T$ 30",
             "espacos": "0,5",
             "categoria": "Item Geral",
-            "tipo": "Alquímico",
+            "tipo": "Preparados",
             "descricao": "Adiciona +1d6 de dano de trevas a magias. (p. 160)"
         },
         {
@@ -1912,7 +1912,7 @@ const itensData = {
             preco: "T$ 60",
             espacos: "0,5",
             categoria: "Item Geral",
-            tipo: "Alquímico",
+            tipo: "Preparados",
             descricao: "Preparado alquímico. Aplicar é uma ação completa e cura 4d6+4 PV.",
             fonte: "Ameaças de Arton"
         },
@@ -1921,7 +1921,7 @@ const itensData = {
             preco: "T$ 15",
             espacos: "0,5",
             categoria: "Item Geral",
-            tipo: "Alquímico",
+            tipo: "Preparados",
             descricao: "Preparado alquímico. Segue as regras da bomba, mas cria uma nuvem de fumaça com 6m de raio (camuflagem leve a 1,5m, total a 3m) por 1 cena.",
             fonte: "Ameaças de Arton"
         },
@@ -1930,7 +1930,7 @@ const itensData = {
             preco: "T$ 120",
             espacos: "0,5",
             categoria: "Item Geral",
-            tipo: "Alquímico",
+            tipo: "Preparados",
             descricao: "Preparado alquímico. Beber (ação padrão) concede arma natural de mordida (1d6, crit x2) por 1 cena. Pode gastar 1 PM para ataque extra com a mordida. Se já possui mordida, dano aumenta em um passo.",
             fonte: "Ameaças de Arton"
         },
@@ -1939,7 +1939,7 @@ const itensData = {
             preco: "T$ 60",
             espacos: "0,5",
             categoria: "Item Geral",
-            tipo: "Alquímico",
+            tipo: "Preparados",
             descricao: "Preparado alquímico. Aplicar (ação padrão) em arma ou 20 munições. Causa +1d4 de dano do tipo elemental (ácido, eletricidade, fogo, frio) até o fim da cena.",
             fonte: "Ameaças de Arton"
         },
@@ -1948,7 +1948,7 @@ const itensData = {
             preco: "T$ 60",
             espacos: "0,5",
             categoria: "Item Geral",
-            tipo: "Alquímico",
+            tipo: "Preparados",
             descricao: "Preparado alquímico. Arremessar (ação padrão, alcance médio). Gruda no alvo (Ref CD Des evita) por 1d6 rodadas. Mortos-vivos não inteligentes em alcance curto são atraídos (Von CD Des evita) e ficam fascinados ou atacam o alvo.",
             fonte: "Ameaças de Arton"
         },
@@ -1957,7 +1957,7 @@ const itensData = {
             preco: "T$ 30",
             espacos: "0,5",
             categoria: "Item Geral",
-            tipo: "Alquímico",
+            tipo: "Preparados",
             descricao: "Preparado alquímico. Aplicar (ação padrão) ou arremessar (alcance curto). Remove todos os efeitos de metamorfose (Ref CD Des evita).",
             fonte: "Ameaças de Arton"
         },
@@ -1966,7 +1966,7 @@ const itensData = {
             preco: "T$ 30",
             espacos: "0,5",
             categoria: "Item Geral",
-            tipo: "Alquímico",
+            tipo: "Preparados",
             descricao: "Preparado alquímico. Aplicar (ação padrão) em arma ou munição para ignorar penalidades de combate submerso até o fim da cena.",
             fonte: "Ameaças de Arton"
         },
@@ -1975,7 +1975,7 @@ const itensData = {
             preco: "T$ 50",
             espacos: "0,5",
             categoria: "Item Geral",
-            tipo: "Alquímico",
+            tipo: "Preparados",
             descricao: "Preparado alquímico. Arremessar (ação de movimento para acender, padrão para arremessar, alcance curto). Criaturas a 3m sofrem 4d6 dano de fogo e ficam em chamas (Ref CD Des reduz à metade e evita chamas).",
             fonte: "Ameaças de Arton"
         },
@@ -1984,7 +1984,7 @@ const itensData = {
             preco: "T$ 150",
             espacos: "0,5",
             categoria: "Item Geral",
-            tipo: "Alquímico",
+            tipo: "Preparados",
             descricao: "Preparado alquímico. Inalar (ação completa) recupera 2d4 PM.",
             fonte: "Ameaças de Arton"
         },
@@ -2794,7 +2794,7 @@ const itensData = {
             preco: "T$ 60",
             espacos: "0,5",
             categoria: "Item Geral",
-            tipo: "Alquímico",
+            tipo: "Preparados",
             descricao: "Como ácido, mas o alvo sofre 4d8 de dano de ácido e fica vulnerável até o fim da cena (Reflexos CD Des reduz à metade e evita a condição).",
             fonte: "Heróis de Arton"
         },
@@ -2803,7 +2803,7 @@ const itensData = {
             preco: "T$ 60",
             espacos: "0,5",
             categoria: "Item Geral",
-            tipo: "Alquímico",
+            tipo: "Preparados",
             descricao: "Usar (ação padrão) role 2d4. Este é o máximo de PM que pode gastar. Até o fim da cena, sempre que sofrer dano, pode gastar 1 PM para reduzir esse dano em 5 (até o máximo rolado).",
             fonte: "Heróis de Arton"
         },
@@ -2812,7 +2812,7 @@ const itensData = {
             preco: "T$ 30",
             espacos: "0,5",
             categoria: "Item Geral",
-            tipo: "Alquímico",
+            tipo: "Preparados",
             descricao: "Arremessar (ação padrão, alcance curto). Criaturas a 3m sofrem 4d6 de dano de impacto e ficam surdas (Fortitude CD Des reduz à metade e evita a condição).",
             fonte: "Heróis de Arton"
         },
@@ -2821,7 +2821,7 @@ const itensData = {
             preco: "T$ 60",
             espacos: "0,5",
             categoria: "Item Geral",
-            tipo: "Alquímico",
+            tipo: "Preparados",
             descricao: "Usar (ação padrão, alcance curto). Alvo sofre 2d12 de dano de frio e fica lento por 1 rodada (Reflexos CD Des reduz à metade e evita a condição).",
             fonte: "Heróis de Arton"
         },
@@ -2830,7 +2830,7 @@ const itensData = {
             preco: "T$ 180",
             espacos: "0,5",
             categoria: "Item Geral",
-            tipo: "Alquímico",
+            tipo: "Preparados",
             descricao: "Arremessar (ação padrão, alcance curto, área 1,5m²). Objetos não mágicos de metal na área são destruídos e criaturas de metal ficam fatigadas (Fortitude CD Des evita).",
             fonte: "Heróis de Arton"
         },
@@ -2839,7 +2839,7 @@ const itensData = {
             preco: "T$ 300",
             espacos: "0,5",
             categoria: "Item Geral",
-            tipo: "Alquímico",
+            tipo: "Preparados",
             descricao: "Arremessar (ação padrão, alcance curto). Criaturas a 3m sofrem 6d6 de dano de fogo e ficam em chamas (Reflexos CD Des reduz à metade e evita a condição). Chamas mais fortes (2d6 de dano, CD 20 para apagar).",
             fonte: "Heróis de Arton"
         },
@@ -2848,7 +2848,7 @@ const itensData = {
             preco: "T$ 5",
             espacos: "0,5",
             categoria: "Item Geral",
-            tipo: "Alquímico",
+            tipo: "Preparados",
             descricao: "Lubrificante. Fornece +5 em um teste de Ladinagem para abrir fechaduras ou sabotar (cumulativo com outros itens).",
             fonte: "Heróis de Arton"
         },
@@ -2857,7 +2857,7 @@ const itensData = {
             preco: "T$ 30",
             espacos: "0,5",
             categoria: "Item Geral",
-            tipo: "Alquímico",
+            tipo: "Preparados",
             descricao: "Usar (ação padrão, alcance curto). Criaturas invisíveis a 3m do ponto deixam de estar invisíveis (passam a ter camuflagem leve).",
             fonte: "Heróis de Arton"
         },
@@ -2866,7 +2866,7 @@ const itensData = {
             preco: "T$ 25",
             espacos: "0,5",
             categoria: "Item Geral",
-            tipo: "Alquímico",
+            tipo: "Preparados",
             descricao: "Usar (ação padrão, alcance curto). Alvo sofre 4d4 de dano de ácido e fica enredado (Fortitude CD Des reduz à metade e evita a condição).",
             fonte: "Heróis de Arton"
         },
@@ -3630,7 +3630,7 @@ const itensData = {
             preco: "T$ 60",
             espacos: "0,5",
             categoria: "Item Geral",
-            tipo: "Alquímico",
+            tipo: "Preparados",
             descricao: "Preparado. Arremessar (ação padrão, alcance curto). Criaturas a 3m recuperam 6d4 PV (luz). Apenas devotos de energia positiva podem fabricar.",
             fonte: "Deuses de Arton"
         },
@@ -3639,7 +3639,7 @@ const itensData = {
             preco: "T$ 12",
             espacos: "0,5",
             categoria: "Item Geral",
-            tipo: "Alquímico",
+            tipo: "Preparados",
             descricao: "Preparado. Se gasto como parte de uma Missa, cada participante recebe 2 PM temporários (cumulativo).",
             fonte: "Deuses de Arton"
         },
@@ -3648,7 +3648,7 @@ const itensData = {
             preco: "T$ 30",
             espacos: "0,5",
             categoria: "Item Geral",
-            tipo: "Alquímico",
+            tipo: "Preparados",
             descricao: "Preparado. Beber (ação padrão). No início de cada turno, role 1d. Ímpar: perde 1 PM. Par: ganha ação movimento extra. 3 pares seguidos: ganha ação padrão extra. Dura pela cena ou até zerar PM.",
             fonte: "Deuses de Arton"
         },
@@ -3657,7 +3657,7 @@ const itensData = {
             preco: "T$ 150",
             espacos: "0,5",
             categoria: "Item Geral",
-            tipo: "Alquímico",
+            tipo: "Preparados",
             descricao: "Preparado. Arremessar (ação mov. acender + padrão, alcance curto). Mortos-vivos e abissais a 3m sofrem 6d12 dano de luz (Ref CD Sab reduz). Apenas devotos de energia positiva podem fabricar.",
             fonte: "Deuses de Arton"
         },
