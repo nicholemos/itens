@@ -605,11 +605,35 @@ function updateSpecificFilters() {
     }
 
     let types = [];
-    types = [...new Set(allItems
-        .filter(item => item.categoria === currentCategory)
-        .map(item => item.tipo)
-        .filter(type => type)
-    )];
+    
+    if (currentCategory === 'Item Mágico') {
+        types = allItems
+            .filter(item => item.categoria === 'Item Mágico')
+            .map(item => item.tipo)
+            .filter(type => type);
+        
+        types = [...new Set(types)];
+    } else if (currentCategory === 'encantamento') {
+        const encantamentoTypes = allEnchantments
+            .map(item => item.tipo)
+            .filter(type => type);
+        
+        const esotericTypes = allEsotericEnchantments
+            .map(item => item.tipo)
+            .filter(type => type);
+        
+        const accessoryTypes = allAccessoryEnchantments
+            .map(item => item.tipo)
+            .filter(type => type);
+        
+        types = [...new Set([...encantamentoTypes, ...esotericTypes, ...accessoryTypes])];
+    } else {
+        types = [...new Set(allItems
+            .filter(item => item.categoria === currentCategory)
+            .map(item => item.tipo)
+            .filter(type => type)
+        )];
+    }
 
     const foodSubtypes = ['Básico', 'Pratos Especiais', 'Pratos Especiais Divinos', 'Bebidas'];
 
@@ -774,10 +798,7 @@ function applyFilters() {
     } else if (currentCategory === 'Item Superior') {
         sourceList = allModifications.concat(allMaterials);
     } else if (currentCategory === 'Item Mágico') {
-        sourceList = allItems.filter(i => i.categoria === 'Item Mágico')
-            .concat(allEnchantments)
-            .concat(allEsotericEnchantments)
-            .concat(allAccessoryEnchantments);
+        sourceList = allItems.filter(i => i.categoria === 'Item Mágico');
     } else if (currentCategory === 'Maldição') {
         sourceList = allCurses;
     } else if (currentCategory !== 'todos') {
@@ -789,31 +810,33 @@ function applyFilters() {
     let filtered = sourceList;
 
 // 2. Filtros
-    if (currentView === 'grid' && selectedTypes.length > 0 && currentCategory === 'Item Geral') {
-        const foodSubtypes = ['Básico', 'Pratos Especiais', 'Pratos Especiais Divinos', 'Bebidas'];
-        const alquimicoSubtypes = ['Preparados', 'Catalisador', 'Venenos'];
-        
-        const hasAlquimicoGroup = selectedTypes.includes('Alquímico');
-        const hasAlimentacaoGroup = selectedTypes.includes('Alimentação');
-        const hasAlquimicoSubtypes = selectedTypes.some(t => alquimicoSubtypes.includes(t));
-        const hasFoodSubtypes = selectedTypes.some(t => foodSubtypes.includes(t));
+    if (currentView === 'grid' && selectedTypes.length > 0) {
+        if (currentCategory === 'Item Geral') {
+            const foodSubtypes = ['Básico', 'Pratos Especiais', 'Pratos Especiais Divinos', 'Bebidas'];
+            const alquimicoSubtypes = ['Preparados', 'Catalisador', 'Venenos'];
+            
+            const hasAlquimicoGroup = selectedTypes.includes('Alquímico');
+            const hasAlimentacaoGroup = selectedTypes.includes('Alimentação');
+            const hasAlquimicoSubtypes = selectedTypes.some(t => alquimicoSubtypes.includes(t));
+            const hasFoodSubtypes = selectedTypes.some(t => foodSubtypes.includes(t));
 
-        filtered = filtered.filter(item => {
-            // Se "Alquímico" está selecionado (sem subtipos específicos), mostra todos do grupo
-            if (hasAlquimicoGroup && !hasAlquimicoSubtypes) {
-                return alquimicoSubtypes.includes(item.tipo);
-            }
-            // Se "Alimentação" está selecionado (sem subtipos específicos), mostra todos do grupo
-            if (hasAlimentacaoGroup && !hasFoodSubtypes) {
-                return foodSubtypes.includes(item.tipo);
-            }
-            // Se subtipos específicos estão selecionados, filtra por eles
-            if (hasAlquimicoSubtypes || hasAlimentacaoGroup) {
+            filtered = filtered.filter(item => {
+                if (hasAlquimicoGroup && !hasAlquimicoSubtypes) {
+                    return alquimicoSubtypes.includes(item.tipo);
+                }
+                if (hasAlimentacaoGroup && !hasFoodSubtypes) {
+                    return foodSubtypes.includes(item.tipo);
+                }
+                if (hasAlquimicoSubtypes || hasAlimentacaoGroup) {
+                    return selectedTypes.includes(item.tipo);
+                }
                 return selectedTypes.includes(item.tipo);
-            }
-            // Caso contrário, filtro normal
-            return selectedTypes.includes(item.tipo);
-        });
+            });
+        } else if (currentCategory === 'Item Mágico') {
+            filtered = filtered.filter(item => selectedTypes.includes(item.tipo));
+        } else if (currentCategory === 'encantamento') {
+            filtered = filtered.filter(item => selectedTypes.includes(item.tipo));
+        }
     }
 
     if (currentCategory === 'Arma' && currentEmpunhadura !== 'todas') {
