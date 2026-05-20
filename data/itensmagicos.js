@@ -2098,7 +2098,80 @@ const itensMagicosData = {
             tipo: "Acessório Maior",
             descricao: " Ferramenta de Guerra aprimorada (+2). Se devoto do Deus da Guerra: pode gastar (Ação Completa, CD 20 Guerra). Sucesso: bônus em Guerra aplica a todos os testes de perícia de aliados em alcance curto (cena). Sucesso por 20+: aliados recebem ação padrão extra.",
             fonte: "Deuses de Arton"
-        }
+        },
+            {
+        "nome": "Punhal Escarlate",
+        "preco": "T$ 41.000",
+        "espacos": "1",
+        "categoria": "Arma Mágica",
+        "tipo": "Arma Específica Média",
+        "descricao": "Criada por Hemera, esta adaga formidável causa +1d6 pontos de dano de essência. Além disso, conta como um orbe cristalino.",
+        "fonte": "Guia de NPCs"
+    },
+    {
+        "nome": "Braceletes das Escamas",
+        "preco": "T$ 21.000",
+        "espacos": "1",
+        "categoria": "Item Mágico",
+        "tipo": "Acessório Médio",
+        "descricao": "Criados por Acteia, estes braceletes de aço escurecido são entalhados de forma a parecer escamas de dragão. Fornecem redução de dano 5 e contam como uma luva de ferro.",
+        "fonte": "Guia de NPCs"
+    },
+    {
+        "nome": "Face Dracônica",
+        "preco": "T$ 25.000",
+        "espacos": "1",
+        "categoria": "Item Mágico",
+        "tipo": "Acessório Médio",
+        "descricao": "Esta máscara dourada, semelhante ao rosto estilizado de um dragão, fortalece o poder arcano do usuário. Fruto do poder de Ilítia, fornece +2 na CD para resistir a suas habilidades mágicas (incluindo magias) e conta como um medalhão de prata.",
+        "fonte": "Guia de NPCs"
+    },
+    {
+        "nome": "Presuntador",
+        "preco": "T$ 120.000",
+        "espacos": "2",
+        "categoria": "Arma Mágica",
+        "tipo": "Arma Específica Maior",
+        "descricao": "Feito de mana solidificado e dado a Klunc como recompensa por um ato especialmente heroico, o Presuntador é um machado de guerra aumentado energético magnífico. Se Klunc ficar inconsciente, o Presuntador continua lutando sozinho, com as mesmas estatísticas que teria se estivesse sendo empunhado. Quando ataca dessa forma, o Presuntador tem Defesa 35, RD 50 e 50 PV.",
+        "fonte": "Lendas de Arton"
+    },
+    {
+        "nome": "Armadura de Khalmyr",
+        "preco": "T$ 42.000",
+        "espacos": "0",
+        "categoria": "Armadura Mágica",
+        "tipo": "Armadura Específica Média",
+        "descricao": "Esta armadura completa sob medida defensora fica armazenada magicamente em uma gargantilha com o símbolo do Deus da Justiça. Enquanto está armazenada dessa forma, a armadura não ocupa nenhum espaço (embora ainda conte como um item vestido) e não impõe nenhuma penalidade ao usuário (como se ele não estivesse de armadura). Ao pronunciar o nome de Khalmyr, o usuário evoca a armadura, que é vestida automaticamente. Devolver a armadura à gargantilha também é uma ação livre.",
+        "fonte": "Lendas de Arton"
+    },
+    {
+        "nome": "Fêmur de Narsogg [Nome Inferido]",
+        "preco": "T$ 96.000",
+        "espacos": "2",
+        "categoria": "Arma Mágica",
+        "tipo": "Arma Específica Maior",
+        "descricao": "Este montante aumentado macabro maciço formidável tumular foi fabricado a partir do fêmur da irmã de Narsogg. Uma arma única, conta como um cajado arcano. Além dos benefícios desse esotérico, as magias do usuário que causam dano de trevas causam +1 ponto de dano por dado.",
+        "fonte": "Lendas de Arton"
+    },
+    {
+        "nome": "Báculo da Fé",
+        "preco": "T$ 45.000",
+        "espacos": "2",
+        "categoria": "Arma Mágica",
+        "tipo": "Arma Específica Maior",
+        "descricao": "Este bordão banhado a ouro formidável é dedicado a uma divindade específica, que pode ser identificada pelos símbolos em sua empunhadura e extremidades. Quando empunhado por um devoto dessa divindade, causa +1d6 pontos de dano de fogo (para divindades que canalizam energia positiva) ou +1d6 pontos de dano de frio (para divindades que canalizam energia negativa).",
+        "fonte": "Lendas de Arton"
+    },
+    {
+        "nome": "Batina Consagrada",
+        "preco": "T$ 80.000",
+        "espacos": "1",
+        "categoria": "Armadura Mágica",
+        "tipo": "Armadura Específica Maior",
+        "descricao": "Esta armadura acolchoada guardiã refletora é dedicada a uma divindade específica, que pode ser identificada pelos símbolos bordados em seu peito e mangas. Conta como um manto eclesiástico aprimorado e, se vestida por um devoto da divindade à qual é dedicada, fornece redução de dano 5.",
+        "fonte": "Lendas de Arton"
+    }
+
 
 
 
