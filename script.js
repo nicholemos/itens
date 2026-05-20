@@ -83,6 +83,7 @@ let allItems = []; // Itens base (armas, armaduras, etc.)
 let filteredItems = [];
 let inventory = [];
 let currentModalItem = null;
+let currentModalIndex = 0;
 let currentCategory = 'todos';
 let selectedTypes = []; // Multi-seleção de sub-tipos (vazio = todos)
 let searchTerm = '';
@@ -193,20 +194,20 @@ function loadItems() {
                 const prereqText = prereqArr && prereqArr.length > 0 ? prereqArr.join(' ou ') : null;
                 return {
                     nome: item.nome, tipo: item.tipo, descricao: item.descricao,
-                    preco: item.preco, prereq: prereqText
+                    preco: item.preco, prereq: prereqText, categoria: 'Item Superior'
                 };
             });
 
         allMaterials = combinedData
             .filter(item => item.categoria === 'Item Superior' && item.tipo === 'Material')
-            .map(item => ({ nome: item.nome, tipo: item.tipo, descricao: item.descricao, preco: item.preco }));
+            .map(item => ({ nome: item.nome, tipo: item.tipo, descricao: item.descricao, preco: item.preco, categoria: 'Item Superior' }));
 
         // CORREÇÃO: Usando a categoria 'encantamento' em vez de 'Item Mágico'
         allEnchantments = combinedData
             .filter(item => item.categoria === 'encantamento' && (item.tipo === 'Arma' || item.tipo === 'Armadura/Escudo'))
             .map(item => ({
                 nome: item.nome, tipo: item.tipo, descricao: item.descricao,
-                preco: item.preco, prereq: enchantmentPrereqs[item.nome] || null
+                preco: item.preco, prereq: enchantmentPrereqs[item.nome] || null, categoria: 'encantamento'
             }));
 
         // CORREÇÃO: Usando a categoria 'encantamento'
@@ -214,7 +215,7 @@ function loadItems() {
             .filter(item => item.categoria === 'encantamento' && item.tipo === 'Esotérico')
             .map(item => ({
                 nome: item.nome, tipo: item.tipo, descricao: item.descricao,
-                preco: item.preco, prereq: enchantmentPrereqs[item.nome] || null
+                preco: item.preco, prereq: enchantmentPrereqs[item.nome] || null, categoria: 'encantamento'
             }));
 
         // CORREÇÃO: Usando a categoria 'encantamento' para Encantamento de Acessório
@@ -222,7 +223,7 @@ function loadItems() {
             .filter(item => item.categoria === 'encantamento' && (item.tipo === 'Encantamento de Acessório'))
             .map(item => ({
                 nome: item.nome, tipo: item.tipo, descricao: item.descricao,
-                preco: item.preco, prereq: enchantmentPrereqs[item.nome] || null
+                preco: item.preco, prereq: enchantmentPrereqs[item.nome] || null, categoria: 'encantamento'
             }));
 
         // NOVO: Popula a lista de Maldições
@@ -230,7 +231,7 @@ function loadItems() {
             .filter(item => item.categoria === 'Maldição')
             .map(item => ({
                 nome: item.nome, tipo: item.tipo, descricao: item.descricao,
-                preco: item.preco, fonte: item.fonte
+                preco: item.preco, fonte: item.fonte, categoria: 'Maldição'
             }));
 
         // 3. Limpa a lista principal "allItems"
@@ -347,7 +348,36 @@ function setupEventListeners() {
             const rm = document.getElementById('randomizerModal');
             if (rm && rm.classList.contains('active')) closeRandomizerModal();
         }
+        if (itemModal.classList.contains('active')) {
+            if (e.key === 'ArrowLeft') navigateModal(-1);
+            if (e.key === 'ArrowRight') navigateModal(1);
+        }
     });
+
+    document.querySelector('.modal-nav-prev').addEventListener('click', () => navigateModal(-1));
+    document.querySelector('.modal-nav-next').addEventListener('click', () => navigateModal(1));
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+    itemModal.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    itemModal.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+        if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0) {
+                navigateModal(1);
+            } else {
+                navigateModal(-1);
+            }
+        }
+    }
 
     addItemBtn.addEventListener('click', addItemToInventory);
     clearInventoryBtn.addEventListener('click', clearInventory);
@@ -989,7 +1019,13 @@ function getTableHeader(category) {
             headers = ['Nome', 'Preço', 'Tipo', 'Espaços', 'Descrição'];
             break;
         case 'Item Superior':
-            headers = ['Nome', 'Custo/Preço', 'Tipo', 'Descrição'];
+            headers = ['Nome', 'Requisito', 'Tipo', 'Descrição'];
+            break;
+        case 'encantamento':
+            headers = ['Nome', 'Requisito', 'Tipo', 'Descrição'];
+            break;
+        case 'Maldição':
+            headers = ['Nome', 'Descrição'];
             break;
         default:
             headers = ['Nome', 'Preço', 'Tipo', 'Espaços', 'Descrição'];
@@ -1015,7 +1051,13 @@ function getItemRows(items, category) {
                 cells = [item.nome, item.preco || '—', item.tipo || '—', item.espacos || '—', desc];
                 break;
             case 'Item Superior':
-                cells = [item.nome, item.preco || '—', item.tipo || '—', desc];
+                cells = [item.nome, item.prereq || '—', item.tipo || '—', desc];
+                break;
+            case 'encantamento':
+                cells = [item.nome, item.prereq || '—', item.tipo || '—', desc];
+                break;
+            case 'Maldição':
+                cells = [item.nome, desc];
                 break;
             default: // Item Geral
                 cells = [item.nome, item.preco || '—', item.tipo || '—', item.espacos || '—', desc];
@@ -1679,6 +1721,7 @@ function refreshEnchantSelectorOptions() {
 
 function openModal(index) {
     currentModalItem = filteredItems[index];
+    currentModalIndex = index;
     const item = currentModalItem;
 
     if (!item) {
@@ -1766,6 +1809,9 @@ function openModal(index) {
 
     modalQuantityInput.value = "1";
 
+    document.querySelector('.modal-nav-prev').disabled = currentModalIndex === 0;
+    document.querySelector('.modal-nav-next').disabled = currentModalIndex === filteredItems.length - 1;
+
     itemModal.classList.add('active');
     modalOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -1776,6 +1822,14 @@ function closeModal() {
     modalOverlay.classList.remove('active');
     document.body.style.overflow = 'auto';
     currentModalItem = null;
+}
+
+function navigateModal(direction) {
+    const newIndex = currentModalIndex + direction;
+    if (newIndex >= 0 && newIndex < filteredItems.length) {
+        currentModalIndex = newIndex;
+        openModal(currentModalIndex);
+    }
 }
 
 function enviarInventarioCompletoParaFicha() {
