@@ -171,8 +171,15 @@
       </div>
 
       <div class="modal-body">
-        <div class="modal-image-container">
-          <img id="modalImage" src="" alt="" class="modal-image" style="display:none;">
+        <div class="modal-image-row">
+          <div class="modal-image-container">
+            <img id="modalImage" src="" alt="" class="modal-image" style="display:none;">
+          </div>
+          <div class="modal-add-item">
+            <label for="modalQuantity">Qtd:</label>
+            <input type="number" id="modalQuantity" class="quantity-input" value="1" min="1">
+            <button id="addItemBtn" class="add-item-btn">Adicionar ao Inventário</button>
+          </div>
         </div>
         <div id="modalBadges" class="modal-badges"></div>
         <div class="modal-section">
@@ -243,12 +250,6 @@
             <div id="curseSelectorsContainer" class="customizer-selectors">
             </div>
           </div>
-        </div>
-
-        <div class="modal-add-item">
-          <label for="modalQuantity">Qtd:</label>
-          <input type="number" id="modalQuantity" class="quantity-input" value="1" min="1">
-          <button id="addItemBtn" class="add-item-btn">Adicionar ao Inventário</button>
         </div>
       </div>
 
