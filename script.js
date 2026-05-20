@@ -358,20 +358,28 @@ function setupEventListeners() {
     document.querySelector('.modal-nav-next').addEventListener('click', () => navigateModal(1));
 
     let touchStartX = 0;
+    let touchStartY = 0;
     let touchEndX = 0;
+    let touchEndY = 0;
     itemModal.addEventListener('touchstart', (e) => {
         touchStartX = e.changedTouches[0].screenX;
+        touchStartY = e.changedTouches[0].screenY;
     }, { passive: true });
     itemModal.addEventListener('touchend', (e) => {
         touchEndX = e.changedTouches[0].screenX;
+        touchEndY = e.changedTouches[0].screenY;
         handleSwipe();
     }, { passive: true });
 
     function handleSwipe() {
-        const swipeThreshold = 50;
-        const diff = touchStartX - touchEndX;
-        if (Math.abs(diff) > swipeThreshold) {
-            if (diff > 0) {
+        const swipeThreshold = 150;
+        const diffX = touchStartX - touchEndX;
+        const diffY = touchStartY - touchEndY;
+
+        // Só desliza se o movimento for claramente mais horizontal que vertical
+        // e se a distância horizontal for bem significativa
+        if (Math.abs(diffX) > Math.abs(diffY) * 1.5 && Math.abs(diffX) > swipeThreshold) {
+            if (diffX > 0) {
                 navigateModal(1);
             } else {
                 navigateModal(-1);

@@ -1055,31 +1055,45 @@ button[title*="Limpar"],
 /* Ajustes específicos do modal no mobile */
 @media (max-width:720px) {
   .modal-content {
-    width: calc(100vw - 20px);
-    max-height: calc(100svh - 20px);
+    width: calc(100vw - 16px);
+    max-height: calc(100svh - 40px);
     padding: 12px;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
   }
 
+  .modal-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .modal-title {
+    font-size: 1.2rem;
+  }
+
   .modal-image-container {
     width: 100%;
-    max-height: 220px;
-    border-radius: 16px;
+    max-height: 180px;
+    border-radius: 12px;
     overflow: hidden;
   }
 
   .modal-image-container img,
   #modalImage {
     width: 100%;
-    height: 220px;
+    height: 180px;
     object-fit: contain;
     display: block;
   }
 
   .modal-stats {
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px;
+  }
+
+  .stat-box {
+    min-width: 90px;
   }
 }
 
