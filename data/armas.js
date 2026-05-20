@@ -1637,6 +1637,34 @@ const armasData = {
             "descricao": "Uma ferramenta comum para corte de madeira. Devido à sua lâmina projetada para materiais rígidos, ataques desferidos com esta arma ignoram 5 pontos de RD (Redução de Dano) de objetos e construtos.",
             "fonte": "Guia de NPCs"
 
+        },
+        {
+            nome: "Espada-Calibre (Corpo a Corpo)",
+            preco: "T$ 1000",
+            dano: "1d8",
+            critico: "19/x2",
+            alcance: "—",
+            tipo_dano: "Corte",
+            espacos: "1",
+            categoria: "Arma",
+            tipo: "Exótica",
+            empunhadura: "Uma Mão",
+            descricao: "Arma híbrida. Quando faz um ataque corpo a corpo, pode acionar seu mecanismo para disparar a bala (+2d6 dano). Recarregar é uma ação padrão.",
+            fonte: "Deuses de Arton"
+        },
+        {
+            nome: "Espada-Calibre (À Distância)",
+            preco: "T$ 1000",
+            dano: "2d6",
+            critico: "19/x3",
+            alcance: "Curto",
+            tipo_dano: "Perfuração",
+            espacos: "1",
+            categoria: "Arma",
+            tipo: "De Fogo",
+            empunhadura: "Uma Mão",
+            descricao: "Arma híbrida. Para atacar com ela como arma de fogo, você deve também ter proficiência em armas de fogo. Recarregar é uma ação padrão.",
+            fonte: "Deuses de Arton"
         }
 
     ]
