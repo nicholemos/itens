@@ -44,14 +44,14 @@ const itensMagicosData = {
         { nome: "Poção: Curar Ferimentos (11d8+11 PV)", preco: "T$ 3.000", tipo: "Poção", espacos: "0,5", categoria: "Item Mágico", descricao: "Poção de cura lendária que restaura 11d8+11 pontos de vida." },
 
         // Armas Especificas
-        { nome: "Azagaia dos Relâmpagos", preco: "T$ 30.000", tipo: "Arma Mágica Maior", espacos: "1", categoria: "Item Mágico", descricao: "Azagaia mágica que ao ser arremessada se transforma em um raio, causando 5d6 de dano elétrico em linha (Reflexos CD 15 reduz à metade). Retorna ao usuário." },
+        { nome: "Azagaia dos Relâmpagos", preco: "T$ 30.000", tipo: "Arma Mágica Maior", espacos: "1", categoria: "Item Mágico", descricao: "Quando arremessada, esta azagaia se transforma em um Relâmpago (8d6 de dano de eletricidade numa linha com alcance médio; CD For ou Des a sua escolha). Quando atinge o fim do alcance ela volta a ser uma azagaia e volta para você no fim do turno." },
         {
             nome: "Espada Baronial",
             preco: "T$ 30.000",
             categoria: "Item Mágico",
             tipo: "Arma Mágica Maior",
             espacos: "1",
-            descricao: "Espada longa +2 que concede +2 em testes de Diplomacia e Intimidação quando empunhada. Marca o portador como nobre."
+            descricao: "Esta espada longa de guarda reta fornece +1 em testes de ataque e rolagens de dano. Este bônus aumenta em +1 se você possuir um código de conduta (de honra, do herói...), for devoto de Khalmyr ou for treinado em Nobreza. Os bônus são cumulativos — um personagem com um código de conduta, devoto de Khalmyr e treinado em Nobreza recebe +4 em ataque e dano."
         },
         {
             nome: "Lâmina da Luz",
@@ -59,7 +59,7 @@ const itensMagicosData = {
             categoria: "Item Mágico",
             tipo: "Arma Mágica Maior",
             espacos: "1",
-            descricao: "Espada +3 sagrada que causa +2d6 de dano de luz adicional contra mortos-vivos e demônios."
+            descricao: "De lâmina prateada e reluzente, esta espada bastarda formidável é concedida a cavaleiros da Luz de honra e virtude comprovadas. Você pode gastar uma ação de movimento e 2 PM para erguer a lâmina da luz acima de sua cabeça. Se fizer isso, ela irradia luz brilhante em alcance médio até o fim da cena. Todos os inimigos dentro da luz ficam ofuscados."
         },
         {
             nome: "Lança Animalesca",
@@ -67,7 +67,7 @@ const itensMagicosData = {
             categoria: "Item Mágico",
             tipo: "Arma Mágica Maior",
             espacos: "1",
-            descricao: "Lança +2 que permite invocar um aliado animal ou assumir forma bestial por uma cena."
+            descricao: "Espinhos e folhas vivas brotam desta lança formidável. Se você usar a habilidade Forma Selvagem, aplica o bônus de +2 em ataque e dano da lança animalesca em suas armas naturais."
         },
         {
             nome: "Maça do Terror",
@@ -75,7 +75,7 @@ const itensMagicosData = {
             categoria: "Item Mágico",
             tipo: "Arma Mágica Maior",
             espacos: "1",
-            descricao: "Maça +3 que pode amedrontar inimigos em um raio de 9m (Vontade CD 17 evita)."
+            descricao: "Esta maça formidável é feita com um osso e um crânio e permite que você lance a magia Amedrontar (CD For ou Car a sua escolha). Caso já conheça a magia, o custo para lançá-la diminui em –1 PM."
         },
         {
             nome: "Florete Fugaz",
@@ -83,7 +83,7 @@ const itensMagicosData = {
             categoria: "Item Mágico",
             tipo: "Arma Mágica Maior",
             espacos: "1",
-            descricao: "Florete +3 que permite se mover 3m como reação após um acerto em combate corpo a corpo."
+            descricao: "Este florete formidável tem o cabo e a guarda trabalhados com prata e pedrarias. Quando usa a ação agarrir, você pode gastar 1 PM. Se fizer isso e acertar um crítico no turno, pode fazer um ataque adicional contra a mesma criatura."
         },
         {
             nome: "Cajado da Destruição",
@@ -91,7 +91,7 @@ const itensMagicosData = {
             categoria: "Item Mágico",
             tipo: "Arma Mágica Maior",
             espacos: "2",
-            descricao: "Cajado +3 que permite conjurar Desintegrar uma vez por dia."
+            descricao: "Este bordão formidável escuro e reforçado com ponteiras de metal é procurado por conjuradores de batalha. Conta como um cajado arcano. Além dos benefícios desse esotérico, quando você lança uma magia de dano, ela causa +1 ponto de dano por dado."
         },
         {
             nome: "Cajado da Vida",
@@ -99,7 +99,7 @@ const itensMagicosData = {
             categoria: "Item Mágico",
             tipo: "Arma Mágica Maior",
             espacos: "2",
-            descricao: "Cajado +3 que permite conjurar Curar Ferimentos Maiores uma vez por dia."
+            descricao: "Este bordão formidável branco com runas prateadas é valorizado por curandeiros. Conta como um cajado arcano, mas afeta magias divinas. Além disso, quando você lança uma magia de cura, ela cura +2 pontos de vida por dado."
         },
         {
             nome: "Machado Silvestre",
@@ -107,7 +107,7 @@ const itensMagicosData = {
             categoria: "Item Mágico",
             tipo: "Arma Mágica Maior",
             espacos: "2",
-            descricao: "Machado que comunica com a natureza, fornecendo +2 em testes de Sobrevivência."
+            descricao: "O cabo e a lâmina deste machado de batalha formidável são cobertos de gravuras representando plantas e animais selvagens. Quando você usa o machado silvestre em um ambiente ermo e ao ar livre, causa +1d8 de dano e recebe o poder Trespassar. Caso já possua este poder, pode utilizá-lo sem pagar pontos de mana."
         },
         {
             nome: "Martelo de Doherimm",
@@ -115,7 +115,7 @@ const itensMagicosData = {
             categoria: "Item Mágico",
             tipo: "Arma Mágica Maior",
             espacos: "2",
-            descricao: "Martelo ancestral dos anões com poder sobre pedra."
+            descricao: "Este martelo de guerra formidável é feito de pedra e aço. Quando empunhado por um anão, adquire o encanto arremesso e aumenta seu dano em +1d8 (ou +2d8 se usado contra criaturas Grandes ou maiores)."
         },
         {
             nome: "Arco do Poder",
@@ -123,7 +123,7 @@ const itensMagicosData = {
             categoria: "Item Mágico",
             tipo: "Arma Mágica Maior",
             espacos: "2",
-            descricao: "Arco longo +4 que dobra o alcance e ignora cobertura parcial e total."
+            descricao: "O arco do poder conta como um arco longo formidável, mas parece apenas o corpo de um arco — não tem corda e não aceita flechas. Contudo, quando você o empunha e faz o gesto de puxar a corda inexistente, o arco cria uma corda e uma flecha de energia dourada. O arco do poder é capaz de ler suas intenções, produzindo diferentes tipos de flechas energéticas a sua escolha: Flecha Normal (3d8 pontos de dano de essência), Flecha Piedosa (4d8 pontos de dano de essência não letal), Flecha Explosiva (3d6 pontos de dano de fogo no alvo e em todas as criaturas adjacentes a ele, Ref CD Des para reduzir à metade), Flecha-Rede (não causa dano, mas deixa a vítima agarrada por uma rede de energia; CD 25 Força ou Acrobacia para se soltar; a rede se dissipa quando a criatura se solta ou no fim da cena)."
         },
         {
             nome: "Língua do Deserto",
@@ -131,7 +131,7 @@ const itensMagicosData = {
             categoria: "Item Mágico",
             tipo: "Arma Mágica Maior",
             espacos: "1",
-            descricao: "Espada curva +4 flamejante; causa +2d6 de dano de fogo e concede resistência 10 a fogo ao portador."
+            descricao: "Esta cimitarra formidável é originária do Deserto da Perdição. Você pode gastar uma ação de movimento e 1 PM para transformar a lâmina dela em chamas até o fim da cena. Nessa condição, o dano da arma aumenta em um passo e passa a ser do tipo fogo. Você pode gastar uma ação de movimento e 2 PM para fazer as chamas brilharem com muita força. Isso deixa os inimigos em alcance curto desprevenidos por uma rodada."
         },
         {
             nome: "Besta Explosiva",
@@ -139,7 +139,7 @@ const itensMagicosData = {
             categoria: "Item Mágico",
             tipo: "Arma Mágica Maior",
             espacos: "2",
-            descricao: "Besta que dispara virotes explosivos causando dano em área."
+            descricao: "Esta besta pesada formidável é feita de madeira escurecida, similar a carvão. Quando usa uma besta explosiva, você pode gastar 3 PM para transformar o virote disparado por ela em uma Bola de Fogo. Você pode mirar esta Bola de Fogo em uma criatura ou em um ponto em alcance médio. No primeiro caso, faça um ataque contra o alvo. Se acertar, ele sofre o dano do disparo mais 6d6 de fogo. Além disso, todas as criaturas a até 6m do alvo sofrem 6d6 pontos de dano de fogo (Ref CD Des reduz à metade). Porém, se o ataque errar, o virote se desfaz em uma nuvem de cinzas inofensivas. No segundo caso, ela funciona como a magia de mesmo nome. Nenhum teste de ataque é necessário e todas as criaturas a 6m do ponto escolhido sofrem 6d6 pontos de dano de fogo (Ref reduz à metade)."
         },
         {
             nome: "Punhal Traidor",
@@ -155,7 +155,7 @@ const itensMagicosData = {
             categoria: "Item Mágico",
             tipo: "Arma Mágica Maior",
             espacos: "1",
-            descricao: "Espada que parece ter sorte, concedendo +1 em todos os testes de ataque."
+            descricao: "Esta espada curta formidável é cravejada de brilhantes. Você recebe +2 nos testes de resistência e, quando faz um teste, pode gastar 3 PM para rolá-lo novamente. Se possuir o poder Sortudo, em vez disso seu custo diminui em –1 PM."
         },
         {
             nome: "Avalanche",
@@ -163,7 +163,7 @@ const itensMagicosData = {
             categoria: "Item Mágico",
             tipo: "Arma Mágica Maior",
             espacos: "2",
-            descricao: "Martelo gigante +5 que pode liberar uma onda sísmica (como a magia Terremoto) uma vez por semana."
+            descricao: "Este machado de guerra de gelo eterno congelante formidável fornece redução de fogo 10. Você pode gastar uma ação padrão e 6 PM para brandi-lo acima de sua cabeça e invocar uma tempestade de gelo que afeta alcance curto ao seu redor. Criaturas na área recebem camuflagem leve e sofrem 3d6 pontos de dano de impacto e 3d6 pontos de frio por rodada. Você não sofre os efeitos nocivos da tempestade (o dano e a chance de falha pela camuflagem) e pode gastar 1 PM no início de cada um de seus turnos para mantê-la."
         },
         {
             nome: "Cajado do Poder",
@@ -171,7 +171,7 @@ const itensMagicosData = {
             categoria: "Item Mágico",
             tipo: "Arma Mágica Maior",
             espacos: "2",
-            descricao: "Cajado +5 que concede +2 em testes de ataque mágicos e permite conjurar diversas magias poderosas (Fogo, Relâmpago, Barreira etc.)."
+            descricao: "Este bordão defensor magnificent tem cabo reto e liso, com uma joia cintilante na ponta. Conta como um cajado arcano. Além dos benefícios desse esotérico, o custo de suas magias arcanas diminui em –1 PM (cumulativo com Mestre em Escola) e a CD para resistir a elas aumenta em +2 (para um aumento total de +3)."
         },
         {
             nome: "Vingadora Sagrada",
@@ -179,17 +179,129 @@ const itensMagicosData = {
             categoria: "Item Mágico",
             tipo: "Arma Mágica Maior",
             espacos: "2",
-            descricao: "Espada longa +5 sagrada; causa +2d6 de dano adicional contra criaturas malignas e concede resistência 10 a trevas ao portador."
+            descricao: "Esta espada longa formidável revela todo o seu poder apenas quando empunhada por um paladino. Se você for um paladino, recebe +5 em testes de ataque e rolagens de dano, o custo de seu Golpe Divino é reduzido em –1 PM e você e seus aliados em alcance curto recebem resistência a magia +5."
+        },
+        {
+            nome: "Punhal Sszzaazita",
+            preco: "T$ 90.000",
+            categoria: "Item Mágico",
+            tipo: "Arma Mágica Maior",
+            espacos: "1",
+            descricao: "Esta adaga assassina formidável venenosa tem lâmina negra e ondulada. Você pode gastar uma ação padrão e 2 PM para transformar o punhal sszzaazita em um objeto inofensivo de tamanho similar, como uma colher ou pena. Nenhuma magia é capaz de detectar essa transformação. Transformar o punhal em arma é uma ação livre."
         },
 
-        // Armaduras Específicas
+// Armaduras Específicas
         {
             nome: "Cota Élfica",
             preco: "T$ 30.000",
             categoria: "Item Mágico",
             tipo: "Armadura Mágica Maior",
             espacos: "2",
-            descricao: "Cota de malha leve e silenciosa feita por elfos; concede +8 na Defesa e +5 em Furtividade."
+            descricao: "Composta de anéis finíssimos, esta cota de malha defensora de mitral parece ser feita de seda. Ela permite que você aplique sua Destreza na Defesa como se fosse uma armadura leve."
+        },
+        {
+            nome: "Couro de Monstro",
+            preco: "T$ 36.000",
+            categoria: "Item Mágico",
+            tipo: "Armadura Mágica Maior",
+            espacos: "2",
+            descricao: "Usado por chefes bárbaros das Montanhas Sanguinárias, este gibão de peles defensor é feito do couro de monstros, como basiliscos e serpes. Se você usar o poder Ataque Poderoso ou fazer uma investida, recebe um bônus de +2d6 nas rolagens de dano."
+        },
+        {
+            nome: "Escudo do Conjurador",
+            preco: "T$ 45.000",
+            categoria: "Item Mágico",
+            tipo: "Escudo Mágica Maior",
+            espacos: "1",
+            descricao: "Este escudo leve defensor tem uma pequena tira de couro na parte interna, sobre a qual um conjurador pode lançar uma magia. A magia não surte efeito na hora; em vez disso, fica inscrita na tira. A tira pode então ser lida como um pergaminho, descargando a magia em seus alvos/área. Uma vez que a magia seja descarregada, outra pode ser armazenada."
+        },
+        {
+            nome: "Loriga do Centurião",
+            preco: "T$ 45.000",
+            categoria: "Item Mágico",
+            tipo: "Armadura Mágica Maior",
+            espacos: "5",
+            descricao: "Esta loriga segmentada defensora é dourada com detalhes em vermelho e possui o símbolo de Tauron, antigo Deus da Força, gravado no peitoral. Se estiver liderando uma ou mais criaturas (em termos de jogo, se estiver usando o poder Comandar ou similar), seus ataques corpo a corpo causam +2d6 de fogo."
+        },
+        {
+            nome: "Manto da Noite",
+            preco: "T$ 45.000",
+            categoria: "Item Mágico",
+            tipo: "Armadura Mágica Maior",
+            espacos: "2",
+            descricao: "Este couro batido ajustado defensor sombrio é negro com partes metálicas foscas. Quando usa esta armadura, você não sofre penalidade em testes de Furtividade por se mover em seu deslocamento normal e a penalidade que você sofre em testes de Furtividade por atacar diminui para –10."
+        },
+        {
+            nome: "Couraça do Comando",
+            preco: "T$ 45.000",
+            categoria: "Item Mágico",
+            tipo: "Armadura Mágica Maior",
+            espacos: "5",
+            descricao: "Esta couraça banhada a ouro sob medida defensora irradia uma aura de autoridade. Você recebe +1 em Carisma. Se usar o poder Comandar, o bônus fornecido aumenta para +2."
+        },
+        {
+            nome: "Baluarte Anão",
+            preco: "T$ 50.000",
+            categoria: "Item Mágico",
+            tipo: "Armadura Mágica Maior",
+            espacos: "5",
+            descricao: "Esta armadura completa reforçada defensora de adamante fornece proteção sem igual. Se você não se deslocar em seu turno, a RD que ela fornece aumenta para 10 até seu próximo turno."
+        },
+        {
+            nome: "Escudo Espinhoso",
+            preco: "T$ 50.000",
+            categoria: "Item Mágico",
+            tipo: "Escudo Mágica Maior",
+            espacos: "2",
+            descricao: "Este escudo pesado defensor é coberto de espinhos. Você pode gastar uma ação de movimento e 2 PM para disparar um espinho em um alvo em alcance curto. O espinho acerta automaticamente e causa 1d10+2 pontos de dano de perfuração."
+        },
+        {
+            nome: "Escudo do Leão",
+            preco: "T$ 50.000",
+            categoria: "Item Mágico",
+            tipo: "Escudo Mágica Maior",
+            espacos: "2",
+            descricao: "Este escudo pesado defensor é forjado como uma cabeça de leão rugindo. Uma vez por rodada, você pode gastar 2 PM para fazer a cabeça criar vida e morder uma criatura adjacente. A mordida acerta automaticamente e causa 2d6+2 pontos de dano de perfuração."
+        },
+        {
+            nome: "Carapaça Demoníaca",
+            preco: "T$ 63.000",
+            categoria: "Item Mágico",
+            tipo: "Armadura Mágica Maior",
+            espacos: "5",
+            descricao: "Esta armadura completa macabra reforçada guardiã é forjada para fazer com que o usuário pareça um demônio — o elmo tem o formato de uma cabeça demoníaca com chifres e o usuário enxerga através da boca aberta e repleta de dentes. Se você for devoto de uma divindade que canaliza apenas energia negativa, os seus ataques corpo a corpo causam +1d8 de dano de trevas."
+        },
+        {
+            nome: "Escudo do Eclipse",
+            preco: "T$ 70.000",
+            categoria: "Item Mágico",
+            tipo: "Escudo Mágica Maior",
+            espacos: "2",
+            descricao: "Este escudo pesado defensor é completamente negro e parece absorver a luz. Ele fornece redução de trevas 10 e causa +1d8 de dano de trevas num ataque. Além disso, você pode gastar uma ação de movimento e 2 PM para lançar Escuridão."
+        },
+        {
+            nome: "Escudo do Deus do Sol",
+            preco: "T$ 140.000",
+            categoria: "Item Mágico",
+            tipo: "Escudo Mágica Maior",
+            espacos: "2",
+            descricao: "Escudo +5 banhado em luz solar; reflete magias de trevas e causa 3d6 de dano de luz em mortos-vivos adjacentes."
+        },
+        {
+            nome: "Escudo de Azgher",
+            preco: "T$ 100.000",
+            categoria: "Item Mágico",
+            tipo: "Escudo Mágica Maior",
+            espacos: "2",
+            descricao: "Este escudo pesado guardião é forjado na forma de um sol estilizado. Você pode gastar uma ação padrão e 10 PM para fazê-lo emitir uma luz brilhante e quente num cone com alcance curto. A luz gera os efeitos da magia Visão da Verdade e causa 6d6 pontos de dano de fogo em todos os seus inimigos (mortos-vivos e criaturas vulneráveis a luz solar sofrem 6d8 pontos de dano). Você pode gastar 1 PM no início de cada um de seus turnos para manter a luz."
+        },
+        {
+            nome: "Armadura da Luz",
+            preco: "T$ 150.000",
+            categoria: "Item Mágico",
+            tipo: "Armadura Mágica Maior",
+            espacos: "5",
+            descricao: "Esta armadura completa banhada a ouro reforçada guardiã zelosa possui o símbolo de Khalmyr gravado no peitoral. Se você possuir um código de conduta (de honra, do herói...) ou for devoto de uma divindade que canaliza apenas energia positiva, recebe redução de dano igual ao seu Carisma."
         },
         {
             nome: "Couro de Monstro",
@@ -288,73 +400,81 @@ const itensMagicosData = {
             descricao: "Armadura completa +5 que emite luz intensa e concede imunidade a dano de trevas e a cegueira."
         },
 
-        // acessórios Menores
+// acessórios Menores
 
-        { nome: "Anel do Sustento", preco: "T$ 3.000", categoria: "Item Mágico", tipo: "Acessório Menor", espacos: "1", descricao: "Usuário não precisa comer, beber e dorme apenas 2h por dia." },
-        { nome: "Bainha Mágica", preco: "T$ 3.000", categoria: "Item Mágico", tipo: "Acessório Menor", espacos: "1", descricao: "Limpa, repara e protege a arma guardada nela; saca a arma como ação livre." },
-        { nome: "Corda da Escalada", preco: "T$ 3.000", categoria: "Item Mágico", tipo: "Acessório Menor", espacos: "1", descricao: "Sobe e se amarra sozinha; suporta até 300 kg." },
-        { nome: "Ferraduras da Velocidade", preco: "T$ 3.000", categoria: "Item Mágico", tipo: "Acessório Menor", espacos: "—", descricao: "Concede +6 m de deslocamento ao animal equipado." },
-        { nome: "Garrafa da Fumaça Eterna", preco: "T$ 3.000", categoria: "Item Mágico", tipo: "Acessório Menor", espacos: "1", descricao: "Emite fumaça densa continuamente; pode ser tampada para interromper." },
-        { nome: "Gema da Luminosidade", preco: "T$ 3.000", categoria: "Item Mágico", tipo: "Acessório Menor", espacos: "1", descricao: "Emite luz como uma tocha; pode ser acesa ou apagada com comando." },
-        { nome: "Manto Élfico", preco: "T$ 3.000", categoria: "Item Mágico", tipo: "Acessório Menor", espacos: "1", descricao: "Concede +5 em Furtividade." },
-        { nome: "Mochila de Carga", preco: "T$ 3.000", categoria: "Item Mágico", tipo: "Acessório Menor", espacos: "0", descricao: "Reduz o peso carregado pela metade para efeitos de carga." },
-        { nome: "Brincos da Sagacidade", preco: "T$ 4.500", categoria: "Item Mágico", tipo: "Acessório Menor", espacos: "1", descricao: "Concede +1 em Inteligência (após 1 dia de uso)." },
-        { nome: "Luvas da Delicadeza", preco: "T$ 4.500", categoria: "Item Mágico", tipo: "Acessório Menor", espacos: "1", descricao: "Concede +1 em Destreza (após 1 dia de uso)." },
-        { nome: "Manoplas da Força do Ogro", preco: "T$ 4.500", categoria: "Item Mágico", tipo: "Acessório Menor", espacos: "1", descricao: "Concede +1 em Força (após 1 dia de uso)." },
-        { nome: "Manto da Resistência", preco: "T$ 4.500", categoria: "Item Mágico", tipo: "Acessório Menor", espacos: "1", descricao: "Concede +1 em todos os testes de resistência (Fortitude, Reflexos e Vontade)." },
-        { nome: "Manto do Fascínio", preco: "T$ 4.500", categoria: "Item Mágico", tipo: "Acessório Menor", espacos: "1", descricao: "Concede +1 em Carisma (após 1 dia de uso)." },
-        { nome: "Torque do Vigor", preco: "T$ 4.500", categoria: "Item Mágico", tipo: "Acessório Menor", espacos: "1", descricao: "Concede +1 em Constituição (após 1 dia de uso)." },
-        { nome: "Flauta Fantasma", preco: "T$ 6.000", categoria: "Item Mágico", tipo: "Acessório Menor", espacos: "1", descricao: "Ao ser tocada, cria sons assombrados que podem causar medo (Vontade CD 15)." },
-        { nome: "Lanterna da Revelação", preco: "T$ 9.000", categoria: "Item Mágico", tipo: "Acessório Menor", espacos: "1", descricao: "Revela criaturas invisíveis em seu raio de luz." },
-        { nome: "Anel do Escudo Mental", preco: "T$ 9.000", categoria: "Item Mágico", tipo: "Acessório Menor", espacos: "1", descricao: "Concede imunidade a efeitos de adivinhação e leitura mental." },
-        { nome: "Pingente da Saúde", preco: "T$ 9.000", categoria: "Item Mágico", tipo: "Acessório Menor", espacos: "1", descricao: "Concede imunidade a doenças e venenos." },
+        { nome: "Anel do Sustento", preco: "T$ 3.000", categoria: "Item Mágico", tipo: "Acessório Menor", espacos: "1", descricao: "Você não precisa comer ou beber e precisa dormir apenas duas horas por noite para descansar. Os efeitos do anel só se ativam após uma semana de uso." },
+        { nome: "Bainha Mágica", preco: "T$ 3.000", categoria: "Item Mágico", tipo: "Acessório Menor", espacos: "1", descricao: "Esta bainha de couro curtido e prata muda de tamanho para acomodar qualquer arma corpo a corpo. Você pode lançar Arma Mágica em qualquer arma na bainha sem pagar seu custo em PM." },
+        { nome: "Corda da Escalada", preco: "T$ 3.000", categoria: "Item Mágico", tipo: "Acessório Menor", espacos: "1", descricao: "Esta corda de 15m é bastante fina, mas forte o suficiente para suportar até seis criaturas Médias (ou 120 espaços). Com um comando (uma ação de movimento), a corda se move em qualquer direção (incluindo para cima) a 3m por rodada, fixando-se firmemente onde você quiser. Ela pode se desamarrar e voltar da mesma forma." },
+        { nome: "Ferraduras da Velocidade", preco: "T$ 3.000", categoria: "Item Mágico", tipo: "Acessório Menor", espacos: "—", descricao: "Este conjunto de ferraduras pode ser fixado nos cascos de um cavalo (ou outro parceiro montaria, a critério do mestre) para aumentar seu deslocamento em +3m." },
+        { nome: "Garrafa da Fumaça Eterna", preco: "T$ 3.000", categoria: "Item Mágico", tipo: "Acessório Menor", espacos: "1", descricao: "Você pode abrir a tampa desta ânfora de metal para lançar a magia Névoa sem pagar seu custo em PM. A fumaça persiste até a garrafa ser tampada. Após isso, dissipa-se no fim da cena (ou após 4 rodadas, sob vento forte, ou 1 rodada, sob um vendaval)." },
+        { nome: "Gema da Luminosidade", preco: "T$ 3.000", categoria: "Item Mágico", tipo: "Acessório Menor", espacos: "1", descricao: "Este cristal tem a aparência de um longo prisma. Com um comando, emite luz equivalente a uma tocha ou então um raio brilhante, que deixa uma criatura em alcance curto cega por 1d4 rodadas (Fort CD Car evita)." },
+        { nome: "Manto Élfico", preco: "T$ 3.000", categoria: "Item Mágico", tipo: "Acessório Menor", espacos: "1", descricao: "Indistinguível de um manto cinza comum. Entretanto, quando usado com o capuz cobrindo o rosto, fornece +5 em Furtividade." },
+        { nome: "Mochila de Carga", preco: "T$ 3.000", categoria: "Item Mágico", tipo: "Acessório Menor", espacos: "0", descricao: "Este item, que parece uma simples mochila de pano, está na verdade ligado a um espaço interdimensional — fazendo com que seja maior por dentro do que por fora. A mochila de carga aumenta sua capacidade de carga em 10 espaços (ela própria não gasta um espaço). Se a mochila for rasgada, os objetos em seu interior são destruídos. Criaturas vivas colocadas no interior da mochila podem sobreviver até 10 minutos, mas depois disso ficarão sem ar." },
+        { nome: "Brincos da Sagacidade", preco: "T$ 4.500", categoria: "Item Mágico", tipo: "Acessório Menor", espacos: "1", descricao: "Este par de brincos de safira aguça o raciocínio. Você recebe +1 em Inteligência (somente após um dia de uso)." },
+        { nome: "Luvas da Delicadeza", preco: "T$ 4.500", categoria: "Item Mágico", tipo: "Acessório Menor", espacos: "1", descricao: "Estas luvas de tecido fino permitem manipulação delicada. Você recebe +1 em Destreza (somente após um dia de uso)." },
+        { nome: "Manoplas da Força do Ogro", preco: "T$ 4.500", categoria: "Item Mágico", tipo: "Acessório Menor", espacos: "1", descricao: "Este par de luvas é feito de couro grosso com rebites de ferro. Você recebe +1 em Força (somente após um dia de uso)." },
+        { nome: "Manto da Resistência", preco: "T$ 4.500", categoria: "Item Mágico", tipo: "Acessório Menor", espacos: "1", descricao: "Este manto de tecido grosso e pesado protege seu usuário. Você recebe +2 em testes de resistência." },
+        { nome: "Manto do Fascínio", preco: "T$ 4.500", categoria: "Item Mágico", tipo: "Acessório Menor", espacos: "1", descricao: "Este manto de veludo possui bordados de ouro. Você recebe +1 em Carisma (somente após um dia de uso)." },
+        { nome: "Torque do Vigor", preco: "T$ 4.500", categoria: "Item Mágico", tipo: "Acessório Menor", espacos: "1", descricao: "O acabamento deste colar ou bracelete remete a um animal poderoso, como um urso ou lobo. Você recebe +1 em Constituição (somente após um dia de uso)." },
+        { nome: "Flauta Fantasma", preco: "T$ 6.000", categoria: "Item Mágico", tipo: "Acessório Menor", espacos: "1", descricao: "Se for treinado em Atuação, você pode lançar Esculpir Sons (CD Car) sem pagar seu custo em PM." },
+        { nome: "Lanterna da Revelação", preco: "T$ 9.000", categoria: "Item Mágico", tipo: "Acessório Menor", espacos: "1", descricao: "Este item funciona como um lampião normal, mas sua luz revela todas as criaturas e objetos invisíveis no alcance." },
+        { nome: "Anel do Escudo Mental", preco: "T$ 9.000", categoria: "Item Mágico", tipo: "Acessório Menor", espacos: "1", descricao: "Você recebe imunidade a magias de adivinhação." },
+        { nome: "Pingente da Saúde", preco: "T$ 9.000", categoria: "Item Mágico", tipo: "Acessório Menor", espacos: "1", descricao: "O usuário desta joia verde em um cordão de prata recebe imunidade a doenças e venenos. Os efeitos só se ativam após uma semana de uso." },
+        { nome: "Pingente da Sensatez", preco: "T$ 4.500", categoria: "Item Mágico", tipo: "Acessório Menor", espacos: "1", descricao: "Esta pequena pérola com uma corrente leve é usada como um colar. Você recebe +1 em Sabedoria (somente após um dia de uso)." },
 
 
         // Acessórios Médios
 
-        { nome: "Anel de Telecinesia", preco: "T$ 10.500", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Permite mover objetos à distância, como a magia Telecinesia." },
-        { nome: "Bola de Cristal", preco: "T$ 10.500", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Permite observar locais ou criaturas distantes, como a magia Vidência." },
-        { nome: "Caveira Maldita", preco: "T$ 10.500", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Cria uma caveira voadora obediente ao usuário, que ataca com rajadas de energia sombria." },
-        { nome: "Botas Aladas", preco: "T$ 15.000", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Permite ao usuário voar com deslocamento de 12 m por cena enquanto calçadas." },
-        { nome: "Braceletes de Bronze", preco: "T$ 15.000", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Concede +1 na Defesa e resistência 5 contra dano de impacto." },
-        { nome: "Anel da Energia", preco: "T$ 21.000", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Concede +5 PM (após 1 dia de uso)." },
-        { nome: "Anel da Vitalidade", preco: "T$ 21.000", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Concede +10 PV (após 1 dia de uso)." },
+        { nome: "Anel de Telecinesia", preco: "T$ 10.500", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Você pode lançar Telecinesia (CD Int). Caso já conheça a magia, o custo para lançá-la diminui em –1 PM." },
+        { nome: "Bola de Cristal", preco: "T$ 10.500", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Esta pequena esfera revela pessoas e lugares distantes. Olhar através dela é uma ação completa e gera a magia Vidência (CD Sab)." },
+        { nome: "Caveira Maldita", preco: "T$ 10.500", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Esta pedra esculpida em formato de crânio gera o efeito da magia Profanar, com o crânio como ponto de origem. Mortos-vivos e devotos de deuses que canalizam apenas energia negativa na área de efeito recebem +2 em testes e Defesa." },
+        { nome: "Botas Aladas", preco: "T$ 15.000", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Você pode gastar 2 PM para fazer asas brotarem dos calcanhares destas botas e receber deslocamento de voo 12m por uma rodada. Você pode gastar 1 PM no início de cada um de seus turnos para manter esse efeito." },
+        { nome: "Botas Velozes", preco: "T$ 15.000", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Você recebe +3m em seu deslocamento e pode lançar Velocidade (apenas sobre você mesmo)." },
+        { nome: "Anel da Proteção", preco: "T$ 10.500", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Este anel desvia ataques contra seu usuário. Você recebe +2 de Defesa." },
+        { nome: "Braceletes de Bronze", preco: "T$ 15.000", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Estes braceletes geram um campo de força invisível, porém tangível. Você recebe +4 na Defesa, cumulativo com outros itens mágicos, mas não com armaduras." },
+        { nome: "Anel da Energia", preco: "T$ 21.000", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Você recebe +5 PM (somente após um dia de uso)." },
+        { nome: "Anel da Vitalidade", preco: "T$ 21.000", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Você recebe +10 PV (somente após um dia de uso)." },
         { nome: "Manto da Invisibilidade", preco: "T$ 21.000", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Permite ficar invisível por uma cena, até realizar uma ação hostil." },
-        { nome: "Braçadeiras do Arqueiro", preco: "T$ 21.000", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Concede +2 em testes de ataque e dano com arcos e bestas." },
+        { nome: "Braçadeiras do Arqueiro", preco: "T$ 21.000", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Você recebe +2 em rolagens de dano com armas de ataque à distância (cumulativo com outros itens)." },
         { nome: "Brincos da Deusa da Paz", preco: "T$ 21.000", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Permitem lançar Curar Ferimentos Leves 3/dia." },
-        { nome: "Faixas do Pugilista", preco: "T$ 21.000", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Concede +2 em ataques desarmados e dano corpo a corpo." },
-        { nome: "Manto da Aranha", preco: "T$ 21.000", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Permite escalar superfícies e paredes como uma aranha." },
-        { nome: "Vassoura Voadora", preco: "T$ 21.000", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "—", descricao: "Permite voar com deslocamento de 9 m; suporta até 100 kg." },
-        { nome: "Amuleto da Robustez", preco: "T$ 25.500", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Concede +2 em Constituição (após 1 dia de uso)." },
-        { nome: "Cinto da Força do Gigante", preco: "T$ 25.500", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Concede +2 em Força (após 1 dia de uso)." },
-        { nome: "Coroa Majestosa", preco: "T$ 25.500", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Concede +2 em Carisma (após 1 dia de uso)." },
-        { nome: "Estola da Serenidade", preco: "T$ 25.500", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Concede +2 em Sabedoria (após 1 dia de uso)." },
-        { nome: "Manto do Morcego", preco: "T$ 25.500", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Concede visão no escuro 18 m e bônus +5 em Furtividade." },
-        { nome: "Pulseiras da Celeridade", preco: "T$ 25.500", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Concede +2 em Destreza (após 1 dia de uso)." },
-        { nome: "Tiara da Sapiencia", preco: "T$ 25.500", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Concede +2 em Inteligência (após 1 dia de uso)." },
+        { nome: "Brincos de Marah", preco: "T$ 21.000", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Este par de brincos brancos é abençoado pela Deusa da Paz. A primeira criatura que o atacar em uma cena deve fazer um teste de Vontade (CD Car). Se falhar, perderá a ação. Se você atacar uma criatura, o efeito dos brincos é cancelado por um dia. Se você possuir Aparência Inofensiva (ou um poder similar) os efeitos acumulam, afetando as duas primeiras criaturas que o atacarem em uma cena." },
+        { nome: "Chapéu do Disfarce", preco: "T$ 21.000", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Você pode lançar Disfarce Ilusório (CD Car), com o aprimoramento que inclui odores e sensações e muda o bônus em Enganação para disfarces para +20, sem pagar seu custo em PM. Você não pode usar outros aprimoramentos. Como parte do disfarce, o chapéu pode mudar para um elmo, faixa, tiara, gorro, touca e assim por diante." },
+        { nome: "Faixas do Pugilista", preco: "T$ 21.000", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Estas faixas surradas são amarradas nos punhos, nos braços ou na testa. Você recebe +2 em testes de ataque e rolagens de dano com ataques desarmados (cumulativo com outros itens)." },
+        { nome: "Manto da Aranha", preco: "T$ 21.000", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Este manto é feito de seda negra com fios de prata bordados. Você recebe deslocamento de escalada igual ao seu deslocamento terrestre, +5 em testes de resistência contra venenos e imunidade a teias mundanas ou mágicas. Além disso, pode lançar Teia (CD Des). Caso já conheça a magia, o custo para lançá-la diminui em –1 PM." },
+        { nome: "Vassoura Voadora", preco: "T$ 21.000", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "—", descricao: "Como um tapete voador, mas pode carregar duas pessoas (ou 40 espaços)." },
+        { nome: "Amuleto da Robustez", preco: "T$ 25.500", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Este disco com corrente de ouro é usado como um colar. Você recebe +2 em Constituição (somente após um dia de uso)." },
+        { nome: "Cinto da Força do Gigante", preco: "T$ 25.500", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Este cinto largo é feito de couro com rebites de ferro. Você recebe +2 em Força (somente após um dia de uso)." },
+        { nome: "Coroa Majestosa", preco: "T$ 25.500", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Esta coroa de ouro possui dezenas de pedras preciosas. Você recebe +2 em Carisma (somente após um dia de uso)." },
+        { nome: "Estola da Serenidade", preco: "T$ 25.500", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Esta faixa de pano com inscrições mágicas é usada sobre a nuca, com as duas extremidades caindo na frente do corpo. Você recebe +2 em Sabedoria (somente após um dia de uso)." },
+        { nome: "Manto do Morcego", preco: "T$ 25.500", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Este manto marrom escuro ou negro fornece +5 em Furtividade e permite que você fique pendurado de ponta-cabeça no teto, como um morcego. Além disso, você pode gastar uma ação padrão para segurar as pontas do manto e se transformar em um morcego. Seu tamanho muda para Minúsculo e você recebe deslocamento de voo 12m e uma arma natural de mordida (dano 1d4, perfuração). Em outros aspectos, isso funciona como a Forma Selvagem do druida. Você só pode se transformar em morcego à noite ou em ambientes escuros." },
+        { nome: "Pulseiras da Celeridade", preco: "T$ 25.500", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Esta pulseira de platina aguça todos os seus movimentos. Você recebe +2 em Destreza (somente após um dia de uso)." },
+        { nome: "Tiara da Sapiencia", preco: "T$ 25.500", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Esta tiara delicada possui uma gema que descansa sobre a testa. Você recebe +2 em Inteligência (somente após um dia de uso)." },
 
-        { nome: "Elmo de Teletransporte", preco: "T$ 30.000", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Permite ao usuário se teleportar como a magia Teletransporte." },
-        { nome: "Gema da Telepatia", preco: "T$ 30.000", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Permite comunicação telepática com qualquer criatura inteligente em alcance médio." },
-        { nome: "Gema Elemental", preco: "T$ 30.000", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Liberta um elemental (fogo, ar, água ou terra) uma vez por dia para lutar por você." },
-        { nome: "Manual da Saúde Corporal", preco: "T$ 30.000", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Ao ser lido, concede +1 permanente em Constituição." },
-        { nome: "Manual do Bom Exercício", preco: "T$ 30.000", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Ao ser lido, concede +1 permanente em Força." },
-        { nome: "Manual dos Movimentos Precisos", preco: "T$ 30.000", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Ao ser lido, concede +1 permanente em Destreza." },
+        { nome: "Elmo de Teletransporte", preco: "T$ 30.000", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Você pode lançar Salto Dimensional e Teletransporte, mas apenas em você mesmo. Caso já conheça as magias, o custo para lançá-las diminui em –1 PM." },
+        { nome: "Gema da Telepatia", preco: "T$ 30.000", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Você pode lançarnCompreensão e Enfeitiçar (CD Car) sem pagar seu custo em PM." },
+        { nome: "Gema Elemental", preco: "T$ 30.000", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Você pode lançar Conjurar Elemental sem pagar seu custo em PM." },
+        { nome: "Manual da Saúde Corporal", preco: "T$ 30.000", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Este tomo volumoso contém exercícios de resistência e dietas saudáveis, mas suas palavras trazem um poderoso efeito mágico. Funciona como um Manual do Bom Exercício, mas fornece +1 de Constituição." },
+        { nome: "Manual do Bom Exercício", preco: "T$ 30.000", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Este tomo volumoso contém exercícios de musculação, mas escondido entre as palavras há um poderoso efeito mágico. Ler o livro leva uma semana e aumenta seu valor de Força em +1 permanentemente (o atributo só pode ser aumentado uma vez com um Manual). Assim que o livro é lido, a magia desaparece de suas páginas e ele se torna um item mundano." },
+        { nome: "Manual dos Movimentos Precisos", preco: "T$ 30.000", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Este tomo volumoso descreve exercícios de coordenação e equilíbrio, mas mesclado às palavras há um poderoso efeito mágico. Funciona como um Manual do Bom Exercício, mas fornece +1 de Destreza." },
+        { nome: "Medalhão de Lena", preco: "T$ 30.000", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Quando você é reduzido a 0 ou menos PV, esta joia emite uma explosão de energia positiva que cura 100 PV (antes que você caia). Este poder só se ativa uma vez por dia." },
         { nome: "Medalhão da Deusa da Vida", preco: "T$ 30.000", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Permite usar a magia Curar Ferimentos Graves uma vez por dia." },
-        { nome: "Tomo da Compreensão", preco: "T$ 30.000", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Ao ser lido, concede +1 permanente em Inteligência." },
-        { nome: "Tomo da Liderança e Influência", preco: "T$ 30.000", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Ao ser lido, concede +1 permanente em Carisma." },
-        { nome: "Tomo dos Grandes Pensamentos", preco: "T$ 30.000", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Ao ser lido, concede +1 permanente em Sabedoria." },
-        { nome: "Anel Refletor", preco: "T$ 51.000", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Reflete uma magia de alvo único de volta ao conjurador uma vez por dia." },
-        { nome: "Cinto do Campeão", preco: "T$ 51.000", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Concede +2 em testes de ataque e dano em combate corpo a corpo." },
-        { nome: "Colar Guardião", preco: "T$ 51.000", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Enquanto carregado, concede resistência a veneno e doenças." },
-        { nome: "Estatueta Animista", preco: "T$ 51.000", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Pode invocar uma criatura mágica (animal, espírito ou construto) uma vez por dia." },
-        { nome: "Anel da Liberdade", preco: "T$ 64.500", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Concede imunidade a efeitos de paralisia, imobilização e lentidão." },
-        { nome: "Tapete Voador", preco: "T$ 64.500", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "2", descricao: "Permite voar com deslocamento de 18m e carregar até 200kg." },
-        { nome: "Braceletes de Ouro", preco: "T$ 64.500", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Concede +2 em Defesa e resistência 5 contra todas as energias." },
-        { nome: "Espelho da Oposição", preco: "T$ 79.500", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "—", descricao: "Cria um clone perfeito do usuário que o enfrenta em combate uma vez por semana." },
-        { nome: "Robe do Arquimago", preco: "T$ 79.500", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Concede +2 em testes de ataque mágicos e +2 na CD das magias lançadas." },
-        { nome: "Orbe das Tempestades", preco: "T$ 79.500", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Permite controlar o clima e conjurar Tempestade uma vez por dia." },
-        { nome: "Anel da Regeneração", preco: "T$ 150.000", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Restaura 1d6 PV por rodada e regenera membros perdidos." },
-        { nome: "Espelho do Aprisionamento", preco: "T$ 150.000", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "—", descricao: "Aprisiona criaturas refletidas em seu interior (Vontade CD 20 nega)." },
+        { nome: "Tomo da Compreensão", preco: "T$ 30.000", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Este livro volumoso contém ensinamentos para tornar o leitor mais centrado e aguçar sua percepção, mas também possui um poderoso efeito mágico. Funciona como um Manual do Bom Exercício, mas fornece +1 de Sabedoria." },
+        { nome: "Tomo da Liderança e Influência", preco: "T$ 30.000", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Este livro de encadernação luxuosa contém instruções detalhadas para convencer e inspirar os demais, mas as páginas escondem um poderoso efeito mágico. Funciona como um Manual do Bom Exercício, mas fornece +1 de Carisma." },
+        { nome: "Tomo dos Grandes Pensamentos", preco: "T$ 30.000", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Este livro pesado contém exercícios para aprimorar o raciocínio e a memória, mas mesclado às palavras há um poderoso efeito mágico. Funciona como um Manual do Bom Exercício, mas fornece +1 de Inteligência." },
+        { nome: "Anel Refletor", preco: "T$ 51.000", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Este aro de platina é poderoso contra conjuradores. Uma vez por rodada, quando você é alvo de uma magia, pode gastar PM igual ao custo dela para refleti-la de volta ao seu conjurador. As características da magia (efeitos, CD...) se mantêm, mas você toma qualquer decisão exigida por ela." },
+        { nome: "Cinto do Campeão", preco: "T$ 51.000", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Este cinturão de ouro é cravejado de joias e possui gravuras de gladiadores e pugilistas minotauros. Você recebe +1 em Força e a habilidade Briga (somente após um dia de uso). Caso já a possua, seu dano desarmado será calculado como se você possuísse quatro níveis de lutador a mais (máximo 2d12). Por fim, caso possua o poder Torcida, o bônus que você recebe por ele aumenta para +3. Estes cintos eram dados aos vencedores dos jogos gladiatoriais do Império de Tauron." },
+        { nome: "Colar Guardião", preco: "T$ 51.000", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Este diamante lapidado preso em uma corrente de platina deflete ataques contra seu usuário. Você recebe +5 na Defesa." },
+        { nome: "Estatueta Animista", preco: "T$ 51.000", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Esta estatueta de pedra é esculpida na forma de um animal. Quando é atirada no chão e a palavra de comando é proferida, transforma-se no animal correspondente. O animal fornece os benefícios de um parceiro veterano até o fim da cena, quando então volta à sua forma de estatueta. O tipo de parceiro é definido pelo animal: raposa (ajudante), onça (assassino), águia (atirador), lobo (combatente), leão (fortão) ou urso (guardião)." },
+        { nome: "Anel da Liberdade", preco: "T$ 64.500", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Forjado em ouro, esteanel é uma relíquia da Igreja de Valkaria. Você fica permanentemente sob efeito de Libertação." },
+        { nome: "Tapete Voador", preco: "T$ 64.500", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "2", descricao: "Com um comando, este tapete flutua, fornecendo deslocamento de voo 12m. O tapete tem 3m x 3m e pode carregar seis criaturas Médias (ou 120 espaços). Se você estiver em alcance longo do tapete, pode comandar o voo dele." },
+        { nome: "Braceletes de Ouro", preco: "T$ 64.500", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Como braceletes de bronze, mas fornece +8 na Defesa, não cumulativo com braceletes de bronze." },
+        { nome: "Espelho da Oposição", preco: "T$ 79.500", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "—", descricao: "Este item lembra um espelho normal com cerca de 1m de comprimento e 1,5m de altura. Pode ser fixado em qualquer superfície e ativado (ou desativado) com um comando. Quando uma criatura observa seu reflexo, o espelho cria uma cópia sua, com as mesmas habilidades e equipamento. A duplicata ataca a criatura original; quando um dos dois é derrotado, a duplicata e seus itens desaparecem." },
+        { nome: "Robe do Arquimago", preco: "T$ 79.500", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Este traje pesado alinha-se com as energias arcanas emitidas por seu usuário para gerar um campo protetor. Se você for um conjurador arcano, recebe um bônus na Defesa igual a 5 + o círculo de magia mais alto que puder lançar e um bônus em testes de resistência igual à metade do bônus na Defesa. Assim, um arcanista de 9º nível (capaz de lançar magias de 3º círculo) recebe +8 na Defesa e +4 em testes de resistência." },
+        { nome: "Orbe das Tempestades", preco: "T$ 79.500", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Esta esfera de vidro com 20cm de diâmetro contém fumaça e raios em seu interior. Você pode lançar Controlar o Clima e Fúria do Panteão (CD Sab). Caso já conheça as magias, o custo para lançá-las diminui em –1 PM. Além disso, você e todos os seus aliados adjacentes ficam sob efeito de Suporte Ambiental." },
+        { nome: "Símbolo Abençoado", preco: "T$ 15.000", categoria: "Item Mágico", tipo: "Acessório Médio", espacos: "1", descricao: "Conta como um símbolo sagrado. Se você for devoto do deus, o custo de suas magias divinas diminui em –1 PM (cumulativo com o poder Símbolo Sagrado Energizado). Apenas devotos desse deus podem fabricar um símbolo abençoado." },
+        { nome: "Anel da Regeneração", preco: "T$ 150.000", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Você recebe Cura Acelerada 5 (somente após um dia de uso)." },
+        { nome: "Anel de Invisibilidade", preco: "T$ 30.000", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "1", descricao: "Ao colocar este anel de prata, você fica sob efeito de Invisibilidade. O efeito termina se você fizer um ataque ou lançar uma magia ofensina, mas você pode tirar e recolocar o anel (uma ação padrão) para que ele volte a funcionar." },
+        { nome: "Espelho do Aprisionamento", preco: "T$ 150.000", categoria: "Item Mágico", tipo: "Acessório Maior", espacos: "—", descricao: "Este item de cristal, com 1,5m de altura e moldura de metal, pode ser fixado em qualquer superfície e ativado (ou desativado) com um comando. Qualquer criatura que se aproxime a alcance curto do espelho do aprisionamento e enxergue seu próprio reflexo deve passar em um teste de Reflexos (CD Int) ou será transportada magicamente para um espaço extradimensional dentro do espelho, ficar presa ali. O tamanho da criatura não importa — mas construtos, mortos-vivos e objetos não podem ser transportados. Com um comando, é possível conversar com uma criatura presa no espelho ou libertá-la. Se o espelho for quebrado, todas as criaturas dentro dele são libertadas." },
 
         // (Itens de Coração de Rubi - Aventura 6)
 
