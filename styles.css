@@ -514,57 +514,66 @@ select {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 50px;
-  height: 50px;
-  border-radius: 12px;
-  border: none;
-  background: linear-gradient(135deg, var(--str-slate) 0%, #1a252f 100%);
-  color: #fff;
-  cursor: pointer;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.65);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #ffffff;
   font-size: 24px;
-  font-weight: 400;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s ease;
-  z-index: 10;
-  box-shadow: 0 4px 15px rgba(47, 63, 79, 0.4);
+  cursor: pointer;
+  z-index: 10005;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  padding: 0;
+  line-height: 1;
 }
 
 .modal-nav-btn:hover {
-  background: linear-gradient(135deg, var(--str-accent) 0%, #c0392b 100%);
-  transform: translateY(-50%) scale(1.05);
-  box-shadow: 0 6px 20px rgba(224, 72, 63, 0.4);
+  background: var(--str-accent);
+  border-color: var(--str-accent);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(224, 72, 63, 0.45);
+}
+
+.modal-nav-btn:active {
+  transform: translateY(-50%) scale(0.92);
 }
 
 .modal-nav-btn:disabled {
-  opacity: 0.25;
+  opacity: 0.2;
   cursor: not-allowed;
-  background: #bdc3c7;
+  pointer-events: none;
+  background: rgba(15, 23, 42, 0.3);
+  border-color: rgba(255, 255, 255, 0.1);
   box-shadow: none;
 }
 
-.modal-nav-btn:disabled:hover {
-  background: #bdc3c7;
-  color: #fff;
-  transform: translateY(-50%) scale(1);
+.modal-nav-btn.modal-nav-prev {
+  left: 24px;
 }
 
-.modal-nav-prev {
-  left: -26px;
+.modal-nav-btn.modal-nav-next {
+  right: 24px;
 }
 
-.modal-nav-next {
-  right: -26px;
-}
-
-.modal-nav-next {
-  right: -22px;
-}
-
-@media (max-width: 768px) {
+/* Ajustes responsivos para telas menores */
+@media (max-width: 820px) {
   .modal-nav-btn {
-    display: none;
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+  .modal-nav-btn.modal-nav-prev {
+    left: 8px;
+  }
+  .modal-nav-btn.modal-nav-next {
+    right: 8px;
   }
 }
 
@@ -701,6 +710,15 @@ select {
   border-top: 1px solid rgba(0, 0, 0, .12);
   padding-top: 8px;
   margin-top: 4px;
+}
+
+#itemCustomizer {
+  gap: 12px;
+}
+
+#itemCustomizer .customizer-section {
+  flex: 1;
+  margin-bottom: 0;
 }
 
 .customizer-section {
@@ -1141,6 +1159,11 @@ button[title*="Limpar"],
     padding: 12px;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
+  }
+
+  #itemCustomizer {
+    flex-direction: column;
+    gap: 8px;
   }
 
   .modal-image-row {

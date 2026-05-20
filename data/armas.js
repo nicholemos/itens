@@ -14,7 +14,8 @@ const armasData = {
             "categoria": "Arma",
             "tipo": "Simples",
             "empunhadura": "Leve",
-            "descricao": "Faca afiada de 15-20cm que causa 1d4 de dano de perfuração (crítico 19). Arma leve que pode ser usada com Destreza. Arremessável com alcance curto. Fornece +5 em Ladinagem para ocultá-la."
+            "descricao": "Faca afiada de 15-20cm que causa 1d4 de dano de perfuração (crítico 19). Arma leve que pode ser usada com Destreza. Arremessável com alcance curto. Fornece +5 em Ladinagem para ocultá-la.",
+            "imagem": "https://www.pngmart.com/files/8/Dagger-PNG-File.png"
         },
         {
             "nome": "Espada curta",
@@ -27,7 +28,8 @@ const armasData = {
             "categoria": "Arma",
             "tipo": "Simples",
             "empunhadura": "Leve",
-            "descricao": "Espada de 40-50cm que causa 1d6 de dano de perfuração (crítico 19). Arma leve, comum entre guardas."
+            "descricao": "Espada de 40-50cm que causa 1d6 de dano de perfuração (crítico 19). Arma leve, comum entre guardas.",
+            "imagem": "https://images.squarespace-cdn.com/content/v1/59aa8bee197aea4ad67f52ae/1504463915011-AHPSUZ67KRCE81OBNFLM/shortsword.png"
         },
         {
             "nome": "Foice",
@@ -40,7 +42,8 @@ const armasData = {
             "categoria": "Arma",
             "tipo": "Simples",
             "empunhadura": "Leve",
-            "descricao": "Instrumento agrícola com lâmina curva que causa 1d6 de dano de corte (crítico x3). Arma tradicional de druidas."
+            "descricao": "Instrumento agrícola com lâmina curva que causa 1d6 de dano de corte (crítico x3). Arma tradicional de druidas.",
+            "imagem": "https://www.pngmart.com/files/23/Sickle-PNG-Isolated-Photo.png"
         },
         {
             "nome": "Clava",

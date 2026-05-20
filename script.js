@@ -1791,7 +1791,7 @@ function openModal(index) {
     document.getElementById('modalPrice').textContent = item.preco || "—";
 
     const modalImage = document.getElementById('modalImage');
-    const imagePath = getImagePath(item.nome);
+    const imagePath = getImagePath(item);
 
     if (imagePath) {
         modalImage.src = imagePath;
@@ -1884,14 +1884,9 @@ function enviarInventarioCompletoParaFicha() {
 }
 
 // ===== MAPA DE IMAGENS (SIMPLIFICADO) =====
-function getImagePath(itemName) {
-    const imageMap = {
-        'Adaga': 'https://www.pngmart.com/files/8/Dagger-PNG-File.png',
-        'Espada curta': 'https://images.squarespace-cdn.com/content/v1/59aa8bee197aea4ad67f52ae/1504463915011-AHPSUZ67KRCE81OBNFLM/shortsword.png',
-        'Foice': 'https://www.pngmart.com/files/23/Sickle-PNG-Isolated-Photo.png',
-        // 'Foice': 'https://www.pngmart.com/files/23/Sickle-PNG-Isolated-Photo.png',
-    };
-    return imageMap[itemName] || null;
+function getImagePath(item) {
+    if (!item) return null;
+    return item.imagem || null;
 }
 
 // ===================================================
