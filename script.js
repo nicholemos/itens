@@ -108,15 +108,17 @@ let searchInput, itemsGrid, itemModal, modalOverlay, closeModalBtn,
 // SUBSTITUA A FUNÇÃO "window.onload" INTEIRA POR ESTA:
 
 window.onload = () => {
-    // Injeta estilos auxiliares
+    // Injeta estilos auxiliares usando variáveis de tema
     const style = document.createElement('style');
     style.textContent = `
         .shop-toast {
             position: fixed; bottom: 1rem; right: 1rem; z-index: 9999;
-            background: #1a1a2e; color: #fff; padding: 0.5rem 1rem;
+            background: var(--surface, #121726); color: var(--text-main, #e2d8c3); 
+            border: 1px solid var(--border-solid, rgba(201, 147, 58, 0.3));
+            padding: 0.5rem 1rem;
             border-radius: 8px; font-size: 0.85rem;
             display: flex; align-items: center; gap: 0.5rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 12px var(--shadow-main, rgba(0,0,0,0.3));
             animation: toastIn 0.25s ease;
         }
         @keyframes toastIn { from { opacity:0; transform: translateY(10px); } to { opacity:1; transform: translateY(0); } }
@@ -163,8 +165,30 @@ window.onload = () => {
     closeInventoryBtn = document.getElementById('closeInventoryBtn');
     mobileInvCount = document.getElementById('mobileInvCount');
 
+    // Inicialização do Tema Claro/Escuro/Clássico
+    const themeToggle = document.getElementById('theme-toggle');
+    const themes = ['dark', 'light', 'classic'];
+    function applyTheme(theme) {
+        document.body.classList.remove('theme-light', 'theme-classic');
+        if (theme === 'light') document.body.classList.add('theme-light');
+        else if (theme === 'classic') document.body.classList.add('theme-classic');
+        if (themeToggle) themeToggle.textContent = theme === 'dark' || theme === 'classic' ? '☀️' : '🌙';
+        localStorage.setItem('diceTheme', theme);
+    }
+    const saved = localStorage.getItem('diceTheme') || 'dark';
+    applyTheme(saved);
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const current = localStorage.getItem('diceTheme') || 'dark';
+            const idx = themes.indexOf(current);
+            const next = themes[(idx + 1) % themes.length];
+            applyTheme(next);
+        });
+    }
+
     // 2. Carrega os dados e o inventário
     loadInventory();
+    restoreFilters(); // Restaura filtros salvos antes de carregar
     loadItems();
     setupEventListeners();
     renderInventory();
@@ -282,6 +306,76 @@ function clearInventory() {
     }
 }
 
+// ===== PERSISTÊNCIA DE FILTROS =====
+const FILTERS_KEY = 't20_item_filters_v1';
+
+function saveFilters() {
+    try {
+        localStorage.setItem(FILTERS_KEY, JSON.stringify({
+            category: currentCategory,
+            search: searchTerm,
+            sort: currentSort,
+            source: currentSource,
+            empunhadura: currentEmpunhadura,
+            view: currentView
+        }));
+    } catch(e) { /* silent */ }
+}
+
+function restoreFilters() {
+    try {
+        const saved = localStorage.getItem(FILTERS_KEY);
+        if (!saved) return;
+        const f = JSON.parse(saved);
+
+        // Categoria
+        if (f.category) {
+            currentCategory = f.category;
+            const catBtn = document.querySelector(`[data-category="${f.category}"]`);
+            if (catBtn) {
+                document.querySelectorAll('.filter-btn[data-category]').forEach(b => b.classList.remove('active'));
+                catBtn.classList.add('active');
+            }
+            // Exibe/oculta filtro de empunhadura
+            const empContainer = document.getElementById('empunhaduraFilters');
+            if (empContainer) empContainer.style.display = f.category === 'Arma' ? 'flex' : 'none';
+        }
+
+        // Busca
+        if (f.search) {
+            searchTerm = f.search;
+            if (searchInput) searchInput.value = f.search;
+        }
+
+        // Ordenação
+        if (f.sort) {
+            currentSort = f.sort;
+            if (sortSelect) sortSelect.value = f.sort;
+        }
+
+        // Fonte
+        if (f.source) {
+            currentSource = f.source;
+            if (sourceFilterSelect) sourceFilterSelect.value = f.source;
+        }
+
+        // Empunhadura
+        if (f.empunhadura && f.empunhadura !== 'todas') {
+            currentEmpunhadura = f.empunhadura;
+            const empBtn = document.querySelector(`[data-empunhadura="${f.empunhadura}"]`);
+            if (empBtn) {
+                document.querySelectorAll('[data-empunhadura]').forEach(b => b.classList.remove('active'));
+                empBtn.classList.add('active');
+            }
+        }
+
+        // View
+        if (f.view) {
+            currentView = f.view;
+        }
+    } catch(e) { /* silent */ }
+}
+
 // ===== EVENT LISTENERS =====
 // SUBSTITUA A FUNÇÃO "setupEventListeners" INTEIRA POR ESTA:
 
@@ -293,6 +387,7 @@ function setupEventListeners() {
     searchInput.addEventListener('input', (e) => {
         searchTerm = e.target.value.toLowerCase();
         applyFilters();
+        saveFilters();
     });
 
     if (mobileInventoryBtn && inventoryContainer) {
@@ -327,6 +422,7 @@ function setupEventListeners() {
 
             updateSpecificFilters();
             applyFilters();
+            saveFilters();
         });
 
 
@@ -402,6 +498,7 @@ function setupEventListeners() {
         viewGridBtn.classList.add('active');
         viewTableBtn.classList.remove('active');
         renderItems();
+        saveFilters();
     });
 
     viewTableBtn.addEventListener('click', () => {
@@ -409,6 +506,7 @@ function setupEventListeners() {
         viewTableBtn.classList.add('active');
         viewGridBtn.classList.remove('active');
         renderItems();
+        saveFilters();
     });
 
     empunhaduraButtons.forEach(btn => {
@@ -417,18 +515,21 @@ function setupEventListeners() {
             btn.classList.add('active');
             currentEmpunhadura = btn.dataset.empunhadura;
             applyFilters();
+            saveFilters();
         });
     });
 
     sourceFilterSelect.addEventListener('change', (e) => {
         currentSource = e.target.value;
         applyFilters();
+        saveFilters();
     });
 
     // NOVO: Listener de Ordenação
     sortSelect.addEventListener('change', (e) => {
         currentSort = e.target.value;
         applyFilters();
+        saveFilters();
     });
 
     modQuantitySelect.addEventListener('change', (e) => {
@@ -873,6 +974,8 @@ function applyFilters() {
         } else if (currentCategory === 'Item Mágico') {
             filtered = filtered.filter(item => selectedTypes.includes(item.tipo));
         } else if (currentCategory === 'encantamento') {
+            filtered = filtered.filter(item => selectedTypes.includes(item.tipo));
+        } else {
             filtered = filtered.filter(item => selectedTypes.includes(item.tipo));
         }
     }
