@@ -165,26 +165,35 @@ window.onload = () => {
     closeInventoryBtn = document.getElementById('closeInventoryBtn');
     mobileInvCount = document.getElementById('mobileInvCount');
 
-    // Inicialização do Tema Claro/Escuro/Clássico
-    const themeToggle = document.getElementById('theme-toggle');
-    const themes = ['dark', 'light', 'classic'];
+    // Inicialização do Tema Sangue/Sombras/Clássico
     function applyTheme(theme) {
-        document.body.classList.remove('theme-light', 'theme-classic');
-        if (theme === 'light') document.body.classList.add('theme-light');
+        document.body.classList.remove('theme-blood', 'theme-dark', 'theme-classic');
+        if (theme === 'blood') document.body.classList.add('theme-blood');
+        else if (theme === 'dark') document.body.classList.add('theme-dark');
         else if (theme === 'classic') document.body.classList.add('theme-classic');
-        if (themeToggle) themeToggle.textContent = theme === 'dark' || theme === 'classic' ? '☀️' : '🌙';
-        localStorage.setItem('diceTheme', theme);
-    }
-    const saved = localStorage.getItem('diceTheme') || 'dark';
-    applyTheme(saved);
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-            const current = localStorage.getItem('diceTheme') || 'dark';
-            const idx = themes.indexOf(current);
-            const next = themes[(idx + 1) % themes.length];
-            applyTheme(next);
+        
+        document.querySelectorAll('.theme-btn').forEach(function (btn) {
+            btn.classList.toggle('active', btn.getAttribute('data-theme') === theme);
         });
+        localStorage.setItem('t20_theme', theme);
     }
+    
+    var saved = localStorage.getItem('t20_theme');
+    if (!saved) {
+        var oldDice = localStorage.getItem('diceTheme');
+        var oldHub = localStorage.getItem('hubTheme');
+        var refTheme = oldDice || oldHub;
+        if (refTheme === 'dark') saved = 'dark';
+        else if (refTheme === 'classic' || refTheme === 'light') saved = 'classic';
+        else saved = 'blood';
+    }
+    applyTheme(saved);
+    
+    document.querySelectorAll('.theme-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            applyTheme(btn.getAttribute('data-theme'));
+        });
+    });
 
     // 2. Carrega os dados e o inventário
     loadInventory();
@@ -310,69 +319,13 @@ function clearInventory() {
 const FILTERS_KEY = 't20_item_filters_v1';
 
 function saveFilters() {
-    try {
-        localStorage.setItem(FILTERS_KEY, JSON.stringify({
-            category: currentCategory,
-            search: searchTerm,
-            sort: currentSort,
-            source: currentSource,
-            empunhadura: currentEmpunhadura,
-            view: currentView
-        }));
-    } catch(e) { /* silent */ }
+    // Desativado por solicitação do usuário - não salva mais os filtros
 }
 
 function restoreFilters() {
+    // Desativado por solicitação do usuário - não restaura mais os filtros
     try {
-        const saved = localStorage.getItem(FILTERS_KEY);
-        if (!saved) return;
-        const f = JSON.parse(saved);
-
-        // Categoria
-        if (f.category) {
-            currentCategory = f.category;
-            const catBtn = document.querySelector(`[data-category="${f.category}"]`);
-            if (catBtn) {
-                document.querySelectorAll('.filter-btn[data-category]').forEach(b => b.classList.remove('active'));
-                catBtn.classList.add('active');
-            }
-            // Exibe/oculta filtro de empunhadura
-            const empContainer = document.getElementById('empunhaduraFilters');
-            if (empContainer) empContainer.style.display = f.category === 'Arma' ? 'flex' : 'none';
-        }
-
-        // Busca
-        if (f.search) {
-            searchTerm = f.search;
-            if (searchInput) searchInput.value = f.search;
-        }
-
-        // Ordenação
-        if (f.sort) {
-            currentSort = f.sort;
-            if (sortSelect) sortSelect.value = f.sort;
-        }
-
-        // Fonte
-        if (f.source) {
-            currentSource = f.source;
-            if (sourceFilterSelect) sourceFilterSelect.value = f.source;
-        }
-
-        // Empunhadura
-        if (f.empunhadura && f.empunhadura !== 'todas') {
-            currentEmpunhadura = f.empunhadura;
-            const empBtn = document.querySelector(`[data-empunhadura="${f.empunhadura}"]`);
-            if (empBtn) {
-                document.querySelectorAll('[data-empunhadura]').forEach(b => b.classList.remove('active'));
-                empBtn.classList.add('active');
-            }
-        }
-
-        // View
-        if (f.view) {
-            currentView = f.view;
-        }
+        localStorage.removeItem(FILTERS_KEY);
     } catch(e) { /* silent */ }
 }
 
@@ -706,7 +659,8 @@ function isVestido(item) {
             "Olho Desintegrador",
             "Olho Petrificante",
             "Patas de Aranha",
-            "Tentáculo com Garras"
+            "Tentáculo com Garras",
+            "Chave Mestra"
             // Adicione aqui outros itens (Ex: "Bolsa de Carga", "Manual do Bom Exercício")
         ];
 

@@ -5,18 +5,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>T20 Item Finder - Inventário</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <div style="background-color: #fff3cd; color: #856404; border: 1px solid #ffeeba; padding: 15px; text-align: center; font-family: sans-serif; border-radius: 4px; margin-bottom: 20px;">
-    <strong>Aviso:</strong> Esse projeto foi descontinuado. A versão atualizada se encontra no 
-    <a href="https://arsenal-delta.vercel.app/index.html" style="color: #533f03; font-weight: bold; text-decoration: underline;">Arsenal do Mestre</a>.
-</div>
   <header class="header">
-    <div class="container">
-      <h1 class="header-title">T20 Item Finder</h1>
-      <p class="header-subtitle">Consulta e Inventário de Itens do Sistema T20</p>
+    <h1 class="header-title">T20 Item Finder</h1>
+    <div class="header-btns">
+      <a href="../index.html" class="header-home-btn" title="Arsenal do Mestre">🏠 Hub</a>
+      <!-- Theme Switcher -->
+      <div class="theme-switcher" id="theme-switcher">
+        <button class="theme-btn" data-theme="blood" title="Tema Sangue (padrão)">🩸</button>
+        <button class="theme-btn" data-theme="dark" title="Tema Sombras (STR escuro)">🌑</button>
+        <button class="theme-btn" data-theme="classic" title="Tema Clássico (STR claro)">📜</button>
+      </div>
     </div>
   </header>
 
@@ -67,6 +70,7 @@
               <option value="Heróis de Arton">Heróis de Arton</option>
               <option value="Deuses de Arton">Deuses de Arton</option>
               <option value="Duelo de Dragões">Duelo de Dragões</option>
+              <option value="Dragão Brasil">Dragão Brasil</option>
             </select>
           </div>
 
@@ -545,9 +549,6 @@
   <script src="data/maldicao.js"></script>
 
   <script src="script.js"></script>
-</body>
-
-</html>
 </body>
 
 </html>
